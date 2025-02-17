@@ -1,0 +1,70 @@
+<!--
+/**
+ * file: count_down_timer.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 10_JULY_2023
+ * license: PUBLIC_DOMAIN
+ */
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset="UTF-8">
+    <title>COUNT_DOWN_TIMER</title>
+ 	<link rel="stylesheet" href="karbytes_aesthetic.css">
+    <script src="count_down_timer.js"></script>
+    <script src="time_stamp.js"></script>
+    <style>
+        /** 
+         * Set DIV borders to have a thickness of 2 pixel thick and to be solid colored CYAN. 
+         * Set DIV content to have 10 pixels of padding on each one of the four sides. 
+         * Set DIV elements to have 10 pixels of padding on the bottom side.
+         */
+        div {
+            border-color: #00ffff;
+            border-width: 2px;
+            border-style: solid;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+    </style>
+ </head>
+ <body onload="initialize_application()">
+    <!-- Display instructions for how to use the application. -->
+    <div>
+        <h1>COUNT_DOWN_TIMER</h1>
+        <p><em>“Time is what makes the observation of change possible.”</em></p>
+        <p><em>“Time is what prevents all phenomena from being perceived as occurring simultaneously.”</em></p>
+        <p>Instantiate a time interval which is N seconds in length.</p>
+    </div>
+    <!-- Display an expandable SELECT menu of timer interval lengths. -->
+    <div>
+        <p>STEP_0: Select a natural number of seconds, N, from the menu.</p>
+        <p>N :=
+            <select id="nonnegative_integer_interval_selector">
+                <option value="30" selected>30 seconds</option>
+                <option value="60">60 seconds (i.e. 1 minute)</option>
+                <option value="120">120 seconds (i.e. 2 minutes)</option>
+                <option value="240">240 seconds (i.e. 4 minutes)</option>
+                <option value="480">480 seconds (i.e. 8 minutes)</option>
+                <option value="960">960 seconds (i.e. 16 minutes)</option>
+            </select>
+        </p>
+        <p>(Click the menu to view hidden options).</p>
+    </div>
+    <!-- Display a button which starts the timer session of N seconds. -->
+    <div>
+        <p>STEP_1: Click the button to start counting down from N to 0 seconds.</p>
+        <p><input id="timer_start_button" type="button" value="start()" onclick="start()"></p>
+    </div>
+    <!-- Display the integer number of seconds remaining for the "in progress" timer session. -->
+    <div class="console" id="seconds_elapsed_display">
+        <p>???</p>
+    </div>
+    <!-- Display time-stamped messages denoting specific events while using the web page application. -->
+    <div class="console" id="application_status_messages_display">
+        <p>???</p>
+    </div>
+ </body>
+ </html>

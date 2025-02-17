@@ -1,0 +1,110 @@
+<!--
+/**
+ * file: beats_machine.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 09_SEPTEMBER_2024
+ * license: PUBLIC_DOMAIN
+ */
+ -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BEATS_MACHINE</title>
+    <!-- 
+        /**
+         * The linked Cascading-Style-Sheet file named karbytes_aesthetic.css 
+         * defines how this web page (which is named beats_machine.html) appears 
+         * when this web page is (re)loaded by the web browser. 
+         */
+     -->
+    <link rel="stylesheet" href="karbytes_aesthetic.css">
+    <!-- 
+        /**
+         * The linked JavaScript file named beats_machine.js 
+         * defines how this web page (which is named beats_machine.html) behaves 
+         * when the user clicks on the menus and start and stop buttons 
+         * (and when this web page is (re)loaded by the web browser). 
+         */
+     -->
+    <script src="beats_machine.js"></script>
+    <style>
+        /** Give DIV elements on this web page rounded corners and a MAGENTA border which is 2 pixels thick. */
+        div {
+            border-color: #ff00ff;
+            border-width: 2px;
+            border-style: solid;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        /** 
+         * Set the button elements on this web page to have a similar visual appearance as other HTML elements 
+         * defined in the linked Cascading-Style-Sheet file (i.e. karbytes_aesthetic.css). 
+         */
+        button {
+            border-color: #ff9000;
+            border-width: 2px;
+            border-style: solid;
+            background: #00ff00;
+            color: #000000;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 14pt;
+        }
+        /** Set the start button's background color to GREEN. */
+        #start_button {
+            background: #00ff00;
+        }
+        /** Set the stop button's background color to RED. */
+        #stop_button {
+            background: #ff0000;
+        }
+        /** Cause the start button's background color to turn CYAN when the cursor hovers over it. */
+        #start_button:hover {
+            background: #00ffff;
+        }
+        /** Cause the stop button's background color to turn CYAN when the cursor hovers over it. */
+        #stop_button:hover {
+            background: #00ffff;
+        }
+    </style>
+</head>
+<body onload="initialize_application()">
+    <div>
+        <h1>BEATS_MACHINE</h1>
+        <p>
+            This application plays zero, one, two, or three sound tracks simultaneously and such that the 
+            user can customize the beat pitch (i.e. monotone sound wave frequency) and the beat duration 
+            (i.e. time interval in which the same tone is played immediately in succession) of each one 
+            of those three sound tracks.
+        </p>
+    </div>
+    <!-- Track 0 -->
+    <div>
+        <h3>TRACK_0</h3>
+        <p>Select Beat Duration:&nbsp;<span id="duration_0_container">???</span></p>
+        <p>Select Beat Pitch:&nbsp;<span id="pitch_0_container">???</span></p>
+    </div>
+    <!-- Track 1 -->
+    <div>
+        <h3>TRACK_1</h3>
+        <p>Select Beat Duration:&nbsp;<span id="duration_1_container">???</span></p>
+        <p>Select Beat Pitch:&nbsp;<span id="pitch_1_container">???</span></p>
+    </div>
+    <!-- Track 2 -->
+    <div>
+        <h3>TRACK_2</h3>
+        <p>Select Beat Duration:&nbsp;<span id="duration_2_container">???</span></p>
+        <p>Select Beat Pitch:&nbsp;<span id="pitch_2_container">???</span></p>
+    </div>
+    <!-- Buttons to start (or stop) playing the beats -->
+    <button id="start_button" onclick="startBeats()">START_BEATS</button>
+    <button id="stop_button" onclick="stopBeats()">STOP_BEATS</button>
+    <!-- CONSOLE -->
+    <div class="console" id="console">???</div>
+</body>
+</html>

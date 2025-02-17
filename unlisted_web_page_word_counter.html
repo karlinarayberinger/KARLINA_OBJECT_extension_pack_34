@@ -1,0 +1,73 @@
+<!--
+/**
+ * file: word_counter.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 10_JULY_2023
+ * license: PUBLIC_DOMAIN
+ */
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>WORD_COUNTER</title>
+    <link rel="stylesheet" href="karbytes_aesthetic.css">
+    <script src="word_counter.js"></script>
+    <style>
+        #S_field {
+            width: 600px;
+            border-color: #00ff00;
+            border-width: 1px;
+            border-style: solid;
+            background: #000000;
+            color: #00ff00;
+        }
+        #S_field:hover {
+            background: #00ff00;
+            color: #000000;
+        }
+    </style>
+</head>
+<body onload="initialize_page()">
+    <h1>WORD_COUNTER</h1>
+    <ol>
+        <li>
+            <p>
+              Enter a sequence of text characters (which will be represented as the 
+              variable named S) into the text field below.
+            </p>
+        </li>
+        <li>
+            <p>
+              Click the SUBMIT button to compute the number of times each 
+              unique word occurs in S.
+            </p>
+        </li>
+        <li>
+            <p>
+              The application will then display the number of times each unique 
+              word occurs in S with in descending order of unique word frequencies 
+              such that the word with the highest frequency is displayed at the top 
+              of the list and the word with the lowest frequency is displayed at 
+              the bottom of the list.
+          </p>
+        </li>
+        <li>
+            <p>
+              Click the RESET button to clear the word counter results from the 
+              display area and to return to the initial web page application state.
+            </p>
+        </li>
+    </ol>
+    <p class="console" id="S_field_display">S := <input type="textarea" id="S_field"></p>
+    <p><input type="button" id="submit_button" value="SUBMIT" onclick="submit()"></p>
+    <p><input type="button" id="reset_button" value="RESET" onclick="initialize_page()"></p>
+    <div id="output">
+      <p>
+        This sentence will disappear in response to the event of a SUBMIT button click.
+      </p>
+    </div>
+    <div class="console" id="time_stamped_messages"><p>???</p></div>
+</body>
+</html>

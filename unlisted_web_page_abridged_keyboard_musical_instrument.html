@@ -1,0 +1,134 @@
+<!--
+/**
+ * file: abridged_keyboard_musical_instrument.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 13_SEPTEMBER_2024
+ * license: PUBLIC_DOMAIN
+ */
+ -->
+<!-- 
+/**
+ * Note that this application contains the word "ABRIDGED" in its title
+ * because the keyboard musical instrument which this application
+ * simulates is missing black keys (i.e. piano keys which correspond 
+ * with minor notes (as opposed to white keys which correspond with
+ * major notes)) and the full range of notes which "real" pianos
+ * typically include.
+ */
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABRIDGED_KEYBOARD_MUSICAL_INSTRUMENT</title>
+    <!-- 
+    /**
+     * The linked Cascading-Style-Sheet file named karbytes_aesthetic.css 
+     * defines how this web page (which is named abridged_keyboard_musical_instrument.html) 
+     * appears when this web page is (re)loaded by the web browser. 
+     */
+   -->
+   <link rel="stylesheet" href="karbytes_aesthetic.css">
+   <style>
+      /** 
+       * Make the padding on the left and right side of each piece of text on this web page 
+       * equal in horizontal length within that piece of text's encompassing container element.
+       * 
+       * Make each container element on this web page have fifty pixels of padding on the top,
+       * bottom, left, and right side of that element.
+       */
+      body {
+          text-align: center;
+          padding: 50px;
+      }
+      /**
+       * Make more padding on the left side than on the right side of the text inside of the 
+       * DIV element whose class is "console" and give that DIV element a two-pixel border 
+       * which is colored green and which has slightly rounded corners.
+       * 
+       * Pad the top of that DIV element with five pixels of margin space.
+       * 
+       * Pad the text inside of that DIV element with ten pixels of space between the 
+       * text and the borders of that DIV element.
+       */
+      .console {
+          text-align: left;
+          border-color: #00ff00;
+          border-style: solid;
+          border-radius: 5px;
+          border-width: 2px;
+          margin-top: 5px;
+          padding: 10px;
+      }
+      /**
+       * Make the keyboard background dark gray with a two-pixel-thick GREEN border.
+       * 
+       * Make the keyboard have slightly rounded corners.
+       */
+      .keyboard {
+          background-color: #606060;
+          border-color: #00ff00;
+          border-style: solid;
+          border-radius: 5px;
+          border-width: 2px;
+          display: inline-block;
+          padding: 10px;
+      }
+      /**
+       * Make each keyboard key background light gray with a two-pixel-thick orange border.
+       * 
+       * Make the keyboard have slightly rounded corners.
+       * 
+       * Make the width of each keyboard key fifty pixels.
+       * 
+       * Make the height of each keyboard key two hundred pixels.
+       * 
+       * Create a gap of five pixels between adjacent keyboard keys.
+       * 
+       * Cause each adjacent keyboard key to be arranged horizontally rather than vertically
+       * (within the confines of the encompassing HTML container element 
+       * (which has a fixed width of 800 pixels)).
+       * 
+       * Make the text color of each keyboard key BLACK.
+       */
+      .key {
+          background-color: #b0b0b0;
+          border: 2px solid #ff9000;
+          border-radius: 5px;
+          width: 50px;
+          height: 200px;
+          margin: 5px;
+          display: inline-block;
+          color: #000000;
+      }
+      /** 
+       * Cause each keyboard key's background color to turn GREEN when it is pressed
+       * (i.e. when the key displayed on the web page's corresponding physical computer
+       * keyboard key (e.g. 'A') is pressed by the application user).
+       */
+      .key.pressed {
+          background-color: #00ff00;
+      }
+  </style>
+</head>
+<body onload="initialize_application()">
+    <h1>ABRIDGED_KEYBOARD_MUSICAL_INSTRUMENT</h1>
+    <p>Press keys on your computer's physical keyboard to play corresponding musical notes.</p>
+    <div class="keyboard" id="keyboard">
+        <!-- Keys will be dynamically added here. -->
+    </div>
+    <!-- CONSOLE (for recording event time stamps) -->
+    <div class="console" id="console">???</div>
+    <!-- 
+    /**
+     * The linked JavaScript file named abridged_keyboard_musical_instrument.js 
+     * defines how this web page (which is named abridged_keyboard_musical_instrument.html) 
+     * behaves when the user clicks on the menus and start and stop buttons 
+     * (and when this web page is (re)loaded by the web browser). 
+     */
+    -->
+    <script src="abridged_keyboard_musical_instrument.js"></script>
+</body>
+</html>

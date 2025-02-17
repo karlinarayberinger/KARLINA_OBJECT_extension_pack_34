@@ -1,0 +1,55 @@
+<!--
+/**
+ * file: base_converter.html
+ * type: Hyper-Text-Markup-Language
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+-->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>BASE_CONVERTER</title>
+    <link rel="stylesheet" href="karbytes_aesthetic.css">
+    <script src="base_converter_arithmetic.js"></script>
+    <script src="base_converter_interface.js"></script>
+    <script src="time_stamp.js"></script>
+    <style>
+        .module {
+            border-radius: 5px;
+            padding: 10px;
+        }
+        .input_step {
+            background: #8fed77;
+            color: #000000;
+        }
+        .output_step {
+            background: #b877ed;
+            color: #000000;
+        }
+        #introduction {
+            background: #ffff00;
+            color: #000000;
+        }
+        #time_stamped_messages {
+            border-color: #00ff00;
+            border-width: 1px;
+            border-style: solid;
+        }
+    </style>
+</head>
+<body onload="initialize_application()">
+    <h1>BASE_CONVERTER</h1>
+    <p class="module" id="introduction">
+        Convert an INPUT_SEQUENCE (i.e. an unsigned integer consisting 
+        of no more than eight digits) whose base is INPUT_BASE to its 
+        equivalent representation as an unsigned integer whose base 
+        is OUTPUT_BASE.
+    </p> 
+    <div id="input_form"><p>#input_form</p></div>
+    <div id="output"><p>#output</p></div>
+    <div class="module console" id="time_stamped_messages"><p>#time_stamped_messages</p></div>
+</body>
+</html>

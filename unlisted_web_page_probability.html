@@ -1,0 +1,82 @@
+<!--
+/**
+ * file: probability.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 10_JULY_2023
+ * license: PUBLIC_DOMAIN
+ */
+ -->
+ <!DOCTYPE html>
+ <html>
+ <head>
+    <meta charset="UTF-8">
+    <title>PROBABILITY</title>
+    <link rel="stylesheet" href="karbytes_aesthetic.css">
+    <script src="probability.js"></script>
+    <style>
+      hr {
+         border: 3px solid #ff00ff;
+         border-radius: 5px;
+      }
+      .yellow_highlight {
+         background: #ffff00;
+         color: #000000;
+      }
+    </style>
+ </head>
+ <body onload="initialize_application()">
+   <hr>
+   <h1>PROBABILITY</h1>
+   <hr>
+   <p class="yellow_highlight">
+      STEP_0: Select a nonnegative integer quantity for each COLOR value
+      to store in an array of COLOR values named A.
+   </p>
+   <p>
+      Note that A is an array consisting exclusively of the COLOR values
+      such that each unique COLOR value appears as an element of A for
+      some nonnegative integer number of times.
+   </p>
+   <p>Note that the array named A is a JavaScript Object type value.</p>
+   <p>Note that each of the elements of A are JavaScript String type values.</p>
+   <div id="c_menus" class="console"><p>#c_menus</p></div>
+   <hr>
+   <p class="yellow_highlight">
+      STEP_1: Specify whether to randomly remove elements from A until A is empty 
+      (PROBABILITY_WITHOUT_REPLACEMENT) or else to randomly remove elements from
+      A while replacing each of those elements with exactly one new randomly 
+      generated COLOR value from the list of all possible colors enumerated in 
+      STEP_0 for a total of N selections (PROBABILITY_WITH_REPLACEMENT).
+   </p>
+   <p>Note that N is the total number of elements in the array named A.</p>
+   <p>Note that N is a JavaScript Number type value.</p>
+   <p id="p_menu" class="console">#p_menu</p>
+   <hr>
+   <p class="yellow_highlight">
+      STEP_2: Click the GENERATE button to create the array named A, to
+      copy the contents of A into a new array named B, and to display statistics 
+      about each of the the random selections of exactly one element from B in 
+      chronological order.
+   </p>
+   <p>Note that the array named B is a JavaScript Object type value.</p>
+   <p>
+      Note that the array named B is comprised exclusively of all the elements 
+      of A arranged in a random order.
+   </p>
+   <p>
+      Note that the elements of A are arranged such that the same COLOR values are 
+      adjacent to each other in A and such that the COLOR values are listed in the 
+      same order in A as those COLOR values are listed in STEP_0 of this web page.
+   </p>
+   <p>
+      <input class="console" id="generate_button" type="button" value="GENERATE" onclick="generate()">&nbsp;
+      <input class="console" id="reset_button" type="button" value="RESET" onclick="initialize_application()">
+   </p>
+   <hr>
+   <div id="output"><p>#output</p></div> 
+   <hr>
+   <div class="console" id="events_log"><p>#events_log</p></div> 
+   <hr>
+ </body>
+ </html>

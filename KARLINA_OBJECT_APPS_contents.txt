@@ -1,0 +1,125 @@
+--------------------------------
+
+This Python program prints the names and file sizes (in megabytes) of each file inside of a particular folder.
+
+--------------------------------
+
+Directory: KARLINA_OBJECT_APPS
+
+Directory: KARLINA_OBJECT_APPS/SOUND_TRACK_LOOP_COUNTER
+
+file_0: sound_track_looper.html // 0.00 megabytes
+
+file_1: karbytes_drums_castro_valley_california_12_december_2022.mp3 // 4.20 megabytes
+
+file_2: karbytes_guitar_07_june_2023.mp3 // 3.47 megabytes
+
+file_3: karbytes_guitar_13_may_2023.mp3 // 4.65 megabytes
+
+file_4: karbytes_aesthetic.css // 0.00 megabytes
+
+file_5: guitar_karbytes_13july2024.mp3 // 0.89 megabytes
+
+file_6: drums_karbytes_10_september_2023_part_0.mp3 // 3.64 megabytes
+
+file_7: bordered_container.css // 0.00 megabytes
+
+file_8: karbytes_guitar_castro_valley_california_12_december_2022.mp3 // 1.11 megabytes
+
+file_9: frogs_croaking_in_castro_valley_california_21_april_2022.mp3 // 0.57 megabytes
+
+file_10: guitar_karbytes_20august2024.mp3 // 0.38 megabytes
+
+file_11: karbytes_guitar_16_october_2023.mp3 // 0.81 megabytes
+
+file_12: coyote_vocalizations_01_july_2023.mp3 // 0.86 megabytes
+
+file_13: sound_track_looper.js // 0.01 megabytes
+
+file_14: karbytes_drums_20_october_2023.mp3 // 3.06 megabytes
+
+Directory: KARLINA_OBJECT_APPS/HEXIDECIMAL_COLOR_CODES
+
+file_15: karbytes_aesthetic.css // 0.00 megabytes
+
+file_16: hexidecimal_color_codes.html // 0.00 megabytes
+
+file_17: time_stamp.js // 0.00 megabytes
+
+file_18: hexidecimal_color_codes.js // 0.02 megabytes
+
+Directory: KARLINA_OBJECT_APPS/BITS_AND_BYTES
+
+file_19: binary_to_decimal.js // 0.01 megabytes
+
+file_20: light_bulb_off.png // 0.14 megabytes
+
+file_21: karbytes_aesthetic.css // 0.00 megabytes
+
+file_22: light_bulb_on.png // 0.23 megabytes
+
+file_23: binary_to_decimal.html // 0.01 megabytes
+
+Directory: KARLINA_OBJECT_APPS/PROBABILITY
+
+file_24: probability.js // 0.04 megabytes
+
+file_25: karbytes_aesthetic.css // 0.00 megabytes
+
+file_26: probability.html // 0.00 megabytes
+
+Directory: KARLINA_OBJECT_APPS/COUNT_DOWN_TIMER
+
+file_27: count_down_timer.html // 0.00 megabytes
+
+file_28: karbytes_aesthetic.css // 0.00 megabytes
+
+file_29: count_down_timer.js // 0.01 megabytes
+
+file_30: alert_sound_effect.wav // 0.31 megabytes
+
+file_31: time_stamp.js // 0.00 megabytes
+
+Directory: KARLINA_OBJECT_APPS/TRIANGLE_GRAPHING
+
+file_32: triangle_graphing.js // 0.05 megabytes
+
+file_33: triangle_graphing.html // 0.00 megabytes
+
+file_34: karbytes_aesthetic.css // 0.00 megabytes
+
+Directory: KARLINA_OBJECT_APPS/BASE_CONVERTER
+
+file_35: karbytes_aesthetic.css // 0.00 megabytes
+
+file_36: base_converter_arithmetic.js // 0.01 megabytes
+
+file_37: base_converter_interface.js // 0.03 megabytes
+
+file_38: time_stamp.js // 0.00 megabytes
+
+file_39: base_converter.html // 0.00 megabytes
+
+Directory: KARLINA_OBJECT_APPS/PI_APPROXIMATION
+
+file_40: karbytes_aesthetic.css // 0.00 megabytes
+
+file_41: pi_approximation.html // 0.00 megabytes
+
+file_42: pi_approximation.js // 0.02 megabytes
+
+Directory: KARLINA_OBJECT_APPS/WORD_COUNTER
+
+file_43: word_counter.html // 0.00 megabytes
+
+file_44: karbytes_aesthetic.css // 0.00 megabytes
+
+file_45: word_counter.js // 0.01 megabytes
+
+--------------------------------
+
+Total number of files: 46
+
+Total folder size: 24.56 megabytes
+
+--------------------------------
