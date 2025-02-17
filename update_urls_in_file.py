@@ -7,14 +7,14 @@
 #########################################################################################
 '''
 ---------------------------------------------------------------------------------------------------------------------------
-Modify a copy of raw_github_files_directory_KARLINA_OBJECT_extension_pack_33.html (which is named thing.html)
+Modify a copy of raw_github_files_directory_KARLINA_OBJECT_extension_pack_34.html (which is named thing.html)
 such that each instance of "https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_33/main/"
-which occurs in thing.html is changed to "/KARLINA_OBJECT_extension_pack_33/".
+which occurs in thing.html is changed to "/KARLINA_OBJECT_extension_pack_34/".
 
 The purpose of this Python program is to help karbytes quickly and accurately update the .onion website
 which mirrors the "micro directory" at the following Uniform Resource Locator (URL):
 
-https://karbytesforlifeblog.wordpress.com/raw_github_files_directory_karlina_object_extension_pack_33/
+https://karbytesforlifeblog.wordpress.com/raw_github_files_directory_karlina_object_extension_pack_34/
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 def replace_in_file(file_name, old_string, new_string):
@@ -38,8 +38,8 @@ def replace_in_file(file_name, old_string, new_string):
 
 # Parameters
 file_name = "thing.html"
-old_string = "https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_33/main/"
-new_string = "/KARLINA_OBJECT_extension_pack_33/"
+old_string = "https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/"
+new_string = "/KARLINA_OBJECT_extension_pack_34/"
 
 # Execute the function
 replace_in_file(file_name, old_string, new_string)
