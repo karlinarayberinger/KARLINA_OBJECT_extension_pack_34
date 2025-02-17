@@ -1,14 +1,14 @@
 #########################################################################################
 # file: update_urls_in_file.py
 # type: Python
-# date: 16_FEBRUARY_2025
+# date: 17_FEBRUARY_2025
 # author: karbytes
 # license: PUBLIC_DOMAIN 
 #########################################################################################
 '''
 ---------------------------------------------------------------------------------------------------------------------------
 Modify a copy of raw_github_files_directory_KARLINA_OBJECT_extension_pack_34.html (which is named thing.html)
-such that each instance of "https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_33/main/"
+such that each instance of "https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/"
 which occurs in thing.html is changed to "/KARLINA_OBJECT_extension_pack_34/".
 
 The purpose of this Python program is to help karbytes quickly and accurately update the .onion website
