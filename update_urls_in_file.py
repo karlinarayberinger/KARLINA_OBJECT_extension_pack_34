@@ -1,20 +1,20 @@
 #########################################################################################
 # file: update_urls_in_file.py
 # type: Python
-# date: 15_FEBRUARY_2025
+# date: 16_FEBRUARY_2025
 # author: karbytes
 # license: PUBLIC_DOMAIN 
 #########################################################################################
 '''
 ---------------------------------------------------------------------------------------------------------------------------
-Modify a copy of raw_github_files_directory_KARLINA_OBJECT_extension_pack_32.html (which is named thing.html)
-such that each instance of "https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_32/main/"
-which occurs in thing.html is changed to "/KARLINA_OBJECT_extension_pack_32/".
+Modify a copy of raw_github_files_directory_KARLINA_OBJECT_extension_pack_33.html (which is named thing.html)
+such that each instance of "https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_33/main/"
+which occurs in thing.html is changed to "/KARLINA_OBJECT_extension_pack_33/".
 
 The purpose of this Python program is to help karbytes quickly and accurately update the .onion website
 which mirrors the "micro directory" at the following Uniform Resource Locator (URL):
 
-https://karbytesforlifeblog.wordpress.com/raw_github_files_directory_karlina_object_extension_pack_32/
+https://karbytesforlifeblog.wordpress.com/raw_github_files_directory_karlina_object_extension_pack_33/
 ---------------------------------------------------------------------------------------------------------------------------
 '''
 def replace_in_file(file_name, old_string, new_string):
@@ -38,8 +38,8 @@ def replace_in_file(file_name, old_string, new_string):
 
 # Parameters
 file_name = "thing.html"
-old_string = "https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_32/main/"
-new_string = "/KARLINA_OBJECT_extension_pack_32/"
+old_string = "https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_33/main/"
+new_string = "/KARLINA_OBJECT_extension_pack_33/"
 
 # Execute the function
 replace_in_file(file_name, old_string, new_string)
