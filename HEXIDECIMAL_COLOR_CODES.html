@@ -1,0 +1,601 @@
+<hr>
+<p><strong>HEXIDECIMAL_COLOR_CODES</strong></p>
+<hr>
+<p><span style="background: #ffff00">The <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank" rel="noopener">single web page application</a> featured in this tutorial web page substantiates a three-by-three square grid composed of nine equally-sized rectangular tiles where each tile is assigned a random background color. Each tile displays the <strong>hexidecimal color code</strong> which represents that tile’s background color in the format <strong>#RRGGBB</strong> along with that tile background color’s <strong style="background: #000000;color: #ff0000">RED</strong> gradient (<strong>RR</strong>), <strong style="background: #000000;color: #00ff00">GREEN</strong> gradient (<strong>GG</strong>), and <strong style="background: #000000;color: #0000ff">BLUE</strong> gradient (<strong>BB</strong>). The application end user may select a color skew option from a list of options to limit the randomized color output values to be either RED skewed, GREEN skewed, BLUE skewed, or not skewed towards any primary color gradient (and skew NONE is automatically selected if no other color skew menu option is selected when the GENERATE button is clicked).</span></p>
+<p>If color_skew_specification is &#8220;red&#8221;, the decimal number which &#8220;RR&#8221; represents will be larger than or equal to the decimal number represented by &#8220;GG&#8221; and larger than or equal to the decimal number represented by &#8220;BB&#8221;.</p>
+<p>If color_skew_specification is &#8220;green&#8221;, the decimal number which &#8220;GG&#8221; represents will be larger than or equal to the decimal number represented by &#8220;RR&#8221; and larger than or equal to the decimal number represented by &#8220;BB&#8221;.</p>
+<p>If color_skew_specification is &#8220;blue&#8221;, the decimal number which &#8220;BB&#8221; represents will be larger than or equal to the decimal number represented by &#8220;RR&#8221; and larger than or equal to the decimal number represented by &#8220;GG&#8221;.</p>
+<p>If color_skew_specification is neither &#8220;red&#8221; nor &#8220;green&#8221; nor &#8220;blue&#8221;, then no color skew will be applied (i.e. the color_skew_specification value will be set to &#8220;none&#8221;).</p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<pre>hexidecimal_digits := ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']. // The nonnegative integer value of a hexidecimal digit is sixteen to the power of the decimal array index value of that particular hexidecimal digit.</pre>
+<pre>primary_color_gradient_hexidecimal_value := hexidecimal_digits[P] hexidecimal_digits[Q]. // P and Q are each nonnegative decimal integer values no larger than 15.</pre>
+<pre>primary_color_gradient_decimal_value := (P * (16 ^ 1)) + (Q * (16 ^ 0)). // P and Q are each nonnegative decimal integer values no larger than 15.</pre>
+<pre>maximum_value(primary_color_gradient_decimal_value) := (hexidecimal_to_decimal('F') * (16 ^ 1)) + (hexidecimal_to_decimal('F')  * (16 ^ 0)) = (15 * 16) + (15 * 0) = 255.</pre>
+<pre>minimum_value(primary_color_gradient_decimal_value) := (hexidecimal_to_decimal('0') * (16 ^ 1)) + (hexidecimal_to_decimal('0')  * (16 ^ 0)) = (0 * 16) + (0 * 0) = 0.</pre>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes.html</a></p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css</a></p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes.js</a></p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/time_stamp.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/time_stamp.js</a></p>
+<hr>
+<p><strong>Hyper-Text-Markup-Language Code</strong></p>
+<hr>
+<p>The following Hyper-Text-Markup-Language (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>) code defines the user interface component of the HEXIDECIMAL_COLOR_CODES web page application. Copy the HTML code from the source code file which is linked below into a text editor and save that file as <strong>hexidecimal_color_codes.html</strong>. Use a web browser such as <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Firefox" target="_blank" rel="noopener">Firefox</a> to open that HTML file (and ensure that the JavaScript and Cascading-Style-Sheet files are in the same file directory as the HTML file).</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
+<p><em><strong>If copy-pasting the following HTML code from the preformatted text box below into a text editor, remove the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Zero-width_space" target="_blank" rel="noopener">zero-width space</a> Unicode character (<span style="background:#000000;color:#fe9eff">&amp;&#8203;#8203;</span>) which is located between the &#8216;s&#8217; and the &#8216;r&#8217; in the script tag(s) which each link to a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a> file.</em></strong></p>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_packk/main/hexidecimal_color_codes.html</a></p>
+<p>image_link: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_html_code_screenshot.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_html_code_screenshot.png</a></p>
+<hr>
+<pre>
+&lt;!--
+/**
+ * file: hexidecimal_color_codes.html
+ * type: Hyper-Text-Markup-Language
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;HEXIDECIMAL_COLOR_CODES&lt;/title&gt;
+    &lt;link rel="stylesheet" href="karbytes_aesthetic.css"&gt;
+    &lt;script s&#8203;rc&#x3D;"hexidecimal_color_codes.js"&gt;&lt;/script&gt;
+    &lt;script s&#8203;rc&#x3D;"time_stamp.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        .green_input_element {
+            background: #000000;
+            color: #00ff00;
+            border-color: #00ff00;
+        }
+        .green_input_element:hover {
+            background: #00ff00;
+            color: #000000;
+        }
+        .tile_text {
+            background: #000000;
+            color: #00ffff;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body onload="initialize_application()"&gt;
+    &lt;h1&gt;HEXIDECIMAL_COLOR_CODES&lt;/h1&gt;
+    &lt;p&gt;1) Select a color skew from the expandable menu.&lt;/p&gt;
+    &lt;p class="console"&gt;COLOR_SKEW := 
+        &lt;select class="green_input_element" id="color_skew_menu"&gt;
+            &lt;option value="none" selected&gt;NONE&lt;/option&gt;
+            &lt;option value="red"&gt;RED&lt;/option&gt;
+            &lt;option value="green"&gt;GREEN&lt;/option&gt;
+            &lt;option value="blue"&gt;BLUE&lt;/option&gt;
+        &lt;/select&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        2) Click the GENERATE button to generate a grid comprised of 3 rows and 3 columns 
+        of randomly colored tiles according to the selected color skew.
+    &lt;/p&gt;
+    &lt;p&gt;&lt;input class="green_input_element" type="button" value="GENERATE" onclick="generate_color_grid()"&gt;&lt;/p&gt;
+    &lt;div id="output"&gt;&lt;p&gt;???&lt;/p&gt;&lt;/div&gt;
+    &lt;div id="time_stamped_events" class="console"&gt;&lt;p&gt;???&lt;/p&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<hr>
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21834" data-permalink="https://karlinaobject.wordpress.com/hexidecimal_color_codes/hexidecimal_color_codes_html_code_screenshot-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_html_code_screenshot.png" data-orig-size="1162,1453" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="hexidecimal_color_codes_html_code_screenshot" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_html_code_screenshot.png?w=240" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_html_code_screenshot.png?w=819" width="1162" height="1453" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_html_code_screenshot.png" alt="" class="wp-image-21834" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_html_code_screenshot.png 1162w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_html_code_screenshot.png?w=120&amp;h=150 120w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_html_code_screenshot.png?w=240&amp;h=300 240w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_html_code_screenshot.png?w=768&amp;h=960 768w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_html_code_screenshot.png?w=819&amp;h=1024 819w" sizes="(max-width: 1162px) 100vw, 1162px" /></figure>
+
+
+<hr />
+<p><strong>Cascading-Style-Sheet Code</strong></p>
+<hr />
+<p>The following Cascading-Style-Sheet (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener">CSS</a>) code defines a stylesheet which customizes the appearance of interface components of the HEXIDECIMAL_COLOR_CODES web page application. Copy the CSS code from the source code file which is linked below into a text editor and save that file as <strong>karbytes_aesthetic.css</strong>.</p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css</a></p>
+<hr />
+<pre>/**
+ * file: karbytes_aesthetic.css
+ * type: Cascading-Style-Sheet
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+/** Make the page background BLACK, the text orange and monospace, and the page content width 800 pixels or less. */
+body {
+ 	background: #000000;
+ 	color: #ff9000;
+ 	font-family: monospace;
+ 	font-size: 16px;
+ 	padding: 10px;
+ 	width: 800px;
+}
+
+/** Make input elements and select elements have an orange rounded border, a BLACK background, and orange monospace text. */
+input, select {
+	background: #000000;
+	color: #ff9000;
+	border-color: #ff9000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 10px;
+	appearance: none;  
+ 	font-family: monospace;
+ 	font-size: 16px;
+}
+
+/** Invert the text color and background color of INPUT and SELECT elements when the cursor (i.e. mouse) hovers over them. */
+input:hover, select:hover {
+	background: #ff9000;
+	color: #000000;
+}
+
+/** Make table data borders one pixel thick and CYAN. Give table data content 10 pixels in padding on all four sides. */
+td {
+	color: #00ffff;
+	border-color: #00ffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px;
+}
+
+/** Set the text color of elements whose identifier (id) is "output" to CYAN. */
+#output {
+	color: #00ffff;
+}
+
+/** Set the text color of elements whose class is "console" to GREEN and make the text background of those elements BLACK. */
+.console {
+	color: #00ff00;
+	background: #000000;
+}
+</pre>
+<hr />
+<p><strong>JavaScript Code</strong></p>
+<hr />
+<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines most of the functions (except for one function) which control the behavior of the HEXIDECIMAL_COLOR_CODES web page application. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>hexidecimal_color_codes.js</strong>.</p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes.js</a></p>
+<hr />
+<pre>/**
+ * file: hexidecimal_color_codes.js
+ * type: JavaScript
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+/**
+ * Set the web page interface to its initial state.
+ * 
+ * Display a placeholder paragraph inside of the div element whose id is "output".
+ * 
+ * Assume that this function is called in response to the event of the corresponding web page, 
+ * hexidecimal_color_codes.html, being loaded by the web browser.
+ */
+function initialize_application() {
+    try {
+        const time_stamp = generate_time_stamp(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
+        let message = "The web page, hexidecimal_color_codes.html, was loaded at time: " + time_stamp;
+        console.log(message);
+        document.getElementById("time_stamped_events").innerHTML = p0 + message + p1;
+        document.getElementById("output").innerHTML = p0 + "This sentence will disappear when the GENERATE button is clicked." + p1;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of initialize_application(): " + exception);
+    }
+}
+
+/**
+ * Return the value of the selected menu option of a select menu element.
+ * 
+ * @param {String} select_menu_identifier is assumed to be the id of a select HTML element.
+ * 
+ * @return {String} the value of the selected menu option.
+ */
+function get_selected_menu_option_value(select_menu_identifier) {
+    try {
+        let menu_object = {}, options_array = [], selected_option_index = 0, selected_option_object = {}, selected_option_value;
+        menu_object = document.getElementById(select_menu_identifier);
+        options_array = menu_object.options;
+        selected_option_index = menu_object.selectedIndex;
+        selected_option_object = options_array[selected_option_index];
+        selected_option_value = selected_option_object.value
+        return selected_option_value;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of get_selected_menu_option(select_menu_identifier): " + exception);
+    }
+}
+
+/**
+ * Use the native JavaScript Math library function for generating random numbers to select a 
+ * base-ten number no smaller than 0 and less than 1.
+ * 
+ * @return {Number} a base-ten (i.e. decimal) number no smaller than zero and smaller than one.
+ */
+function generate_random_nonnegative_number_less_than_one() {
+    return Math.random();
+}
+
+/**
+ * Use the native JavaScript Math library function for generating random numbers to select a base-ten 
+ * number no smaller than 0 and less than 1 and store the result in a variable named N.
+ * 
+ * Multiply N by 256, round the result down to the nearest integer, and return that rounded down result.
+ * 
+ * @return {Number} a base-ten (i.e. decimal) integer no smaller than 0 and no larger than 255.
+ */
+function generate_random_nonnegative_integer_less_than_two_hundred_fifty_six() {
+    let N = generate_random_nonnegative_number_less_than_one();
+    return Math.floor(N * 256);
+}
+
+/**
+ * Convert a nonnegative decimal integer which is no smaller than 0 and no larger than 255 to its two-digit hexidecimal (i.e. base-sixteen) equivalent.
+ * 
+ * @param {Number} decimal_integer is assumed to be a base-ten integer no smaller than 0 and no larger than 255.
+ * 
+ * @return {String} a sequence of two hexidecimal digits which represents the same numerical value as decimal_integer.
+ */
+function convert_from_decimal_to_hexidecimal(decimal_integer) {
+    try {
+        let hexidecimal_digits_set = "0123456789ABCDEF";
+        let hexidecimal_output_array = ['0','0'];
+        let hexidecimal_output_string = "";
+        if (arguments.length !== 1) throw "exactly one function argument is required.";
+        if (typeof arguments[0] !== "number") throw "decimal_integer must be a Number type value.";
+        if (decimal_integer !== Math.floor(decimal_integer)) throw "decimal_integer must be a whole number value.";
+        if (decimal_integer &lt; 0) throw "decimal_integer must be a nonnegative number value.";
+        if (decimal_integer &gt; 255) throw "decicmal_integer must not exceed 255.";
+        hexidecimal_output_array[0] = hexidecimal_digits_set[decimal_integer % 16];
+        decimal_integer = Math.floor(decimal_integer / 16);
+        hexidecimal_output_array[1] = hexidecimal_digits_set[decimal_integer % 16];
+        hexidecimal_output_string += hexidecimal_output_array[1];
+        hexidecimal_output_string += hexidecimal_output_array[0];
+        return hexidecimal_output_string;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of convert_from_decimal_to_hexidecimal(decimal_integer): " + exception);
+        return "00";
+    }
+}
+
+/**
+ * Generate a random hexidecimal color code string in the format "#RRGGBB" 
+ * such that RR represents the RED gradient, 
+ * GG represents the GREEN gradient, and 
+ * BB represents the BLUE gradient 
+ * (and such that each of the three "primary color" gradients 
+ * is a sequence of two hexidecimal digits which represents a decimal integer 
+ * no smaller than 0 and no larger than 255)).
+ * 
+ * If color_skew_specification is "red", 
+ * the decimal number which "RR" represents will be 
+ * larger than or equal to the decimal number represented by "GG" and 
+ * larger than or equal to the decimal number represented by "BB".
+ * 
+ * If color_skew_specification is "green", 
+ * the decimal number which "GG" represents will be 
+ * larger than or equal to the decimal number represented by "RR" and 
+ * larger than or equal to the decimal number represented by "BB".
+ * 
+ * If color_skew_specification is "blue", 
+ * the decimal number which "BB" represents will be 
+ * larger than or equal to the decimal number represented by "RR" and 
+ * larger than or equal to the decimal number represented by "GG".
+ * 
+ * If color_skew_specification is neither "red" nor "green" nor "blue", 
+ * then no color skew will be applied (i.e. the color_skew_specification value will be set to "none").
+ * 
+ * Note that a hexidecimal digit is a String type character from the following set of sixteen base-sixteen digits 
+ * (which are listed in ascending order such that each hexidecimal digit 
+ * represents a base-ten integer value starting with 0 and incrementing by exactly 1): 
+ * 
+ * hexidecimal_digits := ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'].
+ * 
+ * @param {String} color_skew_specification is assumed to be either "none", "red", "green", or "blue".
+ * 
+ * @return {String} a hexidecimal color code string in the format "#RRGGBB".
+ */
+function generate_random_hexidecimal_color_code(color_skew_specification) {
+    try {
+        let red_gradient_hexidecimal_digits_sequence = "00", red_gradient_decimal_value = 0;
+        let green_gradient_hexidecimal_digits_sequence = "00", green_gradient_decimal_value = 0;
+        let blue_gradient_hexidecimal_digits_sequence = "00", blue_gradient_decimal_value = 0;
+        if (arguments.length !== 1) throw "exactly one function argument is required.";
+        if (typeof arguments[0] !== "string") throw "color_skew_specification must be a String type value.";
+        red_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+        green_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+        blue_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+        if (color_skew_specification === "red") {
+            while ((red_gradient_decimal_value &lt; green_gradient_decimal_value) || (red_gradient_decimal_value &lt; blue_gradient_decimal_value)) {
+                red_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+                green_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+                blue_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+            }
+        }
+        if (color_skew_specification === "green") {
+            while ((green_gradient_decimal_value &lt; red_gradient_decimal_value) || (green_gradient_decimal_value &lt; blue_gradient_decimal_value)) {
+                red_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+                green_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+                blue_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+            }
+        }
+        if (color_skew_specification === "blue") {
+            while ((blue_gradient_decimal_value &lt; red_gradient_decimal_value) || (blue_gradient_decimal_value &lt; green_gradient_decimal_value)) {
+                red_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+                green_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+                blue_gradient_decimal_value = generate_random_nonnegative_integer_less_than_two_hundred_fifty_six();
+            }
+        }
+        red_gradient_hexidecimal_digits_sequence = convert_from_decimal_to_hexidecimal(red_gradient_decimal_value);
+        green_gradient_hexidecimal_digits_sequence = convert_from_decimal_to_hexidecimal(green_gradient_decimal_value);
+        blue_gradient_hexidecimal_digits_sequence = convert_from_decimal_to_hexidecimal(blue_gradient_decimal_value);
+        return "#" + red_gradient_hexidecimal_digits_sequence + green_gradient_hexidecimal_digits_sequence + blue_gradient_hexidecimal_digits_sequence;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of generate_random_hexidecimal_color_code(color_skew_specification): " + exception);
+        return "#000000";
+    }
+}
+
+/**
+ * Return the decimal integer index of the hexidecimal digit which H represents in the array below:
+ * 
+ * hexidecimal_digits := ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'].
+ * 
+ * @param {String} H is assumed to be a single hexidecimal digit.
+ * 
+ * @return {Number} the decimal integer index of the hexidecimal digit which H represents.
+ */
+function get_decimal_value_of_hexidecimal_digit(H) {
+    if (H === '0') return 0;
+    if (H === '1') return 1;
+    if (H === '2') return 2;
+    if (H === '3') return 3;
+    if (H === '4') return 4;
+    if (H === '5') return 5;
+    if (H === '6') return 6;
+    if (H === '7') return 7;
+    if (H === '8') return 8;
+    if (H === '9') return 9;
+    if (H === 'A') return 10;
+    if (H === 'B') return 11;
+    if (H === 'C') return 12;
+    if (H === 'D') return 13;
+    if (H === 'E') return 14;
+    if (H === 'F') return 15;
+    return 0;
+}
+
+/**
+ * Convert a string comprised of exactly two hexidecimal digits to its corresponding decimal representation.
+ * 
+ * Note that the characters comprising hexidecimal_sequence must be members of the following set:
+ * 
+ * hexidecimal_digits := ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F'].
+ * 
+ * Note that the output value will be a decimal integer no smaller than 0 and no larger than 255.
+ * 
+ * @param {String} hexidecimal_sequence is assumed to be a string comprised of exactly two hexidecimal digits.
+ * 
+ * @return {Number} the base-ten number which hexidecimal_sequence represents.
+ */
+function convert_from_hexidecimal_to_decimal(hexidecimal_sequence) {
+    try {
+        let hexidecimal_digits_set = "0123456789ABCDEF", i = 0, is_valid_hexidecimal_digit = false, decimal_output = 0;
+        if (arguments.length !== 1) throw "exactly one function argument is required.";
+        if (typeof arguments[0] !== "string") throw "hexidecimal_sequence must be a String type value.";
+        if (hexidecimal_sequence.length !== 2) throw "hexidecimal_sequence must have a length of exactly 2 characters.";
+        for (i = 0; i &lt; 16; i += 1) if (hexidecimal_sequence[0] === hexidecimal_digits_set[i]) is_valid_hexidecimal_digit = true;
+        if (!is_valid_hexidecimal_digit) throw "The first digit of hexidecimal_sequence is not a valid hexidecimal digit.";
+        is_valid_hexidecimal_digit = false;
+        for (i = 0; i &lt; 16; i += 1) if (hexidecimal_sequence[1] === hexidecimal_digits_set[i]) is_valid_hexidecimal_digit = true;
+        if (!is_valid_hexidecimal_digit) throw "The second digit of hexidecimal_sequence is not a valid hexidecimal digit.";
+        decimal_output += (get_decimal_value_of_hexidecimal_digit(hexidecimal_sequence[0]) * 16);
+        decimal_output += (get_decimal_value_of_hexidecimal_digit(hexidecimal_sequence[1]));
+        return decimal_output;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of convert_from_hexidecimal_to_decimal(hexidecimal_sequence): " + exception);
+        return 0;   
+    }
+}
+
+/**
+ * Generate the HTML string which constructs a table data cell whose text content is as follows:
+ * 
+ * - hexidecimal_color_code: a random hexidecimal color code string in the format "#RRGGBB" 
+ *                           such that RR represents the RED gradient, 
+ *                           GG represents the GREEN gradient, and 
+ *                           BB represents the BLUE gradient 
+ *                           (and such that each of the three "primary color" gradients 
+ *                           is a sequence of two hexidecimal digits which represents a decimal integer 
+ *                           no smaller than 0 and no larger than 255)).
+ * 
+ * - red_value: a decimal integer no smaller than 0 and no larger than 255 which "RR" represents.
+ * 
+ * - green_value: a decimal integer no smaller than 0 and no larger than 255 which "GG" represents.
+ * 
+ * - blue_value: a decimal integer no smaller than 0 and no larger than 255 which "BB" represents.
+ * 
+ * If color_skew_specification is "red", 
+ * the decimal number which "RR" represents will be larger than or equal to the decimal number represented by "GG" 
+ * and larger than or equal to the decimal number represented by "BB".
+ * 
+ * If color_skew_specification is "green", 
+ * the decimal number which "GG" represents will be larger than or equal to the decimal number represented by "RR" 
+ * and larger than or equal to the decimal number represented by "BB".
+ * 
+ * If color_skew_specification is "blue", 
+ * the decimal number which "BB" represents will be larger than or equal to the decimal number represented by "RR" 
+ * and larger than or equal to the decimal number represented by "GG".
+ * 
+ * If color_skew_specification is neither "red" nor "green" nor "blue", 
+ * then no color skew will be applied (i.e. the color_skew_specification value will be set to "none").           
+ * 
+ * @param {String} color_skew_specification is assumed to be either "none", "red", "green", or "blue".
+ * 
+ * @return {String} the HTML string which may be used to construct a table data element on a web page.
+ */
+function generate_html_string_for_table_cell(color_skew_specification) {
+    let html_string = "", hexidecimal_color_code = "", RR = "", GG = "", BB = "", red_value = 0, green_value = 0, blue_value = 0;
+    hexidecimal_color_code = generate_random_hexidecimal_color_code(color_skew_specification);
+    RR += hexidecimal_color_code[1];
+    RR += hexidecimal_color_code[2];
+    GG += hexidecimal_color_code[3];
+    GG += hexidecimal_color_code[4];
+    BB += hexidecimal_color_code[5];
+    BB += hexidecimal_color_code[6];
+    red_value = convert_from_hexidecimal_to_decimal(RR);
+    green_value = convert_from_hexidecimal_to_decimal(GG);
+    blue_value = convert_from_hexidecimal_to_decimal(BB);
+    html_string += '&lt;' + 'td' + ' style="background:' +  hexidecimal_color_code + '"' + '&gt;';
+    html_string += '&lt;' + 'p' + ' class="tile_text"' + '&gt;';
+    html_string += "hexidecimal_color_code: " + hexidecimal_color_code;
+    html_string += '&lt;' + '/' + 'p' + '&gt;';
+    html_string += '&lt;' + 'p' + ' class="tile_text"' + '&gt;';
+    html_string += "red_value: " + red_value;
+    html_string += '&lt;' + '/' + 'p' + '&gt;';
+    html_string += '&lt;' + 'p' + ' class="tile_text"' + '&gt;';
+    html_string += "green_value: " + green_value;
+    html_string += '&lt;' + '/' + 'p' + '&gt;';
+    html_string += '&lt;' + 'p' + ' class="tile_text"' + '&gt;';
+    html_string += "blue_value: " + blue_value;
+    html_string += '&lt;' + '/' + 'p' + '&gt;';
+    html_string += '&lt;' + '/' + 'td' + '&gt;';
+    return html_string;
+}
+
+/**
+ * Populate the div element whose id is "output" with a table consisting of three rows, three columns, and data cells 
+ * such that the background color of each data cell is set to the hexidecimal color code text 
+ * displayed inside of that particular data cell.
+ * 
+ * Each of the nine hexidecimal color codes is a randomly generated String value whose RED-GREEN-BLUE values are 
+ * constrained according to the option selected in the select menu whose id is "color_skew_menu".
+ * 
+ * Assume that this function is called in response to the event of button on the corresponding web page, 
+ * hexidecimal_color_codes.html, whose value is "GENERATE" being clicked.
+ */
+function generate_color_grid() {
+    try {        
+        const time_stamp = generate_time_stamp(), p0 = '&lt;' + 'p' + '&gt;', p1 = '&lt;' + '/' + 'p' + '&gt;';
+        let message = "The GENERATE button was clicked at time: " + time_stamp;
+        let selected_color_skew = "", output_div_content = "";
+        console.log(message);
+        document.getElementById("time_stamped_events").innerHTML += p0 + message + p1;
+        selected_color_skew = get_selected_menu_option_value("color_skew_menu");
+        output_div_content = '&lt;' + 'p' + '&gt;';
+        output_div_content += "selected_color_skew := " + selected_color_skew + ".";
+        output_div_content += '&lt;' + '/' + 'p' + '&gt;';
+        output_div_content += '&lt;' + 'table' + '&gt;';
+        output_div_content += '&lt;' + 'tr' + '&gt;';
+        output_div_content += generate_html_string_for_table_cell(selected_color_skew);
+        output_div_content += generate_html_string_for_table_cell(selected_color_skew);
+        output_div_content += generate_html_string_for_table_cell(selected_color_skew);
+        output_div_content += '&lt;' + '/' + 'tr' + '&gt;';
+        output_div_content += '&lt;' + 'tr' + '&gt;';
+        output_div_content += generate_html_string_for_table_cell(selected_color_skew);
+        output_div_content += generate_html_string_for_table_cell(selected_color_skew);
+        output_div_content += generate_html_string_for_table_cell(selected_color_skew);
+        output_div_content += '&lt;' + '/' + 'tr' + '&gt;';
+        output_div_content += '&lt;' + 'tr' + '&gt;';
+        output_div_content += generate_html_string_for_table_cell(selected_color_skew);
+        output_div_content += generate_html_string_for_table_cell(selected_color_skew);
+        output_div_content += generate_html_string_for_table_cell(selected_color_skew);
+        output_div_content += '&lt;' + '/' + 'tr' + '&gt;';
+        output_div_content += '&lt;' + '/' + 'table' + '&gt;';
+        document.getElementById("output").innerHTML = output_div_content;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of generate_color_grid(): " + exception);
+    }
+}
+</pre>
+<hr />
+<p><strong>JavaScript Code</strong></p>
+<hr />
+<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines one function which controls the behavior of the HEXIDECIMAL_COLOR_CODES web page application; namely the function which returns the number of milliseconds elapsed since the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Unix_time" target="_blank" rel="noopener">Unix Epoch</a> concatenated to the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/String_(computer_science)" target="_blank" rel="noopener">string</a> &#8221; milliseconds since midnight on 01_JANUARY_1970&#8243;. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>time_stamp.js</strong>.</p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/time_stamp.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/time_stamp.js</a></p>
+<hr />
+<pre>/**
+ * file: time_stamp.js
+ * type: JavaScript
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+/**
+ * Get the Number of milliseconds which have elapsed since the Unix Epoch.
+ * The Unix Epoch is 01_JANUARY_1970 at midnight (Coordinated Universal Time (UTC)).
+ * 
+ * @return {String} message displaying the time at which this function was called.
+ */
+function generate_time_stamp() {
+ 	const milliseconds_elapsed_since_unix_epoch = Date.now();
+ 	return  milliseconds_elapsed_since_unix_epoch + " milliseconds since midnight on 01_JANUARY_1970.";
+}
+</pre>
+<hr />
+<p><strong>HEXIDECIMAL_COLOR_CODES Interface (Initial)</strong></p>
+<hr />
+<p>The screenshot image below depicts what the HEXIDECIMAL_COLOR_CODES web page interface is supposed to look like when the web page is initially loaded by a web browser.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_initial.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_initial.png</a></p>
+<hr />
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21824" data-permalink="https://karlinaobject.wordpress.com/hexidecimal_color_codes/hexidecimal_color_codes_interface_initial-3/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_initial.png" data-orig-size="821,412" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="hexidecimal_color_codes_interface_initial" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_initial.png?w=300" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_initial.png?w=821" width="821" height="412" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_initial.png" alt="" class="wp-image-21824" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_initial.png 821w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_initial.png?w=150&amp;h=75 150w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_initial.png?w=300&amp;h=151 300w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_initial.png?w=768&amp;h=385 768w" sizes="(max-width: 821px) 100vw, 821px" /></figure>
+
+
+<hr />
+<p><strong>HEXIDECIMAL_COLOR_CODES Interface (Skew None)</strong></p>
+<hr />
+<p>The screenshot image below depicts one possible configuration of what the HEXIDECIMAL_COLOR_CODES web page interface could look like if the GENERATE button is clicked without first clicking on the color skew menu button or if the &#8220;NONE&#8221; option is selected in the color skew menu before the GENERATE button is clicked.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_skew_none.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_skew_none.png</a></p>
+<hr />
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21820" data-permalink="https://karlinaobject.wordpress.com/hexidecimal_color_codes/hexidecimal_color_codes_interface_skew_none-3/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_none.png" data-orig-size="870,1146" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="hexidecimal_color_codes_interface_skew_none" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_none.png?w=228" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_none.png?w=777" width="870" height="1146" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_none.png" alt="" class="wp-image-21820" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_none.png 870w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_none.png?w=114&amp;h=150 114w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_none.png?w=228&amp;h=300 228w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_none.png?w=768&amp;h=1012 768w" sizes="(max-width: 870px) 100vw, 870px" /></figure>
+
+
+<hr />
+<p><strong>HEXIDECIMAL_COLOR_CODES Interface (Skew Red)</strong></p>
+<hr />
+<p>The screenshot image below depicts one possible configuration of what the HEXIDECIMAL_COLOR_CODES web page interface could look like if the &#8220;RED&#8221; option is selected in the color skew menu before the GENERATE button is clicked.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_skew_red.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_skew_red.png</a></p>
+<hr />
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21817" data-permalink="https://karlinaobject.wordpress.com/hexidecimal_color_codes/hexidecimal_color_codes_interface_skew_red-3/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_red.png" data-orig-size="837,1207" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="hexidecimal_color_codes_interface_skew_red" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_red.png?w=208" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_red.png?w=710" loading="lazy" width="837" height="1207" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_red.png" alt="" class="wp-image-21817" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_red.png 837w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_red.png?w=104&amp;h=150 104w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_red.png?w=208&amp;h=300 208w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_red.png?w=768&amp;h=1107 768w" sizes="(max-width: 837px) 100vw, 837px" /></figure>
+
+
+<hr>
+<p><strong>HEXIDECIMAL_COLOR_CODES Interface (Skew Green)</strong></p>
+<hr>
+<p>The screenshot image below depicts one possible configuration of what the HEXIDECIMAL_COLOR_CODES web page interface could look like if the &#8220;GREEN&#8221; option is selected in the color skew menu before the GENERATE button is clicked.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_skew_green.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_skew_green.png</a></p>
+<hr>
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21813" data-permalink="https://karlinaobject.wordpress.com/hexidecimal_color_codes/hexidecimal_color_codes_interface_skew_green-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_green.png" data-orig-size="847,1263" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="hexidecimal_color_codes_interface_skew_green" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_green.png?w=201" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_green.png?w=687" loading="lazy" width="847" height="1263" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_green.png" alt="" class="wp-image-21813" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_green.png 847w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_green.png?w=101&amp;h=150 101w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_green.png?w=201&amp;h=300 201w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_green.png?w=768&amp;h=1145 768w" sizes="(max-width: 847px) 100vw, 847px" /></figure>
+
+
+<hr>
+<p><strong>HEXIDECIMAL_COLOR_CODES Interface (Skew Blue)</strong></p>
+<hr>
+<p>The screenshot image below depicts one possible configuration of what the HEXIDECIMAL_COLOR_CODES web page interface could look like if the &#8220;BLUE&#8221; option is selected in the color skew menu before the GENERATE button is clicked.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_skew_blue.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/hexidecimal_color_codes_interface_skew_blue.png</a></p>
+<hr>
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21808" data-permalink="https://karlinaobject.wordpress.com/hexidecimal_color_codes/hexidecimal_color_codes_interface_skew_blue-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_blue.png" data-orig-size="831,1333" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="hexidecimal_color_codes_interface_skew_blue" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_blue.png?w=187" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_blue.png?w=638" loading="lazy" width="831" height="1333" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_blue.png" alt="" class="wp-image-21808" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_blue.png 831w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_blue.png?w=94&amp;h=150 94w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_blue.png?w=187&amp;h=300 187w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/hexidecimal_color_codes_interface_skew_blue.png?w=768&amp;h=1232 768w" sizes="(max-width: 831px) 100vw, 831px" /></figure>
+
+
+<hr>
+<p>This web page was last updated on 19_FEBRUARY_2025. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>	
