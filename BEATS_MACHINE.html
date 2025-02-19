@@ -1,0 +1,588 @@
+<hr />
+<p><strong>BEATS_MACHINE</strong></p>
+<hr />
+<p><span style="background: #ffff00">The <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank" rel="noopener">single web page application</a> featured in this tutorial web page substantiates a beats machine which allows the user to play zero, one, two, or three sound tracks simultaneously and such that the user can customize the beat <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Pitch_(music)" target="_blank" rel="noopener">pitch</a> (i.e. monotone sound wave frequency) and the beat <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Duration_(music)" target="_blank" rel="noopener">duration</a> (i.e. time interval in which the same tone is played immediately in succession) of each one of those three sound tracks play.</span></p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr />
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr />
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.html</a></p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/karbytes_aesthetic.css</a></p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.js</a></p>
+<hr />
+<p><strong>Hyper-Text-Markup-Language Code</strong></p>
+<hr />
+<p>The following Hyper-Text-Markup-Language (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>) code defines the user interface component of the BEATS_MACHINE web page application. Copy the HTML code from the source code file which is linked below into a text editor and save that file as <strong>beats_machine.html</strong>. Use a web browser such as <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Firefox" target="_blank" rel="noopener">Firefox</a> to open that HTML file (and ensure that the JavaScript and Cascading-Style-Sheet files are in the same file directory as the HTML file).</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
+<p><em><strong>If copy-pasting the following HTML code from the preformatted text box below into a text editor, remove the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Zero-width_space" target="_blank" rel="noopener">zero-width space</a> Unicode character (<span style="background:#000000;color:#fe9eff">&amp;&#8203;#8203;</span>) which is located between the &#8216;s&#8217; and the &#8216;r&#8217; in the script tag(s) which each link to a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a> file.</em></strong></p>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.html</a></p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_html_screenshot.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_html_screenshot.png</a></p>
+<hr />
+<pre>
+&lt;!--
+/**
+ * file: beats_machine.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 09_SEPTEMBER_2024
+ * license: PUBLIC_DOMAIN
+ */
+ --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;BEATS_MACHINE&lt;/title&gt;
+    &lt;!-- 
+        /**
+         * The linked Cascading-Style-Sheet file named karbytes_aesthetic.css 
+         * defines how this web page (which is named beats_machine.html) appears 
+         * when this web page is (re)loaded by the web browser. 
+         */
+     --&gt;
+    &lt;link rel="stylesheet" href="karbytes_aesthetic.css"&gt;
+    &lt;!-- 
+        /**
+         * The linked JavaScript file named beats_machine.js 
+         * defines how this web page (which is named beats_machine.html) behaves 
+         * when the user clicks on the menus and start and stop buttons 
+         * (and when this web page is (re)loaded by the web browser). 
+         */
+     --&gt;
+    &lt;script s&#8203;rc&#x3D;"beats_machine.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        /** Give DIV elements on this web page rounded corners and a MAGENTA border which is 2 pixels thick. */
+        div {
+            border-color: #ff00ff;
+            border-width: 2px;
+            border-style: solid;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+        }
+        /** 
+         * Set the button elements on this web page to have a similar visual appearance as other HTML elements 
+         * defined in the linked Cascading-Style-Sheet file (i.e. karbytes_aesthetic.css). 
+         */
+        button {
+            border-color: #ff9000;
+            border-width: 2px;
+            border-style: solid;
+            background: #00ff00;
+            color: #000000;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 5px;
+            font-size: 14pt;
+        }
+        /** Set the start button's background color to GREEN. */
+        #start_button {
+            background: #00ff00;
+        }
+        /** Set the stop button's background color to RED. */
+        #stop_button {
+            background: #ff0000;
+        }
+        /** Cause the start button's background color to turn CYAN when the cursor hovers over it. */
+        #start_button:hover {
+            background: #00ffff;
+        }
+        /** Cause the stop button's background color to turn CYAN when the cursor hovers over it. */
+        #stop_button:hover {
+            background: #00ffff;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body onload="initialize_application()"&gt;
+    &lt;div&gt;
+        &lt;h1&gt;BEATS_MACHINE&lt;/h1&gt;
+        &lt;p&gt;
+            This application plays zero, one, two, or three sound tracks simultaneously and such that the 
+            user can customize the beat pitch (i.e. monotone sound wave frequency) and the beat duration 
+            (i.e. time interval in which the same tone is played immediately in succession) of each one 
+            of those three sound tracks.
+        &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Track 0 --&gt;
+    &lt;div&gt;
+        &lt;h3&gt;TRACK_0&lt;/h3&gt;
+        &lt;p&gt;Select Beat Duration:&nbsp;&lt;span id="duration_0_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;Select Beat Pitch:&nbsp;&lt;span id="pitch_0_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Track 1 --&gt;
+    &lt;div&gt;
+        &lt;h3&gt;TRACK_1&lt;/h3&gt;
+        &lt;p&gt;Select Beat Duration:&nbsp;&lt;span id="duration_1_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;Select Beat Pitch:&nbsp;&lt;span id="pitch_1_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Track 2 --&gt;
+    &lt;div&gt;
+        &lt;h3&gt;TRACK_2&lt;/h3&gt;
+        &lt;p&gt;Select Beat Duration:&nbsp;&lt;span id="duration_2_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;Select Beat Pitch:&nbsp;&lt;span id="pitch_2_container"&gt;???&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- Buttons to start (or stop) playing the beats --&gt;
+    &lt;button id="start_button" onclick="startBeats()"&gt;START_BEATS&lt;/button&gt;
+    &lt;button id="stop_button" onclick="stopBeats()"&gt;STOP_BEATS&lt;/button&gt;
+    &lt;!-- CONSOLE --&gt;
+    &lt;div class="console" id="console"&gt;???&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<hr>
+
+<figure class="wp-block-image size-full"><img data-attachment-id="35074" data-permalink="https://karbytesforlifeblog.wordpress.com/beats_machine/beats_machine_html_screenshot/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png" data-orig-size="1057,2298" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="beats_machine_html_screenshot" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png?w=138" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png?w=471" width="1057" height="2298" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png" alt="" class="wp-image-35074" srcset="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png 1057w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png?w=69&amp;h=150 69w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png?w=138&amp;h=300 138w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png?w=768&amp;h=1670 768w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_html_screenshot.png?w=471&amp;h=1024 471w" sizes="(max-width: 1057px) 100vw, 1057px" /></figure>
+
+
+<hr />
+<p><strong>Cascading-Style-Sheet Code</strong></p>
+<hr />
+<p>The following Cascading-Style-Sheet (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener">CSS</a>) code defines a stylesheet which customizes the appearance of interface components of the BEATS_MACHINE web page application. Copy the CSS code from the source code file which is linked below into a text editor and save that file as <strong>karbytes_aesthetic.css</strong>.</p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/karbytes_aesthetic.css</a></p>
+<hr />
+<pre>/**
+ * file: karbytes_aesthetic.css
+ * type: Cascading-Style-Sheet
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+/** Make the page background BLACK, the text orange and monospace, and the page content width 800 pixels or less. */
+body {
+ 	background: #000000;
+ 	color: #ff9000;
+ 	font-family: monospace;
+ 	font-size: 16px;
+ 	padding: 10px;
+ 	width: 800px;
+}
+
+/** Make input elements and select elements have an orange rounded border, a BLACK background, and orange monospace text. */
+input, select {
+	background: #000000;
+	color: #ff9000;
+	border-color: #ff9000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 10px;
+	appearance: none;  
+ 	font-family: monospace;
+ 	font-size: 16px;
+}
+
+/** Invert the text color and background color of INPUT and SELECT elements when the cursor (i.e. mouse) hovers over them. */
+input:hover, select:hover {
+	background: #ff9000;
+	color: #000000;
+}
+
+/** Make table data borders one pixel thick and CYAN. Give table data content 10 pixels in padding on all four sides. */
+td {
+	color: #00ffff;
+	border-color: #00ffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px;
+}
+
+/** Set the text color of elements whose identifier (id) is "output" to CYAN. */
+#output {
+	color: #00ffff;
+}
+
+/** Set the text color of elements whose class is "console" to GREEN and make the text background of those elements BLACK. */
+.console {
+	color: #00ff00;
+	background: #000000;
+}
+</pre>
+<hr />
+<p><strong>JavaScript Code</strong></p>
+<hr />
+<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines the functions which control the behavior of the BEATS_MACHINE web page application. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>beats_machine.js</strong>.</p>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below.</p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine.js</a></p>
+<hr />
+<pre>/**
+ * file: beats_machine.js
+ * type: JavaScript
+ * author: karbytes
+ * date: 10_SEPTEMBER_2024
+ * license: PUBLIC_DOMAIN
+ */
+    
+// global program variables    
+let audioContext;
+let intervalIds = [];
+
+/**
+ * Start playing all three beat tracks with the pitch and duration parameters specified on
+ * the web page named beats_machine.html. Play all three of those tracks for an indefinitely
+ * long time period.
+ * 
+ * Assume that this function is called in response to the event of the START_BUTTON being clicked on
+ * the web page named beats_machine.html (which is assumed to be in the same local directory as
+ * this file (i.e. beats_machine.js) and the file named karbytes_aesthetic.css).
+ * 
+ * This function also prints a time-stamped message indicating when the START_BUTTON was last 
+ * clicked in a DIV element on that web page whose identifier is "console" (and that time-stamped
+ * message is appended to the message that should already be printed in that DIV during the
+ * most recent web page load).
+ */
+function startBeats() {
+    let time_stamped_message = "", console_div = undefined;
+    try {
+        // Populate the div whose identifier is "console" with a time stamped message indicating that this function was called (and when it was called).
+        time_stamped_message = ("The function named startBeats() was called at time: " + generate_time_stamp());
+        console.log(time_stamped_message);
+        time_stamped_message = generate_paragraph_html_element(time_stamped_message);
+        console_div = document.getElementById("console");
+        console_div.innerHTML += time_stamped_message;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of startBeats(): " + exception);
+    }
+
+    /**
+     * Initialize the audio context if it has not already been created.
+     * Note that the audio context makes it possible to play the beats offline.
+     * That is because the web browser has built-in sound generating capabilities.
+     * 
+     * According to ChatGPT-4o, the AudioContext manages a flow of audio data buffers, 
+     * which are processed and sent to the output device (e.g., speakers). When creating an 
+     * AudioContext, the browser communicates with the system's sound hardware, requesting 
+     * access to manage audio streams.
+     */
+    if (!audioContext) {
+    audioContext = new (window.AudioContext || window.webkitAudioContext)();
+    }
+    // Begin playing all three tracks (for an indefinitely long period of time).
+    startTrack(0);
+    startTrack(1);
+    startTrack(2);
+}
+
+/**
+ * Stop playing all three beat tracks simultaneously.
+ * 
+ * Assume that this function is called in response to the event of the STOP_BUTTON being clicked on
+ * the web page named beats_machine.html (which is assumed to be in the same local directory as
+ * this file (i.e. beats_machine.js) and the file named karbytes_aesthetic.css).
+ * 
+ * This function also prints a time-stamped message indicating when the STOP_BUTTON was last 
+ * clicked in a DIV element on that web page whose identifier is "console" (and that time-stamped
+ * message is appended to the message that should already be printed in that DIV during the
+ * most recent web page load).
+ */
+function stopBeats() {
+    let time_stamped_message = "", console_div = undefined;
+    try {
+        // Populate the div whose identifier is "console" with a time stamped message indicating that this function was called (and when it was called).
+        time_stamped_message = ("The function named stopBeats() was called at time: " + generate_time_stamp());
+        console.log(time_stamped_message);
+        time_stamped_message = generate_paragraph_html_element(time_stamped_message);
+        console_div = document.getElementById("console");
+        console_div.innerHTML += time_stamped_message;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of stopBeats(): " + exception);
+    }
+    intervalIds.forEach(id =&gt; clearInterval(id)); // Clear all intervals.
+    intervalIds = []; // Reset interval ids array.
+}
+
+/**
+ * Start playing an individual track (whose trackNumber is assumed to be 0, 1, or 2).
+ */
+function startTrack(trackNumber) {
+    const durationSelect = document.getElementById(`track_${trackNumber}_duration`);
+    const pitchSelect = document.getElementById(`track_${trackNumber}_pitch`);
+    const beatDuration = parseFloat(durationSelect.value);
+    const beatPitch = parseFloat(pitchSelect.value);
+
+    // If the "Do Not Play" option is selected, then do not play the respective track.
+    if (beatPitch === 0) return; 
+
+    /**
+     * Play the respective track using the built-in sound generating capabilities of the web browser.
+     * 
+     * According to ChatGPT-4o, the oscillator generates a periodic waveform (like a sine wave). 
+     * Physically, an oscillator in sound represents variations in air pressure over time, which, 
+     * when processed digitally, corresponds to a series of numerical samples. These samples are 
+     * fed into the system's audio buffer, which is sent to the speakers to produce sound.
+     * 
+     * According to ChatGPT-4o, the gain node adjusts the volume of the sound by scaling the 
+     * amplitude of the waveform. At the machine level, this means multiplying each sample in 
+     * the audio buffer by a constant factor before sending it to the output device.
+     * 
+     * The GainNode controls the amplitude of the tone, creating a short beat that ramps up and down in volume.
+     */
+    function playBeat() {
+        const oscillator = audioContext.createOscillator();
+        const gainNode = audioContext.createGain();
+        oscillator.frequency.value = beatPitch;
+        oscillator.connect(gainNode);
+        gainNode.connect(audioContext.destination);
+        gainNode.gain.setValueAtTime(0, audioContext.currentTime);
+        gainNode.gain.linearRampToValueAtTime(1, audioContext.currentTime + 0.01);
+        gainNode.gain.linearRampToValueAtTime(0, audioContext.currentTime + beatDuration);
+        oscillator.start(audioContext.currentTime);
+        oscillator.stop(audioContext.currentTime + beatDuration);
+    }
+    // Set the interval to play the beat at the selected duration.
+    const intervalId = setInterval(playBeat, beatDuration * 1000);
+    intervalIds.push(intervalId);
+}
+
+/**
+ * Return a String type value which describes the number of milliseconds which have elapsed since the Unix Epoch.
+ * 
+ * Note that the Unix Epoch is 01_JANUARY_1970 at 0 hours, 0 minutes, 0 seconds, and 0 seconds 
+ * (i.e. 00:00:00) (i.e. midnight) (Coordinated Universal Time (UTC)).
+ * 
+ * @return {String} text which denotes the number of milliseconds which have elapsed since the Unix Epoch.
+ */
+function generate_time_stamp() {
+    const milliseconds_elapsed_since_unix_epoch = Date.now();
+    return milliseconds_elapsed_since_unix_epoch + " milliseconds since midnight on 01_JANUARY_1970.";
+}
+
+/**
+ * Return a String type value which is used to instantiate a paragraph type web page element such that
+ * the String type value which is passed into this function as its only input is that paragraph element's 
+ * inner HTML content.
+ * 
+ * Note that the String type constant variable values are broken up into single-character String type values 
+ * to avoid causing the WordPress web page editor to interpret HTML tags in the web page body with 
+ * source code which is hosted on that web page inside of PRE (preformatted) web page elements.
+ * 
+ * @param {String} inner_HTML is assumed to be plain text or HTML content.
+ * 
+ * @return {String} a sequence of text characters which is used to instantiate a paragraph (P) web page element.
+ */
+function generate_paragraph_html_element(inner_html) {
+    const opening_paragraph_tag = ('&lt;' + 'p' + '&gt;'), closing_paragraph_tag = ('&lt;' + '/' + 'p' + '&gt;');
+    try {
+        if (typeof inner_html.length !== "number") throw 'The expression (typeof inner_html.length !== "number") was evaluated to be true.';
+        return opening_paragraph_tag + inner_html + closing_paragraph_tag;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of generate_paragraph_html_element(inner_html): " + exception);
+    }
+}
+
+/**
+ * Generate a drop-down menu of various pitches (and a pitch is a particular sound wave frequency).
+ * 
+ * Return a String type value which is used to instantiate a select type web page element such that
+ * the String type value which is passed into this function as its only input is that select menu element's
+ * id property value.
+ * 
+ * When clicked on, the select menu interface element will expand to display a list of all sound frequencies
+ * (in units named hertz (which is abreviated as Hz (and which indicates some number of cycles per second)))
+ * which are nonnegative integers denoting the number of oscillations per second for each of those twenty beat frequencies.
+ * 
+ * Each of the twenty beat pitch frequencies listed in the drop-down menu are arranged in acending order 
+ * starting with the menu option at the top of the list (which is 0 Hz) 
+ * and then, starting with the second option in the list (which is 200 Hz),
+ * incrementing the beat pitch frequency value by some constant positive integer number of Hz (i.e. 45)
+ * until the menu option at the bottom of the list (which is 1010 Hz) is reached.
+ * 
+ * @param {String} select_id is assumed to be either 
+ *                 "track_0_pitch" or else
+ *                 "track_1_pitch" or else
+ *                 "track_2_pitch".
+ * 
+ * @return {String} a sequence of text characters which is used to instantiate an expandable list menu (SELECT) web page element.
+ */
+function generate_pitch_menu_select_html_element(select_id) {
+    let select_menu = '', option = '', i = 0, N = 200;
+    let default_menu_option_label = "Do Not Play (i.e. 0 Hz)";
+    try {
+        if (typeof select_id.length !== "number") throw 'The expression (typeof select_id.length !== "number") was evaluated to be true.';
+        if ((select_id !== "track_0_pitch") &amp;&amp;
+            (select_id !== "track_1_pitch") &amp;&amp;
+            (select_id !== "track_2_pitch"))
+        throw 'select_id must either be "track_0_pitch" or else "track_1_pitch" or "track_2_pitch".';
+        select_menu = ('&lt;' + 'select id="' + select_id + '" style="text-align:left"' + '&gt;');
+        for (i = 0; i &lt; 20; i += 1) {
+            if (i === 0) option = (('&lt;' + 'option value="0" selected' + '&gt;') + default_menu_option_label + ('&lt;' + '/' + '&gt;'));
+            else {
+                option = ('&lt;' + 'option value="' + N + '"' + '&gt;');
+                option += (N + ' Hz' + ('&lt;' + '/' + 'option' + '&gt;'));
+            }
+            select_menu += option;
+            if (i &gt; 0) N += 45;
+        }
+        select_menu += ('&lt;' + '/' + 'select' + '&gt;');
+        return select_menu;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of generate_pitch_menu_select_html_element(select_id): " + exception);
+    } 
+}
+
+/**
+ * Generate a drop-down menu of various beat durations (and a beat duration is the time interval 
+ * in which the same tone is played immediately in succession).
+ * 
+ * Return a String type value which is used to instantiate a select type web page element such that
+ * the String type value which is passed into this function as its only input is that select menu element's
+ * id property value.
+ * 
+ * When clicked on, the select menu interface element will expand to display a list of all beat durations
+ * (in units named seconds (and, according to the International System of Units (SI), the second is defined 
+ * scientifically as the duration of 9,192,631,770 periods of the radiation corresponding to the transition 
+ * between the two hyperfine levels of the ground state of the cesium-133 atom)).
+ * 
+ * Each of the ten beat durations listed in the drop-down menu are arranged in acending order 
+ * starting with the menu option at the top of the list (which is 1/16 second (i.e. 0.0625 second)) 
+ * and then incrementing the beat duration by some positive number of seconds (between 0.0625 seconds and 1 second)
+ * until the menu option at the bottom of the list (which is 2 seconds) is reached.
+ * 
+ * @param {String} select_id is assumed to be either 
+ *                 "track_0_duration" or else
+ *                 "track_1_duration" or else
+ *                 "track_2_dutation".
+ * 
+ * @return {String} a sequence of text characters which is used to instantiate an expandable list menu (SELECT) web page element.
+ */
+function generate_beat_duration_menu_select_html_element(select_id) {
+    let select_menu = '', option = '', i = 0;
+    let default_menu_option_label = "1/16 second (i.e. 0.0625 second)";
+    let menu_option_values = [0.0625, 0.25, 0.5, 0.75, 1, 1.0625, 1.25, 1.5, 1.75, 2];
+    let menu_option_label_prefaces = ["1/16", "1/4", "1/2", "3/4", "1", "17/16", "5/4", "3/2", "7/4", "2"];
+    try {
+        if (typeof select_id.length !== "number") throw 'The expression (typeof select_id.length !== "number") was evaluated to be true.';
+        if ((select_id !== "track_0_duration") &amp;&amp;
+            (select_id !== "track_1_duration") &amp;&amp;
+            (select_id !== "track_2_duration"))
+        throw 'select_id must either be "track_0_duration" or else "track_1_duration" or "track_2_duration".';
+        select_menu = ('&lt;' + 'select id="' + select_id + '" style="text-align:left"' + '&gt;');
+        for (i = 0; i &lt; 10; i += 1) {
+            if (i === 0) option = (('&lt;' + 'option value="' + menu_option_values[0] + '" selected' + '&gt;') + default_menu_option_label + ('&lt;' + '/' + '&gt;'));
+            else {
+                option = ('&lt;' + 'option value="' + menu_option_values[i] + '"' + '&gt;');
+                option += menu_option_label_prefaces[i];
+                if (i &gt; 4) option += (' seconds (' + menu_option_values[i] + ' seconds)');
+                else option += (' second (' + menu_option_values[i] + ' second)');
+                option += ('&lt;' + '/' + 'option' + '&gt;');
+            }
+            select_menu += option;
+        }
+        select_menu += ('&lt;' + '/' + 'select' + '&gt;');
+        return select_menu;
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of generate_beat_duration_menu_select_html_element(select_id): " + exception);
+    } 
+}
+
+/**
+ * Respond to the event of the web page named beats_machine.html being loaded by a web browser.
+ * 
+ * This function populates the six select menus on that web page with their respective menu options
+ * (and those select menus have the HTML element identifiers (ids) are as follows:
+ *      "track_0_duration",
+ *      "track_0_pitch",
+ *      "track_1_duration",
+ *      "track_1_pitch",
+ *      "track_2_duration", and
+ *      "track_2_pitch").
+ * 
+ * This function also prints a time-stamped message indicating when the web page was last 
+ * loaded by the web browser in a DIV element on that web page whose identifier is "console".
+ * 
+ * Assume that all three files which constitute this single web page application are located
+ * in the same local file directory (and those file are 
+ * karbytes_aesthetic.css, beats_machine.js, and beats_machine.html).
+ */
+function initialize_application() {
+    // Initialize variables which are local to this function.
+    let time_stamped_message = "";
+    let duration_0_container = undefined, pitch_0_container = undefined;
+    let duration_1_container = undefined, pitch_1_container = undefined;
+    let duration_2_container = undefined, pitch_2_container = undefined;
+
+    // Execute a try-catch block. If runtime exceptions are found, exit the try block and print an error message to the web browser console.
+    try {
+        // Populate the div whose identifier is "console" with a time stamped message indicating that this function was called (and when it was called).
+        time_stamped_message = ("The function named initialize_application() was called at time: " + generate_time_stamp());
+        console.log(time_stamped_message);
+        time_stamped_message = generate_paragraph_html_element(time_stamped_message);
+        console_div = document.getElementById("console");
+        console_div.innerHTML = time_stamped_message;
+
+        // Populate the "duration_0_container" span element with a select menu for choosing a duration for TRACK_0.
+        duration_0_container_span = document.getElementById("duration_0_container");
+        duration_0_container_span.innerHTML = generate_beat_duration_menu_select_html_element("track_0_duration"); 
+
+        // Populate the "pitch_0_container" span element with a select menu for choosing a pitch for TRACK_0.
+        pitch_0_container_span = document.getElementById("pitch_0_container");
+        pitch_0_container_span.innerHTML = generate_pitch_menu_select_html_element("track_0_pitch"); 
+
+        // Populate the "duration_1_container" span element with a select menu for choosing a duration for TRACK_1.
+        duration_1_container_span = document.getElementById("duration_1_container");
+        duration_1_container_span.innerHTML = generate_beat_duration_menu_select_html_element("track_1_duration"); 
+
+        // Populate the "pitch_1_container" span element with a select menu for choosing a pitch for TRACK_1.
+        pitch_1_container_span = document.getElementById("pitch_1_container");
+        pitch_1_container_span.innerHTML = generate_pitch_menu_select_html_element("track_1_pitch"); 
+
+        // Populate the "duration_2_container" span element with a select menu for choosing a duration for TRACK_2.
+        duration_2_container_span = document.getElementById("duration_2_container");
+        duration_2_container_span.innerHTML = generate_beat_duration_menu_select_html_element("track_2_duration"); 
+
+        // Populate the "pitch_2_container" span element with a select menu for choosing a pitch for TRACK_2.
+        pitch_2_container_span = document.getElementById("pitch_2_container");
+        pitch_2_container_span.innerHTML = generate_pitch_menu_select_html_element("track_2_pitch"); 
+    }
+    catch(exception) {
+        console.log("An exception to normal functioning occurred during the runtime of initialize_application(): " + exception);
+    }
+}
+</pre>
+<hr />
+<p><strong>BEATS_MACHINE Interface (Initial)</strong></p>
+<hr />
+<p>The screenshot image below depicts what the BEATS_MACHINE web page interface is supposed to look like when the web page is initially loaded (or reloaded) by a web browser.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p0.jpeg" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p0.jpeg</a></p>
+<hr />
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="35079" data-permalink="https://karbytesforlifeblog.wordpress.com/beats_machine/beats_machine_interface_screenshot_p0/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg" data-orig-size="1024,1286" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="beats_machine_interface_screenshot_p0" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg?w=239" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg?w=815" width="1024" height="1286" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg" alt="" class="wp-image-35079" srcset="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg 1024w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg?w=119&amp;h=150 119w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg?w=239&amp;h=300 239w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg?w=768&amp;h=965 768w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p0.jpeg?w=815&amp;h=1024 815w" sizes="(max-width: 1024px) 100vw, 1024px" /></figure>
+
+
+<hr />
+<p><strong>BEATS_MACHINE Interface (After Clicking START_BUTTON)</strong></p>
+<hr />
+<p>The screenshot image below depicts what the BEATS_MACHINE web page interface could look like after the user selects pitch and duration options for each of the three sound tracks and then clicks the START_BUTTON.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p1.jpeg" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p1.jpeg</a></p>
+<hr />
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="35082" data-permalink="https://karbytesforlifeblog.wordpress.com/beats_machine/beats_machine_interface_screenshot_p1/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg" data-orig-size="1028,1342" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="beats_machine_interface_screenshot_p1" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg?w=230" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg?w=784" width="1028" height="1342" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg" alt="" class="wp-image-35082" srcset="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg 1028w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg?w=115&amp;h=150 115w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg?w=230&amp;h=300 230w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg?w=768&amp;h=1003 768w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p1.jpeg?w=784&amp;h=1024 784w" sizes="(max-width: 1028px) 100vw, 1028px" /></figure>
+
+
+<hr />
+<p><strong>BEATS_MACHINE Interface (After Clicking STOP_BUTTON)</strong></p>
+<hr />
+<p>The screenshot image below depicts what the BEATS_MACHINE web page interface could look like after the user selects pitch and duration options for each of the three sound tracks, clicks the START_BUTTON, and then clicks the STOP_BUTTON.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p2.jpeg" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_interface_screenshot_p2.jpeg</a></p>
+<hr />
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="35085" data-permalink="https://karbytesforlifeblog.wordpress.com/beats_machine/beats_machine_interface_screenshot_p2/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg" data-orig-size="1013,1400" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="beats_machine_interface_screenshot_p2" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg?w=217" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg?w=741" loading="lazy" width="1013" height="1400" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg" alt="" class="wp-image-35085" srcset="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg 1013w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg?w=109&amp;h=150 109w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg?w=217&amp;h=300 217w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2024/09/beats_machine_interface_screenshot_p2.jpeg?w=768&amp;h=1061 768w" sizes="(max-width: 1013px) 100vw, 1013px" /></figure>
+
+
+<hr />
+<p><strong>BEATS_MACHINE Use Case (Demonstration Video)</strong></p>
+<hr />
+<p>The video file linked below shows karbytes using its finished BEATS_MACHINE application and provides some visual and auditory details about how that application works from the end user&#8217;s perspective.</p>
+<p>video_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_by_karbytes_use_case_10september2024.mp4" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_20/main/beats_machine_by_karbytes_use_case_10september2024.mp4</a></p>
+<hr>
+<p>This web page was last updated on 19_FEBRUARY_2025. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
