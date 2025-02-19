@@ -1,0 +1,483 @@
+<hr>
+<p><strong>WORD_COUNTER</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank" rel="noopener">single web page application</a> featured in this tutorial web page substantiates a word counting application which allows the user to input a sequence of text characters and, after the user clicks the SUBMIT button, statistics about that input sequence are displayed as static text inside the DIV element whose id is “output” such as the total number of text characters in the input sequence, the total number of words in the input sequence, and the total number of times each unique word occurs in the input sequence. (Note that uppercase letters are treated as different text characters than their lowercase counterparts).</span></p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter.html</a></p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css</a></p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter.js</a></p>
+<hr>
+<p><strong>Hyper-Text-Markup-Language Code</strong></p>
+<hr>
+<p>The following Hyper-Text-Markup-Language (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>) code defines the user interface component of the WORD_COUNTER web page application. Copy the HTML code from the source code file which is linked below into a text editor and save that file as <strong>word_counter.html</strong>. Use a web browser such as <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Firefox" target="_blank" rel="noopener">Firefox</a> to open that HTML file (and ensure that the JavaScript and Cascading-Style-Sheet files are in the same file directory as the HTML file).</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
+<p><em><strong>If copy-pasting the following HTML code from the preformatted text box below into a text editor, remove the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Zero-width_space" target="_blank" rel="noopener">zero-width space</a> Unicode character (<span style="background:#000000;color:#fe9eff">&amp;&#8203;#8203;</span>) which is located between the &#8216;s&#8217; and the &#8216;r&#8217; in the script tag(s) which each link to a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a> file.</em></strong></p>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter.html</a></p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter_html_code_screenshot.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter_html_code_screenshot.png</a></p>
+<hr>
+<pre>
+&lt;!--
+/**
+ * file: word_counter.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 10_JULY_2023
+ * license: PUBLIC_DOMAIN
+ */
+ --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;WORD_COUNTER&lt;/title&gt;
+    &lt;link rel="stylesheet" href="karbytes_aesthetic.css"&gt;
+    &lt;script s&#8203;rc&#x3D;"word_counter.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        #S_field {
+            width: 600px;
+            border-color: #00ff00;
+            border-width: 1px;
+            border-style: solid;
+            background: #000000;
+            color: #00ff00;
+        }
+        #S_field:hover {
+            background: #00ff00;
+            color: #000000;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body onload="initialize_page()"&gt;
+    &lt;h1&gt;WORD_COUNTER&lt;/h1&gt;
+    &lt;ol&gt;
+        &lt;li&gt;
+            &lt;p&gt;
+              Enter a sequence of text characters (which will be represented as the 
+              variable named S) into the text field below.
+            &lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p&gt;
+              Click the SUBMIT button to compute the number of times each 
+              unique word occurs in S.
+            &lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p&gt;
+              The application will then display the number of times each unique 
+              word occurs in S with in descending order of unique word frequencies 
+              such that the word with the highest frequency is displayed at the top 
+              of the list and the word with the lowest frequency is displayed at 
+              the bottom of the list.
+          &lt;/p&gt;
+        &lt;/li&gt;
+        &lt;li&gt;
+            &lt;p&gt;
+              Click the RESET button to clear the word counter results from the 
+              display area and to return to the initial web page application state.
+            &lt;/p&gt;
+        &lt;/li&gt;
+    &lt;/ol&gt;
+    &lt;p class="console" id="S_field_display"&gt;S := &lt;input type="textarea" id="S_field"&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type="button" id="submit_button" value="SUBMIT" onclick="submit()"&gt;&lt;/p&gt;
+    &lt;p&gt;&lt;input type="button" id="reset_button" value="RESET" onclick="initialize_page()"&gt;&lt;/p&gt;
+    &lt;div id="output"&gt;
+      &lt;p&gt;
+        This sentence will disappear in response to the event of a SUBMIT button click.
+      &lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div class="console" id="time_stamped_messages"&gt;&lt;p&gt;???&lt;/p&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<hr>
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21968" data-permalink="https://karlinaobject.wordpress.com/word_counter/word_counter_html_code_screenshot-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_html_code_screenshot.png" data-orig-size="1302,2572" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="word_counter_html_code_screenshot" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_html_code_screenshot.png?w=152" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_html_code_screenshot.png?w=518" width="1302" height="2572" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_html_code_screenshot.png" alt="" class="wp-image-21968" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_html_code_screenshot.png 1302w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_html_code_screenshot.png?w=76&amp;h=150 76w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_html_code_screenshot.png?w=152&amp;h=300 152w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_html_code_screenshot.png?w=768&amp;h=1517 768w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_html_code_screenshot.png?w=518&amp;h=1024 518w" sizes="(max-width: 1302px) 100vw, 1302px" /></figure>
+
+
+<hr>
+<p><strong>Cascading-Style-Sheet Code</strong></p>
+<hr>
+<p>The following Cascading-Style-Sheet (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener">CSS</a>) code defines a stylesheet which customizes the appearance of interface components of the WORD_COUNTER web page application. Copy the CSS code from the source code file which is linked below into a text editor and save that file as <strong>karbytes_aesthetic.css</strong>.</p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/karbytes_aesthetic.css</a></p>
+<hr>
+<pre>/**
+ * file: karbytes_aesthetic.css
+ * type: Cascading-Style-Sheet
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+/** Make the page background BLACK, the text orange and monospace, and the page content width 800 pixels or less. */
+body {
+ 	background: #000000;
+ 	color: #ff9000;
+ 	font-family: monospace;
+ 	font-size: 16px;
+ 	padding: 10px;
+ 	width: 800px;
+}
+
+/** Make input elements and select elements have an orange rounded border, a BLACK background, and orange monospace text. */
+input, select {
+	background: #000000;
+	color: #ff9000;
+	border-color: #ff9000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 10px;
+	appearance: none;  
+ 	font-family: monospace;
+ 	font-size: 16px;
+}
+
+/** Invert the text color and background color of INPUT and SELECT elements when the cursor (i.e. mouse) hovers over them. */
+input:hover, select:hover {
+	background: #ff9000;
+	color: #000000;
+}
+
+/** Make table data borders one pixel thick and CYAN. Give table data content 10 pixels in padding on all four sides. */
+td {
+	color: #00ffff;
+	border-color: #00ffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px;
+}
+
+/** Set the text color of elements whose identifier (id) is "output" to CYAN. */
+#output {
+	color: #00ffff;
+}
+
+/** Set the text color of elements whose class is "console" to GREEN and make the text background of those elements BLACK. */
+.console {
+	color: #00ff00;
+	background: #000000;
+}
+</pre>
+<hr>
+<p><strong>JavaScript Code</strong></p>
+<hr>
+<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines the functions which control the behavior of the WORD_COUNTER web page application. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>word_counter.js</strong>.</p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter.js</a></p>
+<hr>
+<pre>/**
+ * file: word_counter.js
+ * type: JavaScript
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+/**
+ * Get the Number of milliseconds which have elapsed since the Unix Epoch.
+ * 
+ * The Unix Epoch is 01_JANUARY_1970 at midnight (Coordinated Universal Time (UTC)).
+ * 
+ * @return {String} message displaying the time at which this function was called.
+ */
+function generate_time_stamp() {
+    const milliseconds_elapsed_since_unix_epoch = Date.now();
+    return milliseconds_elapsed_since_unix_epoch + " milliseconds since midnight on 01_JANUARY_1970.";
+}
+
+/**
+ * Determine whether or not T is a valid word separator token (i.e. delimiter).
+ * 
+ * If T is not a valid delimiter, then T is assumed to be a character within a word.
+ * 
+ * A word is a sequence of some natural number of non-delimiter text characters.
+ * 
+ * @param {String} T is assumed to be exactly one text character (i.e. a String whose length is one).
+ * 
+ * @return {Boolean} true if T is a valid delimiter; false otherwise.
+ */
+function is_delimiter(T) {
+    try {
+        let D = [' ', '.', ',', '"', '?', '!', ';'], i = 0;
+        if (arguments.length !== 1) throw "Exactly one function argument is required.";
+        if (typeof T !== "string") throw "T must be a string type value.";
+        if (T.length !== 1) throw "T must have a length property whose value is exactly 1.";
+        for (i = 0; i &lt; D.length; i += 1) if (T === D[i]) return true;
+        return false;
+    }
+    catch(e) {
+        console.log("An exception to normal functioning occurred during the runtime of is_delimiter(T): " + e);
+        return false;
+    }
+}
+
+/**
+ * Create an array whose elements are the words which occur in the input string S.
+ * 
+ * The first element of the output array is the first word in S.
+ * 
+ * The last element of the output array is the last word in S.
+ * 
+ * Each the element of the output array is listed in the same order as its corresponding word occurs in S.
+ * 
+ * A word is a sequence of some natural number of non-delimiter text characters.
+ * 
+ * Words are separated by delimiter characters.
+ * 
+ * If there are only delimiter characters in S, then return an empty array.
+ * 
+ * @param {String} S is assumed to be a string comprised of some natural number of text characters.
+ * 
+ * @return {Object} an array of zero or more string type values.
+ */
+function get_words(S) {
+    try {
+        let words_array = [], word = '', i = 0;
+        if (arguments.length !== 1) throw "Exactly one function argument is required.";
+        if (typeof S !== "string") throw "S must be a string type value.";
+        if ((S.length &lt; 1) || (S.length !== Math.floor(S.length))) throw "S must have a length property whose value is a natural number.";
+        for (i = 0; i &lt; S.length; i += 1) {
+            if (!is_delimiter(S[i])) word += S[i];
+            if (is_delimiter(S[i]) &amp;&amp; (word.length !== 0)) {
+                words_array.push(word);
+                word = '';
+            }
+            if ((i === (S.length - 1)) &amp;&amp; (word.length !== 0)) words_array.push(word);
+        }
+        if (words_array.length === 0) throw "S appears to only contain delimiters. Hence, an empty array is returned.";
+        return words_array;
+    }
+    catch(e) {
+        console.log("An exception to normal functioning occurred during the runtime of function get_words(S): " + e);
+        return [];
+    }
+}
+
+/**
+ * Create an array whose elements are the unique words occurring in the input string S.
+ * 
+ * The first element of the output array is the first word in S.
+ * 
+ * If there are only delimiter characters in S, then return an empty array.
+ * 
+ * Each element of the returned array is unique with respect to every other element of that array.
+ * In other words, each element of the returned array occurs exactly one time throughout that array.
+ * 
+ * @param {String} S is assumed to be a string comprised of some natural number text characters.
+ * 
+ * @return {Object} an array of zero or more string type values.
+ */
+function get_unique_words(S) {
+    try {
+        let all_words_array = [], unique_words_array = [], i = 0, k = 0, duplicate_word_found = false;
+        if (arguments.length !== 1) throw "Exactly one function argument is required.";
+        if (typeof S !== "string") throw "S must be a string type value.";
+        if ((S.length &lt; 1) || (S.length !== Math.floor(S.length))) throw "S must have a length property whose value is a natural number.";
+        all_words_array = get_words(S);
+        if (all_words_array.length === 0) throw "S appears to only contain delimiters. Hence, an empty array is returned.";
+        unique_words_array.push(all_words_array[0]);
+        for (i = 0; i &lt; all_words_array.length; i += 1) {
+            for (k = 0; k &lt; unique_words_array.length; k += 1) {
+                if (all_words_array[i] === unique_words_array[k]) duplicate_word_found = true;
+            }
+            if (!duplicate_word_found) unique_words_array.push(all_words_array[i]);
+            duplicate_word_found = false;
+        }
+        return unique_words_array;
+    }
+    catch(e) {
+        console.log("An exception to normal functioning occurred during the runtime of get_unique_words(S): " + e);
+        return [];
+    }
+}
+
+/**
+ * Create an array whose elements are objects consisting of the following key-value pairs:
+ * 
+ * - unique_word: a string representing exactly one element of the array returned by get_unique_words(S).
+ * 
+ * - unique_word_frequency: a nonnegative integer representing the number of times unique_word occurs as a value in the array returned by get_words(S).
+ * 
+ * If there are only delimiter characters in S, then return an empty array.
+ * 
+ * Arrange the output array in descending order in terms of unique_word_frequency values for each of the array elements using the Bubble Sort algorithm.
+ * In other words, set the first element of the returned array to be the key-value pair associated with the most frequent word which occurs in S.
+ * 
+ * @param {String} S is assumed to be a string comprised of some natural number of text characters.
+ * 
+ * @return {Object} an array of zero or more object type values.
+ */
+function get_unique_word_counts(S) {
+    try {
+        let all_words_array = [], unique_words_array = [], unique_words_and_frequencies_array = [], i = 0, k = 0, placeholder = {}, adjacent_elements_were_swapped = false, array_is_sorted = false;
+        if (arguments.length !== 1) throw "Exactly one argument is required.";
+        if (typeof S !== "string") throw "S must be a string type value.";
+        if ((S.length &lt; 1) || (S.length !== Math.floor(S.length))) throw "S must have a length property whose value is a natural number.";
+        all_words_array = get_words(S);
+        if (all_words_array.length === 0) throw "S appears to only contain delimiters. Hence, an empty array is returned.";
+        unique_words_array = get_unique_words(S);
+        for (i = 0; i &lt; unique_words_array.length; i += 1) unique_words_and_frequencies_array.push({unique_word:unique_words_array[i],unique_word_frequency:0});
+        for (i = 0; i &lt; unique_words_array.length; i += 1) for (k = 0; k &lt; all_words_array.length; k += 1) if (unique_words_array[i] === all_words_array[k]) unique_words_and_frequencies_array[i].unique_word_frequency += 1;
+        if (unique_words_and_frequencies_array.length === 1) return unique_words_and_frequencies_array;
+        while (!array_is_sorted) {
+            for (i = 1; i &lt; unique_words_and_frequencies_array.length; i += 1) {
+                if (unique_words_and_frequencies_array[i].unique_word_frequency &gt; unique_words_and_frequencies_array[i - 1].unique_word_frequency) {
+                    placeholder = unique_words_and_frequencies_array[i];
+                    unique_words_and_frequencies_array[i] = unique_words_and_frequencies_array[i - 1];
+                    unique_words_and_frequencies_array[i - 1] = placeholder;
+                    adjacent_elements_were_swapped = true;
+                }
+            }
+            if (!adjacent_elements_were_swapped) array_is_sorted = true;
+            adjacent_elements_were_swapped = false;
+        }
+        return unique_words_and_frequencies_array;
+    }
+    catch(e) {
+        console.log("An exception to normal functioning occurred during the runtime of get_unique_word_counts(S): " + e);
+        return [];
+    }
+}
+
+/**
+ * Populate the DIV whose id is "output" with program results:
+ * 
+ *       1. A read-only copy of S (i.e. the input string).
+ * 
+ *       2. The total number of characters in S (including delimiters).
+ * 
+ *       3. The total number of words in S.
+ * 
+ *       4. A list of each word in S.
+ * 
+ *       5. The total number of unique words in S.
+ * 
+ *       6. A list of each unique word in S.
+ * 
+ *       7. The total number of rows in the table which displays the frequency of each unique word (listed in descending order of frequency).
+ * 
+ *       8. A table showing the count for each unique word in S.
+ */
+function print_results() {
+    try {
+        let output_div, input_text_field, S_string = '', all_words_array = [], unique_words_array = [], unique_words_and_frequencies_array = [], p0 = ('&lt;' + 'p' + '&gt;'), p1 = ('&lt;' + '/' + 'p' + '&gt;'), p0_green = ('&lt;' + 'p class="console"' + '&gt;'), i = 0;
+        output_div = document.getElementById("output");
+        input_text_field = document.getElementById("S_field");
+        S_string = input_text_field.value;
+        all_words_array = get_words(S_string);
+        unique_words_array = get_unique_words(S_string);
+        unique_words_and_frequencies_array = get_unique_word_counts(S_string);
+        output_div.innerHTML = (p0 + "WORD COUNTER RESULTS" + p1);
+        output_div.innerHTML += (p0 + "1. S (input string): " + p1 + p0_green + S_string + p1);
+        output_div.innerHTML += (p0 + "2. S length: " + S_string.length + " characters total" + p1);
+        output_div.innerHTML += (p0 + "3. S word count: " + all_words_array.length + " words total" + p1);
+        output_div.innerHTML += (p0 + "4. All words in S: " + p1);
+        for (i = 0; i &lt; all_words_array.length; i += 1) output_div.innerHTML += (p0_green + all_words_array[i] + p1);
+        output_div.innerHTML += (p0 + "5. Number of unique words in S: " + unique_words_array.length + p1);
+        output_div.innerHTML += (p0 + "6. All unique words in S: " + p1);
+        for (i = 0; i &lt; unique_words_array.length; i += 1) output_div.innerHTML += (p0_green + unique_words_array[i] + p1);
+        output_div.innerHTML += (p0 + "7. Number of rows in the table of unique words and their respective frequencies: " + unique_words_and_frequencies_array.length + p1);
+        for (i = 0; i &lt; unique_words_and_frequencies_array.length; i += 1) output_div.innerHTML += (p0_green + unique_words_and_frequencies_array[i].unique_word + " (" + unique_words_and_frequencies_array[i].unique_word_frequency  + ")" + p1);
+        output_div.innerHTML += (p0 + "END OF WORD COUNTER RESULTS" + p1);
+    }
+    catch(e) {
+        console.log("Runtime exception occurred in function print_results(): " + e);
+    }
+}
+
+/**
+ * Append a time-stamped message to the bottom of the web page indicating that the RESET button was clicked or that the web page was opened or else refreshed by the web browser.
+ * 
+ * Clear the input text field (the textarea HTML element whose id is "S_field").
+ * 
+ * Set the input text field to visible rather than to hidden.
+ * 
+ * Set the SUBMIT button to visible rather than to hidden.
+ * 
+ * Set the RESET button to hidden rather than visible.
+ * 
+ * Set the inner HTML of the DIV element whose id is "output" to some placeholder sentence.
+ */
+function initialize_page() {
+    try {
+        const time_stamped_message = "The initialize_page() function was called at time: " + generate_time_stamp(), p0 = ('&lt;' + 'p' + '&gt;'), p1 = ('&lt;' + '/' + 'p' + '&gt;');
+        console.log(time_stamped_message);
+        document.getElementById("time_stamped_messages").innerHTML = p0 + time_stamped_message + p1;
+        document.getElementById("S_field").value = '';
+        document.getElementById("S_field_display").style.display = "block";
+        document.getElementById("submit_button").style.display = "block";
+        document.getElementById("reset_button").style.display = "none";
+        document.getElementById("output").innerHTML = (p0 + "This sentence will disappear in response to the event of a SUBMIT button click." + p1);
+    }
+    catch(e) {
+        console.log("An exception to normal functioning occurred during the runtime of function initialize_page(): " + e);
+    }
+}
+
+/**
+ * Append a time-stamped message to the bottom of the web page indicating that the SUBMIT button was clicked.
+ * 
+ * Hide the input text field.
+ * 
+ * Hide the SUBMIT button.
+ * 
+ * Display the RESET button.
+ * 
+ * Set the inner HTML of the DIV element whose id is "output" to the word count statistics generated by analyzing input string S.
+ */
+function submit() {
+    try {
+        const time_stamped_message = "The submit() function was called at time: " + generate_time_stamp(), p0 = ('&lt;' + 'p' + '&gt;'), p1 = ('&lt;' + '/' + 'p' + '&gt;');
+        console.log(time_stamped_message);
+        document.getElementById("time_stamped_messages").innerHTML += p0 + time_stamped_message + p1;
+        document.getElementById("S_field_display").style.display = "none";
+        document.getElementById("submit_button").style.display = "none";
+        document.getElementById("reset_button").style.display = "block";
+        print_results();
+    }
+    catch(e) {
+        console.log("Runtime exception occurred in function submit(): " + e);
+    }
+}
+</pre>
+<hr>
+<p><strong>WORD_COUNTER Interface (Initial)</strong></p>
+<hr>
+<p>The screenshot image below depicts what the WORD_COUNTER web page interface is supposed to look like when the web page is initially loaded by a web browser or after the RESET button is clicked.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter_interface_initial.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter_interface_initial.png</a></p>
+<hr>
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21966" data-permalink="https://karlinaobject.wordpress.com/word_counter/word_counter_interface_initial-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_initial.png" data-orig-size="840,618" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="word_counter_interface_initial" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_initial.png?w=300" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_initial.png?w=840" width="840" height="618" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_initial.png" alt="" class="wp-image-21966" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_initial.png 840w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_initial.png?w=150&amp;h=110 150w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_initial.png?w=300&amp;h=221 300w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_initial.png?w=768&amp;h=565 768w" sizes="(max-width: 840px) 100vw, 840px" /></figure>
+
+
+<hr>
+<p><strong>WORD_COUNTER Interface (Progress)</strong></p>
+<hr>
+<p>The screenshot image below depicts what the WORD_COUNTER web page interface could look like after the user types keyboard characters into the text field.</p>
+<p>(Notice that the entire input sequence may not be displayed in the text area whose width is 600 pixels. Scroll horizontally to see hidden text which was entered into the text area).</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter_interface_progress.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter_interface_progress.png</a></p>
+<hr>
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21964" data-permalink="https://karlinaobject.wordpress.com/word_counter/word_counter_interface_progress-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_progress.png" data-orig-size="843,626" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="word_counter_interface_progress" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_progress.png?w=300" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_progress.png?w=843" width="843" height="626" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_progress.png" alt="" class="wp-image-21964" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_progress.png 843w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_progress.png?w=150&amp;h=111 150w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_progress.png?w=300&amp;h=223 300w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_progress.png?w=768&amp;h=570 768w" sizes="(max-width: 843px) 100vw, 843px" /></figure>
+
+
+<hr>
+<p><strong>WORD_COUNTER Interface (Final)</strong></p>
+<hr>
+<p>The screenshot image below depicts what the WORD_COUNTER web page interface could look like after the SUBMIT button is clicked.</p>
+<p>(Notice that the RESET button appears after the SUBMIT button is clicked while the SUBMIT button is hidden. Clicking the RESET button will reset the web page interface to its initial state).</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter_interface_final.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/word_counter_interface_final.png</a></p>
+<hr>
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21961" data-permalink="https://karlinaobject.wordpress.com/word_counter/word_counter_interface_final-2/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_final.png" data-orig-size="856,4632" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="word_counter_interface_final" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_final.png?w=55" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_final.png?w=189" loading="lazy" width="856" height="4632" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_final.png" alt="" class="wp-image-21961" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_final.png 856w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/word_counter_interface_final.png?w=768&amp;h=4156 768w" sizes="(max-width: 856px) 100vw, 856px" /></figure>
+
+
+<hr>
+<p>This web page was last updated on 19_FEBRUARY_2025. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
