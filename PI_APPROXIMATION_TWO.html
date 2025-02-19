@@ -1,0 +1,571 @@
+<hr />
+<p><strong>PI_APPROXIMATION_TWO</strong></p>
+<hr />
+<p><span style="background:#ffff00">The <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank" rel="noopener">single web page application</a> featured in this tutorial web page substantiates a Monte Carlo dart-throwing simulation which plots a pixel-sized dot within a square canvas whose side length is 400 pixels once per second for indefinitely many seconds (such that each dot is plotted at some random <a style="background:#000000;color:#00ff00" href="https://karlinaobject.wordpress.com/point/" target="_blank" rel="noopener">point</a> whose two Cartesian plane coordinate values are each whole numbers). Dots which are plotted within a 200-pixel radius of the center of the canvas will be colored <strong style="background:#000000;color:#ff0000">red</strong>. Dots which are plotted further than 200 pixels away from the center of the canvas will be colored <strong style="background:#000000;color:#0000ff">blue</strong>. The quotient produced by dividing the total number of red dots by the sum of the total number of red dots and the total number of blue dots is the approximate value of <a style="background:#000000;color:#00ff00" href="https://karlinaobject.wordpress.com/pi_approximation/" target="_blank" rel="noopener">Pi</a>.</span></p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<pre>pi := (circle.circumference / circle.diameter). // true for all circles</pre>
+<pre>pi_approximation := (4 * (red_pixel_count / (red_pixel_count + blue_pixel_count))).</pre>
+<p>Ideally, as time elapses during the Monte Carlo dart-throwing simulation (where exactly one dart per second is plotted on the square canvas), the resulting pi_approximation value (at time_t (where time_t is the nonnegative <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/numbers/" target="_blank" rel="noopener">integer</a> number of <a style="background:#000000;color:#00ff00" href="https://karlinaobject.wordpress.com/count_down_timer/" target="_blank" rel="noopener">seconds</a> elapsed after the START button is clicked)) with increasing accuracy approximates the exact value of Pi.</p>
+<p><span style="background:#00ffff">Hence, as time_t approaches infinity, pi_approximation approaches (actual) Pi.</span></p>
+<p><strong>The application featured on this web page outputs values which adhere to the aforementioned trend but only up to some (relatively small) maximum number of seconds_elapsed.</strong> Perhaps there is a way to increase the number of digits of precision which can be stored (by running a functionally identical program in some other programming language or by using some kind of JavaScript-interfacing library).</p>
+<p>Note also that, for (relatively small) yet (in the context of a JavaScript program) impractically large values for red_pixel_count and for blue_pixel_count, the &#8220;random&#8221; dart plotting function seems to lag while the seconds_elapsed value increments seemingly at a constant rate of once per second.</p>
+<hr />
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr />
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two.html</a></p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/karbytes_aesthetic.css</a></p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two.js</a></p>
+<hr />
+<p><strong>Hyper-Text-Markup-Language Code</strong></p>
+<hr />
+<p>The following Hyper-Text-Markup-Language (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>) code defines the user interface component of the PI_APPROXIMATION_TWO web page application. Copy the HTML code from the source code file which is linked below into a text editor and save that file as <strong>abridged_keyboard_musical_instrument.html</strong>. Use a web browser such as <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Firefox" target="_blank" rel="noopener">Firefox</a> to open that HTML file (and ensure that the JavaScript and Cascading-Style-Sheet files are in the same file directory as the HTML file).</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
+<p><em><strong>If copy-pasting the following HTML code from the preformatted text box below into a text editor, remove the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Zero-width_space" target="_blank" rel="noopener">zero-width space</a> Unicode character (<span style="background:#000000;color:#fe9eff">&amp;&#8203;#8203;</span>) which is located between the &#8216;s&#8217; and the &#8216;r&#8217; in the script tag(s) which each link to a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a> file.</em></strong></p>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two.html</a></p>
+<hr />
+<pre>
+&lt;!--
+/**
+ * file: pi_approximation_two.html
+ * type: Hyper-Text-Markup-Language
+ * date: 29_DECEMBER_2024
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+--&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;PI_APPROXIMATION_TWO&lt;/title&gt;
+    &lt;link rel="stylesheet" href="karbytes_aesthetic.css"&gt;
+    &lt;script s&#8203;rc="pi_approximation_two.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        #cartesian_plane {
+            background: #ffffff;
+            border-width: 0px;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body onload="initialize_application()"&gt;
+    &lt;h1&gt;PI_APPROXIMATION_TWO&lt;/h1&gt;
+    &lt;p&gt;
+        This single page web application implements a Monte Carlo dart 
+        throwing simulation (whose runtime is indefinitely large) to approximate 
+        the irrational number Pi by dividing the number of darts which land within 
+        200 pixels of the center of a square canvas (whose side length is 400 pixels) 
+        by the total number of darts which are plotted on that canvas. One pixel-sized 
+        dart is plotted at a random location onto the square canvas per second of the 
+        aforementioned Monte Carlo simulation. Darts which are plotted within 200 pixels 
+        of the center of the canvas are colored 
+        &lt;span style="background:#000000;color:#ff0000"&gt;RED&lt;/span&gt;. 
+        Darts which are plotted farther than 200 pixels away from the center of the 
+        canvas are colored &lt;span style="background:#000000;color:#0000ff"&gt;BLUE&lt;/span&gt;.
+    &lt;/p&gt;
+    &lt;p class="console"&gt;pi = (circle.circumference / circle.diameter)&lt;/p&gt;
+    &lt;p class="console"&gt;pi_approximation = (4 * (red_pixel_count / (red_pixel_count + blue_pixel_count)))&lt;/p&gt;
+    &lt;p&gt;&lt;input type="button" id="start_button" value="START" onclick="start_monte_carlo_simulation()"&gt;&lt;/p&gt;
+    &lt;canvas id="cartesian_plane" width="400" height="400"&gt;&lt;/canvas&gt;
+    &lt;div id="output"&gt;
+        &lt;p&gt;seconds_elapsed: &lt;span id="seconds_elapsed_span"&gt;???&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;red_pixel_count: &lt;span id="red_pixel_count_span"&gt;???&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;blue_pixel_count: &lt;span id="blue_pixel_count_span"&gt;???&lt;/span&gt;&lt;/p&gt;
+        &lt;p&gt;pi_approximation: &lt;span id="pi_approximation_span"&gt;???&lt;/span&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;div id="timestamped_events_log" class="console"&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<hr />
+<p><strong>Cascading-Style-Sheet Code</strong></p>
+<hr />
+<p>The following Cascading-Style-Sheet (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener">CSS</a>) code defines a stylesheet which customizes the appearance of interface components of the PI_APPROXIMATION_TWO web page application. Copy the CSS code from the source code file which is linked below into a text editor and save that file as <strong>karbytes_aesthetic.css</strong>.</p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/karbytes_aesthetic.css</a></p>
+<hr />
+<pre>/**
+ * file: karbytes_aesthetic.css
+ * type: Cascading-Style-Sheet
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+/** Make the page background BLACK, the text orange and monospace, and the page content width 800 pixels or less. */
+body {
+ 	background: #000000;
+ 	color: #ff9000;
+ 	font-family: monospace;
+ 	font-size: 16px;
+ 	padding: 10px;
+ 	width: 800px;
+}
+
+/** Make input elements and select elements have an orange rounded border, a BLACK background, and orange monospace text. */
+input, select {
+	background: #000000;
+	color: #ff9000;
+	border-color: #ff9000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 10px;
+	appearance: none;  
+ 	font-family: monospace;
+ 	font-size: 16px;
+}
+
+/** Invert the text color and background color of INPUT and SELECT elements when the cursor (i.e. mouse) hovers over them. */
+input:hover, select:hover {
+	background: #ff9000;
+	color: #000000;
+}
+
+/** Make table data borders one pixel thick and CYAN. Give table data content 10 pixels in padding on all four sides. */
+td {
+	color: #00ffff;
+	border-color: #00ffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px;
+}
+
+/** Set the text color of elements whose identifier (id) is "output" to CYAN. */
+#output {
+	color: #00ffff;
+}
+
+/** Set the text color of elements whose class is "console" to GREEN and make the text background of those elements BLACK. */
+.console {
+	color: #00ff00;
+	background: #000000;
+}
+</pre>
+<hr />
+<p><strong>JavaScript Code</strong></p>
+<hr />
+<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines the functions which control the behavior of the PI_APPROXIMATION_TWO web page application. Copy the JS code from the source code file which is linked below into a text editor and save that file as <strong>abridged_keyboard_musical_instrument.js</strong>.</p>
+<p>The text in the preformatted text box below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">web browser</a>) to be identical to the content of the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a> source code file whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed in the green <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> below.</p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two.js</a></p>
+<hr />
+<pre>
+/**
+ * file: pi_approximation_two.js
+ * type: JavaScript
+ * date: 29_DECEMBER_2024
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+/**
+ * Generate a random x-value or a random y-value for a planar coordinate pair.
+ * 
+ * @return {Number} an integer no smaller than -200 and no larger than 200.
+ */
+function generate_random_coordinate_scalar() {
+	let random_nonnegative_integer_less_than_201 = Math.floor(Math.random() * 201);
+	let random_number_sign = (Math.floor(Math.random() * 100) % 2 === 0) ? 1 : -1;
+	return random_number_sign * random_nonnegative_integer_less_than_201;
+}
+
+/**
+ * Generate a random coordinate pair for plotting points on a Cartesian plane whose origin is represented by 
+ * the coordinate pair { x_coordinate: 0, y_coordinate: 0} and whose side lengths are no less than 400 units.
+ * 
+ * @return {Object} a planar point representation where the x-coordinate (i.e. horizontal position) 
+ *                  and the y-coordinate (i.e. vertical position) is each no smaller than -200 and no larger than 200.
+ */
+function generate_random_planar_point() {
+	return { x_coordinate : generate_random_coordinate_scalar(), y_coordinate: generate_random_coordinate_scalar() };
+}
+
+/**
+ * Compute the approximate square root of input such that the output has an arbitrary number of significant digits.
+ * The product, approximate_square_root(input) * approximate_square_root(input), is approximately equal to input. 
+ * 
+ * @param {Number} input is assumed to be a nonnegative integer.
+ * 
+ * @return {Number} the approximate square root of input.
+ */
+function approximate_square_root(input) {
+	let n = 0, a = 0, b = 0, c = 0;
+	try {
+		if (arguments.length !== 1) throw "exactly one function argument is required.";
+		if (typeof arguments[0] !== "number") throw "the function argument must be a Number type value.";
+		if (input  c) { 
+			a = (a + b) / 2;
+			b = n / a;
+		}
+		return a;
+	}
+	catch(exception) {
+		console.log("An exception to expected functioning occurred in approximate_square_root(input): " + exception);
+		return 0;
+	}
+}
+
+/**
+ * Determine whether or not a given input value is a valid planar point object (as defined in the generate_random_planar_point() function).
+ * 
+ * @param {Object} input is assumed to be an object with the following properties: 
+ * 		  {Number} x_coordinate is assumed to be an integer no smaller than -200 and no larger than 200.
+ *        {Number} y_coordinate is assumed to be an integer no smaller than -200 and no larger than 200.
+ * 
+ * @return {Boolean} true if input satisfies the conditions defined above; false otherwise.
+ */
+function is_point(input) {
+	try {
+		if (arguments.length !== 1) throw "exactly one function argument is required.";
+		if (typeof input.x_coordinate !== "number") throw "the x_coordinate property of input must be a Number type value.";
+		if (typeof input.y_coordinate !== "number") throw "the y_coordinate property of input must be a Number type value.";
+		if (Math.floor(input.x_coordinate) !== input.x_coordinate) throw "the x_coordinate property of the input object must be a whole number value.";
+		if (Math.floor(input.y_coordinate) !== input.y_coordinate) throw "the y_coordinate property of the input object must be a whole number value.";
+		if ((input.x_coordinate  200)) throw "the x_coordinate property of the input object must be no smaller than -200 and no larger than 200.";
+		if ((input.y_coordinate  200)) throw "the y_coordinate property of the input object must be no smaller than -200 and no larger than 200.";
+		return true;
+	}
+	catch(exception) {
+		console.log("An exception to expected functioning occurred in is_point(input): " + exception);
+		return false;
+	}
+}
+
+/**
+ * Use the Distance Formula to calculate the nonnegative real number distance between planar points A and B.
+ * 
+ * distance_formula(A, B) = square_root( ((A.x - B.x) ^ 2) + ((A.y - B.y) ^ 2) )
+ * 
+ * @param {Object} A is assumed to be an object with the following properties: 
+ * 		  {Number} x_coordinate is assumed to be an integer no smaller than -200 and no larger than 200.
+ *    	  {Number} y_coordinate is assumed to be an integer no smaller than -200 and no larger than 200.
+ *
+ * @param {Object} B is assumed to be an object with the following properties: 
+ * 		  {Number} x_coordinate is assumed to be an integer no smaller than -200 and no larger than 200.
+ *        {Number} y_coordinate is assumed to be an integer no smaller than -200 and no larger than 200.
+ * 
+ * @return {Number} the length of the shortest path between planar points A and B.
+ */
+function compute_distance_between_two_planar_points(A, B) {
+	let horizontal_difference = 0, vertical_difference = 0;
+	try {
+		if (arguments.length !== 2) throw "exactly two function arguments are required.";
+		if (!is_point(A)) throw "A must be an object whose properties are as follows: { x_coordinate : integer in range [-200,200], y_coordinate : integer in range [-200,200] }.";
+		if (!is_point(B)) throw "B must be an object whose properties are as follows: { x_coordinate : integer in range [-200,200], y_coordinate : integer in range [-200,200] }.";
+		horizontal_difference = A.x_coordinate - B.x_coordinate;
+		vertical_difference = A.y_coordinate - B.y_coordinate;
+		return approximate_square_root((horizontal_difference * horizontal_difference) + (vertical_difference * vertical_difference));
+	}
+	catch(exception) {
+		console.log("An exception to expected functioning occurred in compute_distance_between_two_planar_points(A, B): " + exception);
+		return 0;
+	}
+}
+
+/**
+ * Add one to the number which is enclosed inside the HTML span element whose id is "red_pixel_count_span" on the corresponding web page.
+ * 
+ * Assume that the number of red pixels is a nonnnegative integer no larger than 3600.
+ */
+function increment_red_pixel_count() {
+	let red_pixel_count_span = undefined, red_pixel_count = 0;
+	try {
+		red_pixel_count_span = document.getElementById("red_pixel_count_span");
+		red_pixel_count = parseInt(red_pixel_count_span.innerHTML);
+		if ((red_pixel_count  3600)) throw "red_pixel_count must be an integer no smaller than 0 and no larger than 3600.";
+		red_pixel_count += 1;
+		red_pixel_count_span.innerHTML = red_pixel_count;
+	}
+	catch(exception) {
+		console.log("An exception to expected functioning occurred in increment_red_pixel_count(): " + exception);
+	}
+}
+
+/**
+ * Add one to the number which is enclosed inside the HTML span element whose id is "blue_pixel_count_span" on the corresponding web page.
+ * 
+ * Assume that the number of blue pixels is a nonnnegative integer no larger than 3600.
+ */
+function increment_blue_pixel_count() {
+	let blue_pixel_count_span = undefined, blue_pixel_count = 0;
+	try {
+		blue_pixel_count_span = document.getElementById("blue_pixel_count_span");
+		blue_pixel_count = parseInt(blue_pixel_count_span.innerHTML);
+		if ((blue_pixel_count  3600)) throw "blue_pixel_count must be an integer no smaller than 0 and no larger than 3600.";
+		blue_pixel_count += 1;
+		blue_pixel_count_span.innerHTML = blue_pixel_count;
+	}
+	catch(exception) {
+		console.log("An exception to expected functioning occurred in increment_blue_pixel_count(): " + exception);
+	}
+}
+
+/**
+ * Retrieve the number which is enclosed inside the HTML span element whose id is "red_pixel_count_span" on the corresponding web page.
+ * 
+ * Assume that the number of red pixels is a nonnnegative integer no larger than 3600.
+ * 
+ * @return {Number} an integer representing the total number of red pixel-sized "darts" which have been plotted on the HTML canvas element on the corresponding web page.
+ */
+function get_red_pixel_count() {
+	let red_pixel_count_span = undefined, red_pixel_count = 0;
+	try {
+		red_pixel_count_span = document.getElementById("red_pixel_count_span");
+		red_pixel_count = parseInt(red_pixel_count_span.innerHTML);
+		if ((red_pixel_count  3600)) throw "red_pixel_count must be an integer no smaller than 0 and no larger than 3600.";
+		return red_pixel_count;
+	}
+	catch(exception) {
+		console.log("An exception to expected functioning occurred in get_red_pixel_count(): " + exception);
+		return 0;
+	}
+}
+
+/**
+ * Retrieve the number which is enclosed inside the HTML span element whose id is "blue_pixel_count_span" on the corresponding web page.
+ * 
+ * Assume that the number of blue pixels is a nonnnegative integer no larger than 3600.
+ * 
+ * @return {Number} an integer representing the total number of blue pixel-sized "darts" which have been plotted on the HTML canvas element on the corresponding web page.
+ */
+function get_blue_pixel_count() {
+	let blue_pixel_count_span = undefined, blue_pixel_count = 0;
+	try {
+		blue_pixel_count_span = document.getElementById("blue_pixel_count_span");
+		blue_pixel_count = parseInt(blue_pixel_count_span.innerHTML);
+		if ((blue_pixel_count  3600)) throw "blue_pixel_count must be an integer no smaller than 0 and no larger than 3600.";
+		return blue_pixel_count;
+	}
+	catch(exception) {
+		console.log("An exception to expected functioning occurred in get_blue_pixel_count(): " + exception);
+		return 0;
+	}
+}
+
+/**
+ * Set the number which is enclosed inside the HTML span element whose id is "pi_approximation_span" to the result of the following computation:
+ * 
+ * (4 * (red_pixel_count / (red_pixel_count + blue_pixel_count)))
+ * 
+ * where red_pixel_count represents the total number of red pixel-sized "darts" which have been plotted on the HTML canvas and
+ * where blue_pixel_count represents the total number of blue pixel-sized "darts" which have been plotted on the same HTML canvas
+ * on the corresponding web page.
+ * 
+ * Assume that this function is called once per second of the 3600 timed simulation.
+ */
+function update_pi_approximation() {
+	let pi_approximation_span = undefined, pi_approximation = 0, red_pixel_count = 0, blue_pixel_count = 0;
+	try {
+		red_pixel_count = get_red_pixel_count();
+		blue_pixel_count = get_blue_pixel_count();
+		pi_approximation_span = document.getElementById("pi_approximation_span");
+		pi_approximation = (4 * (red_pixel_count / (red_pixel_count + blue_pixel_count)));
+		pi_approximation_span.innerHTML = pi_approximation.toPrecision(50); // sets output display value to 50 digits of precision
+	}
+	catch(exception) {
+		console.log("An exception to expected functioning occurred in update_pi_approximation(): " + exception);
+	}
+}
+
+/**
+ * Retrieve the number which is enclosed inside of the HTML span element whose id is "seconds_elapsed_span" on the corresponding web page.
+ * 
+ * @return {Number} an integer which is assumed to be no smaller than 0.
+ */
+function get_seconds_elapsed() {
+	let seconds_elapsed_span = undefined, seconds_remaining = 0;
+	try {
+		seconds_elapsed_span = document.getElementById("seconds_elapsed_span");
+		seconds_elapsed = parseInt(seconds_elapsed_span.innerHTML);
+		if (seconds_elapsed &lt; 0) throw &quot;seconds_elapsed must be an integer no smaller than 0.&quot;;
+		return seconds_elapsed;
+	}
+	catch(exception) {
+		console.log(&quot;An exception to expected functioning occurred in get_seconds_elapsed(): &quot; + exception);
+	}
+}
+
+/**
+ * Add one to the total number of seconds elapsed (which is displayed inside the HTML span element whose id is &quot;seconds_elapsed_span&quot; on the corresponding web page).
+ * 
+ * Assume that the number of seconds remaining is always an integer which is no smaller than 0.
+ */
+function increment_seconds_elapsed() {
+	let seconds_elapsed_span = undefined, seconds_remaining = 0;
+	try {
+		seconds_elapsed_span = document.getElementById(&quot;seconds_elapsed_span&quot;);
+		seconds_elapsed = parseInt(seconds_elapsed_span.innerHTML);
+		if (seconds_elapsed  200) { // outside of radius of circle inscribed inside of 400-pixel square canvas
+			context.beginPath();
+			context.rect(pixel.x, pixel.y, 1, 1); // 1 pixel has a width of 1 and a height of 1
+			context.strokeStyle = "#0000ff"; // HTML color code for blue.
+			context.stroke();
+			increment_blue_pixel_count();
+		}
+		else if (distance_from_origin &lt;= 200) { // inside of radius of circle inscribed inside of 400-pixel square canvas
+			context.beginPath();
+			context.rect(pixel.x, pixel.y, 1, 1); // 1 pixel has a width of 1 and a height of 1
+			context.strokeStyle = &quot;#ff0000&quot;; // HTML color code for red.
+			context.stroke();
+			increment_red_pixel_count();
+		}
+		else {
+			throw &quot;the pixel appears to be neither red nor blue.&quot;;
+		}
+		update_pi_approximation();
+
+	}
+	catch(exception) {
+		console.log(&quot;An exception to expected functioning occurred in plot_point_on_html_canvas(point): &quot; + exception);
+	}
+}
+
+/**
+ * Draw a line whose thickness is one pixel and whose color is black from the middle of the left edge of the HTML canvas to the middle of the right edge of that canvas.
+ * 
+ * Assume that the canvas is 400 pixels in length on all sides.
+ */
+function draw_horizontal_line_through_middle_of_canvas() {
+	let canvas = undefined, context = undefined;
+	try {
+		canvas = document.getElementById(&quot;cartesian_plane&quot;);
+		context = canvas.getContext(&quot;2d&quot;);
+		context.strokeStyle = &quot;#000000&quot;; 
+		context.lineWidth = 1;
+		context.beginPath();
+		context.moveTo(0, 200); // middle point of left square canvas edge
+		context.lineTo(400, 200); // middle point of right square canvas edge
+		context.stroke();
+	}
+	catch(exception) {
+		console.log(&quot;An exception to expected functioning occurred in draw_horizontal_line_through_middle_of_canvas(): &quot; + exception);
+	}
+}
+
+/**
+ * Draw a line whose thickness is one pixel and whose color is black from the middle of the top edge of the HTML canvas to the middle of the bottom edge of that canvas.
+ * 
+ * Assume that the canvas is 400 pixels in length on all sides.
+ */
+function draw_vertical_line_through_middle_of_canvas() {
+    let canvas = undefined, context = undefined;
+    try {
+    	canvas = document.getElementById(&quot;cartesian_plane&quot;);
+    	context = canvas.getContext(&quot;2d&quot;);
+    	context.strokeStyle = &quot;#000000&quot;; 
+    	context.lineWidth = 1;
+    	context.beginPath();
+    	context.moveTo(200, 0); // middle point of top square canvas edge
+    	context.lineTo(200, 400); // middle point of bottom square canvas edge
+    	context.stroke();
+    }
+    catch(exception) {
+    	console.log(&quot;An exception to expected functioning occurred in draw_vertical_line_through_middle_of_canvas(): &quot; + exception);   	
+    }
+}
+
+/**
+ * Make the START button invisible as soon as it is clicked and for the duration of the (indefinitely executing) Monte Carlo dart-throwing simulation.
+ * 
+ * Assume that this function is called in response to the START button being clicked.
+ */
+function hide_start_button() {
+	try {
+		let start_button = document.getElementById(&quot;start_button&quot;);
+		start_button.style.display = &quot;none&quot;;
+	}
+	catch(exception) {
+		console.log(&quot;An exception to expected functioning occurred in hide_start_button(): &quot; + exception);
+	}
+}
+
+/**
+ * Set the HTML canvas whose id is &quot;cartesian_plane&quot; to its initial state: no colored darts and two perpendicular axis intersecting at the center of the canvas.
+ * 
+ * Set the value enclosed by the span element whose id is &quot;seconds_elapsed_span&quot; to 0.
+ * 
+ * Set the value enclosed by the span element whose id is &quot;red_pixel_count_span&quot; to 0.
+ * 
+ * Set the value enclosed by the span element whose id is &quot;blue_pixel_count_span&quot; to 0.
+ * 
+ * Set the value enclosed by the span element whose id is &quot;pi_approximation&quot; to 0.
+ */
+function initialize_application() {
+	const time_point = Date.now(), p0 = &#039;', p1 = '';
+	let seconds_elapsed_span, red_pixel_count_span, blue_pixel_count_span, pi_approximation_span, timestamp, message, console_div;
+	try {
+		message = "The initialize_application() function was called at time: " + time_point + " milliseconds since 01_JANUARY_1970 00:00:00 (Coordinated Universal Time (UTC)).";
+		console.log(message);
+		draw_horizontal_line_through_middle_of_canvas();
+		draw_vertical_line_through_middle_of_canvas();
+		seconds_elapsed_span = document.getElementById("seconds_elapsed_span");
+		red_pixel_count_span = document.getElementById("red_pixel_count_span");
+		blue_pixel_count_span = document.getElementById("blue_pixel_count_span");
+		pi_approximation_span = document.getElementById("pi_approximation_span");
+		console_div = document.getElementById("timestamped_events_log");
+		seconds_elapsed_span.innerHTML = 0; 
+		red_pixel_count_span.innerHTML = 0;
+		blue_pixel_count_span.innerHTML = 0;
+		pi_approximation_span.innerHTML = 0;
+		console_div.innerHTML += p0 + message + p1;
+	}
+	catch(exception) {
+		console.log("An exception to expected functioning occurred in initialize_page(): " + exception);
+	}
+}
+
+/**
+ * Call plot_random_pixel_on_square_canvas(simulation) once per second (for an indefinitely long period of time).
+ * 
+ * Each time plot_random_pixel_on_square_canvas(simulation) is called, increment seconds_elapsed by 1.
+ * 
+ * @param {Object} simulation is assumed to be a timer interval handler (as defined in the start_monte_carlo_simulation() function).
+ */
+function plot_random_pixel_on_square_canvas(simulation) {
+	let point, seconds_elapsed;
+	point = generate_random_planar_point();
+	increment_seconds_elapsed();
+	plot_point_on_html_canvas(point);
+}
+
+/**
+ * Begin the 3600 second Monte Carlo dart throwing simulation.
+ * 
+ * Assume that this function is called in response to the START button being clicked.
+ * 
+ * Throw one random pixel-sized dart onto the square canvas per second for an indefinitely long time period.
+ * 
+ * Use the setInterval function to space plot_random_pixel_on_square_canvas(simulation) function calls apart by one second.
+ */
+function start_monte_carlo_simulation() {
+	const time_point = Date.now(), p0 = '', p1 = '';
+	let simulation; // timer interval handler
+	const message = "The Monte Carlo simulation started at time: " + time_point + " milliseconds since 01_JANUARY_1970 00:00:00 (Coordinated Universal Time (UTC)).";
+	console.log(message);
+	document.getElementById("timestamped_events_log").innerHTML += p0 + message + p1;
+	initialize_application();
+	hide_start_button();
+	simulation = setInterval( function() { plot_random_pixel_on_square_canvas(simulation); }, 1000); // The plot_random_pixel_on_square_canvas(simulation) function is called once every 1000 milliseconds.
+}
+</pre>
+<hr />
+<p><strong>PI_APPROXIMATION_TWO Interface (Initial)</strong></p>
+<hr />
+<p>The screenshot image below depicts what the PI_APPROXIMATION_TWO web page interface is supposed to look like when the web page is initially loaded (or reloaded) by a web browser.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two_interface_initial.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two_interface_initial.png</a></p>
+<hr />
+<p><strong>PI_APPROXIMATION_TWO Interface (After Pressing START (time_0))</strong></p>
+<hr />
+<p>The screenshot image below depicts what the PI_APPROXIMATION_TWO web page interface could look like within a minute of the user clicking the START button.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two_interface_progress_0.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two_interface_progress_0.png</a></p>
+<hr />
+<p><strong>PI_APPROXIMATION_TWO Interface (After Pressing START (time_1))</strong></p>
+<hr />
+<p>The screenshot image below depicts what the PI_APPROXIMATION_TWO web page interface could look like within a twenty minutes of the user clicking the START button. Within a minute of the time that screenshot was taken, the digit to the right of the decimal point was (relatively) consistently 1.</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two_interface_progress_1.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two_interface_progress_1.png</a></p>
+<hr />
+<p><strong>PI_APPROXIMATION_TWO Interface (Final)</strong></p>
+<hr />
+<p>The screenshot image below depicts what the PI_APPROXIMATION_TWO web page interface could look like within an hour of the user clicking the START button. Within a minute of that screenshot being taken, red and blue pixel plotting on the square canvas was lagging behind the seconds_elapsed updating (and pi_approximation started only displaying as zero).</p>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two_interface_final.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_two_interface_final.png</a></p>
+<hr>
+<p>This web page was last updated on 19_FEBRUARY_2025. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
