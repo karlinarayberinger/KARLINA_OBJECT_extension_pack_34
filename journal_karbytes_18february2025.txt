@@ -20,7 +20,11 @@ https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pa
 
 https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_33/main/karlina_object_updates.txt
 
+https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_33/main/mdisc_karbytes2025_7.txt
+
 https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_33/main/unlisted_web_page_karbytes_darknet_websites_root_directory_web_page.html
+
+https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_33/main/unlisted_web_page_mdisc_karbytes2025_7.html
 
 * * *
 
