@@ -1,0 +1,938 @@
+<hr />
+<p><strong>LINKED_LIST</strong></p>
+<hr />
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="21623" data-permalink="https://karlinaobject.wordpress.com/linked_list/linked_list_image/" data-orig-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/linked_list_image.png" data-orig-size="960,720" data-comments-opened="1" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="linked_list_image" data-image-description="" data-image-caption="" data-medium-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/linked_list_image.png?w=300" data-large-file="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/linked_list_image.png?w=960" width="960" height="720" src="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/linked_list_image.png" alt="" class="wp-image-21623" srcset="https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/linked_list_image.png 960w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/linked_list_image.png?w=150&amp;h=113 150w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/linked_list_image.png?w=300&amp;h=225 300w, https://karlinaobject.wordpress.com/wp-content/uploads/2023/07/linked_list_image.png?w=768&amp;h=576 768w" sizes="(max-width: 960px) 100vw, 960px" /></figure>
+
+
+<hr>
+<p>image_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_image.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_image.png</a></p>
+<hr>
+<p><span style="background: #ffff00">The <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/C%2B%2B" target="_blank" rel="noopener">C++</a> program featured in this tutorial web page demonstrates the concept of Object Oriented Programming (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Object-oriented_programming" target="_blank" rel="noopener">OOP</a>). The program implements a user defined data type for instantiating <strong>LINKED_LIST</strong> type objects. Each LINKED_LIST type object represents a singly-linked list whose elements are NODE type variables. A <strong>NODE</strong> type variable is a user defined data type for instantiating data structures comprised of two variables: a string type variable named <strong>key</strong> and a pointer-to-NODE type variable named <strong>next</strong>. A LINKED_LIST object can execute various functions including the ability to insert NODE type elements to the end of the linked list and the ability to remove all elements from the list whose key values match an input string type value. (Note that, unlike a C++ <a style="background: #000000;color: #00ff00" href="https://karlinaobject.wordpress.com/pointers_and_arrays/" target="_blank" rel="noopener">array</a>, the elements of a C++ <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Linked_list" target="_blank" rel="noopener">linked list</a> are not necessarily homogeneous (i.e. of the same data type). Also, unlike a C++ array, a C++ linked list can change size after it is instantiated. Lastly, unlike a C++ array, the elements of a C++ linked list are not necessarily contiguous in memory).</span></p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr />
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr />
+<p>C++_header_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.h" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.h</a></p>
+<p>C++_source_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.cpp</a></p>
+<p>C++_source_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver.cpp</a></p>
+<p>plain-text_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver_output.txt</a></p>
+<hr />
+<p><strong>PROGRAM_COMPILATION_AND_EXECUTION</strong></p>
+<hr />
+<p>STEP_0: Copy and paste the C++ code from the files named <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.h" target="_blank" rel="noopener">linked_list.h</a>, <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.cpp" target="_blank" rel="noopener">linked_list.cpp</a>, and <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver.cpp" target="_blank" rel="noopener">linked_list_driver.cpp</a> into their own new text editor documents and save those documents using their corresponding file names:</p>
+<pre>linked_list.h</pre>
+<pre>linked_list.cpp</pre>
+<pre>linked_list_driver.cpp</pre>
+<p>STEP_1: Open a <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the C++ program files are collectively located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Compile the C++ files into machine-executable instructions (i.e. object file) and then into an executable piece of software named <strong>app</strong> using the following command:</p>
+<pre>g++ linked_list_driver.cpp linked_list.cpp -o app</pre>
+<p>STEP_3: If the program compilation command does not work, then use the following commands (in top-down order) to install the C/C++ compiler (which is part of the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/GNU_Compiler_Collection" target="_blank" rel="noopener">GNU Compiler Collection (GCC)</a>):</p>
+<pre>sudo apt install build-essential</pre>
+<pre>sudo apt-get install g++</pre>
+<p>STEP_4: After running the <strong>g++</strong> command, run the executable file using the following command:</p>
+<pre>./app</pre>
+<p>STEP_5: Observe program results on the command line terminal and in the <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver_output.txt" target="_blank" rel="noopener">output file</a>.</p>
+<hr />
+<p><strong>LINKED_LIST_CLASS_HEADER</strong></p>
+<hr />
+<p>The following header file contains the preprocessing directives and function prototypes of the LINKED_LIST class.</p>
+<p>(Note that the text inside of each of the the preformatted text boxes below appears on this web page (while rendered correctly by the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Web_browser" target="_blank" rel="noopener">web browser</a>) to be identical to the content of that preformatted text box text&#8217;s respective <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Plain_text" target="_blank" rel="noopener">plain-text</a> file or <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Source_code" target="_blank" rel="noopener">source code</a> output file (whose <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/URL" target="_blank" rel="noopener">Uniform Resource Locator</a> is displayed as the <strong style="background:#000000;color:#00ff00">green</strong> <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Hyperlink" target="_blank" rel="noopener">hyperlink</a> immediately above that preformatted text box (if that hyperlink points to a <strong>source code file</strong>) or whose Uniform Resource Locator is displayed as the <strong style="background:#000000;color:#ff9000">orange</strong> hyperlink immediately above that preformatted text box (if that hyperlink points to a <strong>plain-text file</strong>))).</p>
+<p>A <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer" target="_blank" rel="noopener">computer</a> interprets a C++ source code as a series of programmatic instructions (i.e. <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Software" target="_blank" rel="noopener">software</a>) which govern how the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_hardware" target="_blank" rel="noopener">hardware</a> of that computer behaves).</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
+<p>C++_header_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.h" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.h</a></p>
+<hr />
+<pre>/**
+ * file: linked_list.h
+ * type: C++ (header file)
+ * author: karbytes
+ * date: 07_JULY_2023
+ * license: PUBLIC_DOMAIN
+ */
+
+/* preprocessing directives */
+#ifndef LINKED_LIST_H // If linked_list.h has not already been linked to a source file (.cpp), 
+#define LINKED_LIST_H // then link this header file to the source file(s) which include this header file.
+
+/* preprocessing directives */
+#include &lt;iostream&gt; // library for defining objects which handle command line input and command line output
+#include &lt;fstream&gt; // library for defining objects which handle file input and file output
+#include &lt;string&gt; // library which defines a sequence of text characters (i.e. char type values) as a string type variable
+
+/**
+ * A variable whose data type is NODE is a tuple consisting of two variables
+ * such that one of those variables stores some arbitrary piece of information (i.e. key)
+ * while the other variable stores the address of a NODE variable (i.e. next).
+ * 
+ * Like a C++ class, a C++ struct is a user defined data type.
+ * 
+ * Note that each of the members of a struct variable is public and neither private nor protected.
+ * 
+ * Note that each of the members of a struct variable is a variable and not a function.
+ */
+struct NODE
+{
+    std::string key; // key stores an arbitrary sequence of characters
+    NODE * next; // next stores the memory address of a NODE type variable.
+};
+
+/**
+ * A variable whose data type is LINKED_LIST is a software object whose data attributes
+ * consist of exactly one pointer-to-NODE type variable which is assumed to be the 
+ * first node of a linear and unidirectional (i.e. singly-linked) linked list.
+ * 
+ * When a LINKED_LIST type variable is declared, a dynamic NODE type variable is created
+ * and the memory address of that dynamic NODE type variable is stored in a pointer-to-NODE
+ * type variable named head.
+ * 
+ * After a LINKED_LIST type variable is created and before that variable is deleted, 
+ * NODE type elements can be inserted into the list which the LINKED_LIST type variable represents
+ * and NODE type elements can be removed from the list which the LINKED_LIST type variable represents.
+ * 
+ * After a LINKED_LIST type variable is created and before that variable is deleted,
+ * that variable (i.e. object) can invoke a print function which prints a description
+ * of the caller LINKED_LIST object.
+ * 
+ * When a LINKED_LIST variable is deleted, the pointer-to-NODE type variable named head 
+ * (which was assigned memory during program runtime rather than during program compilation time) 
+ * is deleted.
+ */
+class LINKED_LIST
+{
+private:
+    NODE * head; // head stores the memory address of the first NODE type element of a LINKED_LIST type data structure.
+    bool remove_node_with_key(std::string key); // helper method
+public:
+    LINKED_LIST(); // constructor
+    void insert_node_at_end_of_list(NODE * node); // setter method
+    void remove_nodes_with_key(std::string key); // setter method
+    int get_number_of_nodes_in_list(); // getter method
+    void print(std::ostream &amp; output = std::cout); // descriptor method
+    friend std::ostream &amp; operator &lt;&lt; (std::ostream &amp; output, LINKED_LIST &amp; linked_list); // descriptor method
+    ~LINKED_LIST(); // destructor
+};
+
+/* preprocessing directives */
+#endif // Terminate the conditional preprocessing directives code block in this header file.
+</pre>
+<hr />
+<p><strong>LINKED_LIST_CLASS_SOURCE_CODE</strong></p>
+<hr />
+<p>The following source code defines the functions of the LINKED_LIST class.</p>
+<p>C++_source_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.cpp</a></p>
+<hr />
+<pre>/**
+ * file: linked_list.cpp
+ * type: C++ (source file)
+ * author: karbytes
+ * date: 07_JULY_2023
+ * license: PUBLIC_DOMAIN
+ */
+
+// Include the C++ header file which contains preprocessing directives, variable declarations, and function prototypes for the LINKED_LIST class.
+#include "linked_list.h" 
+
+/**
+ * Starting at the NODE type element whose memory address is stored in head and ending at NULL,
+ * traverse the singly-linked list comprised of NODE type elements such that each of those elements are visited.
+ * 
+ * If the current element's key is identical to the input key,
+ * set the next property of the previous node to 
+ * the memory address of the node which is next in the list after the current element
+ * and return true.
+ * 
+ * If at least one node in the list has a key which is identical to the input key,
+ * the function will return true. Otherwise, the function will return false.
+ * 
+ * (The method of using two pointers, p and q, to traverse the list is colloquially described as "inchworming"
+ * because those two pointers metaphorically resemble opposite ends of an inchworm as that insect stretches its
+ * front end forward by approximately one inch before moving its back end to where its front end is located).
+ */
+bool LINKED_LIST::remove_node_with_key(std::string key)
+{
+    NODE * p = head;
+    NODE * q = head;
+    while (q)
+    {
+        if ((q -&gt; key == key) &amp;&amp; (q != head))
+        {
+            std::cout &lt;&lt; "\n\nThe NODE whose memory address is " &lt;&lt; q &lt;&lt; " is being removed from the LINKED_LIST...";
+            p -&gt; next = q -&gt; next;
+            return true;
+        }
+        p = q;
+        q = p -&gt; next;
+    }
+    return false;
+}
+
+/**
+ * Instantiate an "empty" linked list (i.e. a linked list with only a head node and no "body nodes").
+ * 
+ * Note that only "body nodes" may be inserted into or else removed from a linked list which a LINKED_LIST type object represents.
+ */
+LINKED_LIST::LINKED_LIST()
+{
+    std::cout &lt;&lt; "\n\nCreating the LINKED_LIST type object whose memory address is " &lt;&lt; this &lt;&lt; "...";
+    head = new NODE;
+    head -&gt; key = "HEAD";
+    head -&gt; next = NULL;
+}
+
+/**
+ * Make the input NODE type variable the last element of the linked list represented by the caller LINKED_LIST object.
+ * 
+ * (Note that using a NODE which is currently an element of the caller LINKED_LIST as the input to this function
+ * will turn the linked list represented by the caller LINKED_LIST object into a closed loop rather than a finite linear sequence). 
+ * 
+ * (The method of using two pointers, p and q, to traverse the list is colloquially described as "inchworming"
+ * because those two pointers metaphorically resemble opposite ends of an inchworm as that insect stretches its
+ * front end forward by approximately one inch before moving its back end to where its front end is located).
+ */
+void LINKED_LIST::insert_node_at_end_of_list(NODE * node)
+{
+    NODE * p = head;
+    NODE * q = head;
+    while (q)
+    {
+        p = q;
+        q = p -&gt; next;
+    }
+    std::cout &lt;&lt; "\n\nThe NODE whose memory address is " &lt;&lt; p &lt;&lt; " is being inserted into the LINKED_LIST as the last element of that list...";
+    p -&gt; next = node; 
+    node -&gt; next = NULL;
+}
+
+/**
+ * Remove all nodes from the linked list represented by the caller LINKED_LIST object 
+ * whose key values are identical to the input key value.
+ */
+void LINKED_LIST::remove_nodes_with_key(std::string key)
+{
+    bool at_least_one_node_was_removed = false;
+    at_least_one_node_was_removed = remove_node_with_key(key);
+    while (at_least_one_node_was_removed) at_least_one_node_was_removed = remove_node_with_key(key);
+}
+
+/**
+ * Return the natural number count of NODE type elements inside the singly-linked list which
+ * the caller LINKED_LIST object represents.
+ * 
+ * Starting with the head and ending with NULL,
+ * traverse sequentially down the list of NODE type elements and
+ * count each element in the exist. 
+ * 
+ * If the linked list is "empty" (i.e. the head is the only NODE in the caller LINKED_LIST),
+ * one will be returned.
+ * 
+ * (The method of using two pointers, p and q, to traverse the list is colloquially described as "inchworming"
+ * because those two pointers metaphorically resemble opposite ends of an inchworm as that insect stretches its
+ * front end forward by approximately one inch before moving its back end to where its front end is located).
+ */
+int LINKED_LIST::get_number_of_nodes_in_list()
+{
+    int node_count = 0;
+    NODE * p = head;
+    NODE * q = head;
+    while (q)
+    {
+        p = q;
+        q = p -&gt; next;
+        node_count += 1;
+    }
+    return node_count;
+}
+
+/**
+ * The print method of the LINKED_LIST class prints a description of the caller LINKED_LIST object to the output stream.
+ * 
+ * A description of each NODE type element of the linked list which the caller LINKED_LIST object represents will be printed to the output stream
+ * in the order those elements were inserted into the list by "inchworming" from NODE_0 to NODE_N (where N is the total number of nodes in the list).
+ * 
+ * (The method of using two pointers, p and q, to traverse the list is colloquially described as "inchworming"
+ * because those two pointers metaphorically resemble opposite ends of an inchworm as that insect stretches its
+ * front end forward by approximately one inch before moving its back end to where its front end is located).
+ * 
+ * Note that the default value of the function input parameter is the standard command line output stream (std::cout).
+ * 
+ * The default parameter is defined in the LINKED_LIST class header file (i.e. linked_list.h) and not in the LINKED_LIST class source file (i.e. linked_list.cpp).
+ */
+void LINKED_LIST::print(std::ostream &amp; output)
+{
+    int node_count = 0;
+    NODE * p = head;
+    NODE * q = head;
+    output &lt;&lt; "\n\n--------------------------------------------------------------------------------------------------";
+    output &lt;&lt; "\nthis = " &lt;&lt; this &lt;&lt; ". // The keyword named this is a pointer which stores the memory address of the first memory cell of a LINKED_LIST sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST object.";
+    output &lt;&lt; "\n&amp;head = " &lt;&lt; &amp;head &lt;&lt; ". // The reference operation returns the memory address of the first memory cell of a pointer-to-NODE sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST data attribute named head.";
+    output &lt;&lt; "\nsizeof(NODE) = " &lt;&lt; sizeof(NODE) &lt;&lt; ". // The sizeof() operation returns the number of bytes of memory which a NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).";
+    output &lt;&lt; "\nsizeof(std::string) = " &lt;&lt; sizeof(std::string) &lt;&lt; ". // The sizeof() operation returns the number of bytes of memory which a string type variable occupies. (Each memory cell has a data capacity of 1 byte).";
+    output &lt;&lt; "\nsizeof(NODE *) = " &lt;&lt; sizeof(NODE *) &lt;&lt; ". // The sizeof() operation returns the number of bytes of memory which a pointer-to-NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).";
+    output &lt;&lt; "\nsizeof(LINKED_LIST) = " &lt;&lt; sizeof(LINKED_LIST) &lt;&lt; ". // The sizeof() operation returns the number of bytes of memory which a LINKED_LIST type variable occupies. (Each memory cell has a data capacity of 1 byte).";
+    output &lt;&lt; "\nhead = " &lt;&lt; head &lt;&lt; ". // head stores either the first memory cell of a contiguous chunk of memory cells which are allocated to a NODE type variable or else head stores NULL (and the value NULL is displayed as 0).";
+    output &lt;&lt; "\nhead -&gt; key = " &lt;&lt; head -&gt; key &lt;&lt; ". // The arrow operator returns the string type property named key of the NODE type variable which head points to.";
+    output &lt;&lt; "\nhead -&gt; next = " &lt;&lt; head -&gt; next &lt;&lt; ". // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.";
+    output &lt;&lt; "\nget_number_of_nodes_in_list() = " &lt;&lt; get_number_of_nodes_in_list() &lt;&lt; ".";
+    output &lt;&lt; "\n// p is a pointer to a NODE type variable.";
+    output &lt;&lt; "\nLINKED_LIST := {";
+    while (q) 
+    {
+        p = q;
+        output &lt;&lt; "\n\tNODE_" &lt;&lt; node_count &lt;&lt; " := {";
+        output &lt;&lt; "\n\t\tp := " &lt;&lt; p &lt;&lt; ".";
+        output &lt;&lt; "\n\t\tp -&gt; key = " &lt;&lt; p -&gt; key &lt;&lt; ".";
+        output &lt;&lt; "\n\t\tp -&gt; next = " &lt;&lt; p -&gt; next &lt;&lt; ".";
+        output &lt;&lt; "\n\t}.";
+        q = p -&gt; next;
+        node_count += 1;
+    }
+    output &lt;&lt; "\n}.";
+    output &lt;&lt; "\n--------------------------------------------------------------------------------------------------";
+}
+
+/**
+ * The friend function is an alternative to the print method.
+ * The friend function overloads the ostream operator (&lt;&lt;).
+ * 
+ * (Overloading an operator is assigning a different function to a native operator other than the function which that operator is used to represent by default).
+ * 
+ * Note that the default value of the leftmost function input parameter is the standard command line output stream (std::cout).
+ * The default parameter is defined in the LINKED_LIST class header file (i.e. linked_list.h).
+ * 
+ * The friend function is not a member of the LINKED_LIST class, 
+ * but the friend function has access to the private and protected members 
+ * of the LINKED_LIST class and not just to the public members of the LINKED_LIST class.
+ * 
+ * The friend keyword only prefaces the function prototype of this function 
+ * (and the prototype of this function is declared in the LINKED_LIST class header file (i.e. linked_list.h)). 
+ * 
+ * The friend keyword does not preface the definition of this function
+ * (and the definition of this function is specified in the LINKED_LIST class source file (i.e. linked_list.cpp)).
+ * 
+ * // overloaded print function example one
+ * LINKED_LIST linked_list_0;
+ * std::cout &lt;&lt; linked_list_0; // identical to linked_list_0.print();
+ * 
+ * // overloaded print function example two
+ * std::ofstream file;
+ * LINKED_LIST linked_list_1;
+ * file &lt;&lt; linked_list_1; // identical to linked_list_1.print(file);
+ */
+std::ostream &amp; operator &lt;&lt; (std::ostream &amp; output, LINKED_LIST &amp; linked_list)
+{
+    linked_list.print(output);
+    return output;
+}
+
+/**
+ * The destructor method of the LINKED_LIST class de-allocates memory which was used to 
+ * instantiate the LINKED_LIST object which is calling this function.
+ * 
+ * The destructor method of the LINKED_LIST class is automatically called when 
+ * the program scope in which the caller LINKED_LIST object was instantiated terminates.
+ */
+LINKED_LIST::~LINKED_LIST()
+{
+    std::cout &lt;&lt; "\n\nDeleting the LINKED_LIST type object whose memory address is " &lt;&lt; this &lt;&lt; "...";
+    delete head;
+}
+</pre>
+<hr />
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr />
+<p>The following source code defines the client which implements the LINKED_LIST class. The client executes a series of unit tests which demonstrate how the LINKED_LIST class methods work.</p>
+<p>C++_source_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver.cpp" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver.cpp</a></p>
+<hr />
+<pre>/**
+ * file: linked_list_driver.cpp
+ * type: C++ (source file)
+ * date: 07_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN 
+ */
+
+#include "linked_list.h" // Include the C++ header file which contains preprocessing directives, variable declarations, and function prototypes for the LINKED_LIST class.
+
+/* function prototypes */
+void unit_test_0(std::ostream &amp; output);
+void unit_test_1(std::ostream &amp; output);
+void unit_test_2(std::ostream &amp; output);
+void unit_test_3(std::ostream &amp; output);
+void unit_test_4(std::ostream &amp; output);
+
+/**
+ * Unit Test # 0: LINKED_LIST constructor, print method, and destructor.
+ */
+void unit_test_0(std::ostream &amp; output) 
+{
+    output &lt;&lt; "\n\n************************************************";
+    output &lt;&lt; "\nUnit Test # 0: LINKED_LIST constructor, print method, and destructor.";
+    output &lt;&lt; "\n************************************************";
+    output &lt;&lt; "\nLINKED_LIST linked_list;";
+    output &lt;&lt; "\nlinked_list.print(output);";
+    LINKED_LIST linked_list;
+    linked_list.print(output);
+}
+
+/**
+ * Unit Test # 1: LINKED_LIST constructor, insert method, print method, and destructor.
+ */
+void unit_test_1(std::ostream &amp; output) 
+{
+    output &lt;&lt; "\n\n************************************************";
+    output &lt;&lt; "\nUnit Test # 1: LINKED_LIST constructor, insert method, print method, and destructor.";
+    output &lt;&lt; "\n************************************************";
+    output &lt;&lt; "\nLINKED_LIST linked_list;";
+    output &lt;&lt; "\nNODE node;";
+    output &lt;&lt; "\nnode.key = \"unit_test_1\";";
+    output &lt;&lt; "\nnode.next = NULL;";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;node);";
+    output &lt;&lt; "\nlinked_list.print(output);";
+    LINKED_LIST linked_list;
+    NODE node;
+    node.key = "unit_test_1";
+    node.next = NULL;
+    linked_list.insert_node_at_end_of_list(&amp;node);
+    linked_list.print(output);
+}
+
+/**
+ * Unit Test # 2: LINKED_LIST constructor, insert method, print method, and destructor.
+ */
+void unit_test_2(std::ostream &amp; output) 
+{
+    output &lt;&lt; "\n\n************************************************";
+    output &lt;&lt; "\nUnit Test # 2: LINKED_LIST constructor, insert method, print method, and destructor.";
+    output &lt;&lt; "\n************************************************";
+    output &lt;&lt; "\nLINKED_LIST linked_list;";
+    output &lt;&lt; "\nNODE node_A = { key : \"node_A\", next : NULL };";
+    output &lt;&lt; "\nNODE node_B = { key : \"node_B\", next : NULL };";
+    output &lt;&lt; "\nNODE node_C = { key : \"node_C\", next : NULL };";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;node_A);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;node_B);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;node_C);";
+    output &lt;&lt; "\noutput &lt;&lt; linked_list; // functionally identical to linked_list.print(output)";
+    LINKED_LIST linked_list;
+    NODE node_A = { key : "node_A", next : NULL };
+    NODE node_B = { key : "node_B", next : NULL };
+    NODE node_C = { key : "node_C", next : NULL };
+    linked_list.insert_node_at_end_of_list(&amp;node_A);
+    linked_list.insert_node_at_end_of_list(&amp;node_B);
+    linked_list.insert_node_at_end_of_list(&amp;node_C);
+    output &lt;&lt; linked_list;
+}
+
+/**
+ * Unit Test # 3: LINKED_LIST constructor, insert method, remove method, print method, and destructor.
+ */
+void unit_test_3(std::ostream &amp; output) 
+{
+    output &lt;&lt; "\n\n************************************************";
+    output &lt;&lt; "\nUnit Test # 3: LINKED_LIST constructor, insert method, remove method, print method, and destructor.";
+    output &lt;&lt; "\n************************************************";
+    output &lt;&lt; "\nLINKED_LIST linked_list;";
+    output &lt;&lt; "\nNODE node_X = { key : \"node_X\", next : NULL };";
+    output &lt;&lt; "\nNODE node_Y = { key : \"node_Y\", next : NULL };";
+    output &lt;&lt; "\nNODE node_Z = { key : \"node_Z\", next : NULL };";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;node_X);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;node_Y);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;node_Z);";
+    output &lt;&lt; "\nlinked_list.print(output);";
+    output &lt;&lt; "\nlinked_list.remove_nodes_with_key(\"node_Y\");";
+    output &lt;&lt; "\nlinked_list.print(output);";
+    LINKED_LIST linked_list;
+    NODE node_X = { key : "node_X", next : NULL };
+    NODE node_Y = { key : "node_Y", next : NULL };
+    NODE node_Z = { key : "node_Z", next : NULL };
+    linked_list.insert_node_at_end_of_list(&amp;node_X);
+    linked_list.insert_node_at_end_of_list(&amp;node_Y);
+    linked_list.insert_node_at_end_of_list(&amp;node_Z);
+    linked_list.print(output);
+    linked_list.remove_nodes_with_key("node_Y");
+    linked_list.print(output);
+}
+
+/**
+ * Unit Test # 4: LINKED_LIST constructor, insert method, remove method, print method, and destructor.
+ */
+void unit_test_4(std::ostream &amp; output) 
+{
+    output &lt;&lt; "\n\n************************************************";
+    output &lt;&lt; "\nUnit Test # 4: LINKED_LIST constructor, insert method, remove method, print method, and destructor.";
+    output &lt;&lt; "\n************************************************";
+    output &lt;&lt; "\nLINKED_LIST linked_list;";
+    output &lt;&lt; "\nNODE n0 = { key : \"red\", next : NULL };";
+    output &lt;&lt; "\nNODE n1 = { key : \"blue\", next : NULL };";
+    output &lt;&lt; "\nNODE n2 = { key : \"green\", next : NULL };";
+    output &lt;&lt; "\nNODE n3 = { key : \"red\", next : NULL };";
+    output &lt;&lt; "\nNODE n4 = { key : \"green\", next : NULL };";
+    output &lt;&lt; "\nNODE n5 = { key : \"red\", next : NULL };";
+    output &lt;&lt; "\nNODE n6 = { key : \"red\", next : NULL };";
+    output &lt;&lt; "\nNODE n7 = { key : \"red\", next : NULL };";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;n0);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;n1);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;n2);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;n3);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;n4);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;n5);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;n6);";
+    output &lt;&lt; "\nlinked_list.insert_node_at_end_of_list(&amp;n7);";
+    output &lt;&lt; "\nlinked_list.print(output);";
+    output &lt;&lt; "\nlinked_list.remove_nodes_with_key(\"red\");";
+    output &lt;&lt; "\nlinked_list.print(output);";
+    output &lt;&lt; "\nlinked_list.remove_nodes_with_key(\"green\");";
+    output &lt;&lt; "\nlinked_list.print(output);";
+    output &lt;&lt; "\nlinked_list.remove_nodes_with_key(\"blue\");";
+    output &lt;&lt; "\nlinked_list.print(output);";
+    LINKED_LIST linked_list;
+    NODE n0 = { key : "red", next : NULL };
+    NODE n1 = { key : "blue", next : NULL };
+    NODE n2 = { key : "green", next : NULL };
+    NODE n3 = { key : "red", next : NULL };
+    NODE n4 = { key : "green", next : NULL };
+    NODE n5 = { key : "red", next : NULL };
+    NODE n6 = { key : "red", next : NULL };
+    NODE n7 = { key : "red", next : NULL };
+    linked_list.insert_node_at_end_of_list(&amp;n0);
+    linked_list.insert_node_at_end_of_list(&amp;n1);
+    linked_list.insert_node_at_end_of_list(&amp;n2);
+    linked_list.insert_node_at_end_of_list(&amp;n3);
+    linked_list.insert_node_at_end_of_list(&amp;n4);
+    linked_list.insert_node_at_end_of_list(&amp;n5);
+    linked_list.insert_node_at_end_of_list(&amp;n6);
+    linked_list.insert_node_at_end_of_list(&amp;n7);
+    linked_list.print(output);
+    linked_list.remove_nodes_with_key("red");
+    linked_list.print(output);
+    linked_list.remove_nodes_with_key("green");
+    linked_list.print(output);
+    linked_list.remove_nodes_with_key("blue");
+    linked_list.print(output);
+}
+
+/* program entry point */
+int main()
+{
+    // Declare a file output stream object.
+    std::ofstream file;
+
+    /**
+     * If linked_list_driver_output.txt does not already exist in the same directory as linked_list_driver.cpp, 
+     * create a new file named linked_list_driver_output.txt.
+     * 
+     * Open the plain-text file named linked_list_driver_output.txt 
+     * and set that file to be overwritten with program data.
+     */
+    file.open("linked_list_driver_output.txt");
+
+    // Print an opening message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nStart Of Program";
+    std::cout &lt;&lt; "\n--------------------------------";
+
+    // Print an opening message to the file output stream.
+    file &lt;&lt; "--------------------------------";
+    file &lt;&lt; "\nStart Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Implement a series of unit tests which demonstrate the functionality of LINKED_LIST class variables.
+    unit_test_0(std::cout);
+    unit_test_0(file);
+    unit_test_1(std::cout);
+    unit_test_1(file);
+    unit_test_2(std::cout);
+    unit_test_2(file);
+    unit_test_3(std::cout);
+    unit_test_3(file);
+    unit_test_4(std::cout);
+    unit_test_4(file);
+
+    // Print a closing message to the command line terminal.
+    std::cout &lt;&lt; "\n\n--------------------------------";
+    std::cout &lt;&lt; "\nEnd Of Program";
+    std::cout &lt;&lt; "\n--------------------------------\n\n";
+
+    // Print a closing message to the file output stream.
+    file &lt;&lt; "\n\n--------------------------------";
+    file &lt;&lt; "\nEnd Of Program";
+    file &lt;&lt; "\n--------------------------------";
+
+    // Close the file output stream.
+    file.close();
+
+    // Exit the program.
+    return 0;
+}
+</pre>
+<hr />
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr />
+<p>The text in the preformatted text box below was generated by one use case of the C++ program featured in this <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p>plain-text_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list_driver_output.txt</a></p>
+<hr />
+<pre>--------------------------------
+Start Of Program
+--------------------------------
+
+************************************************
+Unit Test # 0: LINKED_LIST constructor, print method, and destructor.
+************************************************
+LINKED_LIST linked_list;
+linked_list.print(output);
+
+--------------------------------------------------------------------------------------------------
+this = 0x7fff55749340. // The keyword named this is a pointer which stores the memory address of the first memory cell of a LINKED_LIST sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST object.
+&amp;head = 0x7fff55749340. // The reference operation returns the memory address of the first memory cell of a pointer-to-NODE sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST data attribute named head.
+sizeof(NODE) = 40. // The sizeof() operation returns the number of bytes of memory which a NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(std::string) = 32. // The sizeof() operation returns the number of bytes of memory which a string type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(NODE *) = 8. // The sizeof() operation returns the number of bytes of memory which a pointer-to-NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(LINKED_LIST) = 8. // The sizeof() operation returns the number of bytes of memory which a LINKED_LIST type variable occupies. (Each memory cell has a data capacity of 1 byte).
+head = 0x5647196a14b0. // head stores either the first memory cell of a contiguous chunk of memory cells which are allocated to a NODE type variable or else head stores NULL (and the value NULL is displayed as 0).
+head -&gt; key = HEAD. // The arrow operator returns the string type property named key of the NODE type variable which head points to.
+head -&gt; next = 0. // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.
+get_number_of_nodes_in_list() = 1.
+// p is a pointer to a NODE type variable.
+LINKED_LIST := {
+	NODE_0 := {
+		p := 0x5647196a14b0.
+		p -&gt; key = HEAD.
+		p -&gt; next = 0.
+	}.
+}.
+--------------------------------------------------------------------------------------------------
+
+************************************************
+Unit Test # 1: LINKED_LIST constructor, insert method, print method, and destructor.
+************************************************
+LINKED_LIST linked_list;
+NODE node;
+node.key = "unit_test_1";
+node.next = NULL;
+linked_list.insert_node_at_end_of_list(&amp;node);
+linked_list.print(output);
+
+--------------------------------------------------------------------------------------------------
+this = 0x7fff55749318. // The keyword named this is a pointer which stores the memory address of the first memory cell of a LINKED_LIST sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST object.
+&amp;head = 0x7fff55749318. // The reference operation returns the memory address of the first memory cell of a pointer-to-NODE sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST data attribute named head.
+sizeof(NODE) = 40. // The sizeof() operation returns the number of bytes of memory which a NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(std::string) = 32. // The sizeof() operation returns the number of bytes of memory which a string type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(NODE *) = 8. // The sizeof() operation returns the number of bytes of memory which a pointer-to-NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(LINKED_LIST) = 8. // The sizeof() operation returns the number of bytes of memory which a LINKED_LIST type variable occupies. (Each memory cell has a data capacity of 1 byte).
+head = 0x5647196a14b0. // head stores either the first memory cell of a contiguous chunk of memory cells which are allocated to a NODE type variable or else head stores NULL (and the value NULL is displayed as 0).
+head -&gt; key = HEAD. // The arrow operator returns the string type property named key of the NODE type variable which head points to.
+head -&gt; next = 0x7fff55749320. // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.
+get_number_of_nodes_in_list() = 2.
+// p is a pointer to a NODE type variable.
+LINKED_LIST := {
+	NODE_0 := {
+		p := 0x5647196a14b0.
+		p -&gt; key = HEAD.
+		p -&gt; next = 0x7fff55749320.
+	}.
+	NODE_1 := {
+		p := 0x7fff55749320.
+		p -&gt; key = unit_test_1.
+		p -&gt; next = 0.
+	}.
+}.
+--------------------------------------------------------------------------------------------------
+
+************************************************
+Unit Test # 2: LINKED_LIST constructor, insert method, print method, and destructor.
+************************************************
+LINKED_LIST linked_list;
+NODE node_A = { key : "node_A", next : NULL };
+NODE node_B = { key : "node_B", next : NULL };
+NODE node_C = { key : "node_C", next : NULL };
+linked_list.insert_node_at_end_of_list(&amp;node_A);
+linked_list.insert_node_at_end_of_list(&amp;node_B);
+linked_list.insert_node_at_end_of_list(&amp;node_C);
+output &lt; key = HEAD. // The arrow operator returns the string type property named key of the NODE type variable which head points to.
+head -&gt; next = 0x7fff557492c0. // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.
+get_number_of_nodes_in_list() = 4.
+// p is a pointer to a NODE type variable.
+LINKED_LIST := {
+	NODE_0 := {
+		p := 0x5647196a14b0.
+		p -&gt; key = HEAD.
+		p -&gt; next = 0x7fff557492c0.
+	}.
+	NODE_1 := {
+		p := 0x7fff557492c0.
+		p -&gt; key = node_A.
+		p -&gt; next = 0x7fff557492f0.
+	}.
+	NODE_2 := {
+		p := 0x7fff557492f0.
+		p -&gt; key = node_B.
+		p -&gt; next = 0x7fff55749320.
+	}.
+	NODE_3 := {
+		p := 0x7fff55749320.
+		p -&gt; key = node_C.
+		p -&gt; next = 0.
+	}.
+}.
+--------------------------------------------------------------------------------------------------
+
+************************************************
+Unit Test # 3: LINKED_LIST constructor, insert method, remove method, print method, and destructor.
+************************************************
+LINKED_LIST linked_list;
+NODE node_X = { key : "node_X", next : NULL };
+NODE node_Y = { key : "node_Y", next : NULL };
+NODE node_Z = { key : "node_Z", next : NULL };
+linked_list.insert_node_at_end_of_list(&amp;node_X);
+linked_list.insert_node_at_end_of_list(&amp;node_Y);
+linked_list.insert_node_at_end_of_list(&amp;node_Z);
+linked_list.print(output);
+linked_list.remove_nodes_with_key("node_Y");
+linked_list.print(output);
+
+--------------------------------------------------------------------------------------------------
+this = 0x7fff55749298. // The keyword named this is a pointer which stores the memory address of the first memory cell of a LINKED_LIST sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST object.
+&amp;head = 0x7fff55749298. // The reference operation returns the memory address of the first memory cell of a pointer-to-NODE sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST data attribute named head.
+sizeof(NODE) = 40. // The sizeof() operation returns the number of bytes of memory which a NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(std::string) = 32. // The sizeof() operation returns the number of bytes of memory which a string type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(NODE *) = 8. // The sizeof() operation returns the number of bytes of memory which a pointer-to-NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(LINKED_LIST) = 8. // The sizeof() operation returns the number of bytes of memory which a LINKED_LIST type variable occupies. (Each memory cell has a data capacity of 1 byte).
+head = 0x5647196a14b0. // head stores either the first memory cell of a contiguous chunk of memory cells which are allocated to a NODE type variable or else head stores NULL (and the value NULL is displayed as 0).
+head -&gt; key = HEAD. // The arrow operator returns the string type property named key of the NODE type variable which head points to.
+head -&gt; next = 0x7fff557492c0. // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.
+get_number_of_nodes_in_list() = 4.
+// p is a pointer to a NODE type variable.
+LINKED_LIST := {
+	NODE_0 := {
+		p := 0x5647196a14b0.
+		p -&gt; key = HEAD.
+		p -&gt; next = 0x7fff557492c0.
+	}.
+	NODE_1 := {
+		p := 0x7fff557492c0.
+		p -&gt; key = node_X.
+		p -&gt; next = 0x7fff557492f0.
+	}.
+	NODE_2 := {
+		p := 0x7fff557492f0.
+		p -&gt; key = node_Y.
+		p -&gt; next = 0x7fff55749320.
+	}.
+	NODE_3 := {
+		p := 0x7fff55749320.
+		p -&gt; key = node_Z.
+		p -&gt; next = 0.
+	}.
+}.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this = 0x7fff55749298. // The keyword named this is a pointer which stores the memory address of the first memory cell of a LINKED_LIST sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST object.
+&amp;head = 0x7fff55749298. // The reference operation returns the memory address of the first memory cell of a pointer-to-NODE sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST data attribute named head.
+sizeof(NODE) = 40. // The sizeof() operation returns the number of bytes of memory which a NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(std::string) = 32. // The sizeof() operation returns the number of bytes of memory which a string type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(NODE *) = 8. // The sizeof() operation returns the number of bytes of memory which a pointer-to-NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(LINKED_LIST) = 8. // The sizeof() operation returns the number of bytes of memory which a LINKED_LIST type variable occupies. (Each memory cell has a data capacity of 1 byte).
+head = 0x5647196a14b0. // head stores either the first memory cell of a contiguous chunk of memory cells which are allocated to a NODE type variable or else head stores NULL (and the value NULL is displayed as 0).
+head -&gt; key = HEAD. // The arrow operator returns the string type property named key of the NODE type variable which head points to.
+head -&gt; next = 0x7fff557492c0. // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.
+get_number_of_nodes_in_list() = 3.
+// p is a pointer to a NODE type variable.
+LINKED_LIST := {
+	NODE_0 := {
+		p := 0x5647196a14b0.
+		p -&gt; key = HEAD.
+		p -&gt; next = 0x7fff557492c0.
+	}.
+	NODE_1 := {
+		p := 0x7fff557492c0.
+		p -&gt; key = node_X.
+		p -&gt; next = 0x7fff55749320.
+	}.
+	NODE_2 := {
+		p := 0x7fff55749320.
+		p -&gt; key = node_Z.
+		p -&gt; next = 0.
+	}.
+}.
+--------------------------------------------------------------------------------------------------
+
+************************************************
+Unit Test # 4: LINKED_LIST constructor, insert method, remove method, print method, and destructor.
+************************************************
+LINKED_LIST linked_list;
+NODE n0 = { key : "red", next : NULL };
+NODE n1 = { key : "blue", next : NULL };
+NODE n2 = { key : "green", next : NULL };
+NODE n3 = { key : "red", next : NULL };
+NODE n4 = { key : "green", next : NULL };
+NODE n5 = { key : "red", next : NULL };
+NODE n6 = { key : "red", next : NULL };
+NODE n7 = { key : "red", next : NULL };
+linked_list.insert_node_at_end_of_list(&amp;n0);
+linked_list.insert_node_at_end_of_list(&amp;n1);
+linked_list.insert_node_at_end_of_list(&amp;n2);
+linked_list.insert_node_at_end_of_list(&amp;n3);
+linked_list.insert_node_at_end_of_list(&amp;n4);
+linked_list.insert_node_at_end_of_list(&amp;n5);
+linked_list.insert_node_at_end_of_list(&amp;n6);
+linked_list.insert_node_at_end_of_list(&amp;n7);
+linked_list.print(output);
+linked_list.remove_nodes_with_key("red");
+linked_list.print(output);
+linked_list.remove_nodes_with_key("green");
+linked_list.print(output);
+linked_list.remove_nodes_with_key("blue");
+linked_list.print(output);
+
+--------------------------------------------------------------------------------------------------
+this = 0x7fff557491a8. // The keyword named this is a pointer which stores the memory address of the first memory cell of a LINKED_LIST sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST object.
+&amp;head = 0x7fff557491a8. // The reference operation returns the memory address of the first memory cell of a pointer-to-NODE sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST data attribute named head.
+sizeof(NODE) = 40. // The sizeof() operation returns the number of bytes of memory which a NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(std::string) = 32. // The sizeof() operation returns the number of bytes of memory which a string type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(NODE *) = 8. // The sizeof() operation returns the number of bytes of memory which a pointer-to-NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(LINKED_LIST) = 8. // The sizeof() operation returns the number of bytes of memory which a LINKED_LIST type variable occupies. (Each memory cell has a data capacity of 1 byte).
+head = 0x5647196a14b0. // head stores either the first memory cell of a contiguous chunk of memory cells which are allocated to a NODE type variable or else head stores NULL (and the value NULL is displayed as 0).
+head -&gt; key = HEAD. // The arrow operator returns the string type property named key of the NODE type variable which head points to.
+head -&gt; next = 0x7fff557491d0. // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.
+get_number_of_nodes_in_list() = 9.
+// p is a pointer to a NODE type variable.
+LINKED_LIST := {
+	NODE_0 := {
+		p := 0x5647196a14b0.
+		p -&gt; key = HEAD.
+		p -&gt; next = 0x7fff557491d0.
+	}.
+	NODE_1 := {
+		p := 0x7fff557491d0.
+		p -&gt; key = red.
+		p -&gt; next = 0x7fff55749200.
+	}.
+	NODE_2 := {
+		p := 0x7fff55749200.
+		p -&gt; key = blue.
+		p -&gt; next = 0x7fff55749230.
+	}.
+	NODE_3 := {
+		p := 0x7fff55749230.
+		p -&gt; key = green.
+		p -&gt; next = 0x7fff55749260.
+	}.
+	NODE_4 := {
+		p := 0x7fff55749260.
+		p -&gt; key = red.
+		p -&gt; next = 0x7fff55749290.
+	}.
+	NODE_5 := {
+		p := 0x7fff55749290.
+		p -&gt; key = green.
+		p -&gt; next = 0x7fff557492c0.
+	}.
+	NODE_6 := {
+		p := 0x7fff557492c0.
+		p -&gt; key = red.
+		p -&gt; next = 0x7fff557492f0.
+	}.
+	NODE_7 := {
+		p := 0x7fff557492f0.
+		p -&gt; key = red.
+		p -&gt; next = 0x7fff55749320.
+	}.
+	NODE_8 := {
+		p := 0x7fff55749320.
+		p -&gt; key = red.
+		p -&gt; next = 0.
+	}.
+}.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this = 0x7fff557491a8. // The keyword named this is a pointer which stores the memory address of the first memory cell of a LINKED_LIST sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST object.
+&amp;head = 0x7fff557491a8. // The reference operation returns the memory address of the first memory cell of a pointer-to-NODE sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST data attribute named head.
+sizeof(NODE) = 40. // The sizeof() operation returns the number of bytes of memory which a NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(std::string) = 32. // The sizeof() operation returns the number of bytes of memory which a string type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(NODE *) = 8. // The sizeof() operation returns the number of bytes of memory which a pointer-to-NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(LINKED_LIST) = 8. // The sizeof() operation returns the number of bytes of memory which a LINKED_LIST type variable occupies. (Each memory cell has a data capacity of 1 byte).
+head = 0x5647196a14b0. // head stores either the first memory cell of a contiguous chunk of memory cells which are allocated to a NODE type variable or else head stores NULL (and the value NULL is displayed as 0).
+head -&gt; key = HEAD. // The arrow operator returns the string type property named key of the NODE type variable which head points to.
+head -&gt; next = 0x7fff55749200. // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.
+get_number_of_nodes_in_list() = 4.
+// p is a pointer to a NODE type variable.
+LINKED_LIST := {
+	NODE_0 := {
+		p := 0x5647196a14b0.
+		p -&gt; key = HEAD.
+		p -&gt; next = 0x7fff55749200.
+	}.
+	NODE_1 := {
+		p := 0x7fff55749200.
+		p -&gt; key = blue.
+		p -&gt; next = 0x7fff55749230.
+	}.
+	NODE_2 := {
+		p := 0x7fff55749230.
+		p -&gt; key = green.
+		p -&gt; next = 0x7fff55749290.
+	}.
+	NODE_3 := {
+		p := 0x7fff55749290.
+		p -&gt; key = green.
+		p -&gt; next = 0.
+	}.
+}.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this = 0x7fff557491a8. // The keyword named this is a pointer which stores the memory address of the first memory cell of a LINKED_LIST sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST object.
+&amp;head = 0x7fff557491a8. // The reference operation returns the memory address of the first memory cell of a pointer-to-NODE sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST data attribute named head.
+sizeof(NODE) = 40. // The sizeof() operation returns the number of bytes of memory which a NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(std::string) = 32. // The sizeof() operation returns the number of bytes of memory which a string type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(NODE *) = 8. // The sizeof() operation returns the number of bytes of memory which a pointer-to-NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(LINKED_LIST) = 8. // The sizeof() operation returns the number of bytes of memory which a LINKED_LIST type variable occupies. (Each memory cell has a data capacity of 1 byte).
+head = 0x5647196a14b0. // head stores either the first memory cell of a contiguous chunk of memory cells which are allocated to a NODE type variable or else head stores NULL (and the value NULL is displayed as 0).
+head -&gt; key = HEAD. // The arrow operator returns the string type property named key of the NODE type variable which head points to.
+head -&gt; next = 0x7fff55749200. // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.
+get_number_of_nodes_in_list() = 2.
+// p is a pointer to a NODE type variable.
+LINKED_LIST := {
+	NODE_0 := {
+		p := 0x5647196a14b0.
+		p -&gt; key = HEAD.
+		p -&gt; next = 0x7fff55749200.
+	}.
+	NODE_1 := {
+		p := 0x7fff55749200.
+		p -&gt; key = blue.
+		p -&gt; next = 0.
+	}.
+}.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------------------------------------------------------------------------
+this = 0x7fff557491a8. // The keyword named this is a pointer which stores the memory address of the first memory cell of a LINKED_LIST sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST object.
+&amp;head = 0x7fff557491a8. // The reference operation returns the memory address of the first memory cell of a pointer-to-NODE sized chunk of contiguous memory cells which are allocated to the caller LINKED_LIST data attribute named head.
+sizeof(NODE) = 40. // The sizeof() operation returns the number of bytes of memory which a NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(std::string) = 32. // The sizeof() operation returns the number of bytes of memory which a string type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(NODE *) = 8. // The sizeof() operation returns the number of bytes of memory which a pointer-to-NODE type variable occupies. (Each memory cell has a data capacity of 1 byte).
+sizeof(LINKED_LIST) = 8. // The sizeof() operation returns the number of bytes of memory which a LINKED_LIST type variable occupies. (Each memory cell has a data capacity of 1 byte).
+head = 0x5647196a14b0. // head stores either the first memory cell of a contiguous chunk of memory cells which are allocated to a NODE type variable or else head stores NULL (and the value NULL is displayed as 0).
+head -&gt; key = HEAD. // The arrow operator returns the string type property named key of the NODE type variable which head points to.
+head -&gt; next = 0. // The arrow operator returns the pointer-to-NODE type property named next of the NODE type variable which head points to.
+get_number_of_nodes_in_list() = 1.
+// p is a pointer to a NODE type variable.
+LINKED_LIST := {
+	NODE_0 := {
+		p := 0x5647196a14b0.
+		p -&gt; key = HEAD.
+		p -&gt; next = 0.
+	}.
+}.
+--------------------------------------------------------------------------------------------------
+
+--------------------------------
+End Of Program
+--------------------------------</pre>
+<hr />
+<p>This web page was last updated on 19_FEBRUARY_2025. The content displayed on this web page is licensed as <a style="background: #000000;color: #ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr />	
