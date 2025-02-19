@@ -1,0 +1,140 @@
+<hr>
+<p><strong>PI_APPROXIMATION_THREE</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Python_(programming_language)" target="_blank" rel="noopener">Python</a> program featured in this tutorial web page is a plain-text and command line version of the graphical user interface application featured on the web page at the following Uniform Resource Locator: <a style="background:#000000;color:#00ff00" href="https://karbytesforlifeblog.wordpress.com/pi_approximation_two/" target="_blank" rel="noopener">https://karbytesforlifeblog.wordpress.com/pi_approximation_two/</a></span></p>
+<p><em>To view hidden text inside each of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr>
+<p><strong>SOFTWARE_APPLICATION_COMPONENTS</strong></p>
+<hr>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation.py</a></p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_output.txt</a></p>
+<hr>
+<p><strong>PROGRAM_INTERPRETATION_AND_EXECUTION</strong></p>
+<hr>
+<p>STEP_0: Copy and paste the Python <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation.py" target="_blank" rel="noopener">source code</a> into a new text editor document and save that document as the following file name:</p>
+<pre>pi_approximation.py</pre>
+<p>STEP_1: Open a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Unix" target="_blank" rel="noopener">Unix</a> command line terminal application and set the current directory to wherever the Python program file is located on the local machine (e.g. Desktop).</p>
+<pre>cd Desktop</pre>
+<p>STEP_2: Run the program by entering the following command:</p>
+<pre>python3 pi_approximation.py</pre>
+<p>STEP_3: If the program interpretation command does not work, then use the following commands (in top-down order) to install the Python interpreter:</p>
+<pre>sudo apt update</pre>
+<pre>sudo apt install python3</pre>
+<p>STEP_4: After running the Python program is booted up and running, it will output pi_approximation statistics once per second until the program stops executing. (The user can terminate the program runtime using the keystoke combination CTRL + C in the command line).</p>
+<p>STEP_5: Observe program results on the command line terminal and in the <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_output.txt" target="_blank" rel="noopener">output file</a>. Note that, in order to save computational resources (especially memory space), only the most recent simulation snapshot is written to that file (instead of all snapshots appended to the file in chronological order).</p>
+<hr>
+<p><strong>PROGRAM_SOURCE_CODE</strong></p>
+<hr>
+<p>Note that, in order to display the Uniform Resource Locator in the Python file on this web page as plain-text, karbytes had to insert a <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Zero-width_space" target="_blank" rel="noopener">zero-width space</a> Unicode character (<strong style="background:#000000;color:#fe9eff">&amp;&#8203;#8203;</strong>) between the &#8220;h&#8221; and the &#8220;t&#8221; in that Uniform Resource Locator. If copy-pasting the Python code from this web page, ensure that the zero-width character is removed after pasting the copied code into a text editor application.</p>
+<p>python_source_file: <a style="background:#000000;color:#00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation.py" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation.py</a></p>
+<hr>
+<pre>
+#########################################################################################
+# file: pi_approximation.py
+# type: Python
+# date: 29_DECEMBER_2024
+# author: karbytes
+# license: PUBLIC_DOMAIN 
+#########################################################################################
+import random
+import time
+
+""" 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+This Python application is a plain-text command line version of the animated 
+JavaScript web application featured on the tutorial web page at the following 
+Uniform Resource Locator:
+
+h&#8203;ttps://karbytesforlifeblog.wordpress.com/pi_approximation_two/
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+"""
+
+def is_in_circle(x, y, radius):
+    """Check if a point (x, y) is positioned within a circle of whose radius is centered at (0, 0)."""
+    return x**2 + y**2 &lt;= radius**2
+
+def monte_carlo_simulation():
+    &quot;&quot;&quot;Run the Monte Carlo simulation indefinitely, overwriting the log file with the latest snapshot.&quot;&quot;&quot;
+    &quot;&quot;&quot;Note that one of such snapshots is made per second of the simulation.&quot;&quot;&quot;
+
+    red_count = 0 # inside of the circle (which is inscribed inside of a square)
+    blue_count = 0 # outside of the circle (but inside of the square)
+
+    radius = 200  # equivalent to half the canvas size in pixels
+    output_file = &quot;pi_approximation_output.txt&quot;
+    
+    print(&quot;Monte Carlo Simulation for Approximating Pi&quot;)
+    print(&quot;-&quot; * 50)
+    
+    try:
+        while True:
+            # Generate a random point in the square.
+            x = random.uniform(-radius, radius)
+            y = random.uniform(-radius, radius)
+            
+            # Check if the point lies in the circle.
+            if is_in_circle(x, y, radius):
+                red_count += 1
+            else:
+                blue_count += 1
+            
+            # Calculate Pi approximation.
+            total_darts = red_count + blue_count
+            pi_approximation = 4 * (red_count / total_darts)
+            
+            # Convert the result to a string and strip unnecessary trailing zeros
+            pi_approximation_str = f&quot;{pi_approximation:.100f}&quot;.rstrip(&#039;0&#039;).rstrip(&#039;.&#039;)
+
+            # Prepare the output string.
+            output = (
+                f&quot;------------------------------------\n&quot;
+                f&quot;seconds_elapsed: {total_darts}\n&quot;
+                f&quot;red_dot_count: {red_count}\n&quot;
+                f&quot;blue_dot_count: {blue_count}\n&quot;
+                f&quot;Pi approximation: {pi_approximation_str}\n&quot;
+                f&quot;------------------------------------\n&quot;
+            )
+            
+            # Print to console.
+            print(output, end=&quot;&quot;)
+            
+            # Overwrite the file with the (second-by-second) latest snapshot.
+            with open(output_file, &quot;w&quot;) as file:
+                file.write(output)
+            
+            time.sleep(1)  # Wait for 1 second.
+    except KeyboardInterrupt:
+        final_message = &quot;\nThe simulation stopped by the user.\n&quot;
+        print(final_message)
+        with open(output_file, &quot;a&quot;) as file:
+
+            file.write(final_message)
+        print(f&quot;The latest snapshot was saved to {output_file}.&quot;)
+
+if __name__ == &quot;__main__&quot;:
+    monte_carlo_simulation()
+</pre>
+<hr>
+<p><strong>SAMPLE_PROGRAM_OUTPUT</strong></p>
+<hr>
+<p>The text in the preformatted text box below was generated by one use case of the Python program featured in this <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Computer_programming" target="_blank" rel="noopener">computer programming</a> tutorial web page.</p>
+<p>plain_text_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_output.txt" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_output.txt</a></p>
+<hr>
+<pre>
+------------------------------------
+seconds_elapsed: 3363
+red_dot_count: 2647
+blue_dot_count: 716
+Pi approximation: 3.148379423134106236403795264777727425098419189453125
+------------------------------------
+
+The simulation stopped by the user.
+</pre>
+<hr />
+<p><strong>PI_APPROXIMATION_THREE Use Case (Demonstration Video)</strong></p>
+<hr />
+<p>The video file linked below shows karbytes using its finished PI_APPROXIMATION_THREE application and via the Unix command line terminal, terminating the program, and checking the program output file.</p>
+<p>video_file: <a style="background: #000000;color: #ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_python_app_demo_29dec2024.mp4" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_27/main/pi_approximation_python_app_demo_29dec2024.mp4</a></p>
+<hr>
+<p>This web page was last updated on 19_FEBRUARY_2025. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
