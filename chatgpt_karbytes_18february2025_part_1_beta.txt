@@ -1,0 +1,760 @@
+// chatgpt_karbytes_18february2025_part_1_beta.txt (approximately 3:30PM PST 18_FEBRUARY_2025)
+
+
+You said:
+Share
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_12 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/point/
+
+
+ChatGPT said:
+The "POINT" page on the karlina_object website introduces a C++ program that demonstrates Object-Oriented Programming (OOP) by defining a custom data type, POINT. This POINT class models a two-dimensional point on a Cartesian grid, with integer X and Y coordinates representing positions along the horizontal and vertical axes, respectively. The class includes methods to calculate the distance between two points and the slope of the line connecting them.
+
+The page provides detailed instructions for compiling and executing the program:
+
+File Preparation: Users are instructed to create three files—point.h, point.cpp, and point_class_tester.cpp—by copying the provided code into each respective file.
+
+Compilation: Using a Unix command line terminal, users navigate to the directory containing the files and compile them with the command:
+
+arduino
+Copy
+Edit
+g++ point_class_tester.cpp point.cpp -o app
+If the compilation fails, the page suggests installing the GNU Compiler Collection (GCC) with:
+
+arduino
+Copy
+Edit
+sudo apt install build-essential
+sudo apt-get install g++
+Execution: After successful compilation, the program can be run using:
+
+bash
+Copy
+Edit
+./app
+The page also includes links to the source code files and an example output file, allowing users to review the code and expected results.
+
+This tutorial serves as a practical introduction to creating and utilizing classes in C++, focusing on geometric computations within a Cartesian plane.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_11 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/pointers_and_arrays/
+
+ChatGPT said:
+The "POINTERS_AND_ARRAYS" page on the karlina_object website presents a C++ program that demonstrates the use of pointer variables to dynamically create and manage arrays at runtime. The program guides users through the following steps:
+
+User Input:
+
+Prompt the user to enter a natural number S, representing the number of elements in the array.
+Prompt the user to enter a natural number T, indicating the range of possible values each element can take (from 0 to T-1).
+Array Creation and Initialization:
+
+Utilize a pointer to allocate an array A of size S dynamically.
+Populate A with S random non-negative integers, each less than T.
+Sorting:
+
+Apply the Bubble Sort algorithm to arrange the elements of A in ascending order.
+Frequency Counting:
+
+Create an array B of size T to count the occurrences of each possible value in A.
+Histogram Display:
+
+Generate a histogram representation using the data in B to visualize the frequency distribution of the elements in A.
+The page provides detailed instructions for compiling and executing the program:
+
+File Preparation: Users are instructed to copy the provided C++ source code into a file named arrays.cpp.
+
+Compilation: Using a Unix command line terminal, navigate to the directory containing arrays.cpp and compile the program with:
+
+Copy
+Edit
+g++ arrays.cpp -o app
+
+csharp
+Copy
+Edit
+
+
+If the compilation fails, the page suggests installing the GNU Compiler Collection (GCC) with:
+
+sudo apt install build-essential
+
+arduino
+Copy
+Edit
+
+
+- **Execution**: After successful compilation, run the program using:
+
+./app
+
+pgsql
+Copy
+Edit
+
+
+The page also includes links to the source code file and an example output file, allowing users to review the code and expected results.
+
+This tutorial serves as a practical introduction to using pointers for dynamic array management in C++, covering key concepts such as memory allocation, pointer arithmetic, and array manipulation.
+::contentReference[oaicite:0]{index=0}
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_10 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/exponentiation/
+ChatGPT said:
+The "EXPONENTIATION" page on the karlina_object website presents a C++ program designed to compute the approximate value of a real number base raised to a real number exponent, a mathematical operation known as exponentiation. Notably, this program achieves the calculation without including standard libraries like cmath or math.h.
+
+Program Overview:
+
+The program defines a function power(base, exponent) that approximates the result of raising base to the power of exponent. It utilizes the natural logarithm and Euler's Number (e) for its computations. The function handles various cases, including:
+
+Exponent Equals Zero: Returns 1, since any number raised to the power of zero is 1.
+
+Exponent Equals One: Returns the base itself.
+
+Exponent as a Whole Number:
+
+Positive: Multiplies the base by itself exponent times.
+Negative: Returns the reciprocal of the base multiplied by itself |exponent| times.
+Exponent as a Non-Whole Number:
+
+Negative: Uses the formula exp(log(base) * exponent) to compute the result.
+Positive: Computes exp(exp(log(base) * |exponent|)).
+Compilation and Execution Instructions:
+
+The page provides a step-by-step guide to compile and run the program:
+
+Save the Source Code: Copy the provided C++ source code into a file named power.cpp.
+
+Open Terminal: Launch a Unix command line terminal and navigate to the directory containing power.cpp.
+
+Compile the Program: Execute the command:
+
+Copy
+Edit
+ g++ power.cpp -o app 
+If the compilation fails, install the GNU Compiler Collection (GCC) with:
+
+nginx
+Copy
+Edit
+ sudo apt install build-essential 
+Run the Program: After successful compilation, run the executable:
+
+bash
+Copy
+Edit
+ ./app 
+User Interaction: The program will prompt for:
+
+A real number value for the base (between -100 and 100).
+
+A real number value for the exponent (between -100 and 100).
+
+After inputting these values, the program displays the computed result and asks if the user wishes to continue with new inputs.
+
+This tutorial offers a practical approach to understanding exponentiation in C++ without relying on standard mathematical libraries, enhancing comprehension of underlying mathematical principles and their implementation in programming.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_9 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/nature/
+
+ChatGPT said:
+The "NATURE" page on the karlina_object website explores foundational metaphysical concepts, offering definitions and discussions of key terms that describe the fabric of reality.
+
+Key Concepts:
+
+Nothingness: Described as the ubiquitous, changeless, irreducible, and featureless substrate permeating and encompassing all phenomena. The page references panpsychism, suggesting that pure nothingness is synonymous with pure consciousness, implying that nature is fundamentally sentient.
+
+Phenomenon: Defined as a finite region of space distinguishable from pure nothingness due to specific, quantifiable features. Examples include sensory perceptions, such as a light sensor detecting light of a particular wavelength.
+
+Frame of Reference: An allocation of pure nothingness that detects the presence or absence of a particular phenomenon. The page discusses frames of reference in the context of space-time continua, differentiating between partial frames (which experience time's passage) and omniscient frames (which transcend all space-time continua).
+
+Noumenon: A specific phenomenon not currently being perceived by any frame of reference.
+
+The page delves into the interplay between these concepts, suggesting that nature encompasses all phenomena, noumena, and pure nothingness. It also touches upon the idea that consciousness is a fundamental aspect of reality, aligning with the principles of panpsychism.
+
+This exploration serves as a philosophical inquiry into the nature of existence, perception, and the underlying substrate of reality.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_8 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/eulers_number_approximation/
+ChatGPT said:
+The "EULERS_NUMBER_APPROXIMATION" page on the karlina_object website presents a C++ program designed to approximate the mathematical constant e, known as Euler's Number. The program prompts users to input a nonnegative integer N and computes the approximation of e by summing the first N terms of the series:
+
+e ≈ 1 + 1/1! + 1/2! + 1/3! + ... + 1/(N-1)!
+
+As N increases, the approximation becomes more accurate, approaching the true value of e, which is approximately 2.71828.
+
+Compilation and Execution Instructions:
+
+Save the Source Code: Copy the provided C++ source code into a file named eulers_number_approximation.cpp.
+
+Open Terminal: Launch a Unix command line terminal and navigate to the directory containing the source file.
+
+Compile the Program: Execute the command:
+
+Copy
+Edit
+ g++ eulers_number_approximation.cpp -o app 
+If the compilation fails, install the GNU Compiler Collection (GCC) with:
+
+nginx
+Copy
+Edit
+ sudo apt install build-essential 
+Run the Program: After successful compilation, run the executable:
+
+bash
+Copy
+Edit
+ ./app 
+User Interaction: The program will prompt:
+
+pgsql
+Copy
+Edit
+ Enter a nonnegative integer which is no larger than 65: 
+Input a value for N to receive the approximate value of e based on the specified number of terms.
+
+This tutorial offers a practical approach to understanding the computation of Euler's Number through series expansion, providing hands-on experience with C++ programming and numerical approximation methods.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_7 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/cube_root_approximation/
+ChatGPT said:
+The "CUBE_ROOT_APPROXIMATION" page on the karlina_object website presents a C++ program designed to compute the approximate cube root of a real number using an iterative algorithm. The program prompts the user to input a real number 
+𝑋
+X (with an absolute value no larger than 100) and calculates 
+𝑌
+Y such that 
+𝑌
+=
+𝑋
+1
+/
+3
+Y=X 
+1/3
+ , meaning 
+𝑌
+×
+𝑌
+×
+𝑌
+=
+𝑋
+Y×Y×Y=X.
+
+Program Components:
+
+C++ Source File: The source code for the program is provided and should be saved as cube_root_approximation.cpp.
+
+Output File: The program outputs results to both the command line terminal and a plain-text file named cube_root_approximation_output.txt.
+
+Compilation and Execution Instructions:
+
+Save the Source Code: Copy the provided C++ source code into a new text editor document and save it as cube_root_approximation.cpp.
+
+Open Terminal: Launch a Unix command line terminal and navigate to the directory containing the source file.
+
+Compile the Program: Execute the command:
+
+Copy
+Edit
+ g++ cube_root_approximation.cpp -o app 
+If the compilation fails, install the GNU Compiler Collection (GCC) with:
+
+nginx
+Copy
+Edit
+ sudo apt install build-essential 
+Run the Program: After successful compilation, run the executable:
+
+bash
+Copy
+Edit
+ ./app 
+User Interaction: The program will prompt:
+
+pgsql
+Copy
+Edit
+ Enter a real number (represented using only base-ten digits with an optional radix and with an optional negative sign), x, which is no larger than 100: 
+Input a value for 
+𝑋
+X to receive its approximate cube root.
+
+Continuation Prompt: After displaying the result, the program asks:
+
+pgsql
+Copy
+Edit
+ Would you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): 
+Enter your choice to either continue with new inputs or exit the program.
+
+This tutorial provides a practical approach to understanding iterative algorithms for computing cube roots, offering hands-on experience with C++ programming and numerical methods.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_6 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/square_root_approximation/
+ChatGPT said:
+The "SQUARE_ROOT_APPROXIMATION" page on the karlina_object website presents a C++ program designed to compute the approximate square root of a real number using an iterative algorithm. The program prompts the user to input a real number 
+𝑋
+X (with an absolute value no larger than 100) and calculates 
+𝑌
+Y such that 
+𝑌
+=
+𝑋
+1
+/
+2
+Y=X 
+1/2
+ , meaning 
+𝑌
+×
+𝑌
+=
+𝑋
+Y×Y=X.
+
+Program Components:
+
+C++ Source File: The source code for the program is provided and should be saved as square_root_approximation.cpp.
+
+Output File: The program outputs results to both the command line terminal and a plain-text file named square_root_approximation_output.txt.
+
+Compilation and Execution Instructions:
+
+Save the Source Code: Copy the provided C++ source code into a new text editor document and save it as square_root_approximation.cpp.
+
+Open Terminal: Launch a Unix command line terminal and navigate to the directory containing the source file.
+
+Compile the Program: Execute the command:
+
+Copy
+Edit
+ g++ square_root_approximation.cpp -o app 
+If the compilation fails, install the GNU Compiler Collection (GCC) with:
+
+nginx
+Copy
+Edit
+ sudo apt install build-essential 
+Run the Program: After successful compilation, run the executable:
+
+bash
+Copy
+Edit
+ ./app 
+User Interaction: The program will prompt:
+
+pgsql
+Copy
+Edit
+ Enter a real number (represented using only base-ten digits with an optional radix and with an optional negative sign), x, which is no larger than 100: 
+Input a value for 
+𝑋
+X to receive its approximate square root.
+
+Continuation Prompt: After displaying the result, the program asks:
+
+pgsql
+Copy
+Edit
+ Would you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): 
+Enter your choice to either continue with new inputs or exit the program.
+
+This tutorial provides a practical approach to understanding iterative algorithms for computing square roots, offering hands-on experience with C++ programming and numerical methods.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_5 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/numbers/
+
+ChatGPT said:
+The "NUMBERS" page on the karlina_object website offers definitions and discussions of various types of numbers, providing foundational insights into mathematical concepts.
+
+Key Terms and Definitions:
+
+One: The smallest natural number; represents the length of a line segment between two adjacent integers on a Cartesian grid.
+
+Zero: Denotes the absence of a countable phenomenon; the integer midway between negative one and one on a Cartesian axis.
+
+Number: Information representing a specific finite quantity; can be approximated to any desired precision or exactly represented by a finite sequence of binary digits.
+
+Infinity: The concept of an unbounded quantity, either as limitless repetitions of a single pattern or an endless variety of unique patterns.
+
+Natural Number: Elements of a set starting from one, including all positive integers obtained by repeatedly adding one.
+
+Integer: A set comprising all natural numbers, their negatives, and zero.
+
+Rational Number: Numbers expressible as the ratio of two integers, where the denominator is non-zero.
+
+Irrational Number: Real numbers that cannot be expressed as a simple fraction of two integers; for example, π (pi).
+
+Real Number: Numbers representing specific points along a Cartesian axis, encompassing both rational and irrational numbers.
+
+Imaginary Number: Numbers that are multiples of the square root of negative one, denoted as 'i', where 
+𝑖
+2
+=
+−
+1
+i 
+2
+ =−1.
+
+The page also features a diagram illustrating the relationships between different sets of numbers, enhancing the reader's understanding of how these categories interconnect.
+
+This comprehensive overview serves as a valuable resource for those seeking to grasp the fundamental classifications and properties of numbers in mathematics.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_4 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/golden_ratio_approximation/
+ChatGPT said:
+The "GOLDEN_RATIO_APPROXIMATION" page on the karlina_object website features a C++ program that calculates an approximation of the Golden Ratio (φ) by utilizing the Fibonacci sequence. The Golden Ratio, approximately 1.61803, is a mathematical constant often encountered in art, architecture, and nature.
+
+Program Overview:
+
+The program computes the ratio of the Nth Fibonacci number to the (N-1)th Fibonacci number, which approaches the Golden Ratio as N increases. The Fibonacci sequence is defined as follows:
+
+fibonacci(0) = 1
+fibonacci(1) = 1
+fibonacci(k) = fibonacci(k - 2) + fibonacci(k - 1) for k ≥ 2
+The approximation is given by:
+
+golden_ratio_approximation(N) = fibonacci(N) / fibonacci(N - 1)
+
+Compilation and Execution Instructions:
+
+Save the Source Code: Copy the provided C++ source code into a file named golden_ratio_approximation.cpp.
+
+Open Terminal: Launch a Unix command line terminal and navigate to the directory containing the source file.
+
+Compile the Program: Execute the command:
+
+Copy
+Edit
+ g++ golden_ratio_approximation.cpp -o app 
+If the compilation fails, install the GNU Compiler Collection (GCC) with:
+
+nginx
+Copy
+Edit
+ sudo apt install build-essential 
+Run the Program: After successful compilation, run the executable:
+
+bash
+Copy
+Edit
+ ./app 
+User Interaction: The program will prompt:
+
+pgsql
+Copy
+Edit
+ Enter a natural number which is no larger than 92: 
+Input a value for N to receive the approximate value of the Golden Ratio based on the specified term of the Fibonacci sequence.
+
+This tutorial provides a practical approach to understanding the relationship between the Fibonacci sequence and the Golden Ratio, offering hands-on experience with C++ programming and numerical approximation methods.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_3 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/fibonacci_numbers/
+
+ChatGPT said:
+The "FIBONACCI_NUMBERS" page on the karlina_object website presents a C++ program that computes the Nth term of the Fibonacci sequence using both recursive and iterative methods. The Fibonacci sequence is defined as follows:
+
+fibonacci(0) = 1
+fibonacci(1) = 1
+fibonacci(i) = fibonacci(i - 2) + fibonacci(i - 1) for i ≥ 2
+Program Components:
+
+C++ Source File: The source code for the program is provided and should be saved as fibonacci_numbers.cpp.
+
+Output File: The program outputs results to both the command line terminal and a plain-text file named fibonacci_numbers_output.txt.
+
+Compilation and Execution Instructions:
+
+Save the Source Code: Copy the provided C++ source code into a new text editor document and save it as fibonacci_numbers.cpp.
+
+Open Terminal: Launch a Unix command line terminal and navigate to the directory containing the source file.
+
+Compile the Program: Execute the command:
+
+Copy
+Edit
+ g++ fibonacci_numbers.cpp -o app 
+If the compilation fails, install the GNU Compiler Collection (GCC) with:
+
+nginx
+Copy
+Edit
+ sudo apt install build-essential 
+Run the Program: After successful compilation, run the executable:
+
+bash
+Copy
+Edit
+ ./app 
+User Interaction: The program will prompt:
+
+pgsql
+Copy
+Edit
+ Enter a nonnegative integer which is no larger than 45: 
+Input a value for N to receive the Nth term of the Fibonacci sequence.
+
+Continuation Prompt: After displaying the result, the program asks:
+
+pgsql
+Copy
+Edit
+ Would you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): 
+Enter your choice to either continue with new inputs or exit the program.
+
+This tutorial provides a practical approach to understanding the computation of Fibonacci numbers, offering hands-on experience with C++ programming and both recursive and iterative methods.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_2 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/factorial/
+ChatGPT said:
+The "FACTORIAL" page on the karlina_object website presents a C++ program that calculates the factorial of a nonnegative integer 
+𝑁
+N using both recursive and iterative methods. The factorial of 
+𝑁
+N, denoted as 
+𝑁
+!
+N!, is the product of all positive integers less than or equal to 
+𝑁
+N. By definition, 
+0
+!
+=
+1
+0!=1.
+
+Program Components:
+
+C++ Source File: The source code is provided and should be saved as factorial.cpp.
+
+Output File: The program outputs results to both the command line terminal and a plain-text file named factorial_output.txt.
+
+Compilation and Execution Instructions:
+
+Save the Source Code: Copy the provided C++ source code into a new text editor document and save it as factorial.cpp.
+
+Open Terminal: Launch a Unix command line terminal and navigate to the directory containing the source file.
+
+Compile the Program: Execute the command:
+
+matlab
+Copy
+Edit
+ g++ factorial.cpp -o app 
+If the compilation fails, install the GNU Compiler Collection (GCC) with:
+
+nginx
+Copy
+Edit
+ sudo apt install build-essential 
+Run the Program: After successful compilation, run the executable:
+
+bash
+Copy
+Edit
+ ./app 
+User Interaction: The program will prompt:
+
+pgsql
+Copy
+Edit
+ Enter a nonnegative integer which is no larger than 12: 
+Input a value for 
+𝑁
+N to receive its factorial.
+
+Continuation Prompt: After displaying the result, the program asks:
+
+pgsql
+Copy
+Edit
+ Would you like to continue inputting program values? (Enter 1 if YES. Enter 0 if NO): 
+Enter your choice to either continue with new inputs or exit the program.
+
+This tutorial offers a practical approach to understanding and computing factorials using both recursive and iterative techniques in C++.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_1 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/public_domain/
+
+ChatGPT said:
+The "PUBLIC_DOMAIN" page on the karlina_object website outlines the author's commitment to open-source principles, declaring that all source code and media files associated with this site and the "Karbytes For Life Blog" are released into the public domain. This means that anyone is free to use, modify, distribute, or sell these files without restriction. The author, known as karbytes (also referred to as Karlina Ray Beringer), has made these resources available to encourage sharing and collaboration.
+
+Key Highlights:
+
+File Types: The website comprises various file types, including HTML files for web pages and JPEG images, such as the displayed image of nested yellow boxes with black interiors.
+
+Intellectual Property Definitions:
+
+File: A sequence of binary digits representing a piece of information.
+Intellectual Property: A collection of files.
+Open Source: Intellectual property licensed to allow free use, modification, and distribution by anyone.
+Public Domain: Open-source intellectual property that is legally ownerless and freely available to the public.
+Preservation Efforts:
+
+GitHub Repository: All source code and media files are stored in a GitHub repository under the username @karlinarayberinger.
+Wayback Machine Archives: The author has saved multiple versions of the website's pages to the Wayback Machine, ensuring long-term accessibility.
+Physical Storage: Efforts are made to preserve the content on M-DISCs and other long-term digital storage media.
+This page emphasizes the author's dedication to making their work freely accessible and preserving it for future reference.
+
+
+Sources
+
+
+
+
+
+
+You said:
+Describe and remember the following web page (which is labeled PAGE_0 on the home page of Karlina Object dot Wordpress dot Com): https://karlinaobject.wordpress.com/
+ChatGPT said:
+The "START_PAGE" on the karlina_object website serves as the central hub, offering an overview of the site's purpose and content. Authored by karbytes (legally known as Karlina Ray Beringer), the website delves into topics such as metaphysics, physics, computer science, mathematics, logic, and digital media. Visitors can explore a variety of pages, each dedicated to a specific subject, ranging from "AGENCY" and "BASE_CONVERTER" to "TRIANGLE_GRAPHING" and "WORD_COUNTER." The site also provides links to additional software applications developed by karbytes, accessible through the "software_engineering_portfolio" page on the karbytesforlifeblog.
+
+Author Details:
+
+Name: karbytes (self-assigned), Karlina Ray Beringer (legal)
+
+Species: HUMAN (since January 13, 1990), CYBORG (since March 19, 2024)
+
+Birth Date: January 13, 1990
+
+Birth Location: San Francisco Bay Area, California, USA
+
+Profession: Software Developer, Metaphysics Researcher
+
+Contact Information:
+
+Emails:
+
+karlinaberinger99@gmail.com
+
+karbytesforlife@protonmail.com
+
+karlina.ray.beringer@protonmail.com
+
+starduststructures@protonmail.com
+
+Online Profiles:
+
+Main Blog: karbytesforlifeblog
+
+Archive: Archive.org
+
+GitHub: karlinarayberinger
+
+LinkedIn: Kar Beringer
+
+Facebook: karlina.beringer.397
+
+Patreon: karbytes
+
+Instagram: karbytes_anew
+
+Twitter: karbytes
+
+Minds: karbytes
+
+Bluesky: karbytes.bsky.social
+
+Donations:
+
+Visitors are invited to support the author through a PayPal donation portal, with a suggested contribution of $10.
+
+Website Chronology:
+
+Establishment Date: April 3, 2020
+
+Last Updated: November 23, 2024
+
+All content is licensed as public domain intellectual property, and the author has archived each page using the WayBack Machine to ensure long-term accessibility.
