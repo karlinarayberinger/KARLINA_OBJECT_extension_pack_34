@@ -1,7 +1,7 @@
 /**
  * file: chatgpt_karbytes_21february2025.txt
  * type: plain-text
- * date: 21_FEBRUARY_2025
+ * date: 22_FEBRUARY_2025
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -456,7 +456,7 @@ These changes provide insight into the neural basis of language and the role of 
 
 karbytes:
 
-I remember taking a large amount of cannabis edible for the first time approximately ten years ago and having a scary experience of watching my language de-volve as though I were reduced back to a two year old and I was mentally generating verbal gibberish. I thought I was losing my mind. Also, I was having odd random flash backs of childhood trauma related to being physically molested.
+I remember taking a large amount of cannabis edible for the first time approximately ten years ago and having a scary experience of watching my language de-volve as though I were reduced back to a two year old and I was mentally generating verbal gibberish. I thought I was losing my mind. Also, I was having odd random flash backs of traumatic experiences from my childhood.
 
 ChatGPT:
 
