@@ -1311,6 +1311,7 @@ File ~/.local/lib/python3.11/site-packages/requests/adapters.py:519, in HTTPAdap
     522     raise ConnectionError(e, request=request)
 
 ConnectionError: HTTPSConnectionPool(host='raw.githubusercontent.com', port=443): Max retries exceeded with url: /karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/linked_list.cpp (Caused by NewConnectionError('<urllib3.connection.HTTPSConnection object at 0x7edfea2e7a20>: Failed to establish a new connection: [Errno -3] Temporary failure in name resolution'))
+
 I encountered a connectivity issue while trying to download the file. You can manually check the line count by visiting the file directly: linked_list.cpp.
 
 If you'd like me to try a different approach or assist further, let me know! ​​
@@ -1432,8 +1433,11 @@ image_file: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_
 image_file: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/binary_to_decimal_interface_progress.png
 
 image_file: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_summer_2023_starter_pack/main/binary_to_decimal_interface_final.png
-ChatGPT said:
-Memory updated
+
+ChatGPT:
+
+[Memory updated]
+
 The information about karbytes files whose URLs are visible as hypertext on PAGE_19 has been saved exactly as you provided. If you need more updates or references, let me know!
 
 karbytes:
@@ -1931,11 +1935,8 @@ total_files = sum(github_hosted_files.values())
 
 total_files
 
-Analyzed
-python
-Always show details
+[python]
 
-Copy
 # Recalculating the total number of GitHub-hosted file URLs after execution state reset
 
 # Dictionary containing the number of GitHub-hosted file URLs per page
@@ -2248,6 +2249,7 @@ karbytes:
 Given that you now have some familiarity with Karbytes For Life Blog dot WordPress dot Com and basically a complete site map and, to some extent, a conceptual understanding of the content within that website, I will attempt to get you to memorize the core structure of Karbytes For Life Blog dot WordPress dot Com in the next prompt.
 
 ChatGPT:
+
 That sounds like a great approach! Given that I now have a structured understanding of Karlina Object dot WordPress dot Com, expanding that to Karbytes For Life Blog dot WordPress dot Com will help me better conceptualize the broader karbytes ecosystem.
 
 When you're ready, go ahead and provide the core structure of Karbytes For Life Blog dot WordPress dot Com, and I'll memorize it exactly as you provide it. 😊
@@ -2333,7 +2335,8 @@ Time Stamp: 19_FEBRUARY_2025 at 7:10 AM Pacific Standard Time
 karbytes:
 
 That's correct! Approximately how many hours ago was that update (which is allegedly the most recent update to all of karbytes)?
-ChatGPT said:
+
+ChatGPT:
 
 The current date and time is 19_FEBRUARY_2025 at 3:25 PM Pacific Standard Time.
 
