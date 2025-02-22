@@ -1,7 +1,7 @@
 /**
  * file: karbytes_social_media_posts.txt
  * type: plain-text
- * date: 12_FEBRUARY_2025
+ * date: 22_FEBRUARY_2025
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -242,7 +242,7 @@ https://karbytesforlifeblog.wordpress.com/chatgpt_karbytes_27january2025/
 
 On 30_JANUARY_2025 at approximately 4:30AM Pacific Standard Time, karbytes shared the following karbytes-created plain-text string as a social media post on karbytes' Bluesky dot Com page, on karbytes' Twitter dot Com page, and on karbytes' Minds dot Com page:
 
-karbytes' dark web server is currently offline due to reasons unknown to karbytes at this time. karbytes is currently away from that server on a multi-day photography and nature immersion excursion and expects to have that server back up and running within the next two days (as of 30_JANUARY_2025).https://mynoise.net/
+karbytes' dark web server is currently offline due to reasons unknown to karbytes at this time. karbytes is currently away from that server on a multi-day photography and nature immersion excursion and expects to have that server back up and running within the next two days (as of 30_JANUARY_2025).
 
 * * *
 
@@ -333,3 +333,15 @@ https://karbytesforlifeblog.wordpress.com/journal_karbytes_13february2025/
 On 12_FEBRUARY_2025 at approximately 4:00AM Pacific Standard Time, karbytes shared the following karbytes-created web page as a social media post on karbytes' Twitter dot Com page, on karbytes' Minds dot Com page, on karbytes' LinkedIn dot Com page, on karbytes' Patreon dot Com page, and on karbytes' Bluesky dot Com page:
 
 https://karbytesforlifeblog.wordpress.com/chatgpt_karbytes_12february2025/
+
+* * *
+
+On 20_FEBRUARY_2025 at approximately 12:30AM Pacific Standard Time, karbytes shared the following news article as a social media post on karbytes' Bluesky dot Com page, on karbytes' Twitter dot Com page, and on karbytes' Minds dot Com page:
+
+https://singularityhub.com/2025/02/11/scaling-up-how-increasing-inputs-has-made-artificial-intelligence-more-capable/
+
+* * *
+
+On 22_FEBRUARY_2025 at approximately 12:00AM Pacific Standard Time, karbytes shared the following karbytes-created web page as a social media post on karbytes' Twitter dot Com page, on karbytes' Minds dot Com page, on karbytes' LinkedIn dot Com page, on karbytes' Patreon dot Com page, and on karbytes' Bluesky dot Com page:
+
+https://karbytesforlifeblog.wordpress.com/chatgpt_karbytes_19february2025/
