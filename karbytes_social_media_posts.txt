@@ -1,7 +1,7 @@
 /**
  * file: karbytes_social_media_posts.txt
  * type: plain-text
- * date: 23_FEBRUARY_2025
+ * date: 28_FEBRUARY_2025
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -351,3 +351,21 @@ https://karbytesforlifeblog.wordpress.com/chatgpt_karbytes_19february2025/
 On 23_FEBRUARY_2025 at approximately 8:00PM Pacific Standard Time, karbytes shared the following karbytes-created web page as a social media post on karbytes' Twitter dot Com page, on karbytes' Minds dot Com page, on karbytes' LinkedIn dot Com page, on karbytes' Patreon dot Com page, and on karbytes' Bluesky dot Com page:
 
 https://karbytesforlifeblog.wordpress.com/journal_karbytes_23february2025/
+
+* * *
+
+On 27_FEBRUARY_2025 at approximately 8:00PM Pacific Standard Time, karbytes shared the following video as a social media post on karbytes' Bluesky dot Com page, on karbytes' Twitter dot Com page, and on karbytes' Minds dot Com page:
+
+video_title: "The Science of New States of Consciousness | Andrés Gómez Emilsson"
+
+video_channel_title: "Curt Jaimungal"
+
+video_release_date: 26_FEBRUARY_2025
+
+video_url: https://www.youtube.com/watch?v=BBP8WZpYp0Y
+
+* * *
+
+On 28_FEBRUARY_2025 at approximately 12:30AM Pacific Standard Time, karbytes shared the following karbytes-created web page as a social media post on karbytes' Twitter dot Com page, on karbytes' Minds dot Com page, on karbytes' LinkedIn dot Com page, on karbytes' Patreon dot Com page, and on karbytes' Bluesky dot Com page:
+
+https://karbytesforlifeblog.wordpress.com/journal_karbytes_27february2025/
