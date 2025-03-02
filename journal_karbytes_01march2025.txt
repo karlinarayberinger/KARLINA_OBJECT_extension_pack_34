@@ -1,0 +1,19 @@
+/**
+ * file: journal_karbytes_01march2025.txt
+ * type: plain-text
+ * date: 01_MARCH_2025
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+karbytes_0: "What do you think would happen if the human population does not shrink to a size which is larger than what it currently is (which is approximately 8 billion humans)?"
+
+karbytes_1: "Assuming that there are no major infrastructural nor political changes which seriously alter how people conduct their lives (away from how they are currently living), I expect there will be increasing pressure on those who are elderly and/or not particularly qualified nor invited to be a service provider (with respect to that person's encompassing local or global economy) to hurry up and die (or at least seriously downsize their personal economic and civic activity such that those people are effectively playing dead and hence not taking resources away from people deemed to be more worthy of such resources such as pregnant women and fathers operating as head of household to a household which includes his prepubescent biological offspring)."
+
+karbytes_0: "Will you willingly die or downsize your lifestyle in order to accomodate those who are deemed to be more deserving of life and resources than you?"
+
+karbytes_1: "Yes if I think that doing so will significantly decrease the chances that I will be forced to experience what I think are circumstances so severely unpleasant that I would rather die 'prematurely' than undergo such experiences. Otherwise no."
+
+karbytes_0: "Do you prefer that the human population stop growing in size?"
+
+karbytes_1: "Generally, my answer to that question is yes. That is because I want to ensure that those who are already born and living their lives as human beings are not under significant pressure (from their respective societies and physical environments) to hurry up and either off themselves (via self-intiated suicide, by 'assisted suicide', or by engaging in behavior which greatly increases their chances of dying as a result of such behaviors) nor to hurry up and downsize their lifestyle to something significantly cheaper and less fulfilling for themselves. Until every human is granted unconditional access to (a) adaquate housing, (b) medical care, (c)nutritious and sustainable food, (d) educational, vocational, and recreational opportunities, I am honestly not comfortable with even one more human becoming pregnant (but I am slightly more partial to new humans being created asexually via AI-curated genomes, AI-regulated artificial wombs, and stem-cell derived zygotes such that traditional sexual reproductions is no longer the only means to replace members of the human population or else to expand the population if conditions are adaquate to do so (such as in the case that humans are able to colonize Mars and space stations while ample resources are available to provide all of what I said should be provided to each human unconditionally))."
