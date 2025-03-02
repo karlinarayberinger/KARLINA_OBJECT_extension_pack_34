@@ -34,6 +34,6 @@ The following are some principles which karbytes came up with and which karbytes
 
 1. Internet-based voting which allows each citizen to submit indefinitely many ballots within the same voting period in pertinence to revising legal policies and selecting governing officials.
 
-2. Manufacturing and distributing meat and other animal-derived products which are humanely (i.e. without causing any animal significant distress, mutilation, nor death) cultivated in a laboratory using animal stem celss.
+2. Manufacturing and distributing meat and other animal-derived products which are humanely (i.e. without causing any animal significant distress, mutilation, nor death) cultivated in a laboratory using animal stem cells.
 
 3. Generating and distributing electricity which is produced entirely from (long-term non-polluting) mechanisms such as photovoltaics and geothermal turbine propulsion.
