@@ -1,12 +1,12 @@
 /**
  * file: journal_karbytes_01march2025.txt
  * type: plain-text
- * date: 01_MARCH_2025
+ * date: 02_MARCH_2025
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
 
-karbytes_0: "What do you think would happen if the human population does not shrink to a size which is larger than what it currently is (which is approximately 8 billion humans)?"
+karbytes_0: "What do you think would happen if the human population does not shrink to a size which is not larger than what it currently is (which is approximately 8 billion humans)?"
 
 karbytes_1: "Assuming that there are no major infrastructural nor political changes which seriously alter how people conduct their lives (away from how they are currently living), I expect there will be increasing pressure on those who are elderly and/or not particularly qualified nor invited to be a service provider (with respect to that person's encompassing local or global economy) to hurry up and die (or at least seriously downsize their personal economic and civic activity such that those people are effectively playing dead and hence not taking resources away from people deemed to be more worthy of such resources such as pregnant women and fathers operating as head of household to a household which includes his prepubescent biological offspring)."
 
