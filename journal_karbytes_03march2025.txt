@@ -1,0 +1,52 @@
+/**
+ * file: journal_karbytes_03march2025.txt
+ * type: plain-text
+ * date: 03_MARCH_2025
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+On 02_MARCH_2025 at approximately 6:30PM Pacific Standard Time, I accidentally broke my glowing glass dildo into two pieces while cleaning multiple glass dildos in the bathroom at my legal address while I was in the midst of backing up the latest version of karbytes to exactly two 25-gigabyte-capacity M_DISC blu-ray discs. I labeled each of those discs "karbytes03march2025" assuming that I would not be making any updates to karbytes between 11:59PM Pacific Standard Time on 02_MARCH_2025 and 11:59M Pacific Standard Time on 03_MARCH_2025 (but this plain-text journal entry addition to the "micro directory" named raw_github_files_directory_KARLINA_OBJECT_extension_pack_34 defies that now outdated convention).
+
+I placed an Amazon dot Com order for a new model of glass dildo I have never used before and which seems to satisfy the criteria I am looking for in a glass dildo: adequate length and girth (and, honestly speaking, the aforementioned glowing glass dildo was what I found to be dissappointingly small and excessively un-anal-friendly), lightly curved while mostly being straight, upright-standing with a flared base (which makes it suitable for both anal penetration and vaginal penetration), aesthetically pleasing (with colors and shapes which I find to be genuinely attractive (especially for my particular sensual/sexual appetites)), and devoid of what I find to be unpleasant textures (while not being too devoid of palpable and varied textures).
+
+What I hope to do with my blog is keep track of the exact brand and model of each consumer good I purchase, use, and want to continue using for an indefinitely long time period. It is very likely that, in order to continue enjoying such products, I will eventually have to replace such products after they become defective or lost. Glass dildos can technically last for centuries if not millennia but are nevertheless relatively brittle (at the temperature in which they are solid, usable, and in their intended environmental conditions (i.e. what is hospitable to human life)) and hence prone to breaking relatively easily (like what happened to my glowing glass dildo (whose two pieces I placed in a storage bin in my room for personal archeological reasons)).
+
+Below are the brand names, model name, and current Amazon dot Com price listings for each of the glass dildos I intend to keep "in stock" within the context of my own personal inventory (which spans my room at my legal address, my backpacks, and the room I am currently residing at (which is at my childhood home in the same town as where my house of legal residence is located)). 
+
+(I keep my stuff and my primary living environment separate because space at each house is limited and because doing so seems to help me be more compartmentalized and organized in my thinking (and I prefer to spend more time at my childhood home (which is my mom's house) than at my current legal residence (which is my dad's house) because my mom's house is more spaceous and in a part of the world which does not seem as densely populated and as insulated from wilderness areas). I expect that to be my living situation for the next three to five years if not longer).
+
+/**
+ * The following is 'pseudocode' representing karbytes' latest glass dildo assortment and loosely emulates the JSON information format.
+ *
+ * Note that price_at_purchase includes sales tax and shipping fee and not just the product price. 
+ * In other words, price_at_purchase refers to the total price of the respective item (via Amazon dot Com).
+ */
+karbytes_glass_dildo_assortment := {
+
+	// karbytes nicknamed dildo_0 "The Valentine's Day Gift".
+	dildo_0 : {
+
+		brand: "Adam and Eve",
+
+		model: "Eve's Sweetheart Swirl Glass Dildo",
+
+		price_at_purchase: "$30.81",
+
+		purchase_date: "17_FEBRUARY_2025"
+	},
+
+	// karbytes nicknamed dildo_1 "The Blue Phallus".
+	dildo_1 : {
+
+		brand: "Pipedream",
+
+		model: "Icicles No 29",
+
+		price_at_purchase: "$40.83",
+		
+		purchase_date: "02_MARCH_2025"
+	}
+}.
+
+(Finally, note that the multi-colored upright glass dildo depicted in the following image is seemingly "limited edition" due to the fact that karbytes could not find products functionally identical to it online (and karbytes concludes that karbytes will never own more than one "copy" of that particular design of glass dildo). karbytes has made a rule of only selecting glass dildos which seem relatively generic and are, hence, relatively easy to buy indefinitely many "copies" of the same brand and model (via reputable online sellers such as Amazon dot Com): https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/glass_dildo_assortment_02mar2025.jpg).
