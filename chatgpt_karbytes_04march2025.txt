@@ -322,7 +322,7 @@ ChatGPT:
 
 [Calculating ephemeral memory]
 
-G[PT-4 supports around 8,192 tokens per conversation, translating to roughly 3,000 words, while GPT-3.5 accommodates up to 4,096 tokens. These figures indicate a significant capability.]
+[GPT-4 supports around 8,192 tokens per conversation, translating to roughly 3,000 words, while GPT-3.5 accommodates up to 4,096 tokens. These figures indicate a significant capability.]
 
 [Managing context limits]
 
