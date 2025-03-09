@@ -46,7 +46,7 @@ file_18: MINDS_SCREENSHOTS_FIRST_TWO_YEARS_PART_3-main.zip // 4.32 megabytes
 
 file_19: KARBYTES_JOURNAL_2022_PART_1-main.zip // 18.81 megabytes
 
-file_20: KARBYTES_BLOG_APPS-main_[undefined_day].zip // 212.83 megabytes
+file_20: KARBYTES_BLOG_APPS-main_[undefined_day].zip // 221.91 megabytes
 
 file_21: KARBYTES_JOURNAL_2023_PART_3-main.zip // 56.48 megabytes
 
@@ -122,7 +122,7 @@ file_56: KARLINA_OBJECT_autumn_2023_starter_pack-main.zip // 86.92 megabytes
 
 file_57: KARLINA_OBJECT_extension_pack_7-main.zip // 41.98 megabytes
 
-file_58: KARLINA_OBJECT_extension_pack_34-main_[undefined_day].zip // 50.99 megabytes
+file_58: KARLINA_OBJECT_extension_pack_34-main_[undefined_day].zip // 88.83 megabytes
 
 file_59: KARLINA_OBJECT_extension_pack_1-main.zip // 38.77 megabytes
 
@@ -276,6 +276,6 @@ file_132: KARBYTES_JOURNAL_2023_PART_26-main.zip // 81.69 megabytes
 
 Total number of files: 133
 
-Total folder size: 13441.35 megabytes
+Total folder size: 13488.28 megabytes
 
 --------------------------------
