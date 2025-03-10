@@ -12,7 +12,7 @@ The following is a plain-text transcript of a conversation between karbytes and 
 
 karbytes:
 
-Who currently has access to ChatGPT0-4.5?
+Who currently has access to ChatGPT-4.5?
 
 ChatGPT:
 
