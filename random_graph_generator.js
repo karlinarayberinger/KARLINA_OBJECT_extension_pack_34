@@ -276,6 +276,24 @@ function displayInfo() {
         html += '<strong>All Traversals Starting at A:</strong> No valid paths found from A.';
     }
 
+    // Generate and display all traversal paths starting from 'A'
+    /*
+    if (graph['A']) {
+        let traversalResults = calculateTraversalDistances(graph); // Get traversal data (paths + distances)
+
+        html += '<strong>All Traversals Starting at A:</strong><ul>';
+        traversalResults.forEach((entry, index) => {
+            let distanceText = (typeof entry.totalDistance === 'number' && !isNaN(entry.totalDistance))
+                ? entry.totalDistance.toFixed(2) 
+                : "Unknown";
+            html += `<li>Traversal ${index + 1}: ${entry.traversal} (Total Distance: ${distanceText})</li>`;
+        });
+        html += '</ul>';
+    } else {
+        html += '<strong>All Traversals Starting at A:</strong> No valid paths found from A.';
+    }*/
+
+
     infoDiv.innerHTML = html;
 }
 
@@ -394,3 +412,63 @@ function findAllTraversals(graph, startNode) {
 
     return paths;
 }
+
+function extractEdgeDistances(traversals, edges) {
+    let edgeDistances = new Map();
+
+    // Convert edge list to a lookup dictionary for quick distance retrieval
+    let edgeLookup = new Map();
+    edges.forEach(edge => {
+        let key1 = `${edge.node0.label} -> ${edge.node1.label}`;
+        let key2 = `${edge.node1.label} -> ${edge.node0.label}`; // Assume undirected graph
+        edgeLookup.set(key1, edge.length);
+        edgeLookup.set(key2, edge.length);
+    });
+
+    // Iterate through each traversal and extract unique edges
+    traversals.forEach(path => {
+        let nodes = path.split(" -> ");
+        for (let i = 0; i < nodes.length - 1; i++) {
+            let edgeKey = `${nodes[i]} -> ${nodes[i + 1]}`;
+            
+            if (edgeLookup.has(edgeKey)) {
+                edgeDistances.set(edgeKey, edgeLookup.get(edgeKey));
+            } else {
+                console.warn(`Edge not found in original edges list: ${edgeKey}`);
+            }
+        }
+    });
+
+    return Object.fromEntries(edgeDistances);
+}
+
+function calculateTraversalDistances(graph) {
+    let traversals = findAllTraversals(graph, 'A'); // Get all traversal paths
+    let edgeDistanceMap = extractEdgeDistances(traversals, edges); // Get edge distances
+
+    let traversalData = traversals.map(path => {
+        let nodes = path.split(" -> ");
+        let totalDistance = 0;
+        let validPath = true;
+
+        for (let i = 0; i < nodes.length - 1; i++) {
+            let edgeKey = `${nodes[i]} -> ${nodes[i + 1]}`;
+
+            if (edgeDistanceMap.hasOwnProperty(edgeKey)) {
+                totalDistance += edgeDistanceMap[edgeKey];
+            } else {
+                validPath = false;
+                break; // Stop if an edge is missing
+            }
+        }
+
+        return {
+            traversal: path,
+            totalDistance: validPath ? totalDistance : "Unknown"
+        };
+    });
+
+    return traversalData;
+}
+
+
