@@ -126,24 +126,24 @@ nodes = nodeLabels.map(label => ({
     y: randomCoordinate()
 }));
 
-// Generate random lines connecting nodes
-let lines = [];
-let numLines = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
-for (let i = 0; i < numLines; i++) {
+// Generate random edges connecting nodes
+let edges = [];
+let numEdges = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
+for (let i = 0; i < numEdges; i++) {
     let [n1, n2] = [nodes[Math.floor(Math.random() * nodes.length)], nodes[Math.floor(Math.random() * nodes.length)]];
-    while (n1 === n2 || lines.some(edge => (edge.node0 === n1 && edge.node1 === n2) || (edge.node0 === n2 && edge.node1 === n1))) {
+    while (n1 === n2 || edges.some(edge => (edge.node0 === n1 && edge.node1 === n2) || (edge.node0 === n2 && edge.node1 === n1))) {
         n1 = nodes[Math.floor(Math.random() * nodes.length)];
         n2 = nodes[Math.floor(Math.random() * nodes.length)];
     }
-    lines.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
+    edges.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
 }
 
 /**
- * Draw Nodes and Lines
+ * Draw Nodes and Edges
  * 
  * The following function, drawGraph, renders a visual representation of a graph onto an HTML5 canvas element.
  * The function retrieves the canvas context, determines the center of the canvas, and applies a scaling factor to properly position nodes.
- * It first draws edges (lines) between connected nodes using the predefined 'lines' array.
+ * It first draws edges (lines) between connected nodes using the predefined edges array.
  * Then, it iterates through the 'nodes' array to render nodes as red circles, labeling them appropriately.
  * The y-axis is inverted to align with conventional Cartesian coordinates (positive y values appear above the center).
  * Dependencies: This function requires a global 'nodes' array containing labeled coordinate points and a 'lines' array defining connections between nodes.
@@ -162,10 +162,10 @@ function drawGraph() {
     ctx.textAlign = 'center';
     ctx.textBaseline = 'middle';
 
-    // Draw Lines
+    // Draw Edges
     ctx.strokeStyle = 'blue';
     ctx.lineWidth = 1.5;
-    lines.forEach(edge => {
+    edges.forEach(edge => {
         ctx.beginPath();
         ctx.moveTo(centerX + edge.node0.x * scale, centerY - edge.node0.y * scale);
         ctx.lineTo(centerX + edge.node1.x * scale, centerY - edge.node1.y * scale);
@@ -203,6 +203,7 @@ function drawGraph() {
  *   - path: A string representing node traversal order (e.g., "A → B → D").
  *   - length: Total length of the path, rounded to two decimal places.
  */
+/*
 function shortestPath(startNode, allNodes) {
     const visited = [startNode];
     const unvisited = allNodes.filter(n => n !== startNode);
@@ -230,6 +231,7 @@ function shortestPath(startNode, allNodes) {
 
     return { path: visited.map(n => n.label).join(' → '), length: totalLength.toFixed(2) };
 }
+*/
 
 // Display Information Below Canvas
 function displayInfo() {
@@ -243,13 +245,13 @@ function displayInfo() {
     html += '</ul>';
 
     html += '<strong>EDGEs:</strong><ul>';
-    lines.forEach((edge, idx) => {
+    edges.forEach((edge, idx) => {
         html += `<li>E${idx}: NODE_0 = ${edge.node0.label}, NODE_1 = ${edge.node1.label}, LENGTH = ${edge.length}</li>`;
     });
     html += '</ul>';
 
-    const shortest = shortestPath(nodes[0], nodes);
-    html += `<strong>Shortest Path Starting at ${nodes[0].label}:</strong> ${shortest.path} (Total Length: ${shortest.length})`;
+    //const shortest = shortestPath(nodes[0], nodes);
+    //html += `<strong>Shortest Path Starting at ${nodes[0].label}:</strong> ${shortest.path} (Total Length: ${shortest.length})`;
 
     infoDiv.innerHTML = html;
 }
@@ -260,7 +262,7 @@ function displayInfo() {
  * Generate up to five randomized NODE instances such that each NODE instance is a software object consisting of two data attributes: 
  * integers representing a horizontal and a vertical position on a Cartesian plane within 10 units of the Cartesian plane's center point.
  * 
- * Generate randomized LINE instances such that each LINE instance is a software object consisting of two data attributes:
+ * Generate randomized EDGE instances such that each EDGE instance is a software object consisting of two data attributes:
  * NODEs representing exactly two end-points to a edge segment.
  */
 function generate_random_graph_and_data_about_that_graph() {
@@ -292,7 +294,7 @@ function clearGraphElements() {
 
 function resetGraphData() {
     nodes.length = 0;  // Clear the existing array
-    lines.length = 0;  // Clear the existing array
+    edges.length = 0;  // Clear the existing array
     console.log("Graph data has been reset.");
 
     generateNewGraphData();  // Reinitialize nodes and lines
@@ -307,20 +309,18 @@ function generateNewGraphData() {
         y: randomCoordinate()
     }));
 
-    // Generate new random lines
-    let numLines = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
-    for (let i = 0; i < numLines; i++) {
+    // Generate new random edges
+    let numEdges = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
+    for (let i = 0; i < numEdges; i++) {
         let n1, n2;
         do {
             n1 = nodes[Math.floor(Math.random() * nodes.length)];
             n2 = nodes[Math.floor(Math.random() * nodes.length)];
-        } while (n1 === n2 || lines.some(edge => (edge.node0 === n1 && edge.node1 === n2) || (edge.node0 === n2 && edge.node1 === n1)));
+        } while (n1 === n2 || edges.some(edge => (edge.node0 === n1 && edge.node1 === n2) || (edge.node0 === n2 && edge.node1 === n1)));
 
-        lines.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
+        edges.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
     }
 }
-
-
 
 /**
  * Implements Dijkstra's algorithm to find the shortest path from a start node to all other nodes.
@@ -329,6 +329,7 @@ function generateNewGraphData() {
  * @param {string} startLabel - The label of the starting node.
  * @returns {Object} An object containing shortest paths and distances.
  */
+/*
 function dijkstraShortestPath(nodes, edges, startLabel) {
     let distances = {};
     let previousNodes = {};
@@ -366,6 +367,7 @@ function dijkstraShortestPath(nodes, edges, startLabel) {
 
     return { distances, previousNodes };
 }
+*/
 
 /**
  * Constructs the shortest path from the previous nodes mapping.
@@ -374,6 +376,7 @@ function dijkstraShortestPath(nodes, edges, startLabel) {
  * @param {string} endLabel - The destination node label.
  * @returns {string[]} The shortest path as an ordered list of node labels.
  */
+/*
 function getShortestPath(previousNodes, startLabel, endLabel) {
     let path = [];
     let currentLabel = endLabel;
@@ -385,8 +388,7 @@ function getShortestPath(previousNodes, startLabel, endLabel) {
 
     return path[0] === startLabel ? path : [];
 }
-
-
+*/
 
 /**
  * Generates unique nodes ensuring no duplicates in position.
@@ -440,8 +442,6 @@ function generateUniqueEdges(nodes, edgeCount) {
     });
 }
 
-
-
 /**
  * Implements Dijkstra's algorithm to find the shortest path from a start node to all other nodes.
  * Ensures that only valid edges are used.
@@ -450,6 +450,7 @@ function generateUniqueEdges(nodes, edgeCount) {
  * @param {string} startLabel - The label of the starting node.
  * @returns {Object} An object containing shortest paths and distances.
  */
+/*
 function dijkstraShortestPath(nodes, edges, startLabel) {
     let distances = {};
     let previousNodes = {};
@@ -489,6 +490,7 @@ function dijkstraShortestPath(nodes, edges, startLabel) {
 
     return { distances, previousNodes };
 }
+*/
 
 /**
  * Constructs the shortest path from the previous nodes mapping.
@@ -499,6 +501,7 @@ function dijkstraShortestPath(nodes, edges, startLabel) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The shortest path as an ordered list of node labels.
  */
+/*
 function getShortestPath(previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -521,8 +524,7 @@ function getShortestPath(previousNodes, startLabel, endLabel, edges) {
 
     return path[0] === startLabel ? path : [];
 }
-
-
+*/
 
 /**
  * Implements Dijkstra's algorithm to find the shortest path from a start node to all other nodes.
@@ -532,6 +534,7 @@ function getShortestPath(previousNodes, startLabel, endLabel, edges) {
  * @param {string} startLabel - The label of the starting node.
  * @returns {Object} An object containing shortest paths and distances.
  */
+/*
 function dijkstraShortestPath(nodes, edges, startLabel) {
     let distances = {};
     let previousNodes = {};
@@ -571,6 +574,7 @@ function dijkstraShortestPath(nodes, edges, startLabel) {
 
     return { distances, previousNodes };
 }
+*/
 
 /**
  * Constructs the shortest path from the previous nodes mapping.
@@ -581,6 +585,7 @@ function dijkstraShortestPath(nodes, edges, startLabel) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The shortest path as an ordered list of node labels.
  */
+/*
 function getStrictShortestPath(previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -603,8 +608,7 @@ function getStrictShortestPath(previousNodes, startLabel, endLabel, edges) {
 
     return path[0] === startLabel ? path : [];
 }
-
-
+*/
 
 /**
  * Constructs the strict shortest path from the previous nodes mapping.
@@ -615,6 +619,7 @@ function getStrictShortestPath(previousNodes, startLabel, endLabel, edges) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The shortest path as an ordered list of node labels.
  */
+/*
 function getValidatedShortestPath(previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -637,9 +642,7 @@ function getValidatedShortestPath(previousNodes, startLabel, endLabel, edges) {
     }
 
     return path[0] === startLabel ? path : [];
-}
-
-
+}*/
 
 /**
  * Implements Dijkstra's algorithm ensuring strict validation of node connections.
@@ -648,6 +651,7 @@ function getValidatedShortestPath(previousNodes, startLabel, endLabel, edges) {
  * @param {string} startLabel - The label of the starting node.
  * @returns {Object} An object containing shortest paths and distances.
  */
+/*
 function strictDijkstraShortestPath(nodes, edges, startLabel) {
     let distances = {};
     let previousNodes = {};
@@ -686,7 +690,7 @@ function strictDijkstraShortestPath(nodes, edges, startLabel) {
     }
 
     return { distances, previousNodes };
-}
+}*/
 
 /**
  * Constructs the strict shortest path ensuring all steps are valid.
@@ -696,6 +700,7 @@ function strictDijkstraShortestPath(nodes, edges, startLabel) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The strictly validated shortest path.
  */
+/*
 function getFinalValidatedPath(previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -719,8 +724,7 @@ function getFinalValidatedPath(previousNodes, startLabel, endLabel, edges) {
 
     return path[0] === startLabel ? path : [];
 }
-
-
+*/
 
 /**
  * Enforces strict edge validation when computing the shortest path.
@@ -731,6 +735,7 @@ function getFinalValidatedPath(previousNodes, startLabel, endLabel, edges) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The strictly enforced shortest path.
  */
+/*
 function getStrictlyEnforcedPath(previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -754,6 +759,7 @@ function getStrictlyEnforcedPath(previousNodes, startLabel, endLabel, edges) {
 
     return path[0] === startLabel ? path : [];
 }
+*/
 
 /**
  * Computes the final shortest path with enforced validation.
@@ -763,6 +769,7 @@ function getStrictlyEnforcedPath(previousNodes, startLabel, endLabel, edges) {
  * @param {string} startLabel - The starting node label.
  * @returns {Object} Contains valid shortest paths and distances.
  */
+/*
 function computeFinalValidatedShortestPath(nodes, edges, startLabel) {
     let { distances, previousNodes } = strictDijkstraShortestPath(nodes, edges, startLabel);
     
@@ -775,8 +782,7 @@ function computeFinalValidatedShortestPath(nodes, edges, startLabel) {
 
     return { distances, validShortestPaths };
 }
-
-
+*/
 
 /**
  * Ensures the computed shortest path strictly follows real edges.
@@ -785,6 +791,7 @@ function computeFinalValidatedShortestPath(nodes, edges, startLabel) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} A corrected shortest path following actual connections.
  */
+/*
 function validateAndCorrectPath(path, edges) {
     let correctedPath = [path[0]];
 
@@ -803,7 +810,7 @@ function validateAndCorrectPath(path, edges) {
     }
 
     return correctedPath.length > 1 ? correctedPath : []; // Ensure path remains valid
-}
+}*/
 
 /**
  * Computes the shortest path using validated steps only.
@@ -814,6 +821,7 @@ function validateAndCorrectPath(path, edges) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The final shortest path after validation.
  */
+/*
 function computeStrictValidatedShortestPath(previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -825,8 +833,7 @@ function computeStrictValidatedShortestPath(previousNodes, startLabel, endLabel,
 
     return validateAndCorrectPath(path, edges);
 }
-
-
+*/
 
 /**
  * Ensures that the shortest path starts from a valid connected edge.
@@ -835,6 +842,7 @@ function computeStrictValidatedShortestPath(previousNodes, startLabel, endLabel,
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} A corrected shortest path following actual connections.
  */
+/*
 function ensureValidStartEdge(path, edges) {
     if (path.length < 2) return []; // Ensure at least one step exists
 
@@ -850,6 +858,7 @@ function ensureValidStartEdge(path, edges) {
 
     return path; // If valid, return the path unchanged
 }
+*/
 
 /**
  * Computes the final shortest path ensuring it starts from a valid connection.
@@ -859,6 +868,7 @@ function ensureValidStartEdge(path, edges) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The final shortest path after validation.
  */
+/*
 function computeFinalStrictPath(previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -871,7 +881,7 @@ function computeFinalStrictPath(previousNodes, startLabel, endLabel, edges) {
     let correctedPath = validateAndCorrectPath(path, edges);
     return ensureValidStartEdge(correctedPath, edges); // Ensure the first step is valid
 }
-
+*/
 
 
 /**
@@ -881,6 +891,7 @@ function computeFinalStrictPath(previousNodes, startLabel, endLabel, edges) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} A corrected shortest path ensuring all steps exist.
  */
+/*
 function reEvaluatePath(path, edges) {
     let validatedPath = [path[0]];
 
@@ -900,6 +911,7 @@ function reEvaluatePath(path, edges) {
 
     return validatedPath.length > 1 ? validatedPath : []; // Ensure path remains valid
 }
+*/
 
 /**
  * Computes the final validated shortest path with re-evaluation.
@@ -910,6 +922,7 @@ function reEvaluatePath(path, edges) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The final corrected shortest path.
  */
+/*
 function computeFinalStrictRecheckedPath(previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -923,8 +936,7 @@ function computeFinalStrictRecheckedPath(previousNodes, startLabel, endLabel, ed
     let finalPath = ensureValidStartEdge(correctedPath, edges);
     return reEvaluatePath(finalPath, edges); // Final check to ensure correctness
 }
-
-
+*/
 
 /**
  * Implements Dijkstra's algorithm using a priority queue (min-heap).
@@ -934,6 +946,7 @@ function computeFinalStrictRecheckedPath(previousNodes, startLabel, endLabel, ed
  * @param {string} startLabel - The label of the starting node.
  * @returns {Object} An object containing shortest paths and distances.
  */
+/*
 function dijkstraWithPriorityQueue(nodes, edges, startLabel) {
     let distances = {};
     let previousNodes = {};
@@ -978,6 +991,7 @@ function dijkstraWithPriorityQueue(nodes, edges, startLabel) {
 
     return { distances, previousNodes };
 }
+*/
 
 /**
  * Reconstructs the shortest path from the Dijkstra result.
@@ -988,6 +1002,7 @@ function dijkstraWithPriorityQueue(nodes, edges, startLabel) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The corrected shortest path.
  */
+/*
 function reconstructValidatedPath(previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -1011,8 +1026,7 @@ function reconstructValidatedPath(previousNodes, startLabel, endLabel, edges) {
 
     return path[0] === startLabel ? path : [];
 }
-
-
+*/
 
 /**
  * Reconstructs the shortest path while strictly following Dijkstra's computed distances.
@@ -1024,6 +1038,7 @@ function reconstructValidatedPath(previousNodes, startLabel, endLabel, edges) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The corrected shortest path.
  */
+/*
 function reconstructStrictPath(distances, previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -1048,6 +1063,7 @@ function reconstructStrictPath(distances, previousNodes, startLabel, endLabel, e
 
     return path[0] === startLabel ? path : [];
 }
+*/
 
 /**
  * Computes the final strict shortest path, ensuring all selected nodes are correct.
@@ -1056,6 +1072,7 @@ function reconstructStrictPath(distances, previousNodes, startLabel, endLabel, e
  * @param {string} startLabel - The starting node label.
  * @returns {Object} Contains valid shortest paths and distances.
  */
+/*
 function computeStrictDijkstraPath(nodes, edges, startLabel) {
     let { distances, previousNodes } = dijkstraWithPriorityQueue(nodes, edges, startLabel);
     
@@ -1068,7 +1085,7 @@ function computeStrictDijkstraPath(nodes, edges, startLabel) {
 
     return { distances, validPaths };
 }
-
+*/
 
 
 /**
@@ -1081,6 +1098,7 @@ function computeStrictDijkstraPath(nodes, edges, startLabel) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The strictly validated shortest path.
  */
+/*
 function enforceValidDijkstraPath(distances, previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -1110,6 +1128,7 @@ function enforceValidDijkstraPath(distances, previousNodes, startLabel, endLabel
 
     return path[0] === startLabel ? path : [];
 }
+*/
 
 /**
  * Computes the strict Dijkstra path ensuring only valid transitions.
@@ -1118,6 +1137,7 @@ function enforceValidDijkstraPath(distances, previousNodes, startLabel, endLabel
  * @param {string} startLabel - The starting node label.
  * @returns {Object} Contains valid shortest paths and distances.
  */
+/*
 function computeFinalStrictDijkstraPath(nodes, edges, startLabel) {
     let { distances, previousNodes } = dijkstraWithPriorityQueue(nodes, edges, startLabel);
     
@@ -1130,7 +1150,7 @@ function computeFinalStrictDijkstraPath(nodes, edges, startLabel) {
 
     return { distances, validPaths };
 }
-
+*/
 
 
 /**
@@ -1141,6 +1161,7 @@ function computeFinalStrictDijkstraPath(nodes, edges, startLabel) {
  * @param {string} startLabel - The label of the starting node.
  * @returns {Object} An object containing shortest paths and distances.
  */
+/*
 function dijkstraWithBacktracking(nodes, edges, startLabel) {
     let distances = {};
     let previousNodes = {};
@@ -1184,7 +1205,7 @@ function dijkstraWithBacktracking(nodes, edges, startLabel) {
     }
 
     return { distances, previousNodes };
-}
+}*/
 
 /**
  * Backtracks to reconstruct the shortest path while allowing alternative routes.
@@ -1196,6 +1217,7 @@ function dijkstraWithBacktracking(nodes, edges, startLabel) {
  * @param {Object[]} edges - The list of valid edges.
  * @returns {string[]} The shortest path considering backtracking.
  */
+/*
 function reconstructPathWithBacktracking(distances, previousNodes, startLabel, endLabel, edges) {
     let path = [];
     let currentLabel = endLabel;
@@ -1217,7 +1239,7 @@ function reconstructPathWithBacktracking(distances, previousNodes, startLabel, e
     path.unshift(startLabel);
 
     return path;
-}
+}*/
 
 /**
  * Computes the final shortest path using Dijkstra's algorithm with backtracking.
@@ -1226,6 +1248,7 @@ function reconstructPathWithBacktracking(distances, previousNodes, startLabel, e
  * @param {string} startLabel - The starting node label.
  * @returns {Object} Contains valid shortest paths and distances.
  */
+/*
 function computeBacktrackingDijkstraPath(nodes, edges, startLabel) {
     let { distances, previousNodes } = dijkstraWithBacktracking(nodes, edges, startLabel);
     
@@ -1238,9 +1261,11 @@ function computeBacktrackingDijkstraPath(nodes, edges, startLabel) {
 
     return { distances, validPaths };
 }
+*/
 
 
 // PriorityQueue class used to always expand the lowest cost state first.
+/*
 class PriorityQueue {
   constructor() {
     this.items = [];
@@ -1255,7 +1280,7 @@ class PriorityQueue {
   isEmpty() {
     return this.items.length === 0;
   }
-}
+}*/
 
 /**
  * Compute the shortest path that visits all nodes.
@@ -1268,6 +1293,7 @@ class PriorityQueue {
  * @param {Number} startNode - (Optional) The index of the starting node (default is 0).
  * @returns {Object|null} - Returns an object with { cost, path } if a solution is found, or null otherwise.
  */
+/*
 function computeShortestPathWithRevisits(nodes, edges, startNode = 0) {
   const n = nodes.length;
   
@@ -1314,4 +1340,4 @@ function computeShortestPathWithRevisits(nodes, edges, startNode = 0) {
   
   // If we exit the loop without returning, then no path exists that can visit all nodes.
   return null;
-}
+}*/
