@@ -36,10 +36,6 @@ function initialize_web_page() {
     }
 }
 
-function generate_random_graph_and_data_about_that_graph() {
-
-}
-
 /**
  * Populate the (assumedly blank) canvas element (on the web page named random_graph_generator.html) 
  * with grid lines (each separated by a 20-pixel width gap), horizontal (y) and vertical (x) axes 
@@ -242,6 +238,8 @@ function displayInfo() {
 }
 
 /**
+ * Append a time-stamped message to the bottom of the web page indicating when the function, generate_random_graph_and_data_about_that_graph(), was called.
+ * 
  * Generate up to five randomized NODE instances such that each NODE instance is a software object consisting of two data attributes: 
  * integers representing a horizontal and a vertical position on a Cartesian plane within 10 units of the Cartesian plane's center point.
  * 
@@ -249,6 +247,9 @@ function displayInfo() {
  * NODEs representing exactly two end-points to a line segment.
  */
 function generate_random_graph_and_data_about_that_graph() {
+	const time_stamped_message = "The generate_random_graph_and_data_about_that_graph() function was called " + generate_time_stamp(), p0 = "<p>", p1 = "</p>";
+	console.log(time_stamped_message);
+	document.getElementById("time_stamped_messages").innerHTML += p0 + time_stamped_message + p1;
 	drawGraph();
 	displayInfo();
 }
