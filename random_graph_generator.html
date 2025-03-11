@@ -1,0 +1,44 @@
+<!--
+/**
+ * file: random_graph_generator.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 11_MARCH_2025
+ * license: PUBLIC_DOMAIN
+ */
+ -->
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>RANDOM_GRAPH_GENERATOR</title>
+    <link rel="stylesheet" href="karbytes_aesthetic.css">
+    <script src="random_graph_generator.js"></script>
+    <style>
+        #graphCanvas {
+            background: #ffffff;
+            border-width: 0px;
+        }
+        div {
+            padding-top: 10px;
+        }
+        #generate_button {
+            color: #00ff00;
+            border-color: #00ff00;
+        }
+        #generate_button:hover {
+            background: #00ff00;
+            color: #000000;
+        }
+    </style>
+</head>
+<body onload="initialize_web_page()">
+    <h1>RANDOM_GRAPH_GENERATOR</h1>
+    <p>Reload this web page to re-generate randomized nodes and edges.</p>
+    <p>Alternatively (and to prevent the time-stamped messages from being cleared from this web page), click the GENERATE button.</p>
+    <p><input type="button" id="generate_button" value="GENERATE" onclick="generate_random_graph_and_data_about_that_graph()"></p>    
+    <canvas id="graphCanvas" width="400" height="400"></canvas>
+    <div id="graphInfo">This sentence will be replaced with graph data after the GENERATE button is clicked.</div>
+    <div class="console" id="time_stamped_messages"><p>???</p></div>
+</body>
+</html>
