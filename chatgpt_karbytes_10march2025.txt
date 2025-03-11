@@ -1,7 +1,7 @@
 /**
  * file: chatgpt_karbytes_10march2025.txt
  * type: plain-text
- * date: 10_MARCH_2025
+ * date: 11_MARCH_2025
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -58,7 +58,6 @@ ChatGPT:
 As of March 9, 2025, OpenAI's ChatGPT models can be ranked based on their performance, cost-effectiveness, and specialized capabilities. Here's an ordered list from best to worst, considering various factors:
 
 1. o1-preview: This model excels in complex reasoning tasks, particularly in STEM fields. It offers a large context window of 128,000 tokens and high output quality. However, its higher cost and increased latency make it more suitable for specialized applications. 
-
     
 2. o1-mini: Optimized for coding and STEM applications, o1-mini provides a balance between performance and cost. It maintains a large context window and delivers faster response times compared to o1-preview. 
 
