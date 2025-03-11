@@ -242,9 +242,9 @@ function displayInfo() {
     });
     html += '</ul>';
 
-    html += '<strong>LINEs:</strong><ul>';
+    html += '<strong>EDGEs:</strong><ul>';
     lines.forEach((edge, idx) => {
-        html += `<li>L${idx}: NODE_0 = ${edge.node0.label}, NODE_1 = ${edge.node1.label}, LENGTH = ${edge.length}</li>`;
+        html += `<li>E${idx}: NODE_0 = ${edge.node0.label}, NODE_1 = ${edge.node1.label}, LENGTH = ${edge.length}</li>`;
     });
     html += '</ul>';
 
