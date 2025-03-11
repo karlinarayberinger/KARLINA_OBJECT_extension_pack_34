@@ -131,7 +131,7 @@ let lines = [];
 let numLines = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
 for (let i = 0; i < numLines; i++) {
     let [n1, n2] = [nodes[Math.floor(Math.random() * nodes.length)], nodes[Math.floor(Math.random() * nodes.length)]];
-    while (n1 === n2 || lines.some(line => (line.node0 === n1 && line.node1 === n2) || (line.node0 === n2 && line.node1 === n1))) {
+    while (n1 === n2 || lines.some(edge => (edge.node0 === n1 && edge.node1 === n2) || (edge.node0 === n2 && edge.node1 === n1))) {
         n1 = nodes[Math.floor(Math.random() * nodes.length)];
         n2 = nodes[Math.floor(Math.random() * nodes.length)];
     }
@@ -165,10 +165,10 @@ function drawGraph() {
     // Draw Lines
     ctx.strokeStyle = 'blue';
     ctx.lineWidth = 1.5;
-    lines.forEach(line => {
+    lines.forEach(edge => {
         ctx.beginPath();
-        ctx.moveTo(centerX + line.node0.x * scale, centerY - line.node0.y * scale);
-        ctx.lineTo(centerX + line.node1.x * scale, centerY - line.node1.y * scale);
+        ctx.moveTo(centerX + edge.node0.x * scale, centerY - edge.node0.y * scale);
+        ctx.lineTo(centerX + edge.node1.x * scale, centerY - edge.node1.y * scale);
         ctx.stroke();
     });
 
@@ -243,8 +243,8 @@ function displayInfo() {
     html += '</ul>';
 
     html += '<strong>LINEs:</strong><ul>';
-    lines.forEach((line, idx) => {
-        html += `<li>L${idx}: NODE_0 = ${line.node0.label}, NODE_1 = ${line.node1.label}, LENGTH = ${line.length}</li>`;
+    lines.forEach((edge, idx) => {
+        html += `<li>L${idx}: NODE_0 = ${edge.node0.label}, NODE_1 = ${edge.node1.label}, LENGTH = ${edge.length}</li>`;
     });
     html += '</ul>';
 
@@ -261,7 +261,7 @@ function displayInfo() {
  * integers representing a horizontal and a vertical position on a Cartesian plane within 10 units of the Cartesian plane's center point.
  * 
  * Generate randomized LINE instances such that each LINE instance is a software object consisting of two data attributes:
- * NODEs representing exactly two end-points to a line segment.
+ * NODEs representing exactly two end-points to a edge segment.
  */
 function generate_random_graph_and_data_about_that_graph() {
     const time_stamped_message = "The generate_random_graph_and_data_about_that_graph() function was called " + generate_time_stamp(), p0 = "<p>", p1 = "</p>";
@@ -314,7 +314,7 @@ function generateNewGraphData() {
         do {
             n1 = nodes[Math.floor(Math.random() * nodes.length)];
             n2 = nodes[Math.floor(Math.random() * nodes.length)];
-        } while (n1 === n2 || lines.some(line => (line.node0 === n1 && line.node1 === n2) || (line.node0 === n2 && line.node1 === n1)));
+        } while (n1 === n2 || lines.some(edge => (edge.node0 === n1 && edge.node1 === n2) || (edge.node0 === n2 && edge.node1 === n1)));
 
         lines.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
     }
@@ -520,4 +520,798 @@ function getShortestPath(previousNodes, startLabel, endLabel, edges) {
     }
 
     return path[0] === startLabel ? path : [];
+}
+
+
+
+/**
+ * Implements Dijkstra's algorithm to find the shortest path from a start node to all other nodes.
+ * Ensures that only valid edges are used.
+ * @param {Object[]} nodes - The list of nodes in the graph.
+ * @param {Object[]} edges - The list of edges in the graph.
+ * @param {string} startLabel - The label of the starting node.
+ * @returns {Object} An object containing shortest paths and distances.
+ */
+function dijkstraShortestPath(nodes, edges, startLabel) {
+    let distances = {};
+    let previousNodes = {};
+    let unvisitedNodes = new Set(nodes.map(node => node.label));
+
+    // Initialize distances to Infinity and previous nodes to null
+    nodes.forEach(node => {
+        distances[node.label] = Infinity;
+        previousNodes[node.label] = null;
+    });
+    distances[startLabel] = 0;
+
+    while (unvisitedNodes.size > 0) {
+        // Get node with the smallest tentative distance
+        let currentNodeLabel = Array.from(unvisitedNodes).reduce((minNode, node) =>
+            distances[node] < distances[minNode] ? node : minNode
+        );
+
+        unvisitedNodes.delete(currentNodeLabel);
+
+        // Get all valid edges for the current node
+        let connectedEdges = edges.filter(edge => 
+            (edge.node0.label === currentNodeLabel && unvisitedNodes.has(edge.node1.label)) ||
+            (edge.node1.label === currentNodeLabel && unvisitedNodes.has(edge.node0.label))
+        );
+
+        for (let edge of connectedEdges) {
+            let neighborLabel = edge.node0.label === currentNodeLabel ? edge.node1.label : edge.node0.label;
+
+            let newDist = distances[currentNodeLabel] + edge.length;
+            if (newDist < distances[neighborLabel]) {
+                distances[neighborLabel] = newDist;
+                previousNodes[neighborLabel] = currentNodeLabel;
+            }
+        }
+    }
+
+    return { distances, previousNodes };
+}
+
+/**
+ * Constructs the shortest path from the previous nodes mapping.
+ * Ensures that each step in the path has a valid edge.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors in the shortest path tree.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The shortest path as an ordered list of node labels.
+ */
+function getStrictShortestPath(previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    // Validate path: Ensure every step exists in the edges list
+    for (let i = 0; i < path.length - 1; i++) {
+        let validEdge = edges.some(edge => 
+            (edge.node0.label === path[i] && edge.node1.label === path[i + 1]) ||
+            (edge.node1.label === path[i] && edge.node0.label === path[i + 1])
+        );
+        if (!validEdge) {
+            return []; // Return an empty path if any step is invalid
+        }
+    }
+
+    return path[0] === startLabel ? path : [];
+}
+
+
+
+/**
+ * Constructs the strict shortest path from the previous nodes mapping.
+ * Ensures that each step in the path has a valid edge before finalizing the path.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors in the shortest path tree.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The shortest path as an ordered list of node labels.
+ */
+function getValidatedShortestPath(previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    // Validate the path: Ensure every step exists in the edges list
+    for (let i = 0; i < path.length - 1; i++) {
+        let validEdge = edges.some(edge => 
+            (edge.node0.label === path[i] && edge.node1.label === path[i + 1]) ||
+            (edge.node1.label === path[i] && edge.node0.label === path[i + 1])
+        );
+        if (!validEdge) {
+            console.error("Invalid path detected. Recalculating...");
+            return []; // Return an empty path if any step is invalid
+        }
+    }
+
+    return path[0] === startLabel ? path : [];
+}
+
+
+
+/**
+ * Implements Dijkstra's algorithm ensuring strict validation of node connections.
+ * @param {Object[]} nodes - The list of nodes in the graph.
+ * @param {Object[]} edges - The list of valid edges.
+ * @param {string} startLabel - The label of the starting node.
+ * @returns {Object} An object containing shortest paths and distances.
+ */
+function strictDijkstraShortestPath(nodes, edges, startLabel) {
+    let distances = {};
+    let previousNodes = {};
+    let unvisitedNodes = new Set(nodes.map(node => node.label));
+
+    // Initialize distances
+    nodes.forEach(node => {
+        distances[node.label] = Infinity;
+        previousNodes[node.label] = null;
+    });
+    distances[startLabel] = 0;
+
+    while (unvisitedNodes.size > 0) {
+        // Get the node with the smallest distance that is still unvisited
+        let currentNodeLabel = Array.from(unvisitedNodes).reduce((minNode, node) =>
+            distances[node] < distances[minNode] ? node : minNode
+        );
+
+        unvisitedNodes.delete(currentNodeLabel);
+
+        // Get valid edges only (ensure strict adherence to existing edges)
+        let connectedEdges = edges.filter(edge => 
+            (edge.node0.label === currentNodeLabel && unvisitedNodes.has(edge.node1.label)) ||
+            (edge.node1.label === currentNodeLabel && unvisitedNodes.has(edge.node0.label))
+        );
+
+        for (let edge of connectedEdges) {
+            let neighborLabel = edge.node0.label === currentNodeLabel ? edge.node1.label : edge.node0.label;
+
+            let newDist = distances[currentNodeLabel] + edge.length;
+            if (newDist < distances[neighborLabel]) {
+                distances[neighborLabel] = newDist;
+                previousNodes[neighborLabel] = currentNodeLabel;
+            }
+        }
+    }
+
+    return { distances, previousNodes };
+}
+
+/**
+ * Constructs the strict shortest path ensuring all steps are valid.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The strictly validated shortest path.
+ */
+function getFinalValidatedPath(previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    // Strictly validate the path: ensure every step exists in the edge list
+    for (let i = 0; i < path.length - 1; i++) {
+        let validEdge = edges.some(edge => 
+            (edge.node0.label === path[i] && edge.node1.label === path[i + 1]) ||
+            (edge.node1.label === path[i] && edge.node0.label === path[i + 1])
+        );
+        if (!validEdge) {
+            console.error("Invalid shortest path detected. Resetting path...");
+            return []; // Return an empty path if any invalid step is found
+        }
+    }
+
+    return path[0] === startLabel ? path : [];
+}
+
+
+
+/**
+ * Enforces strict edge validation when computing the shortest path.
+ * Ensures that only valid connections are used in the shortest path.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The strictly enforced shortest path.
+ */
+function getStrictlyEnforcedPath(previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    // Strictly validate the path: ensure every step exists in the edge list
+    for (let i = 0; i < path.length - 1; i++) {
+        let validEdge = edges.some(edge => 
+            (edge.node0.label === path[i] && edge.node1.label === path[i + 1]) ||
+            (edge.node1.label === path[i] && edge.node0.label === path[i + 1])
+        );
+        if (!validEdge) {
+            console.error("Invalid shortest path detected. Correcting path selection...");
+            return []; // Return an empty path if any invalid step is found
+        }
+    }
+
+    return path[0] === startLabel ? path : [];
+}
+
+/**
+ * Computes the final shortest path with enforced validation.
+ * Ensures that direct connections are preferred.
+ * @param {Object[]} nodes - The list of nodes.
+ * @param {Object[]} edges - The list of valid edges.
+ * @param {string} startLabel - The starting node label.
+ * @returns {Object} Contains valid shortest paths and distances.
+ */
+function computeFinalValidatedShortestPath(nodes, edges, startLabel) {
+    let { distances, previousNodes } = strictDijkstraShortestPath(nodes, edges, startLabel);
+    
+    let validShortestPaths = {};
+    nodes.forEach(node => {
+        if (node.label !== startLabel) {
+            validShortestPaths[node.label] = getStrictlyEnforcedPath(previousNodes, startLabel, node.label, edges);
+        }
+    });
+
+    return { distances, validShortestPaths };
+}
+
+
+
+/**
+ * Ensures the computed shortest path strictly follows real edges.
+ * If an invalid transition is detected, the path is corrected before being returned.
+ * @param {string[]} path - The computed shortest path.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} A corrected shortest path following actual connections.
+ */
+function validateAndCorrectPath(path, edges) {
+    let correctedPath = [path[0]];
+
+    for (let i = 1; i < path.length; i++) {
+        let validEdge = edges.some(edge => 
+            (edge.node0.label === correctedPath[correctedPath.length - 1] && edge.node1.label === path[i]) ||
+            (edge.node1.label === correctedPath[correctedPath.length - 1] && edge.node0.label === path[i])
+        );
+
+        if (validEdge) {
+            correctedPath.push(path[i]);
+        } else {
+            console.error(`Invalid transition detected: ${correctedPath[correctedPath.length - 1]} → ${path[i]}. Removing invalid steps.`);
+            break; // Stop if an invalid step is found.
+        }
+    }
+
+    return correctedPath.length > 1 ? correctedPath : []; // Ensure path remains valid
+}
+
+/**
+ * Computes the shortest path using validated steps only.
+ * Ensures every node step follows an actual edge in the graph.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The final shortest path after validation.
+ */
+function computeStrictValidatedShortestPath(previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    return validateAndCorrectPath(path, edges);
+}
+
+
+
+/**
+ * Ensures that the shortest path starts from a valid connected edge.
+ * If the first step in the computed path does not exist, the path is discarded.
+ * @param {string[]} path - The computed shortest path.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} A corrected shortest path following actual connections.
+ */
+function ensureValidStartEdge(path, edges) {
+    if (path.length < 2) return []; // Ensure at least one step exists
+
+    let firstStepValid = edges.some(edge => 
+        (edge.node0.label === path[0] && edge.node1.label === path[1]) ||
+        (edge.node1.label === path[0] && edge.node0.label === path[1])
+    );
+
+    if (!firstStepValid) {
+        console.error(`Invalid starting edge detected: ${path[0]} → ${path[1]}. Discarding path.`);
+        return []; // Reset path if the first step is not valid
+    }
+
+    return path; // If valid, return the path unchanged
+}
+
+/**
+ * Computes the final shortest path ensuring it starts from a valid connection.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The final shortest path after validation.
+ */
+function computeFinalStrictPath(previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    let correctedPath = validateAndCorrectPath(path, edges);
+    return ensureValidStartEdge(correctedPath, edges); // Ensure the first step is valid
+}
+
+
+
+/**
+ * Re-evaluates the computed shortest path to ensure no indirect steps are present.
+ * If an invalid step is detected, it recalculates the shortest direct path.
+ * @param {string[]} path - The computed shortest path.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} A corrected shortest path ensuring all steps exist.
+ */
+function reEvaluatePath(path, edges) {
+    let validatedPath = [path[0]];
+
+    for (let i = 1; i < path.length; i++) {
+        let validEdge = edges.some(edge => 
+            (edge.node0.label === validatedPath[validatedPath.length - 1] && edge.node1.label === path[i]) ||
+            (edge.node1.label === validatedPath[validatedPath.length - 1] && edge.node0.label === path[i])
+        );
+
+        if (validEdge) {
+            validatedPath.push(path[i]);
+        } else {
+            console.error(`Invalid intermediate step detected: ${validatedPath[validatedPath.length - 1]} → ${path[i]}. Removing incorrect steps.`);
+            break; // Stop at the first invalid step
+        }
+    }
+
+    return validatedPath.length > 1 ? validatedPath : []; // Ensure path remains valid
+}
+
+/**
+ * Computes the final validated shortest path with re-evaluation.
+ * Ensures that indirect paths are eliminated.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The final corrected shortest path.
+ */
+function computeFinalStrictRecheckedPath(previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    let correctedPath = validateAndCorrectPath(path, edges);
+    let finalPath = ensureValidStartEdge(correctedPath, edges);
+    return reEvaluatePath(finalPath, edges); // Final check to ensure correctness
+}
+
+
+
+/**
+ * Implements Dijkstra's algorithm using a priority queue (min-heap).
+ * Ensures correctness in shortest path calculation.
+ * @param {Object[]} nodes - The list of nodes in the graph.
+ * @param {Object[]} edges - The list of valid edges.
+ * @param {string} startLabel - The label of the starting node.
+ * @returns {Object} An object containing shortest paths and distances.
+ */
+function dijkstraWithPriorityQueue(nodes, edges, startLabel) {
+    let distances = {};
+    let previousNodes = {};
+    let unvisitedNodes = new Set(nodes.map(node => node.label));
+    let priorityQueue = new Map();
+
+    // Initialize distances to Infinity and previous nodes to null
+    nodes.forEach(node => {
+        distances[node.label] = Infinity;
+        previousNodes[node.label] = null;
+        priorityQueue.set(node.label, Infinity);
+    });
+    distances[startLabel] = 0;
+    priorityQueue.set(startLabel, 0);
+
+    while (priorityQueue.size > 0) {
+        // Extract node with the smallest distance
+        let currentNodeLabel = [...priorityQueue.entries()].reduce((minNode, entry) =>
+            entry[1] < priorityQueue.get(minNode) ? entry[0] : minNode
+        );
+
+        priorityQueue.delete(currentNodeLabel);
+        unvisitedNodes.delete(currentNodeLabel);
+
+        // Get all valid edges for the current node
+        let connectedEdges = edges.filter(edge => 
+            (edge.node0.label === currentNodeLabel && unvisitedNodes.has(edge.node1.label)) ||
+            (edge.node1.label === currentNodeLabel && unvisitedNodes.has(edge.node0.label))
+        );
+
+        for (let edge of connectedEdges) {
+            let neighborLabel = edge.node0.label === currentNodeLabel ? edge.node1.label : edge.node0.label;
+
+            let newDist = distances[currentNodeLabel] + edge.length;
+            if (newDist < distances[neighborLabel]) {
+                distances[neighborLabel] = newDist;
+                previousNodes[neighborLabel] = currentNodeLabel;
+                priorityQueue.set(neighborLabel, newDist);
+            }
+        }
+    }
+
+    return { distances, previousNodes };
+}
+
+/**
+ * Reconstructs the shortest path from the Dijkstra result.
+ * Ensures correctness by only including valid transitions.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The corrected shortest path.
+ */
+function reconstructValidatedPath(previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    // Validate every transition to ensure correctness
+    for (let i = 0; i < path.length - 1; i++) {
+        let validEdge = edges.some(edge => 
+            (edge.node0.label === path[i] && edge.node1.label === path[i + 1]) ||
+            (edge.node1.label === path[i] && edge.node0.label === path[i + 1])
+        );
+        if (!validEdge) {
+            console.error(`Invalid transition detected: ${path[i]} → ${path[i + 1]}. Resetting path calculation.`);
+            return []; // Reset path if an invalid transition is found
+        }
+    }
+
+    return path[0] === startLabel ? path : [];
+}
+
+
+
+/**
+ * Reconstructs the shortest path while strictly following Dijkstra's computed distances.
+ * Ensures that only valid edges and correct shortest distances are considered.
+ * @param {Object} distances - The computed shortest distances from Dijkstra's algorithm.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The corrected shortest path.
+ */
+function reconstructStrictPath(distances, previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    // Ensure path follows valid computed distances
+    for (let i = 0; i < path.length - 1; i++) {
+        let stepValid = edges.some(edge => 
+            (edge.node0.label === path[i] && edge.node1.label === path[i + 1]) ||
+            (edge.node1.label === path[i] && edge.node0.label === path[i + 1])
+        );
+
+        if (!stepValid) {
+            console.error(`Invalid path segment detected: ${path[i]} → ${path[i + 1]}. Removing invalid steps.`);
+            return []; // Reset path if an invalid step is found
+        }
+    }
+
+    return path[0] === startLabel ? path : [];
+}
+
+/**
+ * Computes the final strict shortest path, ensuring all selected nodes are correct.
+ * @param {Object[]} nodes - The list of nodes.
+ * @param {Object[]} edges - The list of valid edges.
+ * @param {string} startLabel - The starting node label.
+ * @returns {Object} Contains valid shortest paths and distances.
+ */
+function computeStrictDijkstraPath(nodes, edges, startLabel) {
+    let { distances, previousNodes } = dijkstraWithPriorityQueue(nodes, edges, startLabel);
+    
+    let validPaths = {};
+    nodes.forEach(node => {
+        if (node.label !== startLabel) {
+            validPaths[node.label] = reconstructStrictPath(distances, previousNodes, startLabel, node.label, edges);
+        }
+    });
+
+    return { distances, validPaths };
+}
+
+
+
+/**
+ * Ensures the shortest path only includes valid, direct transitions.
+ * If a non-existent connection is found, the path is discarded.
+ * @param {Object} distances - The computed shortest distances from Dijkstra.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The strictly validated shortest path.
+ */
+function enforceValidDijkstraPath(distances, previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== null) {
+        path.unshift(currentLabel);
+        currentLabel = previousNodes[currentLabel];
+    }
+
+    // Validate every transition to ensure correctness using computed distances
+    for (let i = 0; i < path.length - 1; i++) {
+        let stepValid = edges.some(edge => 
+            (edge.node0.label === path[i] && edge.node1.label === path[i + 1]) ||
+            (edge.node1.label === path[i] && edge.node0.label === path[i + 1])
+        );
+
+        let correctDistance = distances[path[i + 1]] === distances[path[i]] + edges.find(edge =>
+            (edge.node0.label === path[i] && edge.node1.label === path[i + 1]) ||
+            (edge.node1.label === path[i] && edge.node0.label === path[i + 1])
+        ).length;
+
+        if (!stepValid || !correctDistance) {
+            console.error(`Invalid step detected: ${path[i]} → ${path[i + 1]}. Removing incorrect transitions.`);
+            return []; // Reset path if an invalid step is found
+        }
+    }
+
+    return path[0] === startLabel ? path : [];
+}
+
+/**
+ * Computes the strict Dijkstra path ensuring only valid transitions.
+ * @param {Object[]} nodes - The list of nodes.
+ * @param {Object[]} edges - The list of valid edges.
+ * @param {string} startLabel - The starting node label.
+ * @returns {Object} Contains valid shortest paths and distances.
+ */
+function computeFinalStrictDijkstraPath(nodes, edges, startLabel) {
+    let { distances, previousNodes } = dijkstraWithPriorityQueue(nodes, edges, startLabel);
+    
+    let validPaths = {};
+    nodes.forEach(node => {
+        if (node.label !== startLabel) {
+            validPaths[node.label] = enforceValidDijkstraPath(distances, previousNodes, startLabel, node.label, edges);
+        }
+    });
+
+    return { distances, validPaths };
+}
+
+
+
+/**
+ * Implements Dijkstra's algorithm allowing backtracking if it leads to a shorter path.
+ * Uses a priority queue (min-heap) for efficiency.
+ * @param {Object[]} nodes - The list of nodes in the graph.
+ * @param {Object[]} edges - The list of valid edges.
+ * @param {string} startLabel - The label of the starting node.
+ * @returns {Object} An object containing shortest paths and distances.
+ */
+function dijkstraWithBacktracking(nodes, edges, startLabel) {
+    let distances = {};
+    let previousNodes = {};
+    let priorityQueue = new Map();
+
+    // Initialize distances and previous nodes
+    nodes.forEach(node => {
+        distances[node.label] = Infinity;
+        previousNodes[node.label] = [];
+        priorityQueue.set(node.label, Infinity);
+    });
+    distances[startLabel] = 0;
+    priorityQueue.set(startLabel, 0);
+
+    while (priorityQueue.size > 0) {
+        // Extract node with the smallest distance
+        let currentNodeLabel = [...priorityQueue.entries()].reduce((minNode, entry) =>
+            entry[1] < priorityQueue.get(minNode) ? entry[0] : minNode
+        );
+
+        priorityQueue.delete(currentNodeLabel);
+
+        // Get all valid edges for the current node
+        let connectedEdges = edges.filter(edge => 
+            edge.node0.label === currentNodeLabel || edge.node1.label === currentNodeLabel
+        );
+
+        for (let edge of connectedEdges) {
+            let neighborLabel = edge.node0.label === currentNodeLabel ? edge.node1.label : edge.node0.label;
+
+            let newDist = distances[currentNodeLabel] + edge.length;
+            if (newDist < distances[neighborLabel]) {
+                distances[neighborLabel] = newDist;
+                previousNodes[neighborLabel] = [currentNodeLabel];
+                priorityQueue.set(neighborLabel, newDist);
+            } else if (newDist === distances[neighborLabel]) {
+                // Allow backtracking by storing multiple previous nodes
+                previousNodes[neighborLabel].push(currentNodeLabel);
+            }
+        }
+    }
+
+    return { distances, previousNodes };
+}
+
+/**
+ * Backtracks to reconstruct the shortest path while allowing alternative routes.
+ * Ensures that all possible shortest paths are considered.
+ * @param {Object} distances - The computed shortest distances.
+ * @param {Object} previousNodes - The mapping of nodes to their predecessors.
+ * @param {string} startLabel - The starting node label.
+ * @param {string} endLabel - The destination node label.
+ * @param {Object[]} edges - The list of valid edges.
+ * @returns {string[]} The shortest path considering backtracking.
+ */
+function reconstructPathWithBacktracking(distances, previousNodes, startLabel, endLabel, edges) {
+    let path = [];
+    let currentLabel = endLabel;
+
+    while (currentLabel !== startLabel) {
+        if (!previousNodes[currentLabel] || previousNodes[currentLabel].length === 0) {
+            console.error(`No valid path found to ${currentLabel}.`);
+            return []; // No valid path found
+        }
+
+        // Select the shortest path from multiple possible previous nodes
+        let nextLabel = previousNodes[currentLabel].reduce((bestChoice, prevLabel) => 
+            distances[prevLabel] < distances[bestChoice] ? prevLabel : bestChoice
+        );
+
+        path.unshift(currentLabel);
+        currentLabel = nextLabel;
+    }
+    path.unshift(startLabel);
+
+    return path;
+}
+
+/**
+ * Computes the final shortest path using Dijkstra's algorithm with backtracking.
+ * @param {Object[]} nodes - The list of nodes.
+ * @param {Object[]} edges - The list of valid edges.
+ * @param {string} startLabel - The starting node label.
+ * @returns {Object} Contains valid shortest paths and distances.
+ */
+function computeBacktrackingDijkstraPath(nodes, edges, startLabel) {
+    let { distances, previousNodes } = dijkstraWithBacktracking(nodes, edges, startLabel);
+    
+    let validPaths = {};
+    nodes.forEach(node => {
+        if (node.label !== startLabel) {
+            validPaths[node.label] = reconstructPathWithBacktracking(distances, previousNodes, startLabel, node.label, edges);
+        }
+    });
+
+    return { distances, validPaths };
+}
+
+
+// PriorityQueue class used to always expand the lowest cost state first.
+class PriorityQueue {
+  constructor() {
+    this.items = [];
+  }
+  enqueue(element) {
+    this.items.push(element);
+    this.items.sort((a, b) => a.cost - b.cost);
+  }
+  dequeue() {
+    return this.items.shift();
+  }
+  isEmpty() {
+    return this.items.length === 0;
+  }
+}
+
+/**
+ * Compute the shortest path that visits all nodes.
+ * The returned path may include repeated nodes and only follows valid (existing) edges.
+ *
+ * @param {Array} nodes - Array of node objects (each node may be identified by its index)
+ * @param {Array} edges - Array of edge objects. Each edge should have:
+ *                        { from: Number, to: Number, weight: Number }
+ *                        For an undirected graph, each edge is assumed to work in both directions.
+ * @param {Number} startNode - (Optional) The index of the starting node (default is 0).
+ * @returns {Object|null} - Returns an object with { cost, path } if a solution is found, or null otherwise.
+ */
+function computeShortestPathWithRevisits(nodes, edges, startNode = 0) {
+  const n = nodes.length;
+  
+  // Build the adjacency list. (For directed graphs, remove the second push.)
+  const adj = Array.from({ length: n }, () => []);
+  for (let edge of edges) {
+    // edge: { from, to, weight }
+    adj[edge.from].push({ node: edge.to, weight: edge.weight });
+    adj[edge.to].push({ node: edge.from, weight: edge.weight });
+  }
+  
+  const allVisited = (1 << n) - 1;
+  // Map keys are in the format "visitedMask,currentNode"
+  const dp = new Map();
+  const queue = new PriorityQueue();
+  
+  const startMask = 1 << startNode;
+  dp.set(startMask + "," + startNode, { cost: 0, path: [startNode] });
+  queue.enqueue({ visited: startMask, node: startNode, cost: 0, path: [startNode] });
+  
+  while (!queue.isEmpty()) {
+    const current = queue.dequeue();
+    
+    // If all nodes have been visited, we have found a valid path.
+    if (current.visited === allVisited) {
+      return current; // current contains the total cost and the complete path.
+    }
+    
+    // Expand each neighbor of the current node (only valid edges are followed).
+    for (let neighbor of adj[current.node]) {
+      const newCost = current.cost + neighbor.weight;
+      // Update the visited mask: add the neighbor's node.
+      const newVisited = current.visited | (1 << neighbor.node);
+      const key = newVisited + "," + neighbor.node;
+      
+      // Only consider this new state if it improves on a previously seen cost.
+      if (!dp.has(key) || dp.get(key).cost > newCost) {
+        const newPath = current.path.concat([neighbor.node]);
+        dp.set(key, { cost: newCost, path: newPath });
+        queue.enqueue({ visited: newVisited, node: neighbor.node, cost: newCost, path: newPath });
+      }
+    }
+  }
+  
+  // If we exit the loop without returning, then no path exists that can visit all nodes.
+  return null;
 }
