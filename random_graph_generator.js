@@ -118,16 +118,17 @@ function calculateDistance(a, b) {
 }
 
 // Node generation
-const nodeLabels = ['A', 'B', 'C', 'D', 'E'];
-const nodes = nodeLabels.map(label => ({
+let nodes = [];
+let nodeLabels = ['A', 'B', 'C', 'D', 'E'];
+nodes = nodeLabels.map(label => ({
     label,
     x: randomCoordinate(),
     y: randomCoordinate()
 }));
 
 // Generate random lines connecting nodes
-const lines = [];
-const numLines = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
+let lines = [];
+let numLines = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
 for (let i = 0; i < numLines; i++) {
     let [n1, n2] = [nodes[Math.floor(Math.random() * nodes.length)], nodes[Math.floor(Math.random() * nodes.length)]];
     while (n1 === n2 || lines.some(line => (line.node0 === n1 && line.node1 === n2) || (line.node0 === n2 && line.node1 === n1))) {
@@ -195,6 +196,12 @@ function drawGraph() {
  * This method does not guarantee a globally optimal shortest path but provides a computationally efficient approximation.
  * The function returns an object containing a string representation of the traversal sequence and the total path length rounded to two decimal places.
  * Dependencies: This function requires a calculateDistance function to compute Euclidean distances between nodes.
+ * 
+ * @param {Object} startNode - The starting node of traversal, containing {label, x, y}.
+ * @param {Array} allNodes - Array of all node objects each containing {label, x, y}.
+ * @returns {Object} An object with properties:
+ *   - path: A string representing node traversal order (e.g., "A → B → D").
+ *   - length: Total length of the path, rounded to two decimal places.
  */
 function shortestPath(startNode, allNodes) {
     const visited = [startNode];
@@ -260,6 +267,55 @@ function generate_random_graph_and_data_about_that_graph() {
 	const time_stamped_message = "The generate_random_graph_and_data_about_that_graph() function was called " + generate_time_stamp(), p0 = "<p>", p1 = "</p>";
 	console.log(time_stamped_message);
 	document.getElementById("time_stamped_messages").innerHTML += p0 + time_stamped_message + p1;
+    resetGraphData();
+    clearGraphElements();
 	drawGraph();
 	displayInfo();
+}
+
+function clearGraphElements() {
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Define the area where nodes and edges exist
+    const width = canvas.width;
+    const height = canvas.height;
+
+    // Use a composite operation to only clear nodes and lines while keeping the grid
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillRect(0, 0, width, height);
+    ctx.globalCompositeOperation = 'source-over';
+
+    // Redraw the grid after clearing nodes and edges
+    drawGrid(ctx, width, height);
+}
+
+function resetGraphData() {
+    nodes.length = 0;  // Clear the existing array
+    lines.length = 0;  // Clear the existing array
+    console.log("Graph data has been reset.");
+
+    generateNewGraphData();  // Reinitialize nodes and lines
+}
+
+function generateNewGraphData() {
+    // Generate new nodes
+    let nodeLabels = ['A', 'B', 'C', 'D', 'E'];
+    nodes = nodeLabels.map(label => ({
+        label,
+        x: randomCoordinate(),
+        y: randomCoordinate()
+    }));
+
+    // Generate new random lines
+    let numLines = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
+    for (let i = 0; i < numLines; i++) {
+        let n1, n2;
+        do {
+            n1 = nodes[Math.floor(Math.random() * nodes.length)];
+            n2 = nodes[Math.floor(Math.random() * nodes.length)];
+        } while (n1 === n2 || lines.some(line => (line.node0 === n1 && line.node1 === n2) || (line.node0 === n2 && line.node1 === n1)));
+
+        lines.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
+    }
 }
