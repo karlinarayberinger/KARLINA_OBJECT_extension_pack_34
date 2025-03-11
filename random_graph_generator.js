@@ -148,13 +148,18 @@ for (let i = 0; i < numLines; i++) {
  * Dependencies: This function requires a global 'nodes' array containing labeled coordinate points and a 'lines' array defining connections between nodes.
  */
 function drawGraph() {
-	const canvas = document.getElementById('graphCanvas');
-	const ctx = canvas.getContext('2d');
-	const width = canvas.width;
-	const height = canvas.height;
-	const centerX = width / 2;
-	const centerY = height / 2;
-	const scale = 20; // pixels per grid unit
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const scale = 20; // pixels per grid unit
+
+    // Adjust font settings for better readability
+    ctx.font = '14px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
 
     // Draw Lines
     ctx.strokeStyle = 'blue';
@@ -172,8 +177,13 @@ function drawGraph() {
         ctx.beginPath();
         ctx.arc(centerX + node.x * scale, centerY - node.y * scale, 4, 0, 2 * Math.PI);
         ctx.fill();
+
+        // Adjust label positioning to prevent cutoff
+        const labelOffsetX = node.x >= 0 ? 10 : -10; // Shift right for positive x, left for negative x
+        const labelOffsetY = node.y >= 0 ? -10 : 10; // Shift up for positive y, down for negative y
+
         ctx.fillStyle = 'black';
-        ctx.fillText(node.label, centerX + node.x * scale + 5, centerY - node.y * scale - 5);
+        ctx.fillText(node.label, centerX + node.x * scale + labelOffsetX, centerY - node.y * scale + labelOffsetY);
     });
 }
 
