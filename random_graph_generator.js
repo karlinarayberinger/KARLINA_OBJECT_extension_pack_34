@@ -167,6 +167,31 @@ for (let i = 0; i < numEdges; i++) {
     }
     edges.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
 }
+
+// Global graph variable
+let graph = {};
+
+function createGraph(nodes, edges) {
+    graph = {}; // Reset global graph
+
+    // Initialize graph with empty arrays for each node label
+    nodes.forEach(node => {
+        graph[node.label] = [];
+    });
+
+    // Add edges to the graph
+    edges.forEach(edge => {
+        let from = edge.node0.label;
+        let to = edge.node1.label;
+        if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
+            graph[from].push(to);
+            graph[to].push(from); // Assuming undirected graph
+        }
+    });
+}
+
+// Generate the graph from the global nodes and edges
+createGraph(nodes, edges);
 /**-----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /**
@@ -238,6 +263,18 @@ function displayInfo() {
 
     //const shortest = shortestPath(nodes[0], nodes);
     //html += `<strong>Shortest Path Starting at ${nodes[0].label}:</strong> ${shortest.path} (Total Length: ${shortest.length})`;
+
+    // Generate and display all traversal paths starting from 'A'
+    if (graph['A']) {
+        let traversals = findAllTraversals(graph, 'A');
+        html += '<strong>All Traversals Starting at A:</strong><ul>';
+        traversals.forEach((path, index) => {
+            html += `<li>Traversal ${index + 1}: ${path}</li>`;
+        });
+        html += '</ul>';
+    } else {
+        html += '<strong>All Traversals Starting at A:</strong> No valid paths found from A.';
+    }
 
     infoDiv.innerHTML = html;
 }
@@ -325,4 +362,35 @@ function generateNewGraphData() {
 
         edges.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
     }
+}
+
+function findAllTraversals(graph, startNode) {
+    let paths = [];
+
+    function traverse(node, path, visitedEdges, cycleUsed) {
+        path.push(node);
+
+        let hasUnvisited = false;
+        for (let neighbor of graph[node] || []) {
+            let edgeKey = `${node}-${neighbor}`;
+            let reverseEdgeKey = `${neighbor}-${node}`;
+
+            if (!visitedEdges.has(edgeKey) || !cycleUsed) {
+                hasUnvisited = true;
+                let newVisitedEdges = new Set(visitedEdges);
+                newVisitedEdges.add(edgeKey);
+                newVisitedEdges.add(reverseEdgeKey); // Treat as an undirected graph
+                
+                traverse(neighbor, [...path], newVisitedEdges, cycleUsed || visitedEdges.has(edgeKey));
+            }
+        }
+
+        if (!hasUnvisited) {
+            paths.push(path.join(" -> "));
+        }
+    }
+
+    traverse(startNode, [], new Set(), false);
+
+    return paths;
 }
