@@ -245,6 +245,10 @@ function displayInfo() {
 /**
  * Append a time-stamped message to the bottom of the web page indicating when the function, generate_random_graph_and_data_about_that_graph(), was called.
  * 
+ * Assume this function was called in response to the GENERATE button on random_graph_generator.html getting clicked.
+ * 
+ * Each time that button is clicked, a new instance of a randomized graph consisting of 5 nodes and up to 10 edges is drawn on the HTML5 canvas.
+ * 
  * Generate up to five randomized NODE instances such that each NODE instance is a software object consisting of two data attributes: 
  * integers representing a horizontal and a vertical position on a Cartesian plane within 10 units of the Cartesian plane's center point.
  * 
@@ -261,6 +265,9 @@ function generate_random_graph_and_data_about_that_graph() {
     displayInfo();
 }
 
+/**
+ * Remove NODE and EDGE components from the HTML5 canvas on the web page whose source code file is named random_graph_generator.html.
+ */
 function clearGraphElements() {
     const canvas = document.getElementById('graphCanvas');
     const ctx = canvas.getContext('2d');
@@ -278,14 +285,25 @@ function clearGraphElements() {
     drawGrid(ctx, width, height);
 }
 
+/**
+ * Delete the data inside of the arrays named nodes and edges.
+ * 
+ * Re-populate the canvas with a new randomized graph.
+ */
 function resetGraphData() {
-    nodes.length = 0;  // Clear the existing array
-    edges.length = 0;  // Clear the existing array
+    nodes = [];
+    edges = [];
     console.log("Graph data has been reset.");
 
-    generateNewGraphData();  // Reinitialize nodes and lines
+    generateNewGraphData();  // Reinitialize nodes and edges
 }
 
+/**
+ * Generate EDGE instances which represent connections between NODE instances within the context of a graph.
+ * 
+ * In the context of this software application, a graph consists of some natural number of point-sized nodes
+ * and line-segment edges whose end-points are two non-identical nodes.
+ */
 function generateNewGraphData() {
     // Generate new nodes
     let nodeLabels = ['A', 'B', 'C', 'D', 'E'];
