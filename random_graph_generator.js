@@ -265,6 +265,7 @@ function displayInfo() {
     //html += `<strong>Shortest Path Starting at ${nodes[0].label}:</strong> ${shortest.path} (Total Length: ${shortest.length})`;
 
     // Generate and display all traversal paths starting from 'A'
+    /*
     if (graph['A']) {
         let traversals = findAllTraversals(graph, 'A');
         html += '<strong>All Traversals Starting at A:</strong><ul>';
@@ -275,6 +276,7 @@ function displayInfo() {
     } else {
         html += '<strong>All Traversals Starting at A:</strong> No valid paths found from A.';
     }
+    */
 
     // Generate and display all traversal paths starting from 'A'
     /*
@@ -291,8 +293,12 @@ function displayInfo() {
         html += '</ul>';
     } else {
         html += '<strong>All Traversals Starting at A:</strong> No valid paths found from A.';
-    }*/
+    }
+    */
 
+    // Generate and display the plain-text graph representation
+    let graphText = generateGraphText(graph);
+    html += `<pre>${graphText}</pre>`; // Use <pre> to preserve formatting
 
     infoDiv.innerHTML = html;
 }
@@ -471,4 +477,37 @@ function calculateTraversalDistances(graph) {
     return traversalData;
 }
 
+function printGraph(graph) {
+    console.log("\n📌 Visual Representation of the Graph\n");
+
+    // Determine unique edges (avoiding duplicate bidirectional edges)
+    let printedEdges = new Set();
+
+    Object.keys(graph).forEach(node => {
+        let connections = graph[node]
+            .filter(neighbor => !printedEdges.has(`${neighbor}-${node}`)) // Avoid duplicate A-B & B-A
+            .map(neighbor => {
+                printedEdges.add(`${node}-${neighbor}`); // Mark edge as printed
+                return `───► ${neighbor}`;
+            })
+            .join("  "); // Space between edges
+
+        console.log(`(${node}) ${connections}`);
+    });
+
+    console.log("\n");
+}
+
+function generateGraphText(graph) {
+    let output = "Graph Representation:\n\n";
+
+    Object.keys(graph).forEach(node => {
+        let connections = graph[node].length > 0 
+            ? graph[node].join(", ") 
+            : "No connections";
+        output += `${node}: ${connections}\n`;
+    });
+
+    return output;
+}
 
