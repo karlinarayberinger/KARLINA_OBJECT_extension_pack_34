@@ -171,6 +171,27 @@ for (let i = 0; i < numEdges; i++) {
 // Global graph variable
 let graph = {};
 
+/*
+function createGraph(nodes, edges) {
+    graph = {}; // Reset global graph
+    nodes.forEach(node => {
+        graph[node.label] = [];
+    });
+
+    edges.forEach(edge => {
+        let from = edge.node0.label;
+        let to = edge.node1.label;
+        if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
+            if (!graph[from].includes(to)) graph[from].push(to);
+            if (!graph[to].includes(from)) graph[to].push(from);
+        }
+    });
+
+    console.log("Adjacency List Debug:", graph);
+}
+*/
+
+/*
 function createGraph(nodes, edges) {
     graph = {}; // Reset global graph
 
@@ -179,15 +200,100 @@ function createGraph(nodes, edges) {
         graph[node.label] = [];
     });
 
-    // Add edges to the graph
+    // Ensure adjacency list only reflects actual edges
     edges.forEach(edge => {
         let from = edge.node0.label;
         let to = edge.node1.label;
+        
         if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
-            graph[from].push(to);
-            graph[to].push(from); // Assuming undirected graph
+            if (!graph[from].includes(to)) graph[from].push(to);
+            if (!graph[to].includes(from)) graph[to].push(from);
         }
     });
+
+    console.log("Final Adjacency List:", graph); // Debugging output
+}
+*/
+
+/*
+function createGraph(nodes, edges) {
+    graph = {}; // Reset global graph
+
+    // Initialize graph with empty arrays for each node label
+    nodes.forEach(node => {
+        graph[node.label] = [];
+    });
+
+    // Ensure adjacency list strictly follows edge list
+    edges.forEach(edge => {
+        let from = edge.node0.label;
+        let to = edge.node1.label;
+        
+        if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
+            if (!graph[from].includes(to)) graph[from].push(to);
+            if (!graph[to].includes(from)) graph[to].push(from);
+        }
+    });
+
+    // Debugging: Log final adjacency list for verification
+    console.log("Final Adjacency List:", graph);
+}
+*/
+
+/*
+function createGraph(nodes, edges) {
+    graph = {}; // Reset global graph
+
+    // Initialize graph with empty arrays for each node label
+    nodes.forEach(node => {
+        graph[node.label] = [];
+    });
+
+    // Ensure adjacency list strictly follows edge list
+    edges.forEach(edge => {
+        let from = edge.node0.label;
+        let to = edge.node1.label;
+        
+        if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
+            if (!graph[from].includes(to) && edges.some(e => (e.node0.label === from && e.node1.label === to) || (e.node0.label === to && e.node1.label === from))) {
+                graph[from].push(to);
+            }
+            if (!graph[to].includes(from) && edges.some(e => (e.node0.label === from && e.node1.label === to) || (e.node0.label === to && e.node1.label === from))) {
+                graph[to].push(from);
+            }
+        }
+    });
+
+    // Debugging: Log final adjacency list for verification
+    console.log("Final Adjacency List:", graph);
+}
+*/
+
+function createGraph(nodes, edges) {
+    graph = {}; // Reset global graph
+
+    // Initialize graph with empty arrays for each node label
+    nodes.forEach(node => {
+        graph[node.label] = [];
+    });
+
+    // Add edges ensuring bidirectionality and correctness
+    edges.forEach(edge => {
+        let from = edge.node0.label;
+        let to = edge.node1.label;
+        
+        if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
+            if (!graph[from].includes(to)) {
+                graph[from].push(to);
+            }
+            if (!graph[to].includes(from)) {
+                graph[to].push(from);
+            }
+        }
+    });
+
+    // Debugging: Log final adjacency list for verification
+    console.log("Final Adjacency List:", JSON.stringify(graph, null, 2));
 }
 
 // Generate the graph from the global nodes and edges
@@ -297,8 +403,16 @@ function displayInfo() {
     */
 
     // Generate and display the plain-text graph representation
-    let graphText = generateGraphText(graph);
-    html += `<pre>${graphText}</pre>`; // Use <pre> to preserve formatting
+    // let graphText = generateGraphText(graph);
+    // html += `<pre>${graphText}</pre>`; // Use <pre> to preserve formatting
+
+    // Generate adjacency list and display it
+    let adjacencyArray = generateAdjacencyArray(graph);
+    html += "<strong>Graph Representation:</strong><pre>";
+    adjacencyArray.forEach(entry => {
+        html += entry[0] + ": " + entry.slice(1).join(", ") + "\n";
+    });
+    html += "</pre>";
 
     infoDiv.innerHTML = html;
 }
@@ -386,6 +500,9 @@ function generateNewGraphData() {
 
         edges.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
     }
+
+// Generate the graph from the global nodes and edges
+createGraph(nodes, edges);
 }
 
 function findAllTraversals(graph, startNode) {
@@ -510,4 +627,31 @@ function generateGraphText(graph) {
 
     return output;
 }
+
+/**
+ * This function converts the graph object into an adjacency array format.
+ * Each element of the array represents a node and its connections.
+ * The first element of each sub-array is the node itself, followed by its neighbors.
+ * Example output:
+ * [
+ *   ["A", "B", "C", "D"],
+ *   ["B", "A", "C"],
+ *   ["C", "A", "B", "E"],
+ *   ["D", "A", "E"],
+ *   ["E", "C", "D"]
+ * ]
+ * @param {Object} graph - The adjacency list representation of the graph.
+ * @returns {Array} adjacencyArray - The adjacency array representation of the graph.
+ */
+function generateAdjacencyArray(graph) {
+    let adjacencyArray = [];
+    Object.keys(graph).forEach(node => {
+        adjacencyArray.push([node, ...graph[node]]);
+    });
+    console.log("Adjacency Array:", JSON.stringify(adjacencyArray, null, 2));
+    return adjacencyArray;
+}
+
+
+
 
