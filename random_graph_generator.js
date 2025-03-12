@@ -2,7 +2,7 @@
  * file: random_graph_generator.js
  * type: JavaScript
  * author: karbytes
- * date: 11_MARCH_2025
+ * date: 12_MARCH_2025
  * license: PUBLIC_DOMAIN
  */
 
@@ -132,6 +132,7 @@ function calculateDistance(a, b) {
 
 /**-----------------------------------------------------------------------------------------------------------------------------------------------------*/
 /** The following global variables store data which changes each time the GENERATE button is clicked on the web page named random_graph_generator.html. */
+/**-----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 // Generate five random non-identical NODE instances.
 let nodeLabels = ['A', 'B', 'C', 'D', 'E'];
@@ -171,104 +172,6 @@ for (let i = 0; i < numEdges; i++) {
 // Global graph variable
 let graph = {};
 
-/*
-function createGraph(nodes, edges) {
-    graph = {}; // Reset global graph
-    nodes.forEach(node => {
-        graph[node.label] = [];
-    });
-
-    edges.forEach(edge => {
-        let from = edge.node0.label;
-        let to = edge.node1.label;
-        if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
-            if (!graph[from].includes(to)) graph[from].push(to);
-            if (!graph[to].includes(from)) graph[to].push(from);
-        }
-    });
-
-    console.log("Adjacency List Debug:", graph);
-}
-*/
-
-/*
-function createGraph(nodes, edges) {
-    graph = {}; // Reset global graph
-
-    // Initialize graph with empty arrays for each node label
-    nodes.forEach(node => {
-        graph[node.label] = [];
-    });
-
-    // Ensure adjacency list only reflects actual edges
-    edges.forEach(edge => {
-        let from = edge.node0.label;
-        let to = edge.node1.label;
-        
-        if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
-            if (!graph[from].includes(to)) graph[from].push(to);
-            if (!graph[to].includes(from)) graph[to].push(from);
-        }
-    });
-
-    console.log("Final Adjacency List:", graph); // Debugging output
-}
-*/
-
-/*
-function createGraph(nodes, edges) {
-    graph = {}; // Reset global graph
-
-    // Initialize graph with empty arrays for each node label
-    nodes.forEach(node => {
-        graph[node.label] = [];
-    });
-
-    // Ensure adjacency list strictly follows edge list
-    edges.forEach(edge => {
-        let from = edge.node0.label;
-        let to = edge.node1.label;
-        
-        if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
-            if (!graph[from].includes(to)) graph[from].push(to);
-            if (!graph[to].includes(from)) graph[to].push(from);
-        }
-    });
-
-    // Debugging: Log final adjacency list for verification
-    console.log("Final Adjacency List:", graph);
-}
-*/
-
-/*
-function createGraph(nodes, edges) {
-    graph = {}; // Reset global graph
-
-    // Initialize graph with empty arrays for each node label
-    nodes.forEach(node => {
-        graph[node.label] = [];
-    });
-
-    // Ensure adjacency list strictly follows edge list
-    edges.forEach(edge => {
-        let from = edge.node0.label;
-        let to = edge.node1.label;
-        
-        if (graph.hasOwnProperty(from) && graph.hasOwnProperty(to)) {
-            if (!graph[from].includes(to) && edges.some(e => (e.node0.label === from && e.node1.label === to) || (e.node0.label === to && e.node1.label === from))) {
-                graph[from].push(to);
-            }
-            if (!graph[to].includes(from) && edges.some(e => (e.node0.label === from && e.node1.label === to) || (e.node0.label === to && e.node1.label === from))) {
-                graph[to].push(from);
-            }
-        }
-    });
-
-    // Debugging: Log final adjacency list for verification
-    console.log("Final Adjacency List:", graph);
-}
-*/
-
 function createGraph(nodes, edges) {
     graph = {}; // Reset global graph
 
@@ -293,11 +196,13 @@ function createGraph(nodes, edges) {
     });
 
     // Debugging: Log final adjacency list for verification
-    console.log("Final Adjacency List:", JSON.stringify(graph, null, 2));
+    // console.log("Final Adjacency List:", JSON.stringify(graph, null, 2));
 }
 
 // Generate the graph from the global nodes and edges
 createGraph(nodes, edges);
+/**-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/** End of global variables initialization (nodes, edges, graph)                                                                                                       */
 /**-----------------------------------------------------------------------------------------------------------------------------------------------------*/
 
 /**
@@ -350,7 +255,7 @@ function drawGraph() {
     });
 }
 
-// Display Information Below Canvas
+// Display Information Below Canvas (after the GENERATE button is clicked)
 function displayInfo() {
     const infoDiv = document.getElementById('graphInfo');
     let html = '<h3>Graph Information</h3>';
@@ -367,8 +272,13 @@ function displayInfo() {
     });
     html += '</ul>';
 
-    //const shortest = shortestPath(nodes[0], nodes);
-    //html += `<strong>Shortest Path Starting at ${nodes[0].label}:</strong> ${shortest.path} (Total Length: ${shortest.length})`;
+    // Generate adjacency list and display it
+    let adjacencyArray = generateAdjacencyArray(graph);
+    html += "<strong>Graph Representation:</strong><pre>";
+    adjacencyArray.forEach(entry => {
+        html += entry[0] + ": " + entry.slice(1).join(", ") + "\n";
+    });
+    html += "</pre>";
 
     // Generate and display all traversal paths starting from 'A'
     /*
@@ -384,35 +294,19 @@ function displayInfo() {
     }
     */
 
-    // Generate and display all traversal paths starting from 'A'
-    /*
     if (graph['A']) {
-        let traversalResults = calculateTraversalDistances(graph); // Get traversal data (paths + distances)
-
+        let traversalResults = calculateTraversalDistances(graph, edges, 'A');
         html += '<strong>All Traversals Starting at A:</strong><ul>';
         traversalResults.forEach((entry, index) => {
             let distanceText = (typeof entry.totalDistance === 'number' && !isNaN(entry.totalDistance))
                 ? entry.totalDistance.toFixed(2) 
                 : "Unknown";
-            html += `<li>Traversal ${index + 1}: ${entry.traversal} (Total Distance: ${distanceText})</li>`;
+            html += `<li>Traversal ${index + 1}: ${entry.path} (Total Distance: ${distanceText})</li>`;
         });
         html += '</ul>';
     } else {
         html += '<strong>All Traversals Starting at A:</strong> No valid paths found from A.';
     }
-    */
-
-    // Generate and display the plain-text graph representation
-    // let graphText = generateGraphText(graph);
-    // html += `<pre>${graphText}</pre>`; // Use <pre> to preserve formatting
-
-    // Generate adjacency list and display it
-    let adjacencyArray = generateAdjacencyArray(graph);
-    html += "<strong>Graph Representation:</strong><pre>";
-    adjacencyArray.forEach(entry => {
-        html += entry[0] + ": " + entry.slice(1).join(", ") + "\n";
-    });
-    html += "</pre>";
 
     infoDiv.innerHTML = html;
 }
@@ -501,10 +395,43 @@ function generateNewGraphData() {
         edges.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
     }
 
-// Generate the graph from the global nodes and edges
-createGraph(nodes, edges);
+    // Generate the graph from the global nodes and edges
+    createGraph(nodes, edges);
 }
 
+/**
+ * This function converts the graph object into an adjacency array format.
+ * Each element of the array represents a node and its connections.
+ * The first element of each sub-array is the node itself, followed by its neighbors.
+ * Example output:
+ * [
+ *   ["A", "B", "C", "D"],
+ *   ["B", "A", "C"],
+ *   ["C", "A", "B", "E"],
+ *   ["D", "A", "E"],
+ *   ["E", "C", "D"]
+ * ]
+ * @param {Object} graph - The adjacency list representation of the graph.
+ * @returns {Array} adjacencyArray - The adjacency array representation of the graph.
+ */
+function generateAdjacencyArray(graph) {
+    let adjacencyArray = [];
+    Object.keys(graph).forEach(node => {
+        adjacencyArray.push([node, ...graph[node]]);
+    });
+    console.log("Adjacency Array:", JSON.stringify(adjacencyArray, null, 2));
+    return adjacencyArray;
+}
+
+/**
+ * This function finds all possible traversal paths in the graph
+ * starting from a given node. It allows cycles and backtracking.
+ * Each path follows edges between connected nodes and tracks visited edges.
+ *
+ * @param {Object} graph - The adjacency list representation of the graph.
+ * @param {string} startNode - The node to start traversals from.
+ * @returns {Array} paths - An array of all possible traversal paths.
+ */
 function findAllTraversals(graph, startNode) {
     let paths = [];
 
@@ -536,120 +463,48 @@ function findAllTraversals(graph, startNode) {
     return paths;
 }
 
-function extractEdgeDistances(traversals, edges) {
-    let edgeDistances = new Map();
-
-    // Convert edge list to a lookup dictionary for quick distance retrieval
-    let edgeLookup = new Map();
-    edges.forEach(edge => {
-        let key1 = `${edge.node0.label} -> ${edge.node1.label}`;
-        let key2 = `${edge.node1.label} -> ${edge.node0.label}`; // Assume undirected graph
-        edgeLookup.set(key1, edge.length);
-        edgeLookup.set(key2, edge.length);
-    });
-
-    // Iterate through each traversal and extract unique edges
-    traversals.forEach(path => {
-        let nodes = path.split(" -> ");
-        for (let i = 0; i < nodes.length - 1; i++) {
-            let edgeKey = `${nodes[i]} -> ${nodes[i + 1]}`;
-            
-            if (edgeLookup.has(edgeKey)) {
-                edgeDistances.set(edgeKey, edgeLookup.get(edgeKey));
-            } else {
-                console.warn(`Edge not found in original edges list: ${edgeKey}`);
-            }
-        }
-    });
-
-    return Object.fromEntries(edgeDistances);
-}
-
-function calculateTraversalDistances(graph) {
-    let traversals = findAllTraversals(graph, 'A'); // Get all traversal paths
-    let edgeDistanceMap = extractEdgeDistances(traversals, edges); // Get edge distances
-
-    let traversalData = traversals.map(path => {
-        let nodes = path.split(" -> ");
-        let totalDistance = 0;
-        let validPath = true;
-
-        for (let i = 0; i < nodes.length - 1; i++) {
-            let edgeKey = `${nodes[i]} -> ${nodes[i + 1]}`;
-
-            if (edgeDistanceMap.hasOwnProperty(edgeKey)) {
-                totalDistance += edgeDistanceMap[edgeKey];
-            } else {
-                validPath = false;
-                break; // Stop if an edge is missing
-            }
-        }
-
-        return {
-            traversal: path,
-            totalDistance: validPath ? totalDistance : "Unknown"
-        };
-    });
-
-    return traversalData;
-}
-
-function printGraph(graph) {
-    console.log("\n📌 Visual Representation of the Graph\n");
-
-    // Determine unique edges (avoiding duplicate bidirectional edges)
-    let printedEdges = new Set();
-
-    Object.keys(graph).forEach(node => {
-        let connections = graph[node]
-            .filter(neighbor => !printedEdges.has(`${neighbor}-${node}`)) // Avoid duplicate A-B & B-A
-            .map(neighbor => {
-                printedEdges.add(`${node}-${neighbor}`); // Mark edge as printed
-                return `───► ${neighbor}`;
-            })
-            .join("  "); // Space between edges
-
-        console.log(`(${node}) ${connections}`);
-    });
-
-    console.log("\n");
-}
-
-function generateGraphText(graph) {
-    let output = "Graph Representation:\n\n";
-
-    Object.keys(graph).forEach(node => {
-        let connections = graph[node].length > 0 
-            ? graph[node].join(", ") 
-            : "No connections";
-        output += `${node}: ${connections}\n`;
-    });
-
-    return output;
-}
-
 /**
- * This function converts the graph object into an adjacency array format.
- * Each element of the array represents a node and its connections.
- * The first element of each sub-array is the node itself, followed by its neighbors.
- * Example output:
- * [
- *   ["A", "B", "C", "D"],
- *   ["B", "A", "C"],
- *   ["C", "A", "B", "E"],
- *   ["D", "A", "E"],
- *   ["E", "C", "D"]
- * ]
+ * This function calculates the total minimum distance for each path
+ * returned from findAllTraversals.
+ *
  * @param {Object} graph - The adjacency list representation of the graph.
- * @returns {Array} adjacencyArray - The adjacency array representation of the graph.
+ * @param {Array} edges - The list of edges with their lengths.
+ * @param {string} startNode - The node to start traversals from.
+ * @returns {Array} pathsWithDistances - An array of objects where each
+ *          object contains a traversal path and its total minimum distance.
  */
-function generateAdjacencyArray(graph) {
-    let adjacencyArray = [];
-    Object.keys(graph).forEach(node => {
-        adjacencyArray.push([node, ...graph[node]]);
+function calculateTraversalDistances(graph, edges, startNode) {
+    let traversals = findAllTraversals(graph, startNode);
+    let edgeMap = new Map();
+
+    // Create a mapping of edges to their respective distances
+    edges.forEach(edge => {
+        let key = `${edge.node0.label}-${edge.node1.label}`;
+        let reverseKey = `${edge.node1.label}-${edge.node0.label}`;
+        edgeMap.set(key, edge.length);
+        edgeMap.set(reverseKey, edge.length);
     });
-    console.log("Adjacency Array:", JSON.stringify(adjacencyArray, null, 2));
-    return adjacencyArray;
+
+    // Calculate the total minimum distance for each traversal
+    let pathsWithDistances = traversals.map(pathStr => {
+        let pathNodes = pathStr.split(" -> ");
+        let visitedEdges = new Set();
+        let totalDistance = 0;
+
+        for (let i = 0; i < pathNodes.length - 1; i++) {
+            let edgeKey = `${pathNodes[i]}-${pathNodes[i + 1]}`;
+            let reverseEdgeKey = `${pathNodes[i + 1]}-${pathNodes[i]}`;
+            
+            if (!visitedEdges.has(edgeKey) && edgeMap.has(edgeKey)) {
+                totalDistance += edgeMap.get(edgeKey);
+                visitedEdges.add(edgeKey);
+                visitedEdges.add(reverseEdgeKey);
+            }
+        }
+        return { path: pathStr, totalDistance: totalDistance };
+    });
+
+    return pathsWithDistances;
 }
 
 
