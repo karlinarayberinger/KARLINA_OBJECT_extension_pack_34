@@ -481,8 +481,8 @@ function calculateTraversalDistances(graph, edges, startNode) {
     edges.forEach(edge => {
         let key = `${edge.node0.label}-${edge.node1.label}`;
         let reverseKey = `${edge.node1.label}-${edge.node0.label}`;
-        edgeMap.set(key, edge.length);
-        edgeMap.set(reverseKey, edge.length);
+        edgeMap.set(key, Math.ceil(parseFloat(edge.length))); // Ensure nonzero integer
+        edgeMap.set(reverseKey, Math.ceil(parseFloat(edge.length)));
     });
 
     // Calculate the total minimum distance for each traversal
@@ -490,6 +490,7 @@ function calculateTraversalDistances(graph, edges, startNode) {
         let pathNodes = pathStr.split(" -> ");
         let visitedEdges = new Set();
         let totalDistance = 0;
+        let validPath = true;
 
         for (let i = 0; i < pathNodes.length - 1; i++) {
             let edgeKey = `${pathNodes[i]}-${pathNodes[i + 1]}`;
@@ -499,9 +500,13 @@ function calculateTraversalDistances(graph, edges, startNode) {
                 totalDistance += edgeMap.get(edgeKey);
                 visitedEdges.add(edgeKey);
                 visitedEdges.add(reverseEdgeKey);
+            } else {
+                validPath = false;
+                break;
             }
         }
-        return { path: pathStr, totalDistance: totalDistance };
+
+        return { path: pathStr, distance: validPath ? totalDistance : Infinity };
     });
 
     return pathsWithDistances;
