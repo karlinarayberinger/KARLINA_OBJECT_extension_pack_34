@@ -282,6 +282,7 @@ function displayInfo() {
 
     if (graph['A']) {
         let traversalResults = calculateTraversalDistances(graph, edges, 'A');
+        //traversalResults = sortTraversalsByDistance(traversalResults);
         html += '<strong>All Traversals Starting at A:</strong><ul>';
         traversalResults.forEach((entry, index) => {
             let distanceText = (typeof entry.distance === 'number' && !isNaN(entry.distance))
@@ -478,6 +479,7 @@ function sumEdgeLengths(traversal) {
  * @param {Object} startNode - The starting node for traversal.
  * @return {Array} - An array of traversal paths and their respective distances.
  */
+/*
 function calculateTraversalDistances(graph, edges, startNode) {
     let traversals = findAllTraversals(graph, startNode);
     let edgeMap = new Map();
@@ -535,6 +537,111 @@ function calculateTraversalDistances(graph, edges, startNode) {
     });
 
     return pathsWithDistances;
+}
+*/
+
+/**
+ * Sort the traversals in order of their distance from shortest to longest.
+ * 
+ * @param {Array} traversals - An array of traversal objects containing paths and distances.
+ * @return {Array} - The sorted array of traversals.
+ */
+/*
+function sortTraversalsByDistance(traversals) {
+    if (traversals.length === 0) {
+        console.warn("No traversals provided.");
+        return [];
+    }
+
+    // Ensure all traversals have a valid totalLength
+    let validTraversals = traversals.filter(traversal => traversal.totalLength !== "Unknown (Missing Edges)");
+
+    // Sort by totalLength in ascending order
+    validTraversals.sort((a, b) => a.totalLength - b.totalLength);
+
+    console.log("Sorted Traversals (Shortest to Longest):");
+    validTraversals.forEach(traversal => {
+        console.log(`Traversal: ${traversal.traversal.map(edge => `(${edge.node0.label} → ${edge.node1.label})`).join(" -> ")} | Total Distance: ${traversal.totalLength.toFixed(2)}`);
+    });
+
+    return validTraversals;
+}*/
+
+/**
+ * Calculate the total distances for all traversals from a given start node.
+ * Uses sumEdgeLengths(traversal) to compute distances and sorts them from shortest to longest.
+ * 
+ * @param {Array} graph - The graph containing nodes.
+ * @param {Array} edges - The list of edges with nodes.
+ * @param {Object} startNode - The starting node for traversal.
+ * @return {Array} - A sorted array of traversal paths and their respective distances.
+ */
+function calculateTraversalDistances(graph, edges, startNode) {
+    let traversals = findAllTraversals(graph, startNode);
+    let edgeMap = new Map();
+
+    console.log("Generating Edge Map...");
+
+    // Create a mapping of edges to their respective distances
+    edges.forEach(edge => {
+        let key = `${edge.node0.label}-${edge.node1.label}`;
+        let reverseKey = `${edge.node1.label}-${edge.node0.label}`;
+        let distance = Math.max(1, Math.ceil(parseFloat(calculateDistance(edge.node0, edge.node1)))); // Ensure nonzero integer
+
+        edgeMap.set(key, { distance, edge });
+        edgeMap.set(reverseKey, { distance, edge });
+        console.log(`Mapped Edge: ${key} & ${reverseKey} → Distance: ${distance}`);
+    });
+
+    console.log("Edge Map:", edgeMap);
+
+    // Calculate the total minimum distance for each traversal using sumEdgeLengths
+    let pathsWithDistances = traversals.map(pathStr => {
+        let pathNodes = pathStr.split(" -> ").map(node => node.trim());
+        let traversalEdges = [];
+        let validPath = true;
+
+        console.log(`Processing Traversal: ${pathStr}`);
+
+        for (let i = 0; i < pathNodes.length - 1; i++) {
+            let node0 = pathNodes[i];
+            let node1 = pathNodes[i + 1];
+            let edgeKey = `${node0}-${node1}`;
+            let reverseEdgeKey = `${node1}-${node0}`;
+
+            console.log(`Checking Edge: ${edgeKey}`);
+
+            if (edgeMap.has(edgeKey)) {
+                let edgeObj = edgeMap.get(edgeKey);
+                console.log(`Found Edge: ${edgeKey} → Distance: ${edgeObj.distance}`);
+                traversalEdges.push(edgeObj.edge);
+            } else {
+                console.warn(`Edge Missing: ${edgeKey} or ${reverseEdgeKey} not found in Edge Map`);
+                validPath = false;
+                break; // Invalid path due to missing edge
+            }
+        }
+
+        if (validPath && traversalEdges.length > 0) {
+            let totalDistance = sumEdgeLengths(traversalEdges);
+            console.log(`Traversal: ${pathStr} | Total Distance: ${totalDistance}`);
+            return { path: pathStr, distance: totalDistance };
+        } else {
+            console.warn(`Traversal: ${pathStr} | Total Distance: Unknown (Missing Edges)`);
+            return { path: pathStr, distance: "Unknown (Missing Edges)" };
+        }
+    });
+
+    // Sort traversals from shortest to longest distance
+    let validPaths = pathsWithDistances.filter(traversal => traversal.distance !== "Unknown (Missing Edges)");
+    validPaths.sort((a, b) => a.distance - b.distance);
+
+    console.log("Sorted Traversals (Shortest to Longest):");
+    validPaths.forEach(traversal => {
+        console.log(`Traversal: ${traversal.path} | Total Distance: ${traversal.distance.toFixed(2)}`);
+    });
+
+    return validPaths;
 }
 
 
