@@ -1,0 +1,705 @@
+<hr>
+<p><strong>RANDOM_GRAPH_GENERATOR</strong></p>
+<hr>
+<p><span style="background:#ffff00">The <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Single-page_application" target="_blank" rel="noopener">single web page application</a> featured in this tutorial web page allows the user to generate a &#8220;randomized&#8221; <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Graph_(discrete_mathematics)" target="_blank" rel="noopener">graph</a> consisting of five nodes and up to ten edges (which is drawn on an <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Canvas_element" target="_blank" rel="noopener">HTML5 graph</a> with a labeled <a style="background:#000000;color:#00ff00" href="https://karlinaobject.wordpress.com/point/" target="_blank" rel="noopener">Cartesian grid</a>). Each time the user clicks on the GENERATE button, a new &#8220;randomized&#8221; graph is depicted along with the following information about that graph: (0) each NODE whole-number coordinate pair and alphabetical label, (1) each EDGE end-point pair, alphanumeric label, and length, (2) each possible traversal path starting at the node labeled A, while visiting every edge-adjacent node in the graph, and while traversing <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Cycle_(graph_theory)" target="_blank" rel="noopener">cycles</a> for exactly one loop, and (3) the length of each of such traversal paths. (Note that the traversal paths are listed in order of their traversal lengths such that the shortest paths are at the top of the list while the longest paths are at the bottom of the list).</span></p>
+<p><em>To view hidden text inside of the preformatted text boxes below, scroll horizontally.</em></p>
+<hr>
+<p><strong>RANDOM_GRAPH_GENERATOR Software Application Components</strong></p>
+<hr>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator.html</a></p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/karbytes_aesthetic.css</a></p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator.js</a></p>
+<hr>
+<p><strong>RANDOM_GRAPH_GENERATOR Hyper-Text-Markup-Language Code</strong></p>
+<hr>
+<p>The following Hyper-Text-Markup-Language (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a>) code defines the user interface component of the RANDOM_GRAPH_GENERATOR web page application. Copy the HTML code from the source code file which is linked below into a text editor and save that file as <strong>random_graph_generator.html</strong>. Use a web browser such as <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Firefox" target="_blank" rel="noopener">Firefox</a> to open that HTML file (and ensure that the JavaScript and Cascading-Style-Sheet files are in the same file directory as the HTML file).</p>
+<p><em>(Note that angle brackets which resemble <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/HTML" target="_blank" rel="noopener">HTML</a> tags (i.e. an &#8220;is less than&#8221; symbol (i.e. &#8216;&lt;&#8216;) followed by an &#8220;is greater than&#8221; symbol (i.e. &#8216;&gt;&#8217;)) displayed on this web page have been replaced (at the source code level of this web page) with the Unicode symbols <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Less-than_sign" target="_blank" rel="noopener">U+003C</a> (which is rendered by the web browser as &#8216;&lt;&#8216;) and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Greater-than_sign" target="_blank" rel="noopener">U+003E</a> (which is rendered by the web browser as &#8216;&gt;&#8217;). That is because the <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/WordPress.com" target="_blank" rel="noopener">WordPress</a> web page editor or web browser interprets a plain-text version of an &#8220;is less than&#8221; symbol followed by an &#8220;is greater than&#8221; symbol as being an opening HTML tag (which means that the WordPress web page editor or web browser deletes or fails to display those (plain-text) inequality symbols and the content between those (plain-text) inequality symbols)).</em></p>
+<p><em><strong>If copy-pasting the following HTML code from the preformatted text box below into a text editor, remove the <a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/Zero-width_space" target="_blank" rel="noopener">zero-width space</a> Unicode character (<span style="background:#000000;color:#fe9eff">&amp;&#8203;#8203;</span>) which is located between the &#8216;s&#8217; and the &#8216;r&#8217; in the script tag(s) which each link to a <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JavaScript</a> file.</em></strong></p>
+<p>Hyper-Text-Markup-Language_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator.html" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator.html</a></p>
+<hr>
+<pre>
+&lt;!--
+/**
+ * file: random_graph_generator.html
+ * type: Hyper-Text-Markup-Language
+ * author: karbytes
+ * date: 11_MARCH_2025
+ * license: PUBLIC_DOMAIN
+ */
+ --&gt;
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;RANDOM_GRAPH_GENERATOR&lt;/title&gt;
+    &lt;link rel="stylesheet" href="karbytes_aesthetic.css"&gt;
+    &lt;script s&#8203;rc="random_graph_generator.js"&gt;&lt;/script&gt;
+    &lt;style&gt;
+        #graphCanvas {
+            background: #ffffff;
+            border-width: 0px;
+        }
+        div {
+            padding-top: 10px;
+        }
+        #generate_button {
+            color: #00ff00;
+            border-color: #00ff00;
+        }
+        #generate_button:hover {
+            background: #00ff00;
+            color: #000000;
+        }
+    &lt;/style&gt;
+&lt;/head&gt;
+&lt;body onload="initialize_web_page()"&gt;
+    &lt;h1&gt;RANDOM_GRAPH_GENERATOR&lt;/h1&gt;
+    &lt;p&gt;Click the GENERATE button to instantiate a randomized graph consisting of NODEs and EDGEs between NODEs.&lt;/p&gt;
+    &lt;p&gt;&lt;input type="button" id="generate_button" value="GENERATE" onclick="generate_random_graph_and_data_about_that_graph()"&gt;&lt;/p&gt;    
+    &lt;canvas id="graphCanvas" width="430" height="430"&gt;&lt;/canvas&gt;
+    &lt;div id="graphInfo"&gt;This sentence will be replaced with graph data after the GENERATE button is clicked.&lt;/div&gt;
+    &lt;div class="console" id="time_stamped_messages"&gt;&lt;p&gt;???&lt;/p&gt;&lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+<hr>
+<p><strong>RANDOM_GRAPH_GENERATOR Cascading-Style-Sheet Code</strong></p>
+<hr>
+<p>The following Cascading-Style-Sheet (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/CSS" target="_blank" rel="noopener">CSS</a>) code defines a stylesheet which customizes the appearance of interface components of the RANDOM_GRAPH_GENERATOR web page application. Copy the CSS code from the preformatted text box below or from the source code file which is linked below into a text editor and save that file as <strong>karbytes_aesthetic.css</strong>.</p>
+<p>Cascading-Style-Sheet_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/karbytes_aesthetic.css" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/karbytes_aesthetic.css</a></p>
+<hr>
+<pre>/**
+ * file: karbytes_aesthetic.css
+ * type: Cascading-Style-Sheet
+ * date: 10_JULY_2023
+ * author: karbytes
+ * license: PUBLIC_DOMAIN
+ */
+
+/** Make the page background BLACK, the text orange and monospace, and the page content width 800 pixels or less. */
+body {
+ 	background: #000000;
+ 	color: #ff9000;
+ 	font-family: monospace;
+ 	font-size: 16px;
+ 	padding: 10px;
+ 	width: 800px;
+}
+
+/** Make input elements and select elements have an orange rounded border, a BLACK background, and orange monospace text. */
+input, select {
+	background: #000000;
+	color: #ff9000;
+	border-color: #ff9000;
+	border-width: 1px;
+	border-style: solid;
+	border-radius: 5px;
+	padding: 10px;
+	appearance: none;  
+ 	font-family: monospace;
+ 	font-size: 16px;
+}
+
+/** Invert the text color and background color of INPUT and SELECT elements when the cursor (i.e. mouse) hovers over them. */
+input:hover, select:hover {
+	background: #ff9000;
+	color: #000000;
+}
+
+/** Make table data borders one pixel thick and CYAN. Give table data content 10 pixels in padding on all four sides. */
+td {
+	color: #00ffff;
+	border-color: #00ffff;
+	border-width: 1px;
+	border-style: solid;
+	padding: 10px;
+}
+
+/** Set the text color of elements whose identifier (id) is "output" to CYAN. */
+#output {
+	color: #00ffff;
+}
+
+/** Set the text color of elements whose class is "console" to GREEN and make the text background of those elements BLACK. */
+.console {
+	color: #00ff00;
+	background: #000000;
+}
+</pre>
+<hr>
+<p><strong>RANDOM_GRAPH_GENERATOR JavaScript Code</strong></p>
+<hr>
+<p>The following JavaScript (<a style="background: #ff9000;color: #000000" href="https://en.wikipedia.org/wiki/JavaScript" target="_blank" rel="noopener">JS</a>) code defines the functions which control the behavior of the RANDOM_GRAPH_GENERATOR web page application. Copy the JS code from the preformatted text box below or from the source code file which is linked below into a text editor and save that file as <strong>random_graph_generator.js</strong>.</p>
+<p>JavaScript_file: <a style="background: #000000;color: #00ff00" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator.js" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator.js</a></p>
+<hr>
+<pre>
+/**
+ * file: random_graph_generator.js
+ * type: JavaScript
+ * author: karbytes
+ * date: 13_MARCH_2025
+ * license: PUBLIC_DOMAIN
+ */
+
+/**
+ * Get the approximate integer Number of milliseconds which have elapsed since the Unix Epoch.
+ * 
+ * The Unix Epoch is 01_JANUARY_1970 at 00:00 (Coordinated Universal Time (UTC)).
+ * 
+ * @return {String} message displaying the time at which this function was called.
+ */
+function generate_time_stamp() {
+    const approximate_number_of_milliseconds_elapsed_since_unix_epoch = Date.now();
+    return "approximately " + approximate_number_of_milliseconds_elapsed_since_unix_epoch + " milliseconds after 00:00 Coordinated Universal Time on 01_JANUARY_1970.";
+}
+
+/**
+ * Display a time-stamped message at the bottom of the web page indicating the time at which that web page's source code file 
+ * (i.e. random_graph_generator.html) was most recently loaded by the web browser.
+ * 
+ * Instantiate the appearance of a two-dimensional Cartesian grid on the web page's only canvas element.
+ */
+function initialize_web_page() {
+    try {
+        const time_stamped_message = "The initialize_web_page() function was called " + generate_time_stamp(), p0 = "&lt;p&gt;", p1 = "&lt;/p&gt;";
+        console.log(time_stamped_message);
+        document.getElementById("time_stamped_messages").innerHTML = p0 + time_stamped_message + p1;
+        drawGrid();
+    }
+    catch(e) {
+        console.log("An exception to normal functioning occurred during the runtime of function initialize_web_page(): " + e);
+    }
+}
+
+/**
+ * Populate the (assumedly blank) canvas element (on the web page named random_graph_generator.html) 
+ * with grid lines (each separated by a 20-pixel width gap), horizontal (y) and vertical (x) axes 
+ * which intersect with each other at the center of the canvas (i.e. at x = 0, y = 0), 
+ * and numerical coordinate labels along each the x-axis and the y-axis.
+ */
+function drawGrid() {
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const scale = 20; // pixels per grid unit
+
+    ctx.strokeStyle = '#ddd';
+    ctx.lineWidth = 1;
+
+    // Vertical lines
+    for (let x = centerX % scale; x &lt; width; x += scale) {
+        ctx.beginPath();
+        ctx.moveTo(x, 0);
+        ctx.lineTo(x, height);
+        ctx.stroke();
+    }
+
+    // Horizontal lines
+    for (let y = centerY % scale; y &lt; height; y += scale) {
+        ctx.beginPath();
+        ctx.moveTo(0, y);
+        ctx.lineTo(width, y);
+        ctx.stroke();
+    }
+
+    // Draw axes
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 2;
+
+    // X-axis
+    ctx.beginPath();
+    ctx.moveTo(0, centerY);
+    ctx.lineTo(width, centerY);
+    ctx.stroke();
+
+    // Y-axis
+    ctx.beginPath();
+    ctx.moveTo(centerX, 0);
+    ctx.lineTo(centerX, height);
+    ctx.stroke();
+
+    // Tick marks and labels
+    ctx.fillStyle = '#000';
+    ctx.font = '10px Arial';
+
+    for (let i = -10; i &lt;= 10; i++) {
+        // X-axis ticks
+        ctx.beginPath();
+        ctx.moveTo(centerX + i * scale, centerY - 5);
+        ctx.lineTo(centerX + i * scale, centerY + 5);
+        ctx.stroke();
+        if (i !== 0) ctx.fillText(i, centerX + i * scale - 3, centerY + 15);
+
+        // Y-axis ticks
+        ctx.beginPath();
+        ctx.moveTo(centerX - 5, centerY + i * scale);
+        ctx.lineTo(centerX + 5, centerY + i * scale);
+        ctx.stroke();
+        if (i !== 0) ctx.fillText(-i, centerX + 8, centerY + i * scale + 3);
+    }
+}
+
+/**
+ * Generate a random integer within grid bounds (i.e. from -10 to 10).
+ * 
+ * @return {Number} exactly one of the following twenty one values: 
+ *         -10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10.
+ */
+function randomCoordinate() {
+    return Math.floor(Math.random() * 21) - 10;
+}
+
+/**
+ * Calculate the Euclidean distance between two points on a plane.
+ * 
+ * @param {Object} a represents a graph NODE whose properties are the following: 
+ *                 exactly one x-axis value and exactly one y-axis value.
+ * 
+ * @param {Object} b represents a graph NODE whose properties are the following: 
+ *                 exactly one x-axis value and exactly one y-axis value.
+ */
+function calculateDistance(a, b) {
+    return Math.sqrt((a.x - b.x)**2 + (a.y - b.y)**2).toFixed(2);
+}
+
+/**-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/** The following global variables store data which changes each time the GENERATE button is clicked on the web page named random_graph_generator.html. */
+/**-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+// Generate five random non-identical NODE instances.
+let nodeLabels = ['A', 'B', 'C', 'D', 'E'];
+
+function generateUniqueNodes(count) {
+    let uniqueNodes = [];
+    let usedCoordinates = new Set();
+
+    while (uniqueNodes.length &lt; count) {
+        let x = randomCoordinate();
+        let y = randomCoordinate();
+        let coordinateKey = `${x},${y}`; // Create a unique key for the coordinate
+
+        if (!usedCoordinates.has(coordinateKey)) {
+            usedCoordinates.add(coordinateKey);
+            uniqueNodes.push({ label: nodeLabels[uniqueNodes.length], x, y });
+        }
+    }
+    return uniqueNodes;
+}
+
+// Assign nodes using generateUniqueNodes
+let nodes = generateUniqueNodes(nodeLabels.length);
+
+// Generate up to ten random EDGE instances (which each represent two adjacent nodes of a graph).
+let edges = [];
+let numEdges = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
+for (let i = 0; i &lt; numEdges; i++) {
+    let [n1, n2] = [nodes[Math.floor(Math.random() * nodes.length)], nodes[Math.floor(Math.random() * nodes.length)]];
+    while (n1 === n2 || edges.some(edge =&gt; (edge.node0 === n1 &amp;&amp; edge.node1 === n2) || (edge.node0 === n2 &amp;&amp; edge.node1 === n1))) {
+        n1 = nodes[Math.floor(Math.random() * nodes.length)];
+        n2 = nodes[Math.floor(Math.random() * nodes.length)];
+    }
+    edges.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
+}
+
+// Global graph variable
+let graph = {};
+
+function createGraph(nodes, edges) {
+    graph = {}; // Reset global graph
+
+    // Initialize graph with empty arrays for each node label
+    nodes.forEach(node =&gt; {
+        graph[node.label] = [];
+    });
+
+    // Add edges ensuring bidirectionality and correctness
+    edges.forEach(edge =&gt; {
+        let from = edge.node0.label;
+        let to = edge.node1.label;
+        
+        if (graph.hasOwnProperty(from) &amp;&amp; graph.hasOwnProperty(to)) {
+            if (!graph[from].includes(to)) {
+                graph[from].push(to);
+            }
+            if (!graph[to].includes(from)) {
+                graph[to].push(from);
+            }
+        }
+    });
+
+    // Debugging: Log final adjacency list for verification
+    // console.log("Final Adjacency List:", JSON.stringify(graph, null, 2));
+}
+
+// Generate the graph from the global nodes and edges
+createGraph(nodes, edges);
+/**-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+/** End of global variables initialization (nodes, edges, graph)                                                                                        */
+/**-----------------------------------------------------------------------------------------------------------------------------------------------------*/
+
+/**
+ * Draw Nodes and Edges
+ * 
+ * The following function, drawGraph, renders a visual representation of a graph onto an HTML5 canvas element.
+ * The function retrieves the canvas context, determines the center of the canvas, and applies a scaling factor to properly position nodes.
+ * It first draws edges (lines) between connected nodes using the predefined edges array.
+ * Then, it iterates through the 'nodes' array to render nodes as red circles, labeling them appropriately.
+ * The y-axis is inverted to align with conventional Cartesian coordinates (positive y values appear above the center).
+ * Dependencies: This function requires a global 'nodes' array containing labeled coordinate points and a 'lines' array defining connections between nodes.
+ */
+function drawGraph() {
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+    const width = canvas.width;
+    const height = canvas.height;
+    const centerX = width / 2;
+    const centerY = height / 2;
+    const scale = 20; // pixels per grid unit
+
+    // Adjust font settings for better readability
+    ctx.font = '14px Arial';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+
+    // Draw Edges
+    ctx.strokeStyle = 'blue';
+    ctx.lineWidth = 1.5;
+    edges.forEach(edge =&gt; {
+        ctx.beginPath();
+        ctx.moveTo(centerX + edge.node0.x * scale, centerY - edge.node0.y * scale);
+        ctx.lineTo(centerX + edge.node1.x * scale, centerY - edge.node1.y * scale);
+        ctx.stroke();
+    });
+
+    // Draw Nodes
+    nodes.forEach(node =&gt; {
+        ctx.fillStyle = 'red';
+        ctx.beginPath();
+        ctx.arc(centerX + node.x * scale, centerY - node.y * scale, 4, 0, 2 * Math.PI);
+        ctx.fill();
+
+        // Adjust label positioning to prevent cutoff
+        const labelOffsetX = node.x &gt;= 0 ? 10 : -10; // Shift right for positive x, left for negative x
+        const labelOffsetY = node.y &gt;= 0 ? -10 : 10; // Shift up for positive y, down for negative y
+
+        ctx.fillStyle = 'black';
+        ctx.fillText(node.label, centerX + node.x * scale + labelOffsetX, centerY - node.y * scale + labelOffsetY);
+    });
+}
+
+// Display Information Below Canvas (after the GENERATE button is clicked)
+function displayInfo() {
+    const infoDiv = document.getElementById('graphInfo');
+    let html = '&lt;h3&gt;Graph Information&lt;/h3&gt;';
+
+    html += '&lt;strong&gt;NODEs:&lt;/strong&gt;&lt;ul&gt;';
+    nodes.forEach(node =&gt; {
+        html += `&lt;li&gt;${node.label}: X_POSITION = ${node.x}, Y_POSITION = ${node.y}&lt;/li&gt;`;
+    });
+    html += '&lt;/ul&gt;';
+
+    html += '&lt;strong&gt;EDGEs:&lt;/strong&gt;&lt;ul&gt;';
+    edges.forEach((edge, idx) =&gt; {
+        html += `&lt;li&gt;E${idx}: NODE_0 = ${edge.node0.label}, NODE_1 = ${edge.node1.label}, LENGTH = ${edge.length}&lt;/li&gt;`;
+    });
+    html += '&lt;/ul&gt;';
+
+    // Generate adjacency list and display it
+    let adjacencyArray = generateAdjacencyArray(graph);
+    html += "&lt;strong&gt;Graph Representation:&lt;/strong&gt;&lt;pre&gt;";
+    adjacencyArray.forEach(entry =&gt; {
+        html += entry[0] + ": " + entry.slice(1).join(", ") + "\n";
+    });
+    html += "&lt;/pre&gt;";
+
+    if (graph['A']) {
+        let traversalResults = calculateTraversalDistances(graph, edges, 'A');
+        html += '&lt;strong&gt;All Traversals Starting at A:&lt;/strong&gt;&lt;ul&gt;';
+        traversalResults.forEach((entry, index) =&gt; {
+            let distanceText = (typeof entry.distance === 'number' &amp;&amp; !isNaN(entry.distance))
+                ? entry.distance.toFixed(2) 
+                : "Unknown";
+            html += `&lt;li&gt;Traversal ${index + 1}: ${entry.path} (Total Distance: ${distanceText})&lt;/li&gt;`;
+        });
+        html += '&lt;/ul&gt;';
+    } else {
+        html += '&lt;strong&gt;All Traversals Starting at A:&lt;/strong&gt; No valid paths found from A.';
+    }
+
+    infoDiv.innerHTML = html;
+}
+
+/**
+ * Append a time-stamped message to the bottom of the web page indicating when the function, generate_random_graph_and_data_about_that_graph(), was called.
+ * 
+ * Assume this function was called in response to the GENERATE button on random_graph_generator.html getting clicked.
+ * 
+ * Each time that button is clicked, a new instance of a randomized graph consisting of 5 nodes and up to 10 edges is drawn on the HTML5 canvas.
+ * 
+ * Generate up to five randomized NODE instances such that each NODE instance is a software object consisting of two data attributes: 
+ * integers representing a horizontal and a vertical position on a Cartesian plane within 10 units of the Cartesian plane's center point.
+ * 
+ * Generate randomized EDGE instances such that each EDGE instance is a software object consisting of two data attributes:
+ * NODEs representing exactly two end-points to a edge segment.
+ */
+function generate_random_graph_and_data_about_that_graph() {
+    const time_stamped_message = "The generate_random_graph_and_data_about_that_graph() function was called " + generate_time_stamp(), p0 = "&lt;p&gt;", p1 = "&lt;/p&gt;";
+    console.log(time_stamped_message);
+    document.getElementById("time_stamped_messages").innerHTML += p0 + time_stamped_message + p1;
+    resetGraphData();
+    clearGraphElements();
+    drawGraph();
+    displayInfo();
+}
+
+/**
+ * Remove NODE and EDGE components from the HTML5 canvas on the web page whose source code file is named random_graph_generator.html.
+ */
+function clearGraphElements() {
+    const canvas = document.getElementById('graphCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Define the area where nodes and edges exist
+    const width = canvas.width;
+    const height = canvas.height;
+
+    // Use a composite operation to only clear nodes and lines while keeping the grid
+    ctx.globalCompositeOperation = 'destination-out';
+    ctx.fillRect(0, 0, width, height);
+    ctx.globalCompositeOperation = 'source-over';
+
+    // Redraw the grid after clearing nodes and edges
+    drawGrid(ctx, width, height);
+}
+
+/**
+ * Delete the data inside of the arrays named nodes and edges.
+ * 
+ * Re-populate the canvas with a new randomized graph.
+ */
+function resetGraphData() {
+    nodes = [];
+    edges = [];
+    console.log("Graph data has been reset.");
+
+    generateNewGraphData();  // Reinitialize nodes and edges
+}
+
+/**
+ * Generate EDGE instances which represent connections between NODE instances within the context of a graph.
+ * 
+ * In the context of this software application, a graph consists of some natural number of point-sized nodes
+ * and line-segment edges whose end-points are two non-identical nodes.
+ */
+function generateNewGraphData() {
+    // Generate new nodes
+    let nodeLabels = ['A', 'B', 'C', 'D', 'E'];
+    nodes = nodeLabels.map(label =&gt; ({
+        label,
+        x: randomCoordinate(),
+        y: randomCoordinate()
+    }));
+    generateUniqueNodes(5);
+
+    // Generate new random edges
+    let numEdges = Math.floor(Math.random() * 6) + 5; // between 5 and 10 lines
+    for (let i = 0; i &lt; numEdges; i++) {
+        let n1, n2;
+        do {
+            n1 = nodes[Math.floor(Math.random() * nodes.length)];
+            n2 = nodes[Math.floor(Math.random() * nodes.length)];
+        } while (n1 === n2 || edges.some(edge =&gt; (edge.node0 === n1 &amp;&amp; edge.node1 === n2) || (edge.node0 === n2 &amp;&amp; edge.node1 === n1)));
+
+        edges.push({ node0: n1, node1: n2, length: calculateDistance(n1, n2) });
+    }
+
+    // Generate the graph from the global nodes and edges
+    createGraph(nodes, edges);
+}
+
+/**
+ * This function converts the graph object into an adjacency array format.
+ * Each element of the array represents a node and its connections.
+ * The first element of each sub-array is the node itself, followed by its neighbors.
+ * Example output:
+ * [
+ *   ["A", "B", "C", "D"],
+ *   ["B", "A", "C"],
+ *   ["C", "A", "B", "E"],
+ *   ["D", "A", "E"],
+ *   ["E", "C", "D"]
+ * ]
+ * @param {Object} graph - The adjacency list representation of the graph.
+ * @returns {Array} adjacencyArray - The adjacency array representation of the graph.
+ */
+function generateAdjacencyArray(graph) {
+    let adjacencyArray = [];
+    Object.keys(graph).forEach(node =&gt; {
+        adjacencyArray.push([node, ...graph[node]]);
+    });
+    // console.log("Adjacency Array:", JSON.stringify(adjacencyArray, null, 2));
+    return adjacencyArray;
+}
+
+/**
+ * This function finds all possible traversal paths in the graph
+ * starting from a given node. It allows cycles and backtracking.
+ * Each path follows edges between connected nodes and tracks visited edges.
+ *
+ * @param {Object} graph - The adjacency list representation of the graph.
+ * @param {string} startNode - The node to start traversals from.
+ * @returns {Array} paths - An array of all possible traversal paths.
+ */
+function findAllTraversals(graph, startNode) {
+    let paths = [];
+
+    function traverse(node, path, visitedEdges, cycleUsed) {
+        path.push(node);
+
+        let hasUnvisited = false;
+        for (let neighbor of graph[node] || []) {
+            let edgeKey = `${node}-${neighbor}`;
+            let reverseEdgeKey = `${neighbor}-${node}`;
+
+            if (!visitedEdges.has(edgeKey) || !cycleUsed) {
+                hasUnvisited = true;
+                let newVisitedEdges = new Set(visitedEdges);
+                newVisitedEdges.add(edgeKey);
+                newVisitedEdges.add(reverseEdgeKey); // Treat as an undirected graph
+                
+                traverse(neighbor, [...path], newVisitedEdges, cycleUsed || visitedEdges.has(edgeKey));
+            }
+        }
+
+        if (!hasUnvisited) {
+            paths.push(path.join(" -&gt; "));
+        }
+    }
+
+    traverse(startNode, [], new Set(), false);
+
+    return paths;
+}
+
+/**
+ * Sum the lengths of all edges in a given traversal.
+ * Logs the traversal path and the total distance.
+ * 
+ * @param {Array} traversal - An array of edges representing a path.
+ * @return {Number} - The total sum of edge lengths.
+ */
+function sumEdgeLengths(traversal) {
+    let totalLength = 0;
+    let traversalPath = traversal.map(edge =&gt; `(${edge.node0.label} → ${edge.node1.label})`).join(" -&gt; ");
+
+    for (let edge of traversal) {
+        totalLength += parseFloat(calculateDistance(edge.node0, edge.node1));
+    }
+    
+    console.log(`Traversal: ${traversalPath} | Total Distance: ${totalLength.toFixed(2)}`);
+
+    return totalLength;
+}
+
+/**
+ * Calculate the total distances for all traversals from a given start node.
+ * Uses sumEdgeLengths(traversal) to compute distances and sorts them from shortest to longest.
+ * 
+ * @param {Array} graph - The graph containing nodes.
+ * @param {Array} edges - The list of edges with nodes.
+ * @param {Object} startNode - The starting node for traversal.
+ * @return {Array} - A sorted array of traversal paths and their respective distances.
+ */
+function calculateTraversalDistances(graph, edges, startNode) {
+    let traversals = findAllTraversals(graph, startNode);
+    let edgeMap = new Map();
+
+    console.log("Generating Edge Map...");
+
+    // Create a mapping of edges to their respective distances
+    edges.forEach(edge =&gt; {
+        let key = `${edge.node0.label}-${edge.node1.label}`;
+        let reverseKey = `${edge.node1.label}-${edge.node0.label}`;
+        let distance = Math.max(1, Math.ceil(parseFloat(calculateDistance(edge.node0, edge.node1)))); // Ensure nonzero integer
+
+        edgeMap.set(key, { distance, edge });
+        edgeMap.set(reverseKey, { distance, edge });
+        console.log(`Mapped Edge: ${key} &amp; ${reverseKey} → Distance: ${distance}`);
+    });
+
+    console.log("Edge Map:", edgeMap);
+
+    // Calculate the total minimum distance for each traversal using sumEdgeLengths
+    let pathsWithDistances = traversals.map(pathStr =&gt; {
+        let pathNodes = pathStr.split(" -&gt; ").map(node =&gt; node.trim());
+        let traversalEdges = [];
+        let validPath = true;
+
+        console.log(`Processing Traversal: ${pathStr}`);
+
+        for (let i = 0; i &lt; pathNodes.length - 1; i++) {
+            let node0 = pathNodes[i];
+            let node1 = pathNodes[i + 1];
+            let edgeKey = `${node0}-${node1}`;
+            let reverseEdgeKey = `${node1}-${node0}`;
+
+            console.log(`Checking Edge: ${edgeKey}`);
+
+            if (edgeMap.has(edgeKey)) {
+                let edgeObj = edgeMap.get(edgeKey);
+                console.log(`Found Edge: ${edgeKey} → Distance: ${edgeObj.distance}`);
+                traversalEdges.push(edgeObj.edge);
+            } else {
+                console.warn(`Edge Missing: ${edgeKey} or ${reverseEdgeKey} not found in Edge Map`);
+                validPath = false;
+                break; // Invalid path due to missing edge
+            }
+        }
+
+        if (validPath &amp;&amp; traversalEdges.length &gt; 0) {
+            let totalDistance = sumEdgeLengths(traversalEdges);
+            console.log(`Traversal: ${pathStr} | Total Distance: ${totalDistance}`);
+            return { path: pathStr, distance: totalDistance };
+        } else {
+            console.warn(`Traversal: ${pathStr} | Total Distance: Unknown (Missing Edges)`);
+            return { path: pathStr, distance: "Unknown (Missing Edges)" };
+        }
+    });
+
+    // Sort traversals from shortest to longest distance
+    let validPaths = pathsWithDistances.filter(traversal =&gt; traversal.distance !== "Unknown (Missing Edges)");
+    validPaths.sort((a, b) =&gt; a.distance - b.distance);
+
+    console.log("Sorted Traversals (Shortest to Longest):");
+    validPaths.forEach(traversal =&gt; {
+        console.log(`Traversal: ${traversal.path} | Total Distance: ${traversal.distance.toFixed(2)}`);
+    });
+
+    return validPaths;
+}
+</pre>
+<hr>
+<p><strong>RANDOM_GRAPH_GENERATOR Interface (after (re)loading the web page)</strong></p>
+<hr>
+<p>image_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator_interface_initial_screenshot.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator_interface_initial_screenshot.png</a></p>
+<hr>
+
+
+<figure class="wp-block-image size-full"><img data-attachment-id="44104" data-permalink="https://karbytesforlifeblog.wordpress.com/random_graph_generator/random_graph_generator_interface_initial_screenshot/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_initial_screenshot.png" data-orig-size="903,853" data-comments-opened="0" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="random_graph_generator_interface_initial_screenshot" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_initial_screenshot.png?w=300" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_initial_screenshot.png?w=903" width="903" height="853" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_initial_screenshot.png" alt="" class="wp-image-44104" srcset="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_initial_screenshot.png 903w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_initial_screenshot.png?w=150&amp;h=142 150w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_initial_screenshot.png?w=300&amp;h=283 300w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_initial_screenshot.png?w=768&amp;h=725 768w" sizes="(max-width: 903px) 100vw, 903px" /></figure>
+
+
+<hr>
+<p><strong>RANDOM_GRAPH_GENERATOR Interface (after clicking GENERATE)</strong></p>
+<hr>
+<p><em>Note that, in the image depicted below, the GENERATE button was clicked multiple times before the depicted graph was generated. That is because the prior graphs encompassed many more depicted traversal paths (and such a lengthy list of traversal paths would be difficult to encompass in a single screenshot image without risking being too big to upload and display on the (live and <a style="background:#ff9000;color:#000000" href="https://en.wikipedia.org/wiki/Wayback_Machine" target="_blank" rel="noopener">WayBack Machine</a> backed up) web page and/or be too low resolution to be readable).</em></p>
+<p>image_file: <a style="background:#000000;color:#ff9000" href="https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator_interface_result_screenshot.png" target="_blank" rel="noopener">https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/random_graph_generator_interface_result_screenshot.png</a></p>
+<hr>
+
+<figure class="wp-block-image size-full"><img data-attachment-id="44106" data-permalink="https://karbytesforlifeblog.wordpress.com/random_graph_generator/random_graph_generator_interface_result_screenshot/" data-orig-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_result_screenshot.png" data-orig-size="947,2202" data-comments-opened="0" data-image-meta="{&quot;aperture&quot;:&quot;0&quot;,&quot;credit&quot;:&quot;&quot;,&quot;camera&quot;:&quot;&quot;,&quot;caption&quot;:&quot;&quot;,&quot;created_timestamp&quot;:&quot;0&quot;,&quot;copyright&quot;:&quot;&quot;,&quot;focal_length&quot;:&quot;0&quot;,&quot;iso&quot;:&quot;0&quot;,&quot;shutter_speed&quot;:&quot;0&quot;,&quot;title&quot;:&quot;&quot;,&quot;orientation&quot;:&quot;0&quot;}" data-image-title="random_graph_generator_interface_result_screenshot" data-image-description="" data-image-caption="" data-medium-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_result_screenshot.png?w=129" data-large-file="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_result_screenshot.png?w=440" width="947" height="2202" src="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_result_screenshot.png" alt="" class="wp-image-44106" srcset="https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_result_screenshot.png 947w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_result_screenshot.png?w=65&amp;h=150 65w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_result_screenshot.png?w=129&amp;h=300 129w, https://karbytesforlifeblog.wordpress.com/wp-content/uploads/2025/03/random_graph_generator_interface_result_screenshot.png?w=768&amp;h=1786 768w" sizes="(max-width: 947px) 100vw, 947px" /></figure>
+
+<hr>
+<p>This web page was last updated on 13_MARCH_2025. The content displayed on this web page is licensed as <a style="background:#000000;color:#ff9000" href="https://karlinaobject.wordpress.com/public_domain/" target="_blank" rel="noopener">PUBLIC_DOMAIN</a> intellectual property.</p>
+<hr>
