@@ -280,23 +280,6 @@ function displayInfo() {
     });
     html += "</pre>";
 
-    // Generate and display all traversal paths starting from 'A'
-    /*
-    if (graph['A']) {
-        let traversals = findAllTraversals(graph, 'A');
-        html += '<strong>All Traversals Starting at A:</strong><ul>';
-        traversals.forEach((path, index) => {
-            html += `<li>Traversal ${index + 1}: ${path}</li>`;
-        });
-        html += '</ul>';
-    } else {
-        html += '<strong>All Traversals Starting at A:</strong> No valid paths found from A.';
-    }
-    */
-
-    let test_object = calculateTraversalDistances(graph, edges, 'A');
-    console.log("test_object[0].distance = " + test_object[0].distance);
-
     if (graph['A']) {
         let traversalResults = calculateTraversalDistances(graph, edges, 'A');
         html += '<strong>All Traversals Starting at A:</strong><ul>';
@@ -310,21 +293,6 @@ function displayInfo() {
     } else {
         html += '<strong>All Traversals Starting at A:</strong> No valid paths found from A.';
     }
-
-    /*
-    if (graph['A']) {
-        let traversalResults = calculateTraversalDistances(graph, edges, 'A');
-        html += '<strong>All Traversals Starting at A:</strong><ul>';
-        traversalResults.forEach((entry, index) => {
-            let distanceText = (typeof entry.totalDistance === 'number' && !isNaN(entry.totalDistance))
-                ? entry.totalDistance.toFixed(2) 
-                : "Unknown";
-            html += `<li>Traversal ${index + 1}: ${entry.path} (Total Distance: ${distanceText})</li>`;
-        });
-        html += '</ul>';
-    } else {
-        html += '<strong>All Traversals Starting at A:</strong> No valid paths found from A.';
-    }*/
 
     infoDiv.innerHTML = html;
 }
@@ -482,125 +450,6 @@ function findAllTraversals(graph, startNode) {
 }
 
 /**
- * This function calculates the total minimum distance for each path
- * returned from findAllTraversals.
- *
- * @param {Object} graph - The adjacency list representation of the graph.
- * @param {Array} edges - The list of edges with their lengths.
- * @param {string} startNode - The node to start traversals from.
- * @returns {Array} pathsWithDistances - An array of objects where each
- *          object contains a traversal path and its total minimum distance.
- */
-/*
-function calculateTraversalDistances(graph, edges, startNode) {
-    let traversals = findAllTraversals(graph, startNode);
-    let edgeMap = new Map();
-
-    // Create a mapping of edges to their respective distances
-    edges.forEach(edge => {
-        let key = `${edge.node0.label}-${edge.node1.label}`;
-        let reverseKey = `${edge.node1.label}-${edge.node0.label}`;
-        edgeMap.set(key, Math.ceil(parseFloat(edge.length))); // Ensure nonzero integer
-        edgeMap.set(reverseKey, Math.ceil(parseFloat(edge.length)));
-    });
-
-    // Calculate the total minimum distance for each traversal
-    let pathsWithDistances = traversals.map(pathStr => {
-        let pathNodes = pathStr.split(" -> ");
-        let visitedEdges = new Set();
-        let totalDistance = 0;
-        let validPath = true;
-
-        for (let i = 0; i < pathNodes.length - 1; i++) {
-            let edgeKey = `${pathNodes[i]}-${pathNodes[i + 1]}`;
-            let reverseEdgeKey = `${pathNodes[i + 1]}-${pathNodes[i]}`;
-            
-            if (!visitedEdges.has(edgeKey) && edgeMap.has(edgeKey)) {
-                totalDistance += edgeMap.get(edgeKey);
-                visitedEdges.add(edgeKey);
-                visitedEdges.add(reverseEdgeKey);
-            } else {
-                validPath = false;
-                break;
-            }
-        }
-
-        return { path: pathStr, distance: validPath ? totalDistance : Infinity };
-    });
-
-    return pathsWithDistances;
-}
-*/
-
-/**
- * Calculate the total distances for all traversals from a given start node.
- * 
- * @param {Array} graph - The graph containing nodes.
- * @param {Array} edges - The list of edges with nodes.
- * @param {Object} startNode - The starting node for traversal.
- * @return {Array} - An array of traversal paths and their respective distances.
- */
-/*
-function calculateTraversalDistances(graph, edges, startNode) {
-    let traversals = findAllTraversals(graph, startNode);
-    let edgeMap = new Map();
-
-    // Create a mapping of edges to their respective distances
-    edges.forEach(edge => {
-        let key = `${edge.node0.label}-${edge.node1.label}`;
-        let reverseKey = `${edge.node1.label}-${edge.node0.label}`;
-        let distance = Math.max(1, Math.ceil(parseFloat(calculateDistance(edge.node0, edge.node1)))); // Ensure nonzero integer
-
-        edgeMap.set(key, distance);
-        edgeMap.set(reverseKey, distance);
-    });
-
-    // Calculate the total minimum distance for each traversal
-    let pathsWithDistances = traversals.map(pathStr => {
-        let pathNodes = pathStr.split(" -> ");
-        let visitedEdges = new Set();
-        let totalDistance = 0;
-        let validPath = true;
-
-        for (let i = 0; i < pathNodes.length - 1; i++) {
-            let edgeKey = `${pathNodes[i]}-${pathNodes[i + 1]}`;
-            let reverseEdgeKey = `${pathNodes[i + 1]}-${pathNodes[i]}`;
-
-            if (!visitedEdges.has(edgeKey) && edgeMap.has(edgeKey)) {
-                totalDistance += edgeMap.get(edgeKey);
-                visitedEdges.add(edgeKey);
-                visitedEdges.add(reverseEdgeKey);
-            } else {
-                validPath = false;
-                break; // Invalid path due to missing edge
-            }
-        }
-
-        return { path: pathStr, distance: validPath ? totalDistance : Infinity };
-    });
-
-    return pathsWithDistances;
-}
-*/
-
-/**
- * Sum the lengths of all edges in a given traversal.
- * 
- * @param {Array} traversal - An array of edges representing a path.
- * @return {Number} - The total sum of edge lengths.
- */
-/*
-function sumEdgeLengths(traversal) {
-    let totalLength = 0;
-    for (let edge of traversal) {
-        totalLength += parseFloat(calculateDistance(edge.node0, edge.node1));
-    }
-
-    return totalLength;
-}
-*/
-
-/**
  * Sum the lengths of all edges in a given traversal.
  * Logs the traversal path and the total distance.
  * 
@@ -619,139 +468,6 @@ function sumEdgeLengths(traversal) {
 
     return totalLength;
 }
-
-/**
- * Calculate the total distances for all traversals from a given start node.
- * Uses sumEdgeLengths(traversal) to compute distances.
- * 
- * @param {Array} graph - The graph containing nodes.
- * @param {Array} edges - The list of edges with nodes.
- * @param {Object} startNode - The starting node for traversal.
- * @return {Array} - An array of traversal paths and their respective distances.
- */
-/*
-function  {
-    let traversals = findAllTraversals(graph, startNode);
-    let edgeMap = new Map();
-
-    console.log("Generating Edge Map...");
-
-    // Create a mapping of edges to their respective distances
-    edges.forEach(edge => {
-        let key = `${edge.node0.label}-${edge.node1.label}`;
-        let reverseKey = `${edge.node1.label}-${edge.node0.label}`;
-        let distance = Math.max(1, Math.ceil(parseFloat(calculateDistance(edge.node0, edge.node1)))); // Ensure nonzero integer
-
-        edgeMap.set(key, { distance, edge });
-        edgeMap.set(reverseKey, { distance, edge });
-        console.log(`Mapped Edge: ${key} & ${reverseKey} → Distance: ${distance}`);
-    });
-
-    console.log("Edge Map:", edgeMap);
-
-    // Calculate the total minimum distance for each traversal using sumEdgeLengths
-    let pathsWithDistances = traversals.map(pathStr => {
-        let pathNodes = pathStr.split(" -> ");
-        let traversalEdges = [];
-        let validPath = true;
-
-        console.log(`Processing Traversal: ${pathStr}`);
-
-        for (let i = 0; i < pathNodes.length - 1; i++) {
-            let node0 = pathNodes[i];
-            let node1 = pathNodes[i + 1];
-            let edgeKey = `${node0}-${node1}`;
-            let reverseEdgeKey = `${node1}-${node0}`;
-
-            console.log(`Checking Edge: ${edgeKey}`);
-
-            if (edgeMap.has(edgeKey)) {
-                traversalEdges.push(edgeMap.get(edgeKey).edge);
-            } else {
-                console.warn(`Edge Missing: ${edgeKey} or ${reverseEdgeKey} not found in Edge Map`);
-                validPath = false;
-                break; // Invalid path due to missing edge
-            }
-        }
-
-        return {
-            path: pathStr,
-            distance: validPath ? sumEdgeLengths(traversalEdges) : "Unknown (Missing Edges)"
-        };
-    });
-
-    return pathsWithDistances;
-}
-*/
-
-/**
- * Calculate the total distances for all traversals from a given start node.
- * Uses sumEdgeLengths(traversal) to compute distances.
- * 
- * @param {Array} graph - The graph containing nodes.
- * @param {Array} edges - The list of edges with nodes.
- * @param {Object} startNode - The starting node for traversal.
- * @return {Array} - An array of traversal paths and their respective distances.
- */
-/*
-function calculateTraversalDistances(graph, edges, startNode) {
-    let traversals = findAllTraversals(graph, startNode);
-    let edgeMap = new Map();
-
-    console.log("Generating Edge Map...");
-
-    // Create a mapping of edges to their respective distances
-    edges.forEach(edge => {
-        let key = `${edge.node0.label}-${edge.node1.label}`;
-        let reverseKey = `${edge.node1.label}-${edge.node0.label}`;
-        let distance = Math.max(1, Math.ceil(parseFloat(calculateDistance(edge.node0, edge.node1)))); // Ensure nonzero integer
-
-        edgeMap.set(key, { distance, edge });
-        edgeMap.set(reverseKey, { distance, edge });
-        console.log(`Mapped Edge: ${key} & ${reverseKey} → Distance: ${distance}`);
-    });
-
-    console.log("Edge Map:", edgeMap);
-
-    // Calculate the total minimum distance for each traversal using sumEdgeLengths
-    let pathsWithDistances = traversals.map(pathStr => {
-        let pathNodes = pathStr.split(" -> ");
-        let traversalEdges = [];
-        let validPath = true;
-
-        console.log(`Processing Traversal: ${pathStr}`);
-
-        for (let i = 0; i < pathNodes.length - 1; i++) {
-            let node0 = pathNodes[i].trim();
-            let node1 = pathNodes[i + 1].trim();
-            let edgeKey = `${node0}-${node1}`;
-            let reverseEdgeKey = `${node1}-${node0}`;
-
-            console.log(`Checking Edge: ${edgeKey}`);
-
-            if (edgeMap.has(edgeKey)) {
-                let edgeObj = edgeMap.get(edgeKey);
-                console.log(`Found Edge: ${edgeKey} → Distance: ${edgeObj.distance}`);
-                traversalEdges.push(edgeObj.edge);
-            } else {
-                console.warn(`Edge Missing: ${edgeKey} or ${reverseEdgeKey} not found in Edge Map`);
-                validPath = false;
-                break; // Invalid path due to missing edge
-            }
-        }
-
-        let totalDistance = validPath ? sumEdgeLengths(traversalEdges) : "Unknown (Missing Edges)";
-        console.log(`Traversal: ${pathStr} | Total Distance: ${totalDistance}`);
-
-        return {
-            path: pathStr,
-            distance: totalDistance
-        };
-    });
-
-    return pathsWithDistances;
-}
-*/
 
 /**
  * Calculate the total distances for all traversals from a given start node.
@@ -820,8 +536,6 @@ function calculateTraversalDistances(graph, edges, startNode) {
 
     return pathsWithDistances;
 }
-
-
 
 
 
