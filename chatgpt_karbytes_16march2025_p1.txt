@@ -187,6 +187,7 @@ It looks like you're holding up three fingers now. Is that right?
 karbytes:
 
 “Yeah.”
+
 [microphone symbol] [00:00]
 
 ChatGPT:
