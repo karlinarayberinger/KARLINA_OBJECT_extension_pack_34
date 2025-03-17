@@ -55,6 +55,7 @@ Yes, the ChatGPT mobile app is available for iOS and Android devices. You can us
 karbytes:
 
 “Good to know.”
+
 [microphone symbol] [00:00]
 
 ChatGPT:
