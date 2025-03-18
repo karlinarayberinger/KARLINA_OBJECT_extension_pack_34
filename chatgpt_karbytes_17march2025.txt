@@ -216,7 +216,7 @@ Are you considering a project that involves real-time video processing alongside
 
 karbytes:
 
-When I was using Advanced Voice Mode, I was able to talk to you while I was recording a video (which was not saved) during that conversation. You commented on that video and accurately stated the number of fingers I was holding up (but you were not apparently able to specify that a decal hanging from the rear-view mirror in my car was blowing around in the breeze when I asked you to notice something with velocity.
+When I was using Advanced Voice Mode, I was able to talk to you while I was recording a video (which was not saved) during that conversation. You commented on that video and accurately stated the number of fingers I was holding up (but you were not apparently able to specify that a decal hanging from the rear-view mirror in my car was blowing around in the breeze when I asked you to notice something with velocity).
 
 ChatGPT:
 
