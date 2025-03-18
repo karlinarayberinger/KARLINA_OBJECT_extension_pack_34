@@ -2,7 +2,7 @@
  * file: sound_track_looper_three.js
  * type: JavaScript
  * author: karbytes
- * date: 08_MARCH_2025
+ * date: 17_MARCH_2025
  * license: PUBLIC_DOMAIN
  */
 
@@ -164,6 +164,10 @@ function get_menu_options() {
         'pig_gorl_31_october_2023_part_0.mp3',
         'pig_gorl_noises_part_0_06_july_2023.mp3',
         'pig_gorl_noises_part_1_06_july_2023.mp3',
+        'plaintive_droning_by_karbytes_17march2025_p0.mp3',
+        'plaintive_droning_by_karbytes_17march2025_p1.mp3',
+        'plaintive_droning_by_karbytes_17march2025_p2.mp3',
+        'plaintive_droning_by_karbytes_17march2025_p3.mp3',
         'protection_racket_by_napalm_death_released_2012_downloaded_via_cobalt_tools_by_karbytes_on_17january2025.mp3',
         'pyramid_meditation_music_kings_chamber_frequencies_[downloaded_from_magnetic_minds_by_karbytes_on_16june2024].mp3',
         'sicko_mode_ft_drake_travis_scott_2018_downloaded_via_aiseo_by_karbytes_25january2025.mp3',
@@ -172,6 +176,9 @@ function get_menu_options() {
 	'the_conjuring_by_megadeth_originally_released_1986_downloaded_by_karbytes_20february2025.mp3',
         'the_battle_fought_by_agrimonia_released_2013_downloaded_via_cobalt_tools_by_karbytes_on_17january2025.mp3',
         'train_san_jose_california_07october2024.mp3',
+        'unintentional_asmr_björk_takes_her_tv_apart_(icelandic_accent)_downloaded_by_karbytes_17march2025.mp3',
+        'unintentional_asmr_relaxing_repair_&_restoration_of_vintage_guitar_amps_downloaded_by_karbytes_17march2025.mp3',
+        'unintentional_asmr_senior_japanese_handcrafted_fountain_pen_masters_downloaded_by_karbytes_17march2025.mp3',
         'unlock_akashic_records_💫_remember_mastery_🌈_ultra_shamanic_drums_[abridged_to_ten_minutes]_lokosmotives_2018_downloaded_by_karbytes_27september2024.mp3',
 	'the_pilgrim_by_mynoise_dot_net_customized_and_downloaded_by_karbytes_28february2025_(contemplative_instrumental).mp3',
         'vintage_office_sounds_from_mynoise_dot_net_downloaded_by_karbytes_21december2024.mp3'
