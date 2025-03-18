@@ -6,7 +6,7 @@
  * license: PUBLIC_DOMAIN
  */
 
-The following is a plain-text transcript of a conversation between karbytes and ChatGPT-4o which took place on 17_MARCH_2025 at approximately 7:00AM Pacific Standard Time and pertains to karbytes first troubleshooting the Cheese application (which is a Unix command-line-installed and command-line-launched photograph and video recording program which enables karbytes to make video recordings using the camera on its laptop). Then karbytes and ChatGPT analyzed a drum recording sample karbytes made in order to generate its waveform plot.
+The following is a plain-text transcript of a conversation between karbytes and ChatGPT-4o which took place on 17_MARCH_2025 at approximately 7:00AM Pacific Standard Time and pertains to karbytes first troubleshooting the Cheese application (which is a Unix command-line-installed and command-line-launched photograph and video recording program which enables karbytes to make video recordings using the camera (and microphone) on its laptop). Then karbytes and ChatGPT analyzed a drum recording sample karbytes made in order to generate its waveform plot.
 
 waveform_plot_image: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/drum_beat_sample_analyzed_by_chatgpt_waveform_plot_17march2025.png
 
