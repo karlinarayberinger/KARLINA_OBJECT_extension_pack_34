@@ -989,12 +989,17 @@ if __name__ == "__main__":
 
 How to Use the Program
 
-    Save this script as analyze_audio.py.
-    Replace "your_audio_file.wav" with the actual .wav file name.
-    Run the script using python analyze_audio.py.
-    The output will:
-        Print the estimated number of distinct frequencies.
-        Show and save a frequency spectrum plot (frequency_spectrum.png).
+1. Save this script as analyze_audio.py.
+    
+2. Replace "your_audio_file.wav" with the actual .wav file name.
+    
+3. Run the script using python analyze_audio.py.
+    
+The output will:
+        
+- Print the estimated number of distinct frequencies.
+        
+- Show and save a frequency spectrum plot (frequency_spectrum.png).
 
 Would you like help modifying the script for specific audio formats or settings?
 
