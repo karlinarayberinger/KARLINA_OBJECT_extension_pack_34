@@ -1,7 +1,7 @@
 /**
  * file: chatgpt_karbytes_21march2025_p0.txt
  * type: plain-text
- * date: 22_MARCH_2025
+ * date: 23_MARCH_2025
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -259,11 +259,11 @@ plt.show()
 
 Wavefunction Of Electron In A 1D Box
 
-[https://raw.githubusercontent.com/karbytessupporter/karbytessupporter_originals/main/chatgpt_generated_image_21march2025_%5Bprobability_density_graph%5D.png]
+[https://raw.githubusercontent.com/karbytessupporter/karbytessupporter_originals/main/chatgpt_generated_image_21march2025_%5Bwavefunction_graph%5D.png]
 
 Probability Density Of Electron In A 1D Box
 
-[https://raw.githubusercontent.com/karbytessupporter/karbytessupporter_originals/main/chatgpt_generated_image_21march2025_%5Bwavefunction_graph%5D.png]
+[https://raw.githubusercontent.com/karbytessupporter/karbytessupporter_originals/main/chatgpt_generated_image_21march2025_%5Bprobability_density_graph%5D.png]
 
 Here are the two visualizations:
 
