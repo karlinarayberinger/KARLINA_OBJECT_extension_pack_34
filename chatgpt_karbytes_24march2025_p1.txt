@@ -1175,27 +1175,34 @@ r_e ≈ 2.817 × 10 ^ -15 m
 
 Proton:
     
-m p≈1.672×10−27 kg
-    mp​≈1.672×10−27 kg
+m_p ≈ 1.672 × 10 ^ −27 kg
 
-    Neutron:
-    mn≈1.675×10−27 kg
-    mn​≈1.675×10−27 kg
+Neutron:
+    
+m_n ≈ 1.675 × 10 ^ −27 kg
 
 ✅ Diameter (unlike electrons!):
 
-    Protons and neutrons are composite particles made of quarks and gluons.
+Protons and neutrons are composite particles made of quarks and gluons.
 
-    They do have measurable “size” due to the extent of their internal structure.
+They do have measurable “size” due to the extent of their internal structure.
 
-        Typical radius ≈ 0.84–0.87 femtometers
-        (1 femtometer = 10−1510−15 meters)
+Typical radius ≈ 0.84–0.87 femtometers
+        
+(1 femtometer = 10−1510−15 meters)
 
 🧬 Summary Table
-Particle        Mass    Size / Diameter?        Composite?
-Photon  0 kg    No defined diameter; spreads like a wave packet No
-Electron        ~9.11×10⁻³¹ kg  No known size (point-like)      No
-Proton  ~1.67×10⁻²⁷ kg  ~0.84 femtometers       Yes (3 quarks)
-Neutron ~1.67×10⁻²⁷ kg  ~0.84 femtometers       Yes (3 quarks)
+
+[preformatted text]
+
+Particle        | Mass                  | Size / Diameter?                                | Composite?
+
+Photon          | 0 kg                  | No defined diameter; spreads like a wave packet | No
+
+Electron        | ~9.11×10⁻³¹ kg        | No known size (point-like)                      | No
+
+Proton          | ~1.67×10⁻²⁷ kg        | ~0.84 femtometers                               | Yes (3 quarks)
+
+Neutron         | ~1.67×10⁻²⁷ kg        | ~0.84 femtometers                               | Yes (3 quarks)
 
 Would you like a visualization comparing these particle “sizes” on a log scale?
