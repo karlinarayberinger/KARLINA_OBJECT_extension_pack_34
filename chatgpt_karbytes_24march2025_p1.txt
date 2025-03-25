@@ -1835,3 +1835,100 @@ Would you like to see how supersymmetry (SUSY) would double the Standard Model w
 karbytes:
 
 Yes please!
+
+ChatGPT:
+
+[python]
+
+import matplotlib.pyplot as plt
+
+# Create figure and axis
+fig, ax = plt.subplots(figsize=(14, 10))
+
+# Define Standard Model particles and their supersymmetric partners
+susy_particles = {
+    "Quarks / Squarks": [("Quark", "lightcoral"), ("Squark (q̃)", "lightgray")],
+    "Leptons / Sleptons": [("Lepton", "lightskyblue"), ("Slepton (ℓ̃)", "lightgray")],
+    "Gauge Bosons / Gauginos": [("Photon / Gluon / W/Z", "palegreen"), ("Photino / Gluino / Wino / Zino", "lightgray")],
+    "Higgs / Higgsinos": [("Higgs Boson (H⁰)", "plum"), ("Higgsino (Ĥ)", "lightgray")]
+}
+
+# Position each pair in a column
+x_positions = {
+    "Quarks / Squarks": 0.15,
+    "Leptons / Sleptons": 0.4,
+    "Gauge Bosons / Gauginos": 0.65,
+    "Higgs / Higgsinos": 0.85
+}
+
+# Draw the paired particles
+for category, particles in susy_particles.items():
+    x = x_positions[category]
+    y_top = 0.75
+    for i, (label, color) in enumerate(particles):
+        y = y_top - i * 0.15
+        ax.text(x, y, label, fontsize=11, ha='center', va='center',
+                bbox=dict(facecolor=color, edgecolor='black'))
+
+# Connect each SM particle to its superpartner
+for x in x_positions.values():
+    ax.annotate("", xy=(x, 0.60), xytext=(x, 0.72),
+                arrowprops=dict(arrowstyle="->", lw=1.5, linestyle='dashed'))
+
+# Category labels
+for category, x in x_positions.items():
+    ax.text(x, 0.88, category, fontsize=12, ha='center', weight='bold')
+
+# Explanatory note
+ax.text(0.5, 0.03,
+        "Supersymmetry (SUSY) proposes that every Standard Model particle has a heavier 'superpartner'.\n"
+        "- Fermions (quarks/leptons) get bosonic superpartners (squarks/sleptons)\n"
+        "- Bosons (photons, gluons, etc.) get fermionic superpartners (gauginos, higgsinos)\n"
+        "None of these superpartners have been observed yet.",
+        fontsize=11, ha='center', bbox=dict(facecolor='lightyellow', edgecolor='black'))
+
+# Set limits and remove axes
+ax.set_xlim(0, 1)
+ax.set_ylim(0, 1)
+ax.axis('off')
+plt.title("Supersymmetry (SUSY): Standard Model Particles and Their Superpartners", fontsize=14)
+plt.tight_layout()
+plt.show()
+
+Supersymmetry (SUSY): Standard Model Particles and Their Superpartners
+
+[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_24march2025_p11.png]
+
+Here’s a diagram showing how Supersymmetry (SUSY) would extend the Standard Model:
+
+🔁 Each known particle gets a superpartner:
+
+[preformatted text]
+
+Standard Model                  | Particle SUSY Partner         | Type Shift
+
+Quark (fermion)                 | Squark (q̃)                    | Fermion → Boson
+
+Lepton (fermion)                | Slepton (ℓ̃)                   | Fermion → Boson
+
+Photon, Gluon, W/Z (bosons)     | Photino, Gluino, Wino, Zino   | Boson → Fermion
+
+Higgs Boson (boson)             | Higgsino (Ĥ)                  | Boson → Fermion
+
+💡 SUSY pairs each fermion with a boson, and each boson with a fermion.
+
+🧠 Why SUSY?
+
+- Helps unify the forces at high energies.
+
+- Offers a natural dark matter candidate (e.g. neutralino).
+
+- Could stabilize the Higgs mass against quantum corrections.
+
+None of these superpartners have been detected yet, but large-scale experiments (like those at CERN’s LHC) are still looking.
+
+Want to explore how SUSY ties into dark matter or extra dimensions? 
+
+karbytes: 
+
+Yes please!
