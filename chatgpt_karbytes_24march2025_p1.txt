@@ -1,7 +1,7 @@
 /**
  * file: chatgpt_karbytes_24march2025_p1.txt
  * type: plain-text
- * date: 24_MARCH_2025
+ * date: 25_MARCH_2025
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -1032,75 +1032,75 @@ That’s an insightful question—because it highlights one of the key differenc
 🧭 Short Answer:
 
 No, the two new photons do not have the same mass as the original photon—because all of them have zero rest mass.
+
 📡 Let’s break it down:
+
 🔹 Photons Have Zero Rest Mass
 
-    Photons are massless particles in terms of rest mass.
+- Photons are massless particles in terms of rest mass.
 
-    Their energy is related to their frequency by this equation:
+- Their energy is related to their frequency by this equation:
 
-E=hf
-E=hf
+E = h * f
 
 Where:
 
-    EE is energy,
+E is energy,
 
-    hh is Planck’s constant,
+h is Planck’s constant,
 
-    ff is frequency.
+f is frequency.
 
 🔹 What Changes in SPDC?
 
 In spontaneous parametric down-conversion:
 
-    A high-energy pump photon (e.g., 405 nm) is absorbed by a nonlinear crystal.
+- A high-energy pump photon (e.g., 405 nm) is absorbed by a nonlinear crystal.
 
-    It “splits” into two lower-energy photons (e.g., each 810 nm).
+- It “splits” into two lower-energy photons (e.g., each 810 nm).
 
-    These new photons are called the signal and idler photons.
+- These new photons are called the signal and idler photons.
 
 ✅ Energy Conservation:
-Epump=Esignal+Eidler
-Epump​=Esignal​+Eidler​
+
+E_pump = E_signal + E_idler
 
 Each daughter photon has less energy, hence lower frequency (longer wavelength).
+
 🔸 Momentum Is Also Conserved:
 
 Even though photons are massless, they still carry momentum:
-p=Ec=hfc=hλ
-p=cE​=chf​=λh​
+
+p = E / c = (h * f) / c = h / λ
 
 So momentum conservation also applies:
-p⃗pump=p⃗signal+p⃗idler
-p
-​pump​=p
-​signal​+p
-​idler​
+
+p_pump = p_signal + p_idler
 
 That’s why the photons emerge at complementary angles forming conical emission patterns from the crystal.
+
 🧬 Mass ≠ Energy in This Case
 
 If you’re thinking in terms of Einstein’s famous equation:
-E=mc2
-E=mc2
+
+E = m * (c ^ 2)
 
 You might wonder: Does a change in energy mean a change in mass?
 
-    That equation applies to rest energy for particles with rest mass.
+- That equation applies to rest energy for particles with rest mass.
 
-    Photons always move at the speed of light and have zero rest mass, so this doesn’t apply in the usual way.
+- Photons always move at the speed of light and have zero rest mass, so this doesn’t apply in the usual way.
 
-    Instead, photon energy is fully expressed as radiative (kinetic) energy, not mass.
+- Instead, photon energy is fully expressed as radiative (kinetic) energy, not mass.
 
 🧠 Bottom Line:
 
-    Original photon: mass = 0, energy = E=hfE=hf
+- Original photon: mass = 0, energy = E = h * f
 
-    Two new photons: each mass = 0, energy = hf1hf1​ and hf2hf2​
+- Two new photons: each mass = 0, energy = h * f_1 and h * f_2
 
-    Total energy and momentum are conserved
+- Total energy and momentum are conserved
 
-    No change in rest mass occurs, because there was no rest mass to begin with.
+- No change in rest mass occurs, because there was no rest mass to begin with.
 
 Would you like a visual comparing energy and momentum before and after the photon split in SPDC?
