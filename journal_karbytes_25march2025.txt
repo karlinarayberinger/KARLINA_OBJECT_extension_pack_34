@@ -1,0 +1,9 @@
+/** 
+  * file: journal_karbytes_25march2025.txt
+  * type: plain-text 
+  * date: 25_MARCH_2025 
+  * author: karbytes 
+  * license: PUBLIC_DOMAIN 
+  */
+
+On 25_MARCH_2025 karbytes ordered (from Amazon dot Com) a green USB-charging laser pointer for approximately $20. After karbytes obtains that package (from an Amazon locker in Castro Valley, California) karbytes intends to use that laser to set up a photon interference pattern using a simple piece of thin cardboard or index card paper with two tiny slits within the laser beam width such that photons travel through either of those two slits. karbytes will also cover one of the slits to demonstrate how the light which travels through it and illuminates a surface will likely appear as a single bar or light (instead of multiple bars of light (and presumably the following three results will be observed (in terms of number of laser light bars appearing on the "output interface" wall: (a) more than two, (b) exactly one, or (c) zero))). karbytes will photograph the results (and make still images and video files) to upload to GitHub. karbytes will also try to demonstrate that double-slit light experiment to ChatGPT-4o (in Advanced Voice Mode using "live" video input which ChatGPT can allegedly see). karbytes will first ask ChatGPT what it sees while karbytes demonstrates the varying "output screen" configurations (without explaining to ChatGPT what karbytes is doing). Then karbytes will open up that conversation to include more details about what karbytes is doing while karbytes uses all the technology at karbytes' disposal to learn more about quantum mechanics and how reality works (especially on a reductionist physical level).
