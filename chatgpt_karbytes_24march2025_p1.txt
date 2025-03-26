@@ -1589,7 +1589,7 @@ plt.show()
 
 Which Particles Interact via Which Fundamental Forces?
 
-[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_24march2025_p8.png]
+[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_24march2025_p7.png]
 
 Here’s a table showing which categories of particles are affected by which of the four fundamental forces:
 
@@ -1688,7 +1688,7 @@ plt.show()
 
 The Standard Model of Particle Physics — 'Particle Zoo'
 
-[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_24march2025_p9.png]
+[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_24march2025_p8.png]
 
 Here’s your Standard Model "particle zoo" — a visual overview of all known fundamental particles:
 
@@ -1802,7 +1802,7 @@ plt.show()
 
 Extended Particle Zoo: Standard Model + Hypothetical Particles
 
-[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_24march2025_p10.png]
+[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_24march2025_p9.png]
 
 Here’s the extended particle zoo, combining the Standard Model with key hypothetical particles from theories beyond it:
 
@@ -1897,7 +1897,7 @@ plt.show()
 
 Supersymmetry (SUSY): Standard Model Particles and Their Superpartners
 
-[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_24march2025_p11.png]
+[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_24march2025_p10.png]
 
 Here’s a diagram showing how Supersymmetry (SUSY) would extend the Standard Model:
 
@@ -2185,3 +2185,11 @@ So:
 🔒 Planck length is not just small—it may be the smallest "length" that can even be meaningfully defined.
 
 Would you like a visual scale diagram comparing everyday objects to the Planck length and other quantum scales?
+
+karbytes:
+
+What is loop quantum gravity and causal sets?
+
+ChatGPT:
+
+
