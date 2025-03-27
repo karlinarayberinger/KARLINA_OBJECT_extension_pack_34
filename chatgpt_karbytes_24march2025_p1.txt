@@ -3064,3 +3064,19 @@ Would you like me to generate example graphs showing what the x-position data at
 karbytes:
 
 Provide a description (rather than vague and underly technical summary) of that experiment. [Deep research]
+
+ChatGPT:
+
+To provide a clear and thorough description of the quantum eraser experiment you're referring to, could you please clarify the following:
+
+1. Are you asking for a description of the original Delayed Choice Quantum Eraser experiment by Yoon-Ho Kim et al. (1999)?
+
+2. Do you want the description to include experimental hardware, photon paths, and timing?
+
+3. Should the description be written for a general audience or with some technical depth (e.g., assuming familiarity with quantum mechanics basics)?
+
+Let me know how you'd like it framed so I can tailor it to your interest.
+
+karbytes:
+
+1: Yes. 2: yes. 3: yes.
