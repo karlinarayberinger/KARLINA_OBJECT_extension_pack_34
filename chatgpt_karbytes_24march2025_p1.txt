@@ -1005,9 +1005,9 @@ In this state, if you measure one photon as horizontally polarized, the other wi
 
 [preformatted text]
 
-Component   Role
+Component                       | Role
 
-UV Laser    Provides high-energy pump photons
+UV Laser                        | Provides high-energy pump photons
 
 BBO Crystal (or KDP, LBO, etc.) | Nonlinear medium for SPDC
 
