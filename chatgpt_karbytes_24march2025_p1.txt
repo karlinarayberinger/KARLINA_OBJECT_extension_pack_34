@@ -6,7 +6,7 @@
  * license: PUBLIC_DOMAIN
  */
 
-The following is a plain-text transcript of a conversation between karbytes and ChatGPT-4o which took place between 4:00AM Pacific Standard Time on 24_MARCH_2025 and 10:00PM Pacific Standard Time on 25_MARCH_2025. That conversation is a (non Advanced Voice Mode) continuation of the same conversation which is depicted by the following plain-text note: 
+The following is a plain-text transcript of a conversation between karbytes and ChatGPT-4o which took place between 4:00AM Pacific Standard Time on 24_MARCH_2025 and 2:00PM Pacific Standard Time on 26_MARCH_2025. That conversation is a (non Advanced Voice Mode) continuation of the same conversation which is depicted by the following plain-text note: 
 
 https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_karbytes_24march2025_p0.txt
 
