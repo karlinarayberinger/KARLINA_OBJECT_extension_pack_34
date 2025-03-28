@@ -331,3 +331,15 @@ Great, I’ll find both an original image or plot from the 1999 Delayed Choice Q
 [Read upload.wikimedia.org]
 
 - Scribing the analysis involves labeling curves, citing sources like Wikipedia for interference patterns, and noting phase shifts in signals detected at various paths.
+
+Delayed Choice Quantum Eraser (Kim et al. 1999) – Experiment and Results
+
+Experiment Setup (Kim et al., 1999)
+
+In 1999, Yoon-Ho Kim and colleagues performed a “delayed-choice quantum eraser” experiment to test how quantum interference can appear or disappear depending on whether which-path information is retained or “erased.” The setup (schematically illustrated below) involved a double-slit illuminated by an argon laser, producing single photons (351 nm) that pass through either slit A or slit B. After the slits, a nonlinear BBO crystal induces spontaneous parametric down-conversion (SPDC), splitting each photon into a pair of entangled photons – one signal photon and one idler photoninterference setup). The idler photon takes a longer path through a system of prisms (PS), beam splitters (BSₐ, BS_b, BS_c), and mirrors (Mₐ, M_b), leading to four possible detectors D₁, D₂, D₃, D₄ on the idler side. Importantly:
+
+D₃ or D₄ (“which-path” detectors): If an idler clicks at D₃, it could only have come from slit B; if it clicks at D₄, it could only have come from slit A. Thus D₃ and D₄ provide which-path information about the signal photon.
+
+D₁ or D₂ (“eraser” detectors): Idlers arriving at D₁ or D₂ have been recombined at BS_c such that their origin is indistinguishable – these detectors erase the which-path information. No single idler at D₁ or D₂ reveals which slit was taken.
+
+The signal detector D₀ is triggered ~8 ns before its entangled idler partner reaches D₁–D₄ (due to shorter path length). A coincidence circuit pairs each D₀ detection with the corresponding idler detection (D₁–D₄). By examining coincident counts (joint detection events), one can post-select subsets of D₀ hits corresponding to a given idler detector. This allows the experimenters to see how the D₀ pattern changes depending on where the idler went, even though D₀ itself, considered alone, shows no clear interference.
