@@ -30,3 +30,66 @@ Great, I’ll find both an original image or plot from the 1999 Delayed Choice Q
 
 [Research completed in 11m. 62 sources]
 
+[Images and Diagrams of 1999 Delayed Choice Quantum Eraser Results]
+
+- I'm gathering images and diagrams from the 1999 Delayed Choice Quantum Eraser experiment by Yoon-Ho Kim et al., including interference patterns and non-interference patterns.
+
+[Searched for Yoon-Ho Kim quantum eraser images]
+
+- I’m thinking about the sources of interference and non-interference patterns in the delayed choice quantum eraser experiment, including original and modern diagrams, and their clarity for visual data interpretation.
+
+[Read arxiv.org]
+
+- I’m considering opening the PDF with browser.open to view the figures and more content directly.
+
+[Read ar5iv.org]
+
+- I'm analyzing interference patterns and detection rates. Comparing Figs 3 and 4 for phase shifts, Fig 5 shows no interference. Proposing images for clarity.
+
+- I’m looking into accessing a PDF via Python or finding images, and also checking out a Wikipedia page and a Reddit discussion for diagrams or explanations.
+
+[Read reddit.com]
+
+[Read en.wikipedia.org]
+
+- Interpreting phenomenon at detectors: detecting interference and diffraction patterns based on idler detection locations.
+
+[Read researchgate.net]
+
+- I’m mapping out how to access PRL, must check subscription status. Considering Wikipedia and Reddit for potential images or links.
+
+[Read en.wikipedia.org]
+
+- I'm thinking about external links or images online. Maybe Google images or specific search engines would work.
+
+[Searched for R01 and R02 interference patterns]
+
+- I'm piecing together resources like Hackaday articles and cs.uwaterloo PPTs. They might offer images or detailed descriptions, useful for understanding interference patterns in waveforms.
+
+[Read hackaday.com]
+
+- I found that Hackaday might contain images showing interference patterns specifically labeled "er_08" linked to waveforms R01 and R02.
+
+[Read more from hackaday.com]
+
+- Noticing references to "R0n" diagrams and "er_08" imagery, likely illustrating particle and interference patterns, from a hackaday source.
+
+[Read more from hackaday.com]
+
+- I'm looking at a small image preview possibly related to simulations or representations. Considering Hackaday's content, it might involve waveforms from varied sources.
+
+[Read more from hackaday.com]
+
+- I’m working through whether "the top image" refers to an earlier image in the article or one from Hackaday. Planning to investigate any images present.
+
+[Read more from hackaday.com]
+
+- I’m gathering info on various images from Hackaday, including diagrams and interference patterns, to piece together their relevance to the quantum eraser experiment.
+
+[Searched for Kim Scully 1999 quantum eraser graph]
+
+- I'm digging into the search results to understand key concepts and potential figures in "Taming the Delayed Choice Quantum Eraser" on PhilSci-Archive.
+
+[Read philsci-archive.pitt.edu]
+
+- I’m analyzing Figure 2's data patterns at D0 and D1-D4, examining interference fringes and clump patterns, and noting potential conceptual content.
