@@ -2,7 +2,7 @@
  * file: sound_track_looper_three.js
  * type: JavaScript
  * author: karbytes
- * date: 26_MARCH_2025
+ * date: 28_MARCH_2025
  * license: PUBLIC_DOMAIN
  */
 
@@ -111,12 +111,18 @@ function get_menu_options() {
         'acoustic_guitar_sample_by_karbytes_08april2024.mp3',
         'alviso_slough_san_jose_california_09july2024.mp3',
 	'amplifier_original_mix_(hardtrance_1995)_by_macrocosm_downloaded_by_karbytes_26march2025.mp3',
+	'asmr_girl_whimpering_downloaded_by_karbytes_27march2025.mp3',
+	'asmr_pig_gorl_simpering_by_karbytes_27mar2025_p0.mp3',
+	'asmr_pig_gorl_simpering_by_karbytes_27mar2025_p1.mp3',
+	'asmr_pig_gorl_simpering_by_karbytes_27mar2025_p2.mp3',
         'baylands_alviso_san_jose_california_23jan2025_p6.mp3',
         'baylands_alviso_san_jose_california_23jan2025_p7.mp3',
+        'baylands_fremont_california_21march2025_p23.mp3',
         'blackened_metallica_1988_downloaded_by_karbytes_21september2024.mp3',
         'cafe_restaurant_by_mynoise_dot_net_customized_and_downloaded_by_karbytes_24january2025.mp3',
         'cafe_restaurant_(misophonia_edition)_by_mynoise_dot_net_customized_and_downloaded_by_karbytes_25january2025.mp3',
-        'deep_summer_spacetime_continuum_sound_13june2024.mp3',
+	'chatgpt_karbytes_voicemode_16march2025.mp3',
+	'deep_summer_spacetime_continuum_sound_13june2024.mp3',
         'diamond_(original_mix)_by_giada_released_2002_downloaded_by_karbytes_26march2025.mp3',
         'drums_karbytes_08march2025.mp3',
         'eagle_of_the_serpent_sun_from_winds_of_serpentine_ascension_by_into_oblivion_downloaded_by_karbytes_on_11april2024.mp3',
