@@ -361,3 +361,15 @@ Crucially, all four coincidence distributions R₀₁, R₀₂, R₀₃, R₀₄
 Figure 2. Joint-Detection Result – No Interference vs Interference. Example of a coincidence count distribution from Kim et al.’s experiment. Shown here is the R₀₄ subset (signal coincidences when the idler went to D₄), displaying a single broad peak – i.e. no interference fringes. In the actual data, the R₀₁ and R₀₂ subsets each showed interference fringes (peaks and troughs) which were phase-shifted relative to each other. By contrast, R₀₃ and R₀₄ yielded only a smooth diffraction profile. (R₀₄ was not explicitly plotted in the original paper; it is assumed to mirror R₀₃.)
 
 [https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_provided_image_28march2025_p1.png]
+
+Published Figures and Follow-ups
+
+Kim et al.’s original Phys. Rev. Lett. (2000) article included graphs of the coincidence rates: interference fringes for R₀₁ and R₀₂ (Fig. 3 and 4) and a flat distribution for R₀₃ (Fig. 5). The key findings are often depicted in summaries and textbooks. For example, the Wikimedia Commons graphic based on Kim’s data explicitly labels the fringe patterns (R₀₁, R₀₂) versus the “clump” patterns (R₀₃, R₀₄). Many reproductions illustrate that R₀₁ and R₀₂ are complementary interference patterns whose sum recreates the single broad curve of R₀₃/R₀₄. In essence, the interference is there in the conditional data, but hidden in the aggregate. Modern discussions (and even classroom demonstrations) emphasize that selecting subsets by the idler detector is like “filtering” the D₀ hits to reveal interference that is otherwise washed out.
+
+Several follow-up studies and explanations have included helpful diagrams of this effect. One visual approach is to color-code the signal hits by the corresponding idler detector. If one plots D₀’s hits tagged by D₁ (say, red) versus those tagged by D₂ (blue), each forms a fringe pattern shifted relative to the other; but when overlaid they sum to a uniform distribution. Conversely, hits tagged by D₃ or D₄ each just form a single hump (no fringes). This reinforces the idea that interference appears only when which-path information is truly unavailable – even though the “choice” to erase or not erase is made after the signal has hit D₀. The Delayed Choice Quantum Eraser experiment thus elegantly demonstrates how entanglement and measurement selection can recover interference from an entangled particle without violating causality.
+
+Sources: Kim et al. (1999/2000) original report [ar5iv.org]; Wikipedia summary of Kim’s experiment [en.wikipedia.org]; Hackaday tutorial (2016) [hackaday.com]; StrangePaths explainer (2007) [strangepaths.com].
+
+karbytes:
+
+In a different conversation you explained how photons can be made to travel significantly slower than the speed of light. Can the speed of electrons also be manipulated in a laboratory?
