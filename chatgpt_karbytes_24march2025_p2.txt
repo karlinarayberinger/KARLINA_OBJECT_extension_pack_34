@@ -1,7 +1,7 @@
 /**
  * file: chatgpt_karbytes_24march2025_p2.txt
  * type: plain-text
- * date: 27_MARCH_2025
+ * date: 28_MARCH_2025
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -93,3 +93,35 @@ Great, I’ll find both an original image or plot from the 1999 Delayed Choice Q
 [Read philsci-archive.pitt.edu]
 
 - I’m analyzing Figure 2's data patterns at D0 and D1-D4, examining interference fringes and clump patterns, and noting potential conceptual content.
+
+[Searched for R03 and R04 interference]
+
+- I'm gathering info on various platforms like Reddit, physics.stackexchange, and arXiv. The snippet suggests R03 and R04 are similarly shaped but shifted.
+
+[Searched for R01 R02 quantum eraser graph]
+
+- I'm pulling together different data types like graphs and Bayesian statistical analysis to streamline the selection of a suitable distribution for modeling a particular variable.
+
+[Read commons.wikimedia.org]
+
+- I’m curious about the file linked to the date/time text, which might be an SVG. I’ll consider fetching a PNG or checking if the image can be displayed in the browser.
+
+[Read upload.wikimedia.org]
+
+- It's interesting to see that embedding SVG files directly might not support them. I'm looking for raster versions or PNG previews on Wikimedia Commons, considering links and dimensions to find a feasible solution.
+
+[Read more from upload.wikimedia.org]
+
+- I'm thinking about converting the SVG to PNG or finding it directly on Google Images. Checking for relevant titles might also help.
+
+[Read commons.wikimedia.org]
+
+- I'm examining if "KimDelayedChoiceQuantumEraserGraphsSVG.svg" is a duplicate of "Delayed_Choice_Quantum_Eraser_Graphs.svg." Both files likely illustrate similar concepts.
+
+[Read upload.wikimedia.org]
+
+- I'm exploring multiple ways to resolve image processing issues, including server restrictions and offline problems. Adjusting the image resolution might also help in mitigating the glitch.
+
+[Read more from upload.wikimedia.org]
+
+- I'm moving anew beyond 'Renleypedekeklo'.
