@@ -205,3 +205,83 @@ Great, I’ll find both an original image or plot from the 1999 Delayed Choice Q
 [Read more from scirp.org]
 
 - OK, let's confirm that SCIRP's Figure 2 is the "Delayed Choice Quantum Eraser Graphs.svg" from Wikimedia, credited to Stigmatella. Now, I’ll check SCIRP's HTML or PDF for images.
+
+[Read more from scirp.org]
+
+- I'm figuring out why the HTML isn't showing or why images might be background. Considering a PDF as an alternative.
+
+[Read more from scirp.org]
+
+- I’m mapping out the idea of searching for images encoded in the PDF or revisiting the directly accessible wiki file's version.
+
+[Read crossmark-cdn.crossref.org]
+
+- OK, let me see. The information is related to Crossmark, but not relevant for this context.
+
+[Read scirp.org]
+
+- I'm exploring browser debug or image address copying methods due to the absence of an interactive UI.
+
+[Read more from scirp.org]
+
+- Piecing together the visual elements, I’m working through the PDF content to confirm the image's placement near its attribution note.
+
+[Read more from scirp.org]
+
+- I'm thinking about various images like the wiki figure, StrangePaths diagram, or SCIRP figure to illustrate interference patterns. Diagramming apparatus and detectors might clearly highlight results based on idler detector triggers.
+
+[Read upload.wikimedia.org]
+
+- I’m noting that adjusting the image dimensions to match the file's original spec (535x445) is essential. Using width=923 might inadvertently set the height to 768, which seems incorrect.
+
+[Read commons.wikimedia.org]
+
+- I’m considering whether option [108], a thumbnail from "commons.wikimedia.org," suffices, or if we should directly search for "Kim Delayed Choice quantum eraser graphs" on Google Images for a better match.
+
+[Searched for Delayed Choice Quantum Eraser Graphs.svg image]
+
+[Read more from commons.wikimedia.org]
+
+- I'm noting the image title and file details. It seems to be a standard image without interactivity.
+
+[Read more from commons.wikimedia.org]
+
+- The text refers to an image and potentially linking it to a specific source, possibly a direct URL or a citation [584].
+
+[Read upload.wikimedia.org]
+
+- I'm working through the file paths and their contents, considering their relevance and potential mismatches to ensure the accurate image link is identified.
+
+[Read more from upload.wikimedia.org]
+
+- I'm working through the image's black background and potential white lines. Red lines, likely interference patterns, are visible.
+
+[Read hackaday.com]
+
+- I’m working to find appropriate diagrams and interference patterns, considering background color effects, and ensuring visibility of key elements.
+
+[Read strangepaths.com]
+
+- Considering StrangePaths image for low resolution, leaning towards SCIRP figure or a clear apparatus diagram to illustrate interference patterns triggered by various detectors.
+
+[Read en.wikipedia.org]
+
+- I'm looking into StrangePaths' quantum eraser scheme using a Mach-Zehnder interferometer. Considering a more direct approach for Kim. The Wikipedia article possibly had an explanatory figure, possibly from Commons. The DCQE setup by Kim with SPDC seems relevant.
+
+[Searched for D1 D2 D3 D4 quantum eraser diagram]
+
+[Searched for delayed choice quantum eraser apparatus diagram D1 D2 D3 D4 D0]
+
+- I’m figuring out that the Wikipedia article has an apparatus diagram, likely with an image and a caption describing it, given the mention of a "vertical black line in the upper left corner."
+
+[Read more from en.wikipedia.org]
+
+- Pulling together the experiment setup, I identified [407] as the setup diagram and [408] as the graph with R04 supplied.
+
+[Read upload.wikimedia.org]
+
+- I’m examining the figure’s layout and identifying potential mappings for each curve, particularly focusing on the (supplied) red hump likely representing R04, while R03 might be in black or grey.
+
+[Read more from upload.wikimedia.org]
+
+- It's worth noting any GIFs like [409] could possibly be animations, simulations, or straightforward .gif files.
