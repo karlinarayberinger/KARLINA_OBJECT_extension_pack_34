@@ -1,7 +1,7 @@
 /**
  * file: journal_karbytes_28march2025.txt
  * type: plain-text
- * date: 28_MARCH_2025
+ * date: 29_MARCH_2025
  * author: karbytes
  * license: PUBLIC_DOMAIN
  */
@@ -10,7 +10,7 @@ This journal entry web page is a continuation of the web page at the following U
 
 https://karbytesforlifeblog.wordpress.com/chatgpt_karbytes_25march2025/
 
-On 28_MARCH_2025, karbytes created videos and photographic images of karbytes' newly-obtained green laser pointer and uploaded those files to the GitHub repository karbytes created and which contains this journal entry web page file. Those green laser files are enumerated by the following list of Uniform Resource Locators (and are listed in chronologial order):
+On 28_MARCH_2025, karbytes created videos and photographic images of karbytes’ newly-obtained green laser pointer and uploaded those files to the GitHub repository karbytes created and which contains this journal entry web page file. Those green laser files are enumerated by the following list of Uniform Resource Locators (and are listed in chronologial order):
 
 green_laser_file_0: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_double_slit_filter_flimsy_28mar2025.jpg
 
@@ -22,12 +22,12 @@ green_laser_file_3: https://raw.githubusercontent.com/karlinarayberinger/KARLINA
 
 green_laser_file_4: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_double_slit_experiment_28march2025.mp4
 
-green_laser_file_6: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_unsplit_beam_reflection_28mar2025.jpg
+green_laser_file_5: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_unsplit_beam_reflection_28mar2025.jpg
 
-green_laser_file_7: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_unsplit_beam_28march2025_path.jpg
+green_laser_file_6: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_unsplit_beam_28march2025_path.jpg
 
-green_laser_file_8: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_unsplit_beam_28march2025.mp4
+green_laser_file_7: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_unsplit_beam_28march2025.mp4
 
-green_laser_file_9: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_with_filter_cap_on_28march2025.mp4
+green_laser_file_8: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_with_filter_cap_on_28march2025.mp4
 
-green_laser_file_10: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_illuminates_dark_house_28march2025.mp4
+green_laser_file_9: https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/green_laser_illuminates_dark_house_28march2025.mp4
