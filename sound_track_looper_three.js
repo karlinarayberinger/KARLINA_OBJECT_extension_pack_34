@@ -2,7 +2,7 @@
  * file: sound_track_looper_three.js
  * type: JavaScript
  * author: karbytes
- * date: 28_MARCH_2025
+ * date: 30_MARCH_2025
  * license: PUBLIC_DOMAIN
  */
 
@@ -148,7 +148,8 @@ function get_menu_options() {
         'medieval_village_by_mynoise_dot_net_customized_and_downloaded_by_karbytes_28february2025_(animal_vocalizations_and_occasional_blacksmithing).mp3',
         'memories_of_children_david_darling_healing_music_project_radiance_2003_downloaded_by_karbytes_on_13june2024.mp3',
         'merced_manure_sound_files_karlina_beringer_2008_to_2009_track_0_retrieved_on_24_december_2023_[clock_shatter].mp3',
-        'pig_boi_24_june_2023.mp3',
+	'moonlight_sonata_[originally_named-_piano_sonata_No._14_in_C♯_minor_“Quasi una fantasia”]_by_ludwig_van_beethoven_released_1802_downloaded_by_karbytes_30march2025.mp3',
+	'pig_boi_24_june_2023.mp3',
         'pig_gorl_02_april_2024_part_0.mp3',
         'pig_gorl_02_april_2024_part_1.mp3',
         'pig_gorl_03_november_2023_part_0.mp3',
