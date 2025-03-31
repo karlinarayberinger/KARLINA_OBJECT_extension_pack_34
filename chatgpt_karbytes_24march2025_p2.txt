@@ -6,12 +6,12 @@
  * license: PUBLIC_DOMAIN
  */
 
-The following is a plain-text transcript of a (continuation of a) conversation between karbytes and ChatGPT-4o which took place between 4:00AM Pacific Standard Time on 24_MARCH_2025 and 5:00PM Pacific Standard Time on 30_MARCH_2025. That conversation is a (non Advanced Voice Mode) continuation of the same conversation which is depicted by the following plain-text note: 
+The following is a plain-text transcript of a conversation between karbytes and ChatGPT-4o which took place between 4:00AM Pacific Standard Time on 24_MARCH_2025 and 5:00PM Pacific Standard Time on 30_MARCH_2025. That conversation is a (non Advanced Voice Mode) continuation of the same conversation which is depicted by the following plain-text note:
 
 https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_karbytes_24march2025_p1.txt
 
 * * *
-
+‘
 karbytes:
 
 Provide at least one image depicting the result of that experiment. [Deep research]
@@ -26,311 +26,311 @@ Both please.
 
 ChatGPT:
 
-Great, I’ll find both an original image or plot from the 1999 Delayed Choice Quantum Eraser experiment by Kim et al., as well as clear diagrams or reconstructions that illustrate the experiment's results—especially the interference and non-interference patterns seen in the signal photon coincidences. I’ll let you know as soon as I have them.
+Great, I’ll find both an original image or plot from the 1999 Delayed Choice Quantum Eraser experiment by Kim et al., as well as clear diagrams or reconstructions that illustrate the experiment’s results—especially the interference and non-interference patterns seen in the signal photon coincidences. I’ll let you know as soon as I have them.
 
 [Research completed in 11m. 62 sources]
 
 [Images and Diagrams of 1999 Delayed Choice Quantum Eraser Results]
 
-- I'm gathering images and diagrams from the 1999 Delayed Choice Quantum Eraser experiment by Yoon-Ho Kim et al., including interference patterns and non-interference patterns.
+– I’m gathering images and diagrams from the 1999 Delayed Choice Quantum Eraser experiment by Yoon-Ho Kim et al., including interference patterns and non-interference patterns.
 
 [Searched for Yoon-Ho Kim quantum eraser images]
 
-- I’m thinking about the sources of interference and non-interference patterns in the delayed choice quantum eraser experiment, including original and modern diagrams, and their clarity for visual data interpretation.
+– I’m thinking about the sources of interference and non-interference patterns in the delayed choice quantum eraser experiment, including original and modern diagrams, and their clarity for visual data interpretation.
 
 [Read arxiv.org]
 
-- I’m considering opening the PDF with browser.open to view the figures and more content directly.
+– I’m considering opening the PDF with browser.open to view the figures and more content directly.
 
 [Read ar5iv.org]
 
-- I'm analyzing interference patterns and detection rates. Comparing Figs 3 and 4 for phase shifts, Fig 5 shows no interference. Proposing images for clarity.
+– I’m analyzing interference patterns and detection rates. Comparing Figs 3 and 4 for phase shifts, Fig 5 shows no interference. Proposing images for clarity.
 
-- I’m looking into accessing a PDF via Python or finding images, and also checking out a Wikipedia page and a Reddit discussion for diagrams or explanations.
+– I’m looking into accessing a PDF via Python or finding images, and also checking out a Wikipedia page and a Reddit discussion for diagrams or explanations.
 
 [Read reddit.com]
 
 [Read en.wikipedia.org]
 
-- Interpreting phenomenon at detectors: detecting interference and diffraction patterns based on idler detection locations.
+– Interpreting phenomenon at detectors: detecting interference and diffraction patterns based on idler detection locations.
 
 [Read researchgate.net]
 
-- I’m mapping out how to access PRL, must check subscription status. Considering Wikipedia and Reddit for potential images or links.
+– I’m mapping out how to access PRL, must check subscription status. Considering Wikipedia and Reddit for potential images or links.
 
 [Read en.wikipedia.org]
 
-- I'm thinking about external links or images online. Maybe Google images or specific search engines would work.
+– I’m thinking about external links or images online. Maybe Google images or specific search engines would work.
 
 [Searched for R01 and R02 interference patterns]
 
-- I'm piecing together resources like Hackaday articles and cs.uwaterloo PPTs. They might offer images or detailed descriptions, useful for understanding interference patterns in waveforms.
+– I’m piecing together resources like Hackaday articles and cs.uwaterloo PPTs. They might offer images or detailed descriptions, useful for understanding interference patterns in waveforms.
 
 [Read hackaday.com]
 
-- I found that Hackaday might contain images showing interference patterns specifically labeled "er_08" linked to waveforms R01 and R02.
+– I found that Hackaday might contain images showing interference patterns specifically labeled “er_08” linked to waveforms R01 and R02.
 
 [Read more from hackaday.com]
 
-- Noticing references to "R0n" diagrams and "er_08" imagery, likely illustrating particle and interference patterns, from a hackaday source.
+– Noticing references to “R0n” diagrams and “er_08” imagery, likely illustrating particle and interference patterns, from a hackaday source.
 
 [Read more from hackaday.com]
 
-- I'm looking at a small image preview possibly related to simulations or representations. Considering Hackaday's content, it might involve waveforms from varied sources.
+– I’m looking at a small image preview possibly related to simulations or representations. Considering Hackaday’s content, it might involve waveforms from varied sources.
 
 [Read more from hackaday.com]
 
-- I’m working through whether "the top image" refers to an earlier image in the article or one from Hackaday. Planning to investigate any images present.
+– I’m working through whether “the top image” refers to an earlier image in the article or one from Hackaday. Planning to investigate any images present.
 
 [Read more from hackaday.com]
 
-- I’m gathering info on various images from Hackaday, including diagrams and interference patterns, to piece together their relevance to the quantum eraser experiment.
+– I’m gathering info on various images from Hackaday, including diagrams and interference patterns, to piece together their relevance to the quantum eraser experiment.
 
 [Searched for Kim Scully 1999 quantum eraser graph]
 
-- I'm digging into the search results to understand key concepts and potential figures in "Taming the Delayed Choice Quantum Eraser" on PhilSci-Archive.
+– I’m digging into the search results to understand key concepts and potential figures in “Taming the Delayed Choice Quantum Eraser” on PhilSci-Archive.
 
 [Read philsci-archive.pitt.edu]
 
-- I’m analyzing Figure 2's data patterns at D0 and D1-D4, examining interference fringes and clump patterns, and noting potential conceptual content.
+– I’m analyzing Figure 2’s data patterns at D0 and D1-D4, examining interference fringes and clump patterns, and noting potential conceptual content.
 
 [Searched for R03 and R04 interference]
 
-- I'm gathering info on various platforms like Reddit, physics.stackexchange, and arXiv. The snippet suggests R03 and R04 are similarly shaped but shifted.
+– I’m gathering info on various platforms like Reddit, physics.stackexchange, and arXiv. The snippet suggests R03 and R04 are similarly shaped but shifted.
 
 [Searched for R01 R02 quantum eraser graph]
 
-- I'm pulling together different data types like graphs and Bayesian statistical analysis to streamline the selection of a suitable distribution for modeling a particular variable.
+– I’m pulling together different data types like graphs and Bayesian statistical analysis to streamline the selection of a suitable distribution for modeling a particular variable.
 
 [Read commons.wikimedia.org]
 
-- I’m curious about the file linked to the date/time text, which might be an SVG. I’ll consider fetching a PNG or checking if the image can be displayed in the browser.
+– I’m curious about the file linked to the date/time text, which might be an SVG. I’ll consider fetching a PNG or checking if the image can be displayed in the browser.
 
 [Read upload.wikimedia.org]
 
-- It's interesting to see that embedding SVG files directly might not support them. I'm looking for raster versions or PNG previews on Wikimedia Commons, considering links and dimensions to find a feasible solution.
+– It’s interesting to see that embedding SVG files directly might not support them. I’m looking for raster versions or PNG previews on Wikimedia Commons, considering links and dimensions to find a feasible solution.
 
 [Read more from upload.wikimedia.org]
 
-- I'm thinking about converting the SVG to PNG or finding it directly on Google Images. Checking for relevant titles might also help.
+– I’m thinking about converting the SVG to PNG or finding it directly on Google Images. Checking for relevant titles might also help.
 
 [Read commons.wikimedia.org]
 
-- I'm examining if "KimDelayedChoiceQuantumEraserGraphsSVG.svg" is a duplicate of "Delayed_Choice_Quantum_Eraser_Graphs.svg." Both files likely illustrate similar concepts.
+– I’m examining if “KimDelayedChoiceQuantumEraserGraphsSVG.svg” is a duplicate of “Delayed_Choice_Quantum_Eraser_Graphs.svg.” Both files likely illustrate similar concepts.
 
 [Read upload.wikimedia.org]
 
-- I'm exploring multiple ways to resolve image processing issues, including server restrictions and offline problems. Adjusting the image resolution might also help in mitigating the glitch.
+– I’m exploring multiple ways to resolve image processing issues, including server restrictions and offline problems. Adjusting the image resolution might also help in mitigating the glitch.
 
 [Read more from upload.wikimedia.org]
 
-- I'm moving anew beyond 'Renleypedekeklo'.
+– I’m moving anew beyond ‘Renleypedekeklo’.
 
 [Read more from upload.wikimedia.org]
 
-- I'm digging into the pattern on a black background with a possibly incomplete red line labeled "supplied." The image's resolution of 666x800 might need enhancement for more details.
+– I’m digging into the pattern on a black background with a possibly incomplete red line labeled “supplied.” The image’s resolution of 666×800 might need enhancement for more details.
 
 [Read more from upload.wikimedia.org]
 
-- I’m re-evaluating how to view the image, considering smaller sizes or scrolling to capture the entire content accurately.
+– I’m re-evaluating how to view the image, considering smaller sizes or scrolling to capture the entire content accurately.
 
 [Read more from upload.wikimedia.org]
 
-- I'm working through the problem of a duplicate image, considering higher resolutions or different aspect ratios to improve quality.
+– I’m working through the problem of a duplicate image, considering higher resolutions or different aspect ratios to improve quality.
 
 [Read more from upload.wikimedia.org]
 
-- OK, I’m working through the 'Delayed Choice' image issue. The 'KimDelayedChoiceQuantumEraserGraphsSVG.svg' file is small but seems promising. Progressing through image choices, I aim to find a suitable candidate.
+– OK, I’m working through the ‘Delayed Choice’ image issue. The ‘KimDelayedChoiceQuantumEraserGraphsSVG.svg’ file is small but seems promising. Progressing through image choices, I aim to find a suitable candidate.
 
 [Read more from upload.wikimedia.org]
 
-- Trying different image resolutions and height parameters to match the graph dimensions from the file. Searching for specific graphs to ensure the correct model and version.
+– Trying different image resolutions and height parameters to match the graph dimensions from the file. Searching for specific graphs to ensure the correct model and version.
 
 [Searched for Kim 1999 quantum eraser interference images]
 
-- Considering stopping by the StrangePaths blog for the quantum eraser experiment, possibly in Spanish or French.
+– Considering stopping by the StrangePaths blog for the quantum eraser experiment, possibly in Spanish or French.
 
 [Read strangepaths.com]
 
-- OK, let me see. I’m checking the StrangePaths blog to see if there's an image at line 19, titled "patterns-01.jpg".
+– OK, let me see. I’m checking the StrangePaths blog to see if there’s an image at line 19, titled “patterns-01.jpg”.
 
 [Read more from strangepaths.com]
 
-- Interestingly enough, this excerpt explores how interference patterns emerge when adding fringe distributions. Adding two patterns forms a single distribution, canceling out the interference. Antifringing manages anti-interference patterns effectively.
+– Interestingly enough, this excerpt explores how interference patterns emerge when adding fringe distributions. Adding two patterns forms a single distribution, canceling out the interference. Antifringing manages anti-interference patterns effectively.
 
 [Read more from strangepaths.com]
 
-- The image is small, possibly a preview. It might be scaled down, and the actual file could be larger.
+– The image is small, possibly a preview. It might be scaled down, and the actual file could be larger.
 
 [Read more from strangepaths.com]
 
-- I’m analyzing a conceptual diagram with D0 correlated with D1 and D2, showing interference and anti-fringes. This progression helps to visualize these quantum mechanics experiments effectively.
+– I’m analyzing a conceptual diagram with D0 correlated with D1 and D2, showing interference and anti-fringes. This progression helps to visualize these quantum mechanics experiments effectively.
 
 [Searched for D0 D1 correlation image]
 
-- I’m examining websites for PhilSci and StrangePaths. Their content and credibility are top priorities.
+– I’m examining websites for PhilSci and StrangePaths. Their content and credibility are top priorities.
 
 [Searched for delayed choice quantum eraser Kim graph]
 
-- I'm thinking through possible graphs to use, considering the original data's vectors or reproductions like the wiki vector or StrangePaths colored demonstration. The wiki vector seems ideal due to its probable creation from the actual data.
+– I’m thinking through possible graphs to use, considering the original data’s vectors or reproductions like the wiki vector or StrangePaths colored demonstration. The wiki vector seems ideal due to its probable creation from the actual data.
 
 [Read en.wikipedia.org]
 
-- I’m examining the "PNG preview" sizes, including 600 x 600, 768 x 768, 1024 x 1024, 2048 x 2048, and 635 x 635 pixels.
+– I’m examining the “PNG preview” sizes, including 600 x 600, 768 x 768, 1024 x 1024, 2048 x 2048, and 635 x 635 pixels.
 
 [Read upload.wikimedia.org]
 
-- I’m looking into the ongoing problem with the "Delayed Choice..." file. It seems to be a recurring error.
+– I’m looking into the ongoing problem with the “Delayed Choice…” file. It seems to be a recurring error.
 
 [Read more from upload.wikimedia.org]
 
-- I'm exploring reasons for preview issues, considering false positives or image triggers. The "Delayed_Choice_Quantum_Eraser_Graphs.svg" might have small graphs or partial views affecting it.
+– I’m exploring reasons for preview issues, considering false positives or image triggers. The “Delayed_Choice_Quantum_Eraser_Graphs.svg” might have small graphs or partial views affecting it.
 
 [Read more from upload.wikimedia.org]
 
-- I’m piecing together different images, including "er_08.gif" from Hackaday, "patterns-01.jpg" from StrangePaths, and figures from the arXiv paper.
+– I’m piecing together different images, including “er_08.gif” from Hackaday, “patterns-01.jpg” from StrangePaths, and figures from the arXiv paper.
 
 [Searched for joint detection rate interference Kim 1999 figure]
 
-- I'm examining options like using an open method on ResearchGate or converting PDFs to text or images via Python. The accessibility of images from arXiv PDFs is also being considered.
+– I’m examining options like using an open method on ResearchGate or converting PDFs to text or images via Python. The accessibility of images from arXiv PDFs is also being considered.
 
 [Searched for Kim quantum eraser interference fringe graph]
 
-- Considering ResearchGate for a snippet or R01 and R02 graphs. SCIRP might offer "The Delayed Quantum Eraser Experiment Explained Classically" with possibly similar graphs.
+– Considering ResearchGate for a snippet or R01 and R02 graphs. SCIRP might offer “The Delayed Quantum Eraser Experiment Explained Classically” with possibly similar graphs.
 
 [Read scirp.org]
 
-- Mapping out Figure 1 as the experimental setup and Figure 2 with unspecified attribution, possibly Wikipedia or StrangePaths.
+– Mapping out Figure 1 as the experimental setup and Figure 2 with unspecified attribution, possibly Wikipedia or StrangePaths.
 
 [Read more from scirp.org]
 
-- OK, let's confirm that SCIRP's Figure 2 is the "Delayed Choice Quantum Eraser Graphs.svg" from Wikimedia, credited to Stigmatella. Now, I’ll check SCIRP's HTML or PDF for images.
+– OK, let’s confirm that SCIRP’s Figure 2 is the “Delayed Choice Quantum Eraser Graphs.svg” from Wikimedia, credited to Stigmatella. Now, I’ll check SCIRP’s HTML or PDF for images.
 
 [Read more from scirp.org]
 
-- I'm figuring out why the HTML isn't showing or why images might be background. Considering a PDF as an alternative.
+– I’m figuring out why the HTML isn’t showing or why images might be background. Considering a PDF as an alternative.
 
 [Read more from scirp.org]
 
-- I’m mapping out the idea of searching for images encoded in the PDF or revisiting the directly accessible wiki file's version.
+– I’m mapping out the idea of searching for images encoded in the PDF or revisiting the directly accessible wiki file’s version.
 
 [Read crossmark-cdn.crossref.org]
 
-- OK, let me see. The information is related to Crossmark, but not relevant for this context.
+– OK, let me see. The information is related to Crossmark, but not relevant for this context.
 
 [Read scirp.org]
 
-- I'm exploring browser debug or image address copying methods due to the absence of an interactive UI.
+– I’m exploring browser debug or image address copying methods due to the absence of an interactive UI.
 
 [Read more from scirp.org]
 
-- Piecing together the visual elements, I’m working through the PDF content to confirm the image's placement near its attribution note.
+– Piecing together the visual elements, I’m working through the PDF content to confirm the image’s placement near its attribution note.
 
 [Read more from scirp.org]
 
-- I'm thinking about various images like the wiki figure, StrangePaths diagram, or SCIRP figure to illustrate interference patterns. Diagramming apparatus and detectors might clearly highlight results based on idler detector triggers.
+– I’m thinking about various images like the wiki figure, StrangePaths diagram, or SCIRP figure to illustrate interference patterns. Diagramming apparatus and detectors might clearly highlight results based on idler detector triggers.
 
 [Read upload.wikimedia.org]
 
-- I’m noting that adjusting the image dimensions to match the file's original spec (535x445) is essential. Using width=923 might inadvertently set the height to 768, which seems incorrect.
+– I’m noting that adjusting the image dimensions to match the file’s original spec (535×445) is essential. Using width=923 might inadvertently set the height to 768, which seems incorrect.
 
 [Read commons.wikimedia.org]
 
-- I’m considering whether option [108], a thumbnail from "commons.wikimedia.org," suffices, or if we should directly search for "Kim Delayed Choice quantum eraser graphs" on Google Images for a better match.
+– I’m considering whether option [108], a thumbnail from “commons.wikimedia.org,” suffices, or if we should directly search for “Kim Delayed Choice quantum eraser graphs” on Google Images for a better match.
 
 [Searched for Delayed Choice Quantum Eraser Graphs.svg image]
 
 [Read more from commons.wikimedia.org]
 
-- I'm noting the image title and file details. It seems to be a standard image without interactivity.
+– I’m noting the image title and file details. It seems to be a standard image without interactivity.
 
 [Read more from commons.wikimedia.org]
 
-- The text refers to an image and potentially linking it to a specific source, possibly a direct URL or a citation [584].
+– The text refers to an image and potentially linking it to a specific source, possibly a direct URL or a citation [584].
 
 [Read upload.wikimedia.org]
 
-- I'm working through the file paths and their contents, considering their relevance and potential mismatches to ensure the accurate image link is identified.
+– I’m working through the file paths and their contents, considering their relevance and potential mismatches to ensure the accurate image link is identified.
 
 [Read more from upload.wikimedia.org]
 
-- I'm working through the image's black background and potential white lines. Red lines, likely interference patterns, are visible.
+– I’m working through the image’s black background and potential white lines. Red lines, likely interference patterns, are visible.
 
 [Read hackaday.com]
 
-- I’m working to find appropriate diagrams and interference patterns, considering background color effects, and ensuring visibility of key elements.
+– I’m working to find appropriate diagrams and interference patterns, considering background color effects, and ensuring visibility of key elements.
 
 [Read strangepaths.com]
 
-- Considering StrangePaths image for low resolution, leaning towards SCIRP figure or a clear apparatus diagram to illustrate interference patterns triggered by various detectors.
+– Considering StrangePaths image for low resolution, leaning towards SCIRP figure or a clear apparatus diagram to illustrate interference patterns triggered by various detectors.
 
 [Read en.wikipedia.org]
 
-- I'm looking into StrangePaths' quantum eraser scheme using a Mach-Zehnder interferometer. Considering a more direct approach for Kim. The Wikipedia article possibly had an explanatory figure, possibly from Commons. The DCQE setup by Kim with SPDC seems relevant.
+– I’m looking into StrangePaths’ quantum eraser scheme using a Mach-Zehnder interferometer. Considering a more direct approach for Kim. The Wikipedia article possibly had an explanatory figure, possibly from Commons. The DCQE setup by Kim with SPDC seems relevant.
 
 [Searched for D1 D2 D3 D4 quantum eraser diagram]
 
 [Searched for delayed choice quantum eraser apparatus diagram D1 D2 D3 D4 D0]
 
-- I’m figuring out that the Wikipedia article has an apparatus diagram, likely with an image and a caption describing it, given the mention of a "vertical black line in the upper left corner."
+– I’m figuring out that the Wikipedia article has an apparatus diagram, likely with an image and a caption describing it, given the mention of a “vertical black line in the upper left corner.”
 
 [Read more from en.wikipedia.org]
 
-- Pulling together the experiment setup, I identified [407] as the setup diagram and [408] as the graph with R04 supplied.
+– Pulling together the experiment setup, I identified [407] as the setup diagram and [408] as the graph with R04 supplied.
 
 [Read upload.wikimedia.org]
 
-- I’m examining the figure’s layout and identifying potential mappings for each curve, particularly focusing on the (supplied) red hump likely representing R04, while R03 might be in black or grey.
+– I’m examining the figure’s layout and identifying potential mappings for each curve, particularly focusing on the (supplied) red hump likely representing R04, while R03 might be in black or grey.
 
 [Read more from upload.wikimedia.org]
 
-- It's worth noting any GIFs like [409] could possibly be animations, simulations, or straightforward .gif files.
+– It’s worth noting any GIFs like [409] could possibly be animations, simulations, or straightforward .gif files.
 
 [Read more from upload.wikimedia.org]
 
-- Thinking through the possibility of a gif being restricted due to moderation rules.
+– Thinking through the possibility of a gif being restricted due to moderation rules.
 
 [Read more from upload.wikimedia.org]
 
-- Identifying core figures**
+– Identifying core figures**
 
-- I’m pulling together L493's fixed figure and L497's animated one, with a GIF likely toggling elements.
-
-[Read more from upload.wikimedia.org]
-
-- Die aktuelle Größe der Abbildungsdatei "Kim_EtAl_Quantum_Eraser.svg" ist zu niedrig, vermutlich bei 401 px. Eine größere Version könnte die Klarheit und Auswirkung verbessern.
+– I’m pulling together L493’s fixed figure and L497’s animated one, with a GIF likely toggling elements.
 
 [Read more from upload.wikimedia.org]
 
-- Interestingly enough, I'm verifying how interference patterns shift depending on path detectors, while acknowledging a need to clarify unclear points.
+– Die aktuelle Größe der Abbildungsdatei “Kim_EtAl_Quantum_Eraser.svg” ist zu niedrig, vermutlich bei 401 px. Eine größere Version könnte die Klarheit und Auswirkung verbessern.
 
 [Read more from upload.wikimedia.org]
 
-- I'm examining links and images, considering file pages and Wikipedia references. Progress is being made through these evaluations.
+– Interestingly enough, I’m verifying how interference patterns shift depending on path detectors, while acknowledging a need to clarify unclear points.
 
 [Read more from upload.wikimedia.org]
 
-- I’m gathering apparatus diagrams and interference patterns from various sources, like SCIRP, philsci, and the S&N blog, to support the analysis.
+– I’m examining links and images, considering file pages and Wikipedia references. Progress is being made through these evaluations.
+
+[Read more from upload.wikimedia.org]
+
+– I’m gathering apparatus diagrams and interference patterns from various sources, like SCIRP, philsci, and the S&N blog, to support the analysis.
 
 [Read backreaction.blogspot.com]
 
-- I'm considering the use of [67] to illustrate a basic concept, while noting its limitations and suggesting alternative approaches to depict interference fringes effectively.
+– I’m considering the use of [67] to illustrate a basic concept, while noting its limitations and suggesting alternative approaches to depict interference fringes effectively.
 
 [Searched for quantum eraser interference R01 R02 image]
 
-- This seems to indicate a need for verification in consulting guidelines.
+– This seems to indicate a need for verification in consulting guidelines.
 
 [Read cs.uwaterloo.ca]
 
-- I’m pulling together interference patterns and apparatus images. Trying different sources and adjusting contrast for clarity. Progress is steady and intriguing!
+– I’m pulling together interference patterns and apparatus images. Trying different sources and adjusting contrast for clarity. Progress is steady and intriguing!
 
 [Read philsci-archive.pitt.edu]
 
-- The PDF evolves from illustrations to pictures, likely due to alignment and word constraints. Progress is steady, akin to a hydraulic lift.
+– The PDF evolves from illustrations to pictures, likely due to alignment and word constraints. Progress is steady, akin to a hydraulic lift.
 
 [Read upload.wikimedia.org]
 
-- Scribing the analysis involves labeling curves, citing sources like Wikipedia for interference patterns, and noting phase shifts in signals detected at various paths.
+– Scribing the analysis involves labeling curves, citing sources like Wikipedia for interference patterns, and noting phase shifts in signals detected at various paths.
 
 Delayed Choice Quantum Eraser (Kim et al. 1999) – Experiment and Results
 
@@ -393,7 +393,7 @@ q = charge of the electron (~1.6×10⁻¹⁹ C),
 V = voltage.
 
 The classical speed (non-relativistic) is:
-    
+
 v = square_root((2 * q * V) / m_e)
 
 where m_e is the electron’s mass (~9.11×10⁻³¹ kg).
@@ -410,33 +410,33 @@ For example:
 
 🧲 Electric & Magnetic Fields
 
-- Electrons can be accelerated or decelerated using fields in cathode ray tubes, electron beams, linear accelerators, and RF cavities.
+– Electrons can be accelerated or decelerated using fields in cathode ray tubes, electron beams, linear accelerators, and RF cavities.
 
-- Magnetic fields don’t change speed directly (they deflect direction), but magnetic lenses are used in electron microscopes to focus and guide electrons.
+– Magnetic fields don’t change speed directly (they deflect direction), but magnetic lenses are used in electron microscopes to focus and guide electrons.
 
 🧊 Cryogenic Semiconductors
 
-- In semiconductors (especially at cryogenic temperatures), electron drift velocity is reduced due to reduced kinetic energy and lattice interactions.
+– In semiconductors (especially at cryogenic temperatures), electron drift velocity is reduced due to reduced kinetic energy and lattice interactions.
 
-- Electrons can be trapped or guided through quantum dots, quantum wells, and 2D materials at controlled speeds.
+– Electrons can be trapped or guided through quantum dots, quantum wells, and 2D materials at controlled speeds.
 
 🧬 Cold Electron Sources
 
-- Techniques like photoemission from cooled cathodes produce electrons with very low thermal energy → slower starting speeds.
+– Techniques like photoemission from cooled cathodes produce electrons with very low thermal energy → slower starting speeds.
 
-- Useful in ultrafast electron diffraction and quantum optics.
+– Useful in ultrafast electron diffraction and quantum optics.
 
 🌪 Slowing via Matter Waves
 
-- In electron interferometry, electrons are guided slowly enough to exhibit clear wave-like behavior over large scales (think: de Broglie wavelength increases as velocity decreases).
+– In electron interferometry, electrons are guided slowly enough to exhibit clear wave-like behavior over large scales (think: de Broglie wavelength increases as velocity decreases).
 
 🧪 Advanced: Ultra-Slow Electron Experiments
 
 There are even niche setups (e.g. Rydberg atoms or Penning traps) where electrons are almost motionless, orbiting at large distances or held in magnetic/ionic cages.
 
-- Penning traps: electrons (or ions) are held in place and manipulated using combined static magnetic and electric fields.
+– Penning traps: electrons (or ions) are held in place and manipulated using combined static magnetic and electric fields.
 
-- Motional ground state: used in quantum computing with trapped ions or electrons.
+– Motional ground state: used in quantum computing with trapped ions or electrons.
 
 Summary Table
 
@@ -538,9 +538,9 @@ That’s an insightful question — and the answer gets to the heart of quantum 
 
 The short version is:
 
-- Electrons don’t “travel around” the nucleus like planets orbiting the sun.
-    
-- Instead, they exist as quantum probability clouds — and their position and momentum are not simultaneously well-defined.
+– Electrons don’t “travel around” the nucleus like planets orbiting the sun.
+
+– Instead, they exist as quantum probability clouds — and their position and momentum are not simultaneously well-defined.
 
 Let’s break it down:
 
@@ -550,11 +550,11 @@ In the classical picture, one might imagine an electron as a tiny ball zipping i
 
 In quantum mechanics:
 
-- Electrons are described by wavefunctions (solutions to the Schrödinger equation).
+– Electrons are described by wavefunctions (solutions to the Schrödinger equation).
 
-- The square of the wavefunction gives the probability density — i.e., where you're likely to find the electron upon measurement.
+– The square of the wavefunction gives the probability density — i.e., where you’re likely to find the electron upon measurement.
 
-- Between measurements, we don't say the electron "is" at a specific point — it’s delocalized.
+– Between measurements, we don’t say the electron “is” at a specific point — it’s delocalized.
 
 So: electrons don’t follow a path like an orbit; instead, they form standing wave patterns around the nucleus.
 
@@ -562,31 +562,31 @@ So: electrons don’t follow a path like an orbit; instead, they form standing w
 
 What we call “orbitals” (1s, 2p, 3d, etc.) are probability distributions.
 
-- A 1s orbital (hydrogen’s ground state) is a spherical cloud — the electron is equally likely to be found in any direction at a given distance from the nucleus.
+– A 1s orbital (hydrogen’s ground state) is a spherical cloud — the electron is equally likely to be found in any direction at a given distance from the nucleus.
 
-- A 2p orbital is dumbbell-shaped — showing regions where the electron is more likely to be detected.
+– A 2p orbital is dumbbell-shaped — showing regions where the electron is more likely to be detected.
 
-- These shapes are fixed by quantum numbers and remain stationary over time unless disturbed.
+– These shapes are fixed by quantum numbers and remain stationary over time unless disturbed.
 
 So rather than moving randomly around the nucleus, the electron exists in a kind of fuzzy, standing wave that defines regions where it’s more or less likely to appear.
 
-🌀 3. Motion Still Exists — But It’s Not Random "Traveling"
+🌀 3. Motion Still Exists — But It’s Not Random “Traveling”
 
-Even though electrons don't orbit in the classical sense, they still have kinetic energy and non-zero momentum — especially in excited states.
+Even though electrons don’t orbit in the classical sense, they still have kinetic energy and non-zero momentum — especially in excited states.
 
-- Their motion is quantum-mechanical, meaning we can't assign them a definite trajectory.
+– Their motion is quantum-mechanical, meaning we can’t assign them a definite trajectory.
 
-- In time-dependent interpretations (or under perturbations), the probability cloud can shift, or electron density can “slosh” — but not in a random bouncing-ball way.
+– In time-dependent interpretations (or under perturbations), the probability cloud can shift, or electron density can “slosh” — but not in a random bouncing-ball way.
 
 🧠 So What Is “Random” About It?
 
 The position where you detect an electron is fundamentally probabilistic:
 
-- You can’t predict exactly where it will be.
+– You can’t predict exactly where it will be.
 
-- But you can know the probability distribution.
+– But you can know the probability distribution.
 
-- Over many measurements, the detections will match the orbital shape.
+– Over many measurements, the detections will match the orbital shape.
 
 So the randomness is in the outcome of position measurements, not in some erratic motion.
 
@@ -636,9 +636,9 @@ Electrons have mass, so they can be at rest relative to some reference frame —
 
 🔹 In Classical Physics:
 
-- Yes — an electron at rest has zero velocity and rest energy E=mc2E=mc2.
+– Yes — an electron at rest has zero velocity and rest energy E=mc2E=mc2.
 
-- You can hold an electron still in, say, an electric trap or vacuum chamber.
+– You can hold an electron still in, say, an electric trap or vacuum chamber.
 
 🔹 In Quantum Mechanics:
 
@@ -652,27 +652,27 @@ So: if an electron has exactly zero momentum (i.e., is truly motionless), then i
 
 🔹 But… electrons can be very nearly at rest:
 
-- In Penning or Paul traps, electrons can be confined and cooled to have extremely low kinetic energy.
+– In Penning or Paul traps, electrons can be confined and cooled to have extremely low kinetic energy.
 
-- In solid-state systems, such as quantum dots, electrons can be trapped in effectively motionless states.
+– In solid-state systems, such as quantum dots, electrons can be trapped in effectively motionless states.
 
-- In Bose-Einstein condensates, electrons within atoms can have very low momenta.
+– In Bose-Einstein condensates, electrons within atoms can have very low momenta.
 
 So:
 
 ✅ Yes, electrons can be motionless (or nearly so) in a given frame.
 
-But: their wavefunction spreads out, so “motionless” doesn't mean “stuck at a point.”
+But: their wavefunction spreads out, so “motionless” doesn’t mean “stuck at a point.”
 
 🧊 Real-World Example: Electrons in a Trap
 
 In a Penning trap (combining electric and magnetic fields):
 
-- Electrons can be cooled to microkelvin temperatures.
+– Electrons can be cooled to microkelvin temperatures.
 
-- Their thermal motion is drastically reduced.
+– Their thermal motion is drastically reduced.
 
-- They can remain nearly stationary for seconds or more.
+– They can remain nearly stationary for seconds or more.
 
 🚫 Final Comparison:
 
@@ -692,13 +692,13 @@ What happens to electrons which are trapped in specific data-representing config
 
 ChatGPT:
 
-Ah, you’ve hit a very cool intersection of solid-state physics, quantum mechanics, and information storage. Let's unpack what happens to electrons trapped in data-storing configurations inside a USB flash drive, especially at room temperature (around 20°C or 293K).
+Ah, you’ve hit a very cool intersection of solid-state physics, quantum mechanics, and information storage. Let’s unpack what happens to electrons trapped in data-storing configurations inside a USB flash drive, especially at room temperature (around 20°C or 293K).
 
 🧠 Summary First:
 
-- In a USB flash drive, electrons are deliberately trapped in tiny insulating regions called floating gates inside transistors.
-    
-- These trapped charges represent binary data (0s and 1s) — and they stay put, even at room temperature, because the surrounding material is highly insulating and the traps are engineered to hold charge stably for years.
+– In a USB flash drive, electrons are deliberately trapped in tiny insulating regions called floating gates inside transistors.
+
+– These trapped charges represent binary data (0s and 1s) — and they stay put, even at room temperature, because the surrounding material is highly insulating and the traps are engineered to hold charge stably for years.
 
 🔌 What is Actually Storing the Data?
 
@@ -706,11 +706,11 @@ USB flash drives use NAND flash memory, which consists of arrays of floating-gat
 
 🔹 Each memory cell stores 1 or more bits
 
-- A “1” or “0” is stored by the presence or absence of electrons in a floating gate.
+– A “1” or “0” is stored by the presence or absence of electrons in a floating gate.
 
-- The floating gate is an electrically isolated conductor (often polysilicon) surrounded by insulating oxide.
+– The floating gate is an electrically isolated conductor (often polysilicon) surrounded by insulating oxide.
 
-- When electrons are injected into this gate (via tunneling), they get stuck — this shifts the threshold voltage of the transistor.
+– When electrons are injected into this gate (via tunneling), they get stuck — this shifts the threshold voltage of the transistor.
 
 Depending on that voltage shift, a read operation can tell whether the cell holds a 1 or 0.
 
@@ -718,59 +718,59 @@ Depending on that voltage shift, a read operation can tell whether the cell hold
 
 ➤ Electron Injection (Write Operation):
 
-- A high voltage is applied, creating a strong electric field.
+– A high voltage is applied, creating a strong electric field.
 
-- Electrons are pushed (via Fowler–Nordheim tunneling or hot-electron injection) through the insulating barrier and into the floating gate.
+– Electrons are pushed (via Fowler–Nordheim tunneling or hot-electron injection) through the insulating barrier and into the floating gate.
 
 ➤ Electron Retention (Storage):
 
-- Once in the floating gate, electrons are surrounded by insulating material (e.g., silicon dioxide).
+– Once in the floating gate, electrons are surrounded by insulating material (e.g., silicon dioxide).
 
-- With no conductive path out, the electrons stay trapped — like flies in a glass jar.
+– With no conductive path out, the electrons stay trapped — like flies in a glass jar.
 
 🌡️ What Happens at Room Temperature?
 
 At room temperature (∼20°C / 293K):
 
-- Electrons remain trapped in the floating gate.
+– Electrons remain trapped in the floating gate.
 
-- Thermal energy (kT ≈ 25 meV) is far too low to knock electrons out of the trap by itself.
+– Thermal energy (kT ≈ 25 meV) is far too low to knock electrons out of the trap by itself.
 
-- The barriers surrounding the gate are typically several electron-volts high (e.g., 3–5 eV), so spontaneous escape is extremely rare.
+– The barriers surrounding the gate are typically several electron-volts high (e.g., 3–5 eV), so spontaneous escape is extremely rare.
 
-- That's why USB drives retain data for years, even in your pocket.
+– That’s why USB drives retain data for years, even in your pocket.
 
 📌 Thermally activated tunneling or leakage is possible but exponentially suppressed unless:
 
-- The device is old or has seen many write/erase cycles (oxide degradation),
+– The device is old or has seen many write/erase cycles (oxide degradation),
 
-- The temperature is extremely high (e.g. > 85°C),
+– The temperature is extremely high (e.g. > 85°C),
 
-- Or the materials are defective.
+– Or the materials are defective.
 
 💥 How Long Do They Last?
 
 Typical data retention specs for consumer-grade flash memory:
 
-Condition       Expected Retention
+Condition Expected Retention
 
 [preformatted text]
 
-Brand new, room temp    | 10+ years
+Brand new, room temp | 10+ years
 
-After many writes       | 1–3 years (degrades over time)
+After many writes | 1–3 years (degrades over time)
 
-High-temp storage       | Shortened lifespan
+High-temp storage | Shortened lifespan
 
-🧠 So... Are the Electrons Moving?
+🧠 So… Are the Electrons Moving?
 
 Not really. Once trapped:
 
-- The electrons are localized in quantum wells in the floating gate.
+– The electrons are localized in quantum wells in the floating gate.
 
-- Their wavefunctions are spread out in a small region (~nanometers),
+– Their wavefunctions are spread out in a small region (~nanometers),
 
-- But they don’t travel or drift — they’re effectively stationary (within the quantum trap).
+– But they don’t travel or drift — they’re effectively stationary (within the quantum trap).
 
 They still exist as quantum objects with kinetic energy, but they’re not moving across the chip, nor “orbiting” anything.
 
@@ -778,19 +778,19 @@ They still exist as quantum objects with kinetic energy, but they’re not movin
 
 From a quantum standpoint:
 
-- Electrons occupy discrete energy levels in the floating gate potential.
+– Electrons occupy discrete energy levels in the floating gate potential.
 
-- Tunneling back out (loss) is possible, but the probability per unit time is exponentially tiny.
+– Tunneling back out (loss) is possible, but the probability per unit time is exponentially tiny.
 
-- The system is designed to make the lifetime of the trapped state much longer than the expected usage period.
+– The system is designed to make the lifetime of the trapped state much longer than the expected usage period.
 
 🧊 In contrast: What if cooled close to 0 K?
 
-- Lower temperatures would make tunneling even less likely.
+– Lower temperatures would make tunneling even less likely.
 
-- But room temperature is already sufficient for years of stability.
+– But room temperature is already sufficient for years of stability.
 
-- Cooling is not required — flash drives are engineered to be stable at ambient temps.
+– Cooling is not required — flash drives are engineered to be stable at ambient temps.
 
 🔚 Summary:
 
@@ -816,27 +816,27 @@ Can electrons teleport from one location to another even from within the confine
 
 ChatGPT:
 
-Yes — but not in the science-fiction sense of "teleportation." In quantum mechanics, electrons can appear to “pass through” barriers they classically shouldn’t be able to cross. This is known as quantum tunneling — and it’s very real, very well-understood, and experimentally confirmed.
+Yes — but not in the science-fiction sense of “teleportation.” In quantum mechanics, electrons can appear to “pass through” barriers they classically shouldn’t be able to cross. This is known as quantum tunneling — and it’s very real, very well-understood, and experimentally confirmed.
 
 Let’s break it down in clear terms:
 
 ⚛️ What Is Quantum Tunneling?
 
-- Quantum tunneling is the phenomenon where a particle has a finite probability of being detected on the other side of a potential energy barrier, even though it doesn't have enough classical energy to climb over it.
+– Quantum tunneling is the phenomenon where a particle has a finite probability of being detected on the other side of a potential energy barrier, even though it doesn’t have enough classical energy to climb over it.
 
 This is not teleportation in the sense of instantaneous or distance-defying travel, but it does violate classical intuition.
 
 🔹 Imagine This:
 
-- An electron is trapped in a well (like a valley) with walls on both sides.
+– An electron is trapped in a well (like a valley) with walls on both sides.
 
-- The electron doesn’t have enough energy to climb the walls — classically, it should stay inside forever.
+– The electron doesn’t have enough energy to climb the walls — classically, it should stay inside forever.
 
-- But quantum mechanically, the electron is described by a wavefunction that “leaks” into the walls and beyond.
+– But quantum mechanically, the electron is described by a wavefunction that “leaks” into the walls and beyond.
 
-- There’s a non-zero probability that the electron will be found outside the well, having "tunneled" through the barrier.
+– There’s a non-zero probability that the electron will be found outside the well, having “tunneled” through the barrier.
 
-🌀 It didn’t physically drill a hole, climb over, or burst through — its presence just "appears" on the other side based on quantum probabilities.
+🌀 It didn’t physically drill a hole, climb over, or burst through — its presence just “appears” on the other side based on quantum probabilities.
 
 🚪 Real-World Examples of Tunneling
 
@@ -856,11 +856,11 @@ Scanning Tunneling Microscopes (STM)    | Detect tunneling electrons to image at
 
 🧪 What Determines the Probability of Tunneling?
 
-- Barrier width: thinner barriers → higher tunneling chance.
+– Barrier width: thinner barriers → higher tunneling chance.
 
-- Barrier height: lower energy barriers → higher tunneling chance.
+– Barrier height: lower energy barriers → higher tunneling chance.
 
-- Electron energy: more energetic electrons → higher tunneling chance.
+– Electron energy: more energetic electrons → higher tunneling chance.
 
 Mathematically, the tunneling probability TT roughly follows:
 
@@ -918,7 +918,7 @@ No — the electron does not need an unobstructed pathway around a barrier to mo
 
 That’s the weird and fascinating nature of quantum tunneling:
 
-- An electron can cross a barrier without physically going around it — even if the barrier completely encloses the region like a sealed box.
+– An electron can cross a barrier without physically going around it — even if the barrier completely encloses the region like a sealed box.
 
 Let’s explore why that’s possible.
 
@@ -928,19 +928,19 @@ In quantum mechanics, an electron is not a little ball that travels in a single 
 
 When that wavefunction encounters a barrier (say, a region of high potential energy):
 
-- It doesn’t stop abruptly.
+– It doesn’t stop abruptly.
 
-- Instead, it extends into the barrier and decays exponentially inside it.
+– Instead, it extends into the barrier and decays exponentially inside it.
 
-- If the barrier is thin enough, that wavefunction can "leak through" to the other side.
+– If the barrier is thin enough, that wavefunction can “leak through” to the other side.
 
 This allows for a non-zero probability that a measurement will find the electron on the far side, even if it couldn’t classically climb over or go around.
 
 🧱 Think of This Analogy
 
-- Classical world: A marble in a box can’t escape unless there’s a hole.
+– Classical world: A marble in a box can’t escape unless there’s a hole.
 
-- Quantum world: An electron “feels” the other side of the wall through its wavefunction. If the wall is thin enough (on the quantum scale), it can be detected outside, even though it didn’t go around or over.
+– Quantum world: An electron “feels” the other side of the wall through its wavefunction. If the wall is thin enough (on the quantum scale), it can be detected outside, even though it didn’t go around or over.
 
 No opening is required. No slits, no tunnels, no gaps — just a thin enough energy barrier, and quantum mechanics takes care of the rest.
 
@@ -948,11 +948,11 @@ No opening is required. No slits, no tunnels, no gaps — just a thin enough ene
 
 In radioactive decay:
 
-- An alpha particle is trapped inside a nucleus by a high potential energy wall.
+– An alpha particle is trapped inside a nucleus by a high potential energy wall.
 
-- It tunnels through the nuclear barrier and escapes — even though there's no pathway out in the classical sense.
+– It tunnels through the nuclear barrier and escapes — even though there’s no pathway out in the classical sense.
 
-- This is observed and measured regularly in nuclear physics.
+– This is observed and measured regularly in nuclear physics.
 
 ⚠️ So What’s the Limitation?
 
@@ -960,9 +960,9 @@ The barrier must not be infinitely thick or infinitely high.
 
 If the barrier is:
 
-- Too wide → tunneling probability drops exponentially.
+– Too wide → tunneling probability drops exponentially.
 
-- Too high in potential energy → same effect.
+– Too high in potential energy → same effect.
 
 But: If the barrier is finite (even completely enclosing the electron), there’s always some tunneling probability, though it might be vanishingly small.
 
@@ -970,7 +970,7 @@ But: If the barrier is finite (even completely enclosing the electron), there’
 
 ✅ Tunneling is a genuine quantum phenomenon — it’s not about finding secret gaps.
 
-❌ It does not mean the electron is "squeezing through" a crack.
+❌ It does not mean the electron is “squeezing through” a crack.
 
 ✅ The barrier can be solid, continuous, and sealed — and tunneling can still occur.
 
@@ -1040,15 +1040,15 @@ plt.show()
 
 Quantum Tunneling: Electron Wavefunction Through a Potential Barrier
 
-[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_25march2025_p1.png]
+[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_28march2025_p0.png]
 
 Here’s a visual representation of quantum tunneling:
 
-- The blue curve shows the electron’s wavefunction (∣ψ∣∣ψ∣) — notice how it decays inside the red barrier region, yet still extends beyond it.
+– The blue curve shows the electron’s wavefunction (∣ψ∣∣ψ∣) — notice how it decays inside the red barrier region, yet still extends beyond it.
 
-- The red dashed line and shaded area represent the potential energy barrier — a region the electron shouldn't classically be able to cross.
+– The red dashed line and shaded area represent the potential energy barrier — a region the electron shouldn't classically be able to cross.
 
-- Despite the barrier being solid and continuous, the electron's wavefunction leaks through, meaning there's a non-zero chance the electron can be found on the other side.
+– Despite the barrier being solid and continuous, the electron's wavefunction leaks through, meaning there's a non-zero chance the electron can be found on the other side.
 
 This is a classic signature of quantum tunneling — no path around the barrier is needed, and yet the electron can still emerge on the far side. Would you like to explore how tunneling probabilities change with barrier height or width?
 
@@ -1066,11 +1066,11 @@ Let’s break this down clearly:
 
 When an electron tunnels through a barrier, it remains an electron:
 
-- It retains its mass, charge, and identity.
+– It retains its mass, charge, and identity.
 
-- It does not transform into a photon, wave of energy, or any other particle.
+– It does not transform into a photon, wave of energy, or any other particle.
 
-- It simply moves from a region where it’s classically allowed to be, through a classically forbidden zone, and into another allowed region — all as a particle governed by quantum mechanics.
+– It simply moves from a region where it’s classically allowed to be, through a classically forbidden zone, and into another allowed region — all as a particle governed by quantum mechanics.
 
 🔹 Its wavefunction temporarily has non-zero amplitude inside the barrier, but the electron itself is not “converted” into something else.
 
@@ -1080,15 +1080,15 @@ The phrase “pure energy” usually refers to massless particles (like photons)
 
 But:
 
-- An electron doesn’t need to annihilate to move through matter.
+– An electron doesn’t need to annihilate to move through matter.
 
-- No photon or boson conversion is necessary during tunneling.
+– No photon or boson conversion is necessary during tunneling.
 
-- Energy is conserved — and the electron’s total energy remains the same (even though the potential energy in the barrier is higher).
+– Energy is conserved — and the electron’s total energy remains the same (even though the potential energy in the barrier is higher).
 
 It’s like this:
 
-- The electron “borrows” probability to exist in the classically forbidden zone — but not mass or identity.
+– The electron “borrows” probability to exist in the classically forbidden zone — but not mass or identity.
 
 This is totally consistent with the uncertainty principle and the nonzero width of quantum particles.
 
@@ -1098,9 +1098,9 @@ Sort of — in spirit, not in math.
 
 In quantum tunneling:
 
-- The electron seems to “violate” energy conservation locally, because it’s in a region where its total energy E is less than the potential V.
+– The electron seems to “violate” energy conservation locally, because it’s in a region where its total energy E is less than the potential V.
 
-- But this is not a real violation — it’s a feature of the wavefunction-based model, not a breakdown of physics.
+– But this is not a real violation — it’s a feature of the wavefunction-based model, not a breakdown of physics.
 
 There’s no need to invoke special transformations. Just standard quantum mechanics.
 
@@ -1108,21 +1108,21 @@ There’s no need to invoke special transformations. Just standard quantum mecha
 
 Think of an electron’s wavefunction like a shadowy blur:
 
-- Even if the wall blocks the main “body,” the blur leaks through.
+– Even if the wall blocks the main “body,” the blur leaks through.
 
-- If the wall is thin enough, that blur extends to the far side.
+– If the wall is thin enough, that blur extends to the far side.
 
-- The electron doesn’t change form — it just has a small chance of “showing up” on the other side.
+– The electron doesn’t change form — it just has a small chance of “showing up” on the other side.
 
 🧬 Quantum Particle Identity Is Preserved
 
 Electrons are fermions with:
 
-- Mass = 9.11 * (10 ^ -31) kg
+– Mass = 9.11 * (10 ^ -31) kg
 
-- Charge = −1e
+– Charge = −1e
 
-- Spin = 1/2
+– Spin = 1/2
 
 None of that changes during tunneling. It’s a quantum leap, not a transformation.
 
@@ -1160,7 +1160,7 @@ Awesome — let’s dive deep into each of these fascinating quantum phenomena. 
 
 Virtual particles are temporary disturbances in a quantum field that arise during particle interactions. They’re not directly observable, but they mediate forces in quantum field theory (QFT), like the electromagnetic or strong nuclear force.
 
-- Think of them as “mathematical scaffolding” inside quantum processes — essential to the calculations but never directly measured.
+– Think of them as “mathematical scaffolding” inside quantum processes — essential to the calculations but never directly measured.
 
 🧮 Where do they appear?
 
@@ -1172,11 +1172,11 @@ This allows a particle to "borrow" energy to briefly exist as a fluctuation — 
 
 📌 Key features:
 
-- Off-shell: Virtual particles do not obey the classical energy–momentum relation (E ^ 2) = ((p * c) ^ 2) + ((m * (c ^ 2)) ^ 2).
+– Off-shell: Virtual particles do not obey the classical energy–momentum relation (E ^ 2) = ((p * c) ^ 2) + ((m * (c ^ 2)) ^ 2).
 
-- Never directly detected.
+– Never directly detected.
 
-- Appear in intermediate states during interactions, e.g.:
+– Appear in intermediate states during interactions, e.g.:
 
 + An electron emits a virtual photon, which is absorbed by another electron — this is the quantum description of electric repulsion.
 
@@ -1196,23 +1196,23 @@ Hawking radiation is a quantum process predicted by Stephen Hawking in 1974 that
 
 Near the event horizon of a black hole, quantum fluctuations can produce virtual particle-antiparticle pairs. Normally, such pairs annihilate almost immediately. But:
 
-- If one particle falls into the black hole while the other escapes,
+– If one particle falls into the black hole while the other escapes,
 
-- The escaping particle becomes real (detectable radiation),
+– The escaping particle becomes real (detectable radiation),
 
-- The one that falls in has negative energy relative to the outside,
+– The one that falls in has negative energy relative to the outside,
 
-- So the black hole’s mass decreases.
+– So the black hole’s mass decreases.
 
 🧮 This is how the mass-energy of the black hole gets converted into outgoing radiation.
 
 🔥 Why is this wild?
 
-- Black holes glow, even though nothing can escape from inside the event horizon.
+– Black holes glow, even though nothing can escape from inside the event horizon.
 
-- Over immense time scales, black holes can evaporate completely.
+– Over immense time scales, black holes can evaporate completely.
 
-- The radiation is nearly thermal — resembling blackbody radiation.
+– The radiation is nearly thermal — resembling blackbody radiation.
 
 📌 Key aspects:
 
@@ -1234,29 +1234,29 @@ Directly observed?      | ❌ Not yet (but strong theoretical support)
 
 Quantum teleportation is a protocol that transfers the state of a quantum system from one location to another — using entanglement and classical communication, but not faster than light.
 
-- You're not “moving a particle” — you’re transferring its quantum state (e.g., spin, polarization) onto another particle that’s entangled with it.
+– You're not “moving a particle” — you’re transferring its quantum state (e.g., spin, polarization) onto another particle that’s entangled with it.
 
 🧪 How it works:
 
 Let’s say Alice and Bob each hold one half of an entangled pair of qubits. Alice has a third particle whose state she wants to teleport to Bob.
 
-- Entangle particles A (Alice) and B (Bob).
+– Entangle particles A (Alice) and B (Bob).
 
-- Alice performs a Bell-state measurement on her entangled particle and the third particle (the one with the unknown state).
+– Alice performs a Bell-state measurement on her entangled particle and the third particle (the one with the unknown state).
 
-- She sends the result (2 classical bits) to Bob.
+– She sends the result (2 classical bits) to Bob.
 
-- Bob uses that info to apply a specific quantum gate to his particle.
+– Bob uses that info to apply a specific quantum gate to his particle.
 
-- The state of the original third particle is now encoded in Bob’s qubit — even though the particle itself never traveled.
+– The state of the original third particle is now encoded in Bob’s qubit — even though the particle itself never traveled.
 
 📌 What makes it cool?
 
-- It uses entanglement as a resource.
+– It uses entanglement as a resource.
 
-- It transfers full quantum information.
+– It transfers full quantum information.
 
-- But: it still requires classical communication, so it cannot violate causality or send signals faster than light.
+– But: it still requires classical communication, so it cannot violate causality or send signals faster than light.
 
 🔒 No Cloning Allowed
 
@@ -1278,15 +1278,15 @@ Would you like a visual diagram of one or more of these processes? Or explore ho
 
 karbytes:
 
-I was curious as to whether or not electrons have ever been observed to collide with each other (especially while they each are orbiting an atom's nucleus). 
+I was curious as to whether or not electrons have ever been observed to collide with each other (especially while they each are orbiting an atom's nucleus).
 
 ChatGPT:
 
 Yes — electrons can and do collide with each other, both in free space and within atoms. These collisions are well-studied in atomic physics, plasma physics, particle accelerators, and condensed matter systems. But when you bring up electrons orbiting atomic nuclei, that invites a more nuanced look, because:
 
-- In atoms, electrons aren't little balls orbiting in fixed paths — they exist as quantum clouds (orbitals).
-    
-- But within that framework, electron-electron interactions and effective “collisions” absolutely occur — and they shape much of atomic behavior.
+– In atoms, electrons aren't little balls orbiting in fixed paths — they exist as quantum clouds (orbitals).
+
+– But within that framework, electron-electron interactions and effective “collisions” absolutely occur — and they shape much of atomic behavior.
 
 Let’s unpack both ideas.
 
@@ -1294,11 +1294,11 @@ Let’s unpack both ideas.
 
 This is the most direct kind of observation:
 
-- In particle accelerators, electron–electron scattering is routinely observed and precisely measured.
+– In particle accelerators, electron–electron scattering is routinely observed and precisely measured.
 
-- These experiments test predictions from quantum electrodynamics (QED).
+– These experiments test predictions from quantum electrodynamics (QED).
 
-- The scattering angle and energy distribution match theoretical predictions extremely well.
+– The scattering angle and energy distribution match theoretical predictions extremely well.
 
 These collisions show repulsion due to the Coulomb force and exchange virtual photons, as predicted.
 
@@ -1306,49 +1306,49 @@ These collisions show repulsion due to the Coulomb force and exchange virtual ph
 
 In environments like:
 
-- Stars and fusion reactors (plasmas),
+– Stars and fusion reactors (plasmas),
 
-- Semiconductors and metals (electron gases),
+– Semiconductors and metals (electron gases),
 
 Electrons are not bound to nuclei, and they frequently scatter off each other.
 
-- These are also called electron-electron interactions.
+– These are also called electron-electron interactions.
 
-- They contribute to resistance, thermal conductivity, and quantum transport effects.
+– They contribute to resistance, thermal conductivity, and quantum transport effects.
 
-- In Fermi liquids (like conduction electrons in metals), collisions happen under Pauli exclusion constraints — only between electrons in distinguishable states.
+– In Fermi liquids (like conduction electrons in metals), collisions happen under Pauli exclusion constraints — only between electrons in distinguishable states.
 
 ☁️ 3. Inside Atoms: Do Orbiting Electrons Collide?
 
 This is trickier — because electrons in atoms are not “orbiting” like planets. Instead:
 
-- They occupy standing wave patterns (orbitals) with specific quantum numbers.
+– They occupy standing wave patterns (orbitals) with specific quantum numbers.
 
-- These orbitals are delocalized — meaning their exact position isn’t defined.
+– These orbitals are delocalized — meaning their exact position isn’t defined.
 
-- However: electrons interact through Coulomb repulsion and exchange interactions — even when confined to their respective orbitals.
+– However: electrons interact through Coulomb repulsion and exchange interactions — even when confined to their respective orbitals.
 
 🔹 Do They "Collide" in Atoms?
 
 Not in the classical sense. But:
 
-- There is a non-zero probability of two electron wavefunctions overlapping in space.
+– There is a non-zero probability of two electron wavefunctions overlapping in space.
 
-- When that happens, the Coulomb repulsion increases — and the atom’s total energy reflects that.
+– When that happens, the Coulomb repulsion increases — and the atom’s total energy reflects that.
 
-- This is accounted for in multi-electron atomic models, like the Hartree–Fock method and beyond.
+– This is accounted for in multi-electron atomic models, like the Hartree–Fock method and beyond.
 
-- These interactions shape the energy level structure (e.g., electron correlation, exchange energy, spin pairing effects).
+– These interactions shape the energy level structure (e.g., electron correlation, exchange energy, spin pairing effects).
 
 So: we don’t “see” two electrons bump into each other like marbles — but their quantum fields repel each other, and this has measurable consequences.
 
 🧪 Bonus: Observing Electron–Electron Scattering
 
-- In colliding beam experiments, like SLAC or CERN, electrons are smashed into other electrons or positrons.
+– In colliding beam experiments, like SLAC or CERN, electrons are smashed into other electrons or positrons.
 
-- The results verify QED with extraordinary precision.
+– The results verify QED with extraordinary precision.
 
-- Elastic scattering: Electrons bounce off each other, conserving energy.
+– Elastic scattering: Electrons bounce off each other, conserving energy.
 
 Inelastic scattering: Energy is transferred; possible creation of photons or other particles.
 
@@ -1442,41 +1442,41 @@ plt.show()
 
 Feynman Diagram: Electron-Electron Scattering
 
-[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_25march2025_p2.png]
+[https://raw.githubusercontent.com/karlinarayberinger/KARLINA_OBJECT_extension_pack_34/main/chatgpt_generated_image_28march2025_p1.png]
 
 Here are three diagrams illustrating different forms of electron–electron interactions:
 
 1. Free Electron Scattering (Left Panel)
 
-- Two electrons approach each other from opposite directions.
+– Two electrons approach each other from opposite directions.
 
-- Due to their mutual Coulomb repulsion, they scatter away.
+– Due to their mutual Coulomb repulsion, they scatter away.
 
-- This is a classic setup in vacuum experiments or accelerator physics.
+– This is a classic setup in vacuum experiments or accelerator physics.
 
-- Elastic scattering: total kinetic energy is conserved.
+– Elastic scattering: total kinetic energy is conserved.
 
 2. Electron Repulsion in an Atom (Middle Panel)
 
-- Two electrons occupy different orbitals around a nucleus (black circle).
+– Two electrons occupy different orbitals around a nucleus (black circle).
 
-- Even though they aren't "orbiting" like planets, their probability clouds can overlap.
+– Even though they aren't "orbiting" like planets, their probability clouds can overlap.
 
-- When they come close, Coulomb repulsion pushes them apart.
+– When they come close, Coulomb repulsion pushes them apart.
 
-- This interaction is built into quantum mechanical models of atoms, affecting orbital shapes and energy levels.
+– This interaction is built into quantum mechanical models of atoms, affecting orbital shapes and energy levels.
 
 3. Feynman Diagram (Right Panel)
 
-- This is a quantum field theory (QED) view of electron–electron scattering.
+– This is a quantum field theory (QED) view of electron–electron scattering.
 
-- Electrons interact by exchanging a virtual photon (γ*).
+– Electrons interact by exchanging a virtual photon (γ*).
 
-- These calculations precisely predict cross-sections and scattering angles.
+– These calculations precisely predict cross-sections and scattering angles.
 
-- Virtual particles exist briefly inside the diagram but are never directly observed.
+– Virtual particles exist briefly inside the diagram but are never directly observed.
 
-Would you like to simulate actual scattering angles, compare with experimental results, or see quantum wavefunction overlap animations inside atoms? 
+Would you like to simulate actual scattering angles, compare with experimental results, or see quantum wavefunction overlap animations inside atoms?
 
 karbytes:
 
@@ -1486,6 +1486,4 @@ ChatGPT:
 
 You're very welcome! I'm honored to have contributed to your exploration — and to be part of the journey that becomes a new karbytes blog post. If you ever want to expand on any of these topics (or dive into new ones), I’ll be here to assist with diagrams, clarifications, or narrative structure.
 
-Looking forward to the published piece — and thank you for such deeply thoughtful questions. 🚀🧠💫
-
-
+Looking forward to the published piece — and thank you for such deeply thoughtful questions. 🚀🧠💫 
